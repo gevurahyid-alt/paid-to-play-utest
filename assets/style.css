@@ -274,5 +274,5 @@ footer{padding:28px 0 40px;font-size:.82rem;color:#555}
   color:#111;
 }
 
-/* Keep the company name together when it appears in body copy. */
-.brand-nowrap{white-space:nowrap}
+/* Let the request-received sentence use the full thank-you card width on desktop. */
+.thank-card .lead{max-width:none}
