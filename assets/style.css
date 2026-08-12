@@ -95,7 +95,7 @@ footer{padding:28px 0 40px;font-size:.82rem;color:#555}
   display:grid;
   grid-template-columns:.95fr 1.05fr;
   gap:26px;
-  align-items:center;
+  align-items:start;
 }
 .tip-label{
   display:inline-block;
@@ -296,4 +296,246 @@ footer{padding:28px 0 40px;font-size:.82rem;color:#555}
 }
 .referral-info-callout p{
   margin:0;
+}
+
+
+/* v45 — live Google-Sheets availability + scheduling preferences */
+.tip-tools{display:flex;flex-direction:column;gap:14px;min-width:0}
+.instruction-shot img{height:auto;object-fit:contain}
+.availability-tool{background:#fff;border:2px solid #111;padding:0;min-width:0}
+.availability-heading,.preference-heading{display:block;background:var(--yellow);border-bottom:2px solid #111;padding:6px 9px;font-weight:900;line-height:1.25}
+.availability-meta{padding:7px 9px 0;font-size:.88rem}
+.availability-disclaimer{margin:5px 9px 8px;font-size:.82rem;line-height:1.35}
+.availability-weeks{padding:0 8px 8px;display:grid;gap:9px}
+.availability-loading,.availability-error{padding:12px;border:1px solid #aaa;background:#f7f7f7;font-size:.85rem}
+.availability-table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.availability-table{width:100%;border-collapse:collapse;font-size:.78rem;text-align:center;min-width:500px}
+.availability-table th,.availability-table td{border:1px solid #111;padding:4px 5px;white-space:nowrap}
+.availability-table thead th{background:#fff200;font-weight:900}
+.availability-table .week-label{min-width:66px}
+.availability-table tbody th{background:#fff200;font-weight:900}
+.availability-table td.available{background:#c6e0b4;font-weight:800}
+.availability-table td.empty{background:#ddd;color:#555}
+.availability-table td.full{background:#eee;font-weight:800}
+.preference-form{padding:9px}
+.preference-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px 10px}
+.preference-grid label{display:flex;flex-direction:column;gap:3px;font-weight:800;font-size:.78rem;min-width:0}
+.preference-grid small{font-weight:400}
+.preference-grid input,.preference-grid select{width:100%;min-width:0;border:1.5px solid #111;background:#fff;padding:7px 8px;font:inherit;color:#111}
+.preference-note{font-size:.76rem;line-height:1.35;margin:9px 0 7px;padding:7px 8px;background:#fff8d4;border:1px solid #d4a900}
+.preference-submit{width:100%;background:#176eb5;color:#fff;border:2px solid #111;padding:8px 10px;font-weight:900;text-transform:uppercase;cursor:pointer;box-shadow:3px 3px 0 #111}
+.preference-submit:hover{transform:translate(1px,1px);box-shadow:2px 2px 0 #111}
+.preference-submit:disabled{opacity:.65;cursor:wait}
+.preference-return{font-size:.76rem;line-height:1.35;margin:8px 0 0}
+.preference-status{font-size:.78rem;font-weight:800;margin:7px 0 0}
+.preference-status.success{color:#0b6a25}.preference-status.error{color:#a21d14}
+.preference-submit-frame,.hp-field{position:absolute!important;width:1px!important;height:1px!important;overflow:hidden!important;clip:rect(0 0 0 0)!important;white-space:nowrap!important;border:0!important;padding:0!important;margin:-1px!important}
+@media(max-width:1050px) and (min-width:761px){.preference-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:760px){
+  .tip-tools{margin-top:4px}
+  .availability-tool{margin-top:2px}
+  .preference-grid{grid-template-columns:1fr 1fr}
+  .availability-table{font-size:.7rem;min-width:455px}
+}
+@media(max-width:480px){.preference-grid{grid-template-columns:1fr}}
+
+
+/* v46 — public-facing availability bands; exact counts remain private in Google Sheets */
+.availability-heading{
+  text-align:center;
+}
+.availability-heading .availability-title,
+.availability-heading .availability-location{
+  display:block;
+}
+.availability-heading .availability-location{
+  margin-top:1px;
+}
+.availability-disclaimer{
+  margin:6px 9px 9px;
+  font-size:.82rem;
+  line-height:1.4;
+}
+.availability-table td.available{
+  background:#c6e0b4;
+  font-weight:900;
+}
+.availability-table td.limited{
+  background:#ffe699;
+  font-weight:900;
+}
+.availability-table td.few{
+  background:#f8cbad;
+  font-weight:900;
+}
+.availability-table td.full{
+  background:#d9d9d9;
+  color:#333;
+  font-weight:900;
+}
+.availability-table td.empty{
+  background:#eeeeee;
+  color:#777;
+}
+.availability-table td{
+  line-height:1.1;
+}
+.availability-legend{
+  display:flex;
+  flex-wrap:wrap;
+  gap:5px 9px;
+  padding:0 9px 8px;
+  font-size:.72rem;
+  line-height:1.2;
+}
+.availability-legend span{
+  display:inline-flex;
+  align-items:center;
+  gap:4px;
+  white-space:nowrap;
+}
+.availability-legend i{
+  width:10px;
+  height:10px;
+  border:1px solid #111;
+  display:inline-block;
+}
+.availability-legend .lg-available{background:#c6e0b4}
+.availability-legend .lg-limited{background:#ffe699}
+.availability-legend .lg-few{background:#f8cbad}
+.availability-legend .lg-full{background:#d9d9d9}
+
+
+/* v47 — tighten calendar and move full scheduling disclaimer to form box */
+.availability-table{
+  table-layout:fixed;
+  width:100%;
+}
+.availability-table th,
+.availability-table td{
+  padding:3px 2px;
+  font-size:.66rem;
+}
+.availability-table td.available,
+.availability-table td.limited,
+.availability-table td.few,
+.availability-table td.full{
+  font-size:.61rem;
+  letter-spacing:-.2px;
+  white-space:normal;
+  overflow-wrap:anywhere;
+}
+.availability-table-wrap{
+  overflow-x:hidden;
+}
+.availability-top-note{
+  margin:6px 9px 8px;
+  font-size:.78rem;
+  line-height:1.35;
+}
+.preference-note{
+  padding:9px 10px !important;
+  line-height:1.42 !important;
+}
+
+
+/* v48 — centered parallel yellow section headings */
+.preference-heading{
+  text-align:center;
+}
+
+
+/* v51 — scheduling preference confirmation, based on existing help thank-you card */
+.preference-confirmation{
+  margin-top:12px;
+}
+.preference-confirmation[hidden],
+.preference-form[hidden]{
+  display:none !important;
+}
+.preference-confirmation .thank-title{
+  margin-top:10px;
+}
+.preference-confirmation .thank-actions{
+  margin-top:16px;
+}
+.preference-return-button{
+  font:inherit;
+  cursor:pointer;
+}
+
+
+/* v52 — intentional inline success state */
+.preference-confirmation{padding:14px 10px 16px;font-size:13px;line-height:1.42}
+.preference-confirmation p{margin:0 0 10px}
+.preference-success-lead{font-size:15px}
+.preference-confirmation .preference-return-button{width:100%;margin:4px 0 12px}
+.preference-success-info{border-top:1px solid #bbb;padding-top:11px;margin-top:3px}
+
+
+/* v53 beta — update-self / another-applicant workflow */
+.preference-success-actions{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:9px;
+  margin:14px 0 12px;
+}
+.preference-success-actions .preference-submit{
+  width:100%;
+}
+.preference-another-panel{
+  margin:0 0 12px;
+  padding:10px;
+  border:2px solid #111;
+  background:#fff8d8;
+}
+.preference-another-panel[hidden]{
+  display:none !important;
+}
+.preference-another-panel .another-question{
+  margin:0 0 8px;
+  font-weight:800;
+  line-height:1.35;
+}
+.preference-another-options{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+}
+.preference-another-options button{
+  border:2px solid #111;
+  background:#fff;
+  color:#111;
+  font:inherit;
+  font-weight:800;
+  padding:8px 10px;
+  cursor:pointer;
+}
+.preference-another-options button:hover{
+  background:#f3f3f3;
+}
+@media (min-width:760px){
+  .preference-success-actions{
+    grid-template-columns:1fr 1fr;
+  }
+}
+
+
+/* v54 beta — reversible submission choices */
+.preference-back-options{
+  margin:10px 0 2px;
+  text-align:center;
+}
+.preference-back-options button{
+  border:0;
+  background:transparent;
+  color:#005ea8;
+  text-decoration:underline;
+  font:inherit;
+  font-weight:800;
+  cursor:pointer;
+  padding:4px 6px;
+}
+.preference-back-options[hidden]{
+  display:none !important;
 }

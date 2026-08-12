@@ -5,9 +5,9 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Atlanta Wearable Technology Study | Paid to Play Testing</title>
 <meta name="description" content="Atlanta-area adults: apply for an in-person wearable technology testing opportunity in Sandy Springs paying $120 for approximately 3 hours.">
-<link rel="stylesheet" href="../assets/style.css">
-<link rel="icon" type="image/png" sizes="512x512" href="../assets/favicon.png?v=44">
-<link rel="shortcut icon" href="../assets/favicon.ico?v=44">
+<link rel="stylesheet" href="../assets/style.css?v=54">
+<link rel="icon" type="image/png" sizes="512x512" href="../assets/favicon.png?v=47">
+<link rel="shortcut icon" href="../assets/favicon.ico?v=47">
 
 <style>
 .brand-sherpa-tagline{
@@ -93,7 +93,7 @@ header.topbar > * {
       <div class="pill">ABOUT 3 HOURS</div>
       <div class="pill">AGE 18+</div>
     </div>
-    <p>Weekday sessions are generally offered around <strong>9 AM</strong> and <strong>2 PM</strong>.<br><span class="keep-together">No technology experience is required.</span> Participation is subject to eligibility and successful screening.</p>
+    <p>Weekday sessions are generally offered around <strong>9:30 AM</strong> and <strong>2 PM</strong>.<br><span class="keep-together">No technology experience is required.</span> Participation is subject to eligibility and successful screening.</p>
     <p><a class="cta" href="#before-you-apply">Apply for the Atlanta Study</a></p>
     <p class="note">You'll continue to the official uTest registration/application process.</p>
   </div>
@@ -119,14 +119,76 @@ header.topbar > * {
       <div class="recovery-tip">
         <h3>If You Accidentally Close or Lose the Original uTest Page</h3>
         <p><strong>Don't create another uTest account.</strong> Log in to your existing account and locate your uTest ID.</p>
-        <p>If you still need to complete the study application, contact <a href="mailto:info@paidtoplaytesting.com">info@paidtoplaytesting.com</a> for assistance accessing the appropriate application form.</p>
+        <p>If you still need to complete the study application, email <a href="mailto:info@paidtoplaytesting.com">info@paidtoplaytesting.com</a> or text <a href="sms:+17706792400">(770) 679-2400</a> for assistance accessing the appropriate application form.</p>
         <p><strong>Already have your uTest ID?</strong> Include it when contacting us so we can help you get back on track more quickly.</p>
+        <p><strong>You can also scroll to the bottom of this page to submit a help request.</strong></p>
       </div>
     </div>
-    <figure class="instruction-shot">
-      <img src="../assets/utest-confirm-account-cropped.png" alt="uTest Confirm Your Account page showing the Continue To Application button">
-      <figcaption>Follow the arrow to <strong>Continue To Application</strong> before leaving this page.</figcaption>
-    </figure>
+
+    <div class="tip-tools">
+      <figure class="instruction-shot">
+        <img src="../assets/utest-confirm-account-cropped.png" alt="uTest Confirm Your Account page showing the Continue To Application button">
+        <figcaption>Follow the arrow to <strong>Continue To Application</strong> before leaving this page.</figcaption>
+      </figure>
+
+      <section class="availability-tool" data-location="atl" data-api="https://script.google.com/macros/s/AKfycbybIuYUdhAe6B5LjxmZ5iRROS6uQvQiFzmTQsz5Bb8fDRh1vysUhF6ySNU6qO9QHI0i/exec">
+        <div class="availability-heading"><span class="availability-title">CHECK CURRENT AVAILABILITY</span><span class="availability-location">Loading…</span></div>
+        <div class="availability-meta">Last updated: <strong class="availability-updated">Loading…</strong></div>
+        <p class="availability-top-note">Availability may change. Current information is shown for planning purposes.</p>
+        <div class="availability-legend" aria-label="Availability status legend"><span><i class="lg-available"></i>Available</span><span><i class="lg-limited"></i>Limited</span><span><i class="lg-few"></i>Few slots left</span><span><i class="lg-full"></i>Full</span></div>
+        <div class="availability-weeks" aria-live="polite">
+          <div class="availability-loading">Loading current availability…</div>
+        </div>
+
+        <div class="preference-heading">TELL US YOUR PREFERRED SESSION TIMES</div>
+        <form class="preference-form" action="https://script.google.com/macros/s/AKfycbybIuYUdhAe6B5LjxmZ5iRROS6uQvQiFzmTQsz5Bb8fDRh1vysUhF6ySNU6qO9QHI0i/exec" method="POST" target="preference-submit-frame">
+          <input type="hidden" name="action" value="preference">
+          <input type="hidden" name="notes" value="">
+          <input type="hidden" name="location" value="ATL Sandy Springs">
+          <input class="hp-field" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+          <div class="preference-another-panel" hidden>
+            <p class="another-question">Would this applicant like to attend with the previous applicant?</p>
+            <div class="preference-another-options">
+              <button type="button" class="another-together">YES, IF POSSIBLE</button>
+              <button type="button" class="another-independent">NO PREFERENCE</button>
+            </div>
+          </div>
+          <div class="preference-back-options" hidden><button type="button" class="back-to-submission-options">← BACK TO SUBMISSION OPTIONS</button></div>
+          <div class="preference-grid">
+            <label><span>Name <strong>*</strong></span><input name="name" type="text" autocomplete="name" required></label>
+            <label><span>uTest ID <small>(if known)</small></span><input name="utest_id" type="text" inputmode="numeric" autocomplete="off" placeholder="e.g., 1234567"></label>
+            <label><span>Email <strong>*</strong></span><input name="email" type="email" autocomplete="email" required></label>
+            <label><span>Phone <small>(optional)</small></span><input name="phone" type="tel" autocomplete="tel"></label>
+            <label><span>Preferred Date <strong>*</strong></span><input name="preferred_date" type="date" required></label>
+            <label><span>Preferred Time <strong>*</strong></span><select name="preferred_time" required><option value="">Select time</option></select></label>
+            <label><span>Backup Date #1 (optional)</span><input name="backup_date_1" type="date"></label>
+            <label><span>Backup Date #2 (optional)</span><input name="backup_date_2" type="date"></label>
+          </div>
+          <p class="preference-note"><strong>This is a scheduling preference only.</strong> It does not reserve or confirm a session. Availability may change. You may also select a future date not shown on this calendar, pending availability. <strong>If you’re unsure of your backup dates, you may leave them blank and update your preferences later.</strong> <strong>Earlier dates are encouraged, as availability is limited and study opportunities may fill or change at any time.</strong><br><strong>Slots tend to fill quickly.</strong></p>
+          <button class="preference-submit" type="submit">Submit Scheduling Preferences</button>
+          <p class="preference-return">Not ready yet? No problem. You can complete your uTest application first and return here anytime to submit your preferred dates and times.</p>
+          <p class="preference-status" role="status" aria-live="polite"></p>
+
+
+        </form>
+        <div class="preference-confirmation" hidden>
+          <p class="preference-success-lead"><strong>Thank you! Your scheduling preferences have been received.</strong></p>
+          <p>This is a scheduling preference only and does not reserve or confirm a session.</p>
+          <p><strong>Need to change your dates or times?</strong> You can update your preferences at any time. Your newest submission will supersede your earlier preferences. You can also return to this page later — even in a new visit — and submit updated preferences at any time.</p>
+          <div class="preference-success-actions">
+            <button class="preference-submit preference-return-button" type="button">UPDATE MY SCHEDULING PREFERENCES</button>
+            <button class="preference-submit preference-another-button" type="button">SUBMIT PREFERENCES FOR ANOTHER APPLICANT</button>
+          </div>
+          <div class="preference-success-info">
+            <p><strong>Questions or need assistance?</strong> Email <a href="mailto:info@paidtoplaytesting.com"><strong>info@paidtoplaytesting.com</strong></a> or text <a href="sms:+17706792400"><strong>(770) 679-2400</strong></a>. We will respond as soon as possible, typically within 24 business hours.</p>
+            <p>Once your application is complete and you qualify, uTest should generally contact you regarding next steps within <strong>48 business hours</strong>. If you would like a status update or help expediting the process, or if more than 48 business hours have passed without hearing from uTest, feel free to reach out to us.</p>
+            <p><strong>Ready to continue?</strong> Follow the application instructions below.</p>
+          </div>
+        </div>
+        <iframe class="preference-submit-frame" name="preference-submit-frame" title="Preference submission response"></iframe>
+      </section>
+    </div>
   </div>
 
   <div class="steps four-steps">
@@ -139,13 +201,13 @@ header.topbar > * {
   <div class="nda-note">
     <h3>One More Step: Complete Your NDA</h3>
     <p>After submitting the study application, be sure to complete the required <strong>NDA (Non-Disclosure Agreement)</strong>.</p>
-    <p><strong>The NDA must be completed before you can schedule and participate in the test.</strong> Watch for the NDA instructions after submitting your application and complete them promptly.</p>
+    <p><strong>The NDA must be completed before you can be officially scheduled and participate in the test.</strong> Watch for the NDA instructions after submitting your application and complete them promptly.</p>
   </div>
 
     <div class="referral-info-callout">
     <strong>IMPORTANT — KEEP REFERRAL INFORMATION AS IS</strong>
-    <p>The application will automatically fill in referral information. Please leave any pre-filled referral information unchanged — it is used to connect your application to this referral and allows us to act as your concierge agent, including answering questions from uTest on your behalf.</p>
-    <p><strong>If you provide us with your contact information at the bottom of this page, we may also be able to help you find earlier availability for your preferred testing day and connect you directly with scheduling.</strong></p>
+    <p>The application will automatically fill in referral information. Please leave any pre-filled referral information unchanged — it is used to connect your application to this referral and allows us to act as your concierge agent, including answering questions from uTest on your behalf and sometimes helping to expedite the process.</p>
+    <p><strong>If you provide us with your contact information at the bottom of this page, we can also help you track current testing availability, submit your preferred and backup dates, and, when possible, help you find earlier availability and connect you directly with scheduling. You can also enter your date/time preferences above.</strong></p>
     <p><strong>If no referral information is listed, enter 1436373 in the uTest ID# field.</strong></p>
   </div>
 
@@ -159,11 +221,11 @@ header.topbar > * {
 <section>
 <div class="wrap two-col">
   <div>
-    <h2>What to expect</h2>
+    <h2>What to Expect:</h2>
     <p>This is an <strong>in-person wearable technology study</strong> in the Sandy Springs / Atlanta area. Qualified participants are invited to attend an approximately three-hour session and receive <strong>$120</strong> for completing the study.</p>
     <p>You'll first create a uTest account and then complete the study's application/screener. Not everyone who applies will necessarily qualify or be selected.</p>
     <p class="smallcaps">Questions or stuck during signup?</p>
-    <p>Paid to Play Testing can help you navigate the registration and application process. Email <a href="mailto:info@paidtoplaytesting.com"><strong>info@paidtoplaytesting.com</strong></a> for assistance.</p>
+    <p>Paid to Play Testing can help you navigate the registration and application process. Email <a href="mailto:info@paidtoplaytesting.com"><strong>info@paidtoplaytesting.com</strong></a> or text <a href="sms:+17706792400"><strong>(770) 679-2400</strong></a> for assistance. We typically respond within 24 hours on business days.</p>
   </div>
   <div><img class="secondary" src="../assets/atlanta-secondary.jpeg" alt="Wearable technology testing opportunity campaign"></div>
 </div>
@@ -222,5 +284,166 @@ header.topbar > * {
   <p><strong>© 2026 Digital Design Trusted Technologies</strong></p>
 </div>
 </footer>
+
+<script>
+(function(){
+  function esc(s){return String(s ?? '').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+  function renderWeek(rows, times, weekNumber, maxPositive){
+    const dayHeaders=rows.map(r=>`<th><div>${esc(r.day)}</div><div>${esc(r.date)}</div></th>`).join('');
+    function publicStatus(v){
+      if(v===null || v==='' || typeof v==='undefined') return {cls:'empty',label:'—'};
+      const n=Number(v);
+      if(!Number.isFinite(n)) return {cls:'empty',label:'—'};
+      if(n===0) return {cls:'full',label:'FULL'};
+      const ratio=maxPositive>0 ? n/maxPositive : 1;
+      if(ratio<=0.25) return {cls:'few',label:'FEW SLOTS LEFT'};
+      if(ratio<=0.50) return {cls:'limited',label:'LIMITED'};
+      return {cls:'available',label:'AVAILABLE'};
+    }
+    function cells(key){
+      return rows.map(r=>{
+        const s=publicStatus(r[key]);
+        return `<td class="${s.cls}">${esc(s.label)}</td>`;
+      }).join('');
+    }
+    return `<div class="availability-table-wrap"><table class="availability-table"><thead><tr><th class="week-label">WEEK ${weekNumber}<br>Time</th>${dayHeaders}</tr></thead><tbody><tr><th>${esc(times[0])}</th>${cells('morning')}</tr><tr><th>${esc(times[1])}</th>${cells('afternoon')}</tr></tbody></table></div>`;
+  }
+  document.querySelectorAll('.availability-tool').forEach(async tool=>{
+    const api=tool.dataset.api, loc=tool.dataset.location;
+    const weeks=tool.querySelector('.availability-weeks');
+    const timeSelect=tool.querySelector('select[name="preferred_time"]');
+    try{
+      const res=await fetch(api+'?location='+encodeURIComponent(loc),{cache:'no-store'});
+      if(!res.ok) throw new Error('HTTP '+res.status);
+      const data=await res.json();
+      if(!data.success) throw new Error(data.error||'Availability unavailable');
+      tool.querySelector('.availability-location').textContent=data.location.toUpperCase();
+      tool.querySelector('.availability-updated').textContent=data.lastUpdated;
+      timeSelect.innerHTML='<option value="">Select time</option>'+data.times.map(t=>`<option value="${esc(t)}">${esc(t)}</option>`).join('');
+      const rows=data.sessions||[];
+      const positives=rows.flatMap(r=>[r.morning,r.afternoon]).map(Number).filter(n=>Number.isFinite(n)&&n>0);
+      const maxPositive=positives.length?Math.max(...positives):0;
+      const chunks=[]; for(let i=0;i<rows.length;i+=5) chunks.push(rows.slice(i,i+5));
+      weeks.innerHTML=chunks.map((c,i)=>renderWeek(c,data.times,i+1,maxPositive)).join('');
+    }catch(err){
+      weeks.innerHTML='<div class="availability-error">Current availability could not be loaded. Please try again shortly.</div>';
+      tool.querySelector('.availability-updated').textContent='temporarily unavailable';
+      console.error(err);
+    }
+
+    const form=tool.querySelector('.preference-form');
+    const heading=tool.querySelector('.preference-heading');
+    const frame=tool.querySelector('.preference-submit-frame');
+    const status=tool.querySelector('.preference-status');
+    const button=tool.querySelector('.preference-submit');
+    let submitted=false;
+    form.addEventListener('submit',()=>{
+      submitted=true; button.disabled=true; status.className='preference-status'; status.textContent='Sending your preferences…';
+    });
+    const confirmation=tool.querySelector('.preference-confirmation');
+    const returnButton=tool.querySelector('.preference-return-button');
+    const anotherButton=tool.querySelector('.preference-another-button');
+    const anotherPanel=tool.querySelector('.preference-another-panel');
+    const togetherButton=tool.querySelector('.another-together');
+    const independentButton=tool.querySelector('.another-independent');
+    const notesInput=form.querySelector('input[name="notes"]');
+    const backWrap=tool.querySelector('.preference-back-options');
+    const backOptions=tool.querySelector('.back-to-submission-options');
+    const anotherQuestion=tool.querySelector('.another-question');
+    let lastSubmission=null;
+
+    function snapshotForm(){
+      const fd=new FormData(form);
+      return {
+        name:fd.get('name')||'',
+        utest_id:fd.get('utest_id')||'',
+        email:fd.get('email')||'',
+        phone:fd.get('phone')||'',
+        preferred_date:fd.get('preferred_date')||'',
+        preferred_time:fd.get('preferred_time')||'',
+        backup_date_1:fd.get('backup_date_1')||'',
+        backup_date_2:fd.get('backup_date_2')||''
+      };
+    }
+
+    function setField(name,value){
+      const el=form.elements[name];
+      if(el) el.value=value||'';
+    }
+
+    frame.addEventListener('load',()=>{
+      if(!submitted) return;
+      submitted=false;
+      button.disabled=false;
+      status.className='preference-status success';
+      status.textContent='';
+      lastSubmission=snapshotForm();
+      form.hidden=true;
+      backWrap.hidden=true;
+      heading.textContent='✓ SUCCESS — PREFERENCES SUBMITTED';
+      confirmation.hidden=false;
+      confirmation.scrollIntoView({behavior:'smooth',block:'start'});
+    });
+
+    returnButton.addEventListener('click',()=>{
+      confirmation.hidden=true;
+      form.hidden=false;
+      anotherPanel.hidden=true;
+      backWrap.hidden=false;
+      notesInput.value='';
+      heading.textContent='TELL US YOUR PREFERRED SESSION TIMES';
+      status.textContent='';
+      tool.scrollIntoView({behavior:'smooth',block:'start'});
+    });
+
+    anotherButton.addEventListener('click',()=>{
+      confirmation.hidden=true;
+      form.hidden=false;
+      heading.textContent='TELL US YOUR PREFERRED SESSION TIMES';
+      status.textContent='';
+      anotherPanel.hidden=false;
+      backWrap.hidden=false;
+      anotherQuestion.textContent='Would this applicant like to attend with '+((lastSubmission&&lastSubmission.name)||'the previous applicant')+'?';
+      setField('name','');
+      setField('utest_id','');
+      setField('email','');
+      setField('phone','');
+      setField('preferred_date','');
+      setField('preferred_time','');
+      setField('backup_date_1','');
+      setField('backup_date_2','');
+      notesInput.value='';
+      tool.scrollIntoView({behavior:'smooth',block:'start'});
+    });
+
+    backOptions.addEventListener('click',()=>{
+      form.hidden=true;
+      anotherPanel.hidden=true;
+      backWrap.hidden=true;
+      notesInput.value='';
+      heading.textContent='✓ SUCCESS — PREFERENCES SUBMITTED';
+      confirmation.hidden=false;
+      confirmation.scrollIntoView({behavior:'smooth',block:'start'});
+    });
+
+    togetherButton.addEventListener('click',()=>{
+      if(lastSubmission){
+        setField('preferred_date',lastSubmission.preferred_date);
+        setField('preferred_time',lastSubmission.preferred_time);
+        setField('backup_date_1',lastSubmission.backup_date_1);
+        setField('backup_date_2',lastSubmission.backup_date_2);
+        notesInput.value='Would like to attend with previous applicant: '+(lastSubmission.name||'previous applicant')+'. Same-session preference if possible.';
+      }
+      anotherPanel.hidden=true;
+    });
+
+    independentButton.addEventListener('click',()=>{
+      notesInput.value='Another applicant submitted from the same referral flow; no preference to attend with previous applicant.';
+      anotherPanel.hidden=true;
+    });
+  });
+})();
+</script>
+
 </body>
 </html>
