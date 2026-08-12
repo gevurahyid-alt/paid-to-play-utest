@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Midtown Wearable Technology Study | Paid to Play Testing</title>
 <meta name="description" content="New York City-area adults: apply for an in-person wearable technology testing opportunity in Midtown Manhattan paying $150 for approximately 3 hours.">
-<link rel="stylesheet" href="../assets/style.css?v=54">
+<link rel="stylesheet" href="../assets/style.css?v=56">
 <link rel="icon" type="image/png" sizes="512x512" href="../assets/favicon.png?v=47">
 <link rel="shortcut icon" href="../assets/favicon.ico?v=47">
 
@@ -124,7 +124,8 @@ header.topbar > * {
       <h2>Keep Your Application Open</h2>
       <p>After creating your uTest account, you'll be asked to confirm your account by email.</p>
       <div class="critical-tip">
-        <strong>📌 DO NOT USE THE ORIGINAL UTEST TAB TO CHECK YOUR EMAIL.</strong>
+        <span class="critical-pin" aria-hidden="true">📌</span>
+        <strong class="critical-copy">DO NOT USE THE ORIGINAL UTEST TAB TO CHECK YOUR EMAIL.</strong>
       </div>
       <p><strong>Keep that uTest page open.</strong> Check your email using your email app, a <strong>different browser tab</strong>, or another device. After confirming your account, return to the original uTest tab and click <strong>Continue To Application</strong>.</p>
       <p>This allows your new uTest account information — including your <strong>uTest ID, name and email</strong> — to carry over automatically to the study application.</p>
@@ -143,7 +144,7 @@ header.topbar > * {
     <div class="tip-tools">
       <figure class="instruction-shot">
         <img src="../assets/utest-confirm-account-cropped.png" alt="uTest Confirm Your Account page showing the Continue To Application button">
-        <figcaption>Follow the arrow to <strong>Continue To Application</strong> before leaving this page.</figcaption>
+        <figcaption>Follow the arrow to <strong>Continue To Application</strong> before leaving the uTest page.</figcaption>
       </figure>
 
       <section class="availability-tool" data-location="midtown" data-api="https://script.google.com/macros/s/AKfycbybIuYUdhAe6B5LjxmZ5iRROS6uQvQiFzmTQsz5Bb8fDRh1vysUhF6ySNU6qO9QHI0i/exec">
@@ -448,13 +449,13 @@ header.topbar > * {
         setField('preferred_time',lastSubmission.preferred_time);
         setField('backup_date_1',lastSubmission.backup_date_1);
         setField('backup_date_2',lastSubmission.backup_date_2);
-        notesInput.value='Would like to attend with previous applicant: '+(lastSubmission.name||'previous applicant')+'. Same-session preference if possible.';
+        notesInput.value='ATTEND WITH: '+(lastSubmission.name||'previous applicant')+' — yes, if possible. Scheduling preferences may differ.';
       }
       anotherPanel.hidden=true;
     });
 
     independentButton.addEventListener('click',()=>{
-      notesInput.value='Another applicant submitted from the same referral flow; no preference to attend with previous applicant.';
+      notesInput.value='CONNECTED TO: '+((lastSubmission&&lastSubmission.name)||'previous applicant')+' — no preference to attend together.';
       anotherPanel.hidden=true;
     });
   });
