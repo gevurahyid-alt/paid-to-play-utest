@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Midtown Wearable Technology Study | Paid to Play Testing</title>
 <meta name="description" content="New York City-area adults: apply for an in-person wearable technology testing opportunity in Midtown Manhattan paying $150 for approximately 3 hours.">
-<link rel="stylesheet" href="../assets/style.css?v=56">
+<link rel="stylesheet" href="../assets/style.css?v=64">
 <link rel="icon" type="image/png" sizes="512x512" href="../assets/favicon.png?v=47">
 <link rel="shortcut icon" href="../assets/favicon.ico?v=47">
 
@@ -181,7 +181,7 @@ header.topbar > * {
             <label><span>Backup Date #1 (optional)</span><input name="backup_date_1" type="date"></label>
             <label><span>Backup Date #2 (optional)</span><input name="backup_date_2" type="date"></label>
           </div>
-          <p class="preference-note"><strong>This is a scheduling preference only.</strong> It does not reserve or confirm a session. Availability may change. You may also select a future date not shown on this calendar, pending availability. <strong>If you’re unsure of your backup dates, you may leave them blank and update your preferences later.</strong> <strong>Earlier dates are encouraged, as availability is limited and study opportunities may fill or change at any time.</strong><br><strong>Slots tend to fill quickly.</strong></p>
+          <p class="preference-note"><strong>This is a scheduling preference only.</strong> It does not reserve or confirm a session. Availability may change. You may also select a future date not shown on this calendar, pending availability. <strong>If you’re unsure of your backup dates, you may leave them blank and update your preferences later.</strong> <strong>Earlier dates are encouraged, as availability is limited and study opportunities may fill or change at any time.</strong><br><strong class="slots-urgency">Slots tend to fill quickly.</strong></p>
           <button class="preference-submit" type="submit">Submit Scheduling Preferences</button>
           <p class="preference-return">Not ready yet? No problem. You can complete your uTest application first and return here anytime to submit your preferred dates and times.</p>
           <p class="preference-status" role="status" aria-live="polite"></p>
@@ -306,7 +306,22 @@ header.topbar > * {
 (function(){
   function esc(s){return String(s ?? '').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
   function renderWeek(rows, times, weekNumber, maxPositive){
-    const dayHeaders=rows.map(r=>`<th><div>${esc(r.day)}</div><div>${esc(r.date)}</div></th>`).join('');
+    const mobile=window.matchMedia('(max-width:700px)').matches;
+    const displayDate=(value)=>{
+      const s=String(value||'');
+      const m=s.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);
+      if(!m) return s;
+      const month=String(Number(m[1]));
+      const day=String(Number(m[2]));
+      return mobile ? `${month}/${day}` : `${month}/${day}/${m[3]}`;
+    };
+    const displayDay=(value)=>{
+      const s=String(value||'');
+      if(!mobile) return s;
+      const map={Monday:'Mon',Tuesday:'Tue',Wednesday:'Wed',Thursday:'Thu',Friday:'Fri'};
+      return map[s]||s;
+    };
+    const dayHeaders=rows.map(r=>`<th><div>${esc(displayDay(r.day))}</div><div>${esc(displayDate(r.date))}</div></th>`).join('');
     function publicStatus(v){
       if(v===null || v==='' || typeof v==='undefined') return {cls:'empty',label:'—'};
       const n=Number(v);
