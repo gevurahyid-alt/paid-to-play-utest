@@ -755,3 +755,1093 @@ footer{padding:28px 0 40px;font-size:.82rem;color:#555}
     margin-top:1em;
   }
 }
+
+
+/* v65 — desktop checkpoint heading emphasis */
+@media (min-width:701px){
+  .nda-note h3{
+    text-align:center;
+  }
+  .referral-info-callout > .referral-heading{
+    display:block;
+    text-align:center;
+  }
+}
+@media (max-width:700px){
+  .nda-note h3,
+  .referral-info-callout > .referral-heading{
+    text-align:left;
+  }
+}
+
+
+/* v66 — mobile hero centering + Pro Tip heading centering */
+.pro-tip .tip-label,
+.pro-tip .tip-copy > h2{
+  text-align:center;
+}
+.pro-tip .tip-label{
+  margin-left:auto;
+  margin-right:auto;
+}
+
+@media (max-width:700px){
+  .hero .copy .kicker{
+    text-align:center;
+    margin-left:auto;
+    margin-right:auto;
+  }
+
+  .hero .copy h1{
+    text-align:center;
+  }
+
+  .hero .offer .pill:first-child{
+    margin-left:auto;
+    margin-right:auto;
+  }
+}
+
+
+/* v67 — true box centering and intentional mobile heading breaks */
+
+/* Center the actual PRO TIP badge, not merely its text, on desktop + mobile. */
+.pro-tip .tip-label{
+  display:block !important;
+  width:max-content;
+  max-width:100%;
+  margin-left:auto !important;
+  margin-right:auto !important;
+  text-align:center;
+}
+.pro-tip .tip-copy > h2{
+  text-align:center;
+}
+
+/* Desktop checkpoint headings remain centered. */
+@media (min-width:701px){
+  .nda-note h3{
+    text-align:center;
+  }
+  .referral-info-callout > .referral-heading{
+    text-align:center;
+  }
+  .nda-step-prefix,
+  .nda-step-rest,
+  .referral-rest{
+    display:inline;
+  }
+  .referral-dash{
+    display:inline;
+  }
+}
+
+@media (max-width:700px){
+  /* True centering of the location ribbon on mobile. */
+  .hero .copy .kicker{
+    display:block !important;
+    width:max-content;
+    max-width:100%;
+    margin-left:auto !important;
+    margin-right:auto !important;
+    text-align:center;
+  }
+
+  .hero .copy h1{
+    text-align:center;
+  }
+
+  /*
+    Preserve the lower ABOUT 3 HOURS / AGE 18+ pair as a row,
+    while centering the wider payment box over their combined width.
+  */
+  .hero .offer{
+    display:grid !important;
+    grid-template-columns:max-content max-content;
+    width:max-content;
+    max-width:100%;
+    justify-content:start;
+    column-gap:12px;
+    row-gap:12px;
+  }
+  .hero .offer .pill:first-child{
+    grid-column:1 / -1;
+    justify-self:center;
+    margin:0 !important;
+  }
+  .hero .offer .pill:nth-child(2),
+  .hero .offer .pill:nth-child(3){
+    margin:0 !important;
+  }
+
+  /* Intentional two-line NDA checkpoint on mobile only. */
+  .nda-note h3{
+    text-align:left;
+  }
+  .nda-step-prefix,
+  .nda-step-rest{
+    display:block;
+  }
+
+  /*
+    Mobile referral heading:
+    IMPORTANT
+    KEEP REFERRAL INFORMATION AS IS
+    No em dash on mobile.
+  */
+  .referral-info-callout > .referral-heading{
+    text-align:left;
+  }
+  .referral-heading .referral-important,
+  .referral-heading .referral-rest{
+    display:block;
+  }
+  .referral-heading .referral-dash{
+    display:none;
+  }
+}
+
+
+/* v68 — center referral checkpoint heading on mobile too */
+@media (max-width:700px){
+  .referral-info-callout > .referral-heading{
+    text-align:center !important;
+  }
+}
+
+
+/* v69 — portrait/landscape mobile refinement */
+@media (max-width:900px){
+  .hero .offer{
+    margin-left:auto !important;
+    margin-right:auto !important;
+  }
+}
+
+@media (max-width:700px) and (orientation:portrait){
+  .nda-note h3,
+  .nda-step-prefix,
+  .nda-step-rest{
+    text-align:center !important;
+  }
+  .nda-step-prefix,
+  .nda-step-rest{
+    display:block;
+  }
+
+  .hero .cta .cta-atl-prefix,
+  .hero .cta .cta-atl-rest{
+    display:block;
+    text-align:center;
+  }
+
+  .session-times .time-2pm{
+    white-space:nowrap;
+  }
+}
+
+@media (max-width:900px) and (orientation:landscape){
+  .nda-note h3{
+    text-align:center !important;
+  }
+  .nda-step-prefix,
+  .nda-step-rest{
+    display:inline;
+  }
+
+  .hero .cta .cta-atl-prefix,
+  .hero .cta .cta-atl-rest{
+    display:inline;
+  }
+
+  .hero .offer{
+    width:max-content !important;
+    max-width:100%;
+    margin-left:auto !important;
+    margin-right:auto !important;
+  }
+}
+
+
+/* v70 — experimental interactive offer details (Atlanta) */
+.offer-interactive{
+  position:relative;
+}
+.offer-detail-trigger{
+  font:inherit;
+  color:inherit;
+  cursor:pointer;
+  appearance:none;
+  -webkit-appearance:none;
+}
+.offer-detail-trigger:hover,
+.offer-detail-trigger:focus-visible,
+.offer-detail-trigger.is-active{
+  transform:translate(-1px,-1px);
+  box-shadow:5px 5px 0 #111;
+}
+.offer-detail-trigger:focus-visible{
+  outline:3px solid var(--blue);
+  outline-offset:3px;
+}
+.offer-popover[hidden]{
+  display:none !important;
+}
+.offer-popover{
+  position:absolute;
+  z-index:20;
+  left:0;
+  top:calc(100% + 8px);
+  width:min(470px, calc(100vw - 48px));
+  background:#fff;
+  border:3px solid #111;
+  box-shadow:7px 7px 0 var(--yellow);
+  padding:16px 42px 16px 16px;
+  line-height:1.42;
+  animation:offerPopIn .14s ease-out;
+}
+.offer-popover-copy{
+  font-size:.96rem;
+}
+.offer-popover-close{
+  position:absolute;
+  right:8px;
+  top:5px;
+  border:0;
+  background:transparent;
+  font-size:1.65rem;
+  line-height:1;
+  cursor:pointer;
+  font-weight:900;
+}
+@keyframes offerPopIn{
+  from{opacity:0;transform:translateY(-4px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+@media (max-width:900px){
+  .offer-popover{
+    left:50%;
+    transform:translateX(-50%);
+    top:calc(100% + 10px);
+    width:min(440px, calc(100vw - 36px));
+  }
+  @keyframes offerPopIn{
+    from{opacity:0;transform:translate(-50%,-4px)}
+    to{opacity:1;transform:translate(-50%,0)}
+  }
+}
+
+
+/* v71 — practical session information within What to Expect flow */
+.session-practical-info{
+  max-width:820px;
+  margin:28px auto 24px;
+  padding:20px 22px;
+  background:#fff;
+  border:3px solid #111;
+  box-shadow:6px 6px 0 var(--blue);
+}
+.session-practical-info h3{
+  margin:0 0 14px;
+  text-align:center;
+  font-size:1.25rem;
+}
+.session-practical-info p{
+  margin:12px 0;
+  line-height:1.5;
+}
+.session-practical-info p:last-child{
+  margin-bottom:0;
+}
+@media(max-width:700px){
+  .session-practical-info{
+    margin:24px auto 20px;
+    padding:17px 16px;
+  }
+  .session-practical-info h3{
+    font-size:1.16rem;
+  }
+}
+
+
+/* v72 — swap desktop What to Expect / session-info columns and center lower graphic */
+.what-session-grid{
+  align-items:start;
+}
+.what-to-expect-copy{
+  min-width:0;
+}
+.secondary-centered{
+  display:flex;
+  justify-content:center;
+  margin:26px auto 0;
+}
+.secondary-centered .secondary{
+  display:block;
+  width:min(100%, 620px);
+  height:auto;
+}
+
+@media(max-width:700px){
+  .secondary-centered{
+    margin-top:22px;
+  }
+  .secondary-centered .secondary{
+    width:100%;
+    max-width:620px;
+  }
+}
+
+
+/* v73 — desktop help heading centering */
+@media (min-width:701px){
+  #signup-help > .wrap > h2{
+    text-align:center;
+  }
+}
+
+
+/* v74 — intentional desktop sentence break beneath official application button */
+.desktop-app-note-break{ display:none; }
+@media (min-width:901px){
+  .desktop-app-note-break{ display:inline; }
+}
+
+
+/* v76 — desktop Atlanta hero recenter, preserving full column width */
+@media (min-width:901px){
+  /* Do NOT narrow the copy column. Keep the original grid proportions. */
+  body.atlanta .hero .copy,
+
+  /* Do NOT narrow the copy column. Keep the original grid proportions. */
+  body.midtown .hero .copy{
+    width:100%;
+    max-width:none;
+  }
+
+  /* Center the visual anchors on one shared axis. */
+  body.atlanta .hero .copy .kicker,
+
+
+  /* Center the visual anchors on one shared axis. */
+  body.midtown .hero .copy .kicker{
+    display:block;
+    width:max-content;
+    max-width:100%;
+    margin-left:auto;
+    margin-right:auto;
+  }
+
+  body.atlanta .hero .copy h1,
+
+
+  body.midtown .hero .copy h1{
+    text-align:center;
+  }
+
+  body.atlanta .hero .copy .offer,
+
+
+  body.midtown .hero .copy .offer{
+    justify-content:center;
+    width:100%;
+  }
+
+  body.atlanta .hero .hero-cta-row,
+
+
+  body.midtown .hero .hero-cta-row{
+    text-align:center;
+  }
+
+  body.atlanta .hero .hero-note,
+
+
+  body.midtown .hero .hero-note{
+    text-align:center;
+  }
+
+  /* Keep explanatory prose comfortably left-aligned. */
+  body.atlanta .hero .lead,
+  body.atlanta .hero .session-times,
+
+
+  /* Keep explanatory prose comfortably left-aligned. */
+  body.midtown .hero .lead,
+  body.midtown .hero .session-times{
+    width:100%;
+    max-width:none;
+    text-align:left;
+  }
+
+  /* Small balance correction already identified in desktop review. */
+  body.atlanta .what-session-grid .session-practical-info,
+
+
+  /* Small balance correction already identified in desktop review. */
+  body.midtown .what-session-grid .session-practical-info{
+    transform:translateY(-9px);
+  }
+}
+
+
+/* v77 — desktop Atlanta hero copy centering */
+.desktop-eligibility-break{ display:none; }
+
+@media (min-width:901px){
+  body.atlanta .hero .lead,
+  body.atlanta .hero .session-times,
+
+  body.midtown .hero .lead,
+  body.midtown .hero .session-times{
+    text-align:center;
+  }
+
+  body.atlanta .hero .lead,
+
+
+  body.midtown .hero .lead{
+    margin-left:auto;
+    margin-right:auto;
+  }
+
+  .desktop-eligibility-break{
+    display:inline;
+  }
+}
+
+
+/* v78 — intentional desktop break in centered Atlanta lead */
+.desktop-lead-break{ display:none; }
+@media (min-width:901px){
+  .desktop-lead-break{ display:inline; }
+}
+
+
+/* v79 — final desktop alignment polish */
+@media (min-width:901px){
+  /*
+    Shift the entire Atlanta hero pair (copy + hero artwork) slightly
+    to align its combined center with the large Pro Tip/application block below.
+    Keep the internal relationship of the two hero columns unchanged.
+  */
+  body.atlanta .hero .hero-grid,
+
+  /*
+    Shift the entire Atlanta hero pair (copy + hero artwork) slightly
+    to align its combined center with the large Pro Tip/application block below.
+    Keep the internal relationship of the two hero columns unchanged.
+  */
+  body.midtown .hero .hero-grid{
+    position:relative;
+    left:12px;
+  }
+
+  /*
+    Lift the entire “A Few Things to Know Before Your Session” card
+    to visually balance its top edge against What to Expect.
+    Total lift from its original position: 24px.
+  */
+  body.atlanta .what-session-grid .session-practical-info,
+
+
+  /*
+    Lift the entire “A Few Things to Know Before Your Session” card
+    to visually balance its top edge against What to Expect.
+    Total lift from its original position: 24px.
+  */
+  body.midtown .what-session-grid .session-practical-info{
+    transform:translateY(-24px);
+  }
+}
+
+
+/* v81 — subtle scan-friendly spacing in Atlanta referral notice */
+body.atlanta .referral-spaced,
+
+
+
+/* v81 — subtle scan-friendly spacing in Atlanta referral notice */
+body.midtown .referral-spaced{
+  display:block;
+  margin-top:8px;
+}
+
+@media (max-width:900px){
+  body.atlanta .referral-spaced,
+
+  body.midtown .referral-spaced{
+    margin-top:6px;
+  }
+}
+
+
+/* v83 — desktop vertical balance for lower two-column section */
+@media (min-width:901px){
+  /*
+    Lower the entire left What to Expect / signup-help column as one unit
+    so its visual center better matches the white practical-info card.
+    Internal spacing and typography remain untouched.
+  */
+  body.atlanta .what-session-grid > :first-child,
+
+  /*
+    Lower the entire left What to Expect / signup-help column as one unit
+    so its visual center better matches the white practical-info card.
+    Internal spacing and typography remain untouched.
+  */
+  body.midtown .what-session-grid > :first-child{
+    position:relative;
+    top:18px;
+  }
+}
+
+
+/* v87 — shared desktop grid alignment with Pro Tip block */
+@media (min-width:901px){
+  /*
+    Stop chasing the alignment with pixel nudges.
+    Use the same left/right column proportions and gap as the Pro Tip block
+    beneath the hero so both sections share the same visual grid.
+  */
+  body.atlanta .hero .hero-grid,
+
+  /*
+    Stop chasing the alignment with pixel nudges.
+    Use the same left/right column proportions and gap as the Pro Tip block
+    beneath the hero so both sections share the same visual grid.
+  */
+  body.midtown .hero .hero-grid{
+    position:relative;
+    left:0 !important;
+    grid-template-columns:.95fr 1.05fr;
+    gap:26px;
+  }
+}
+
+
+/* v88 — desktop-only recovery heading centering/break */
+.desktop-recovery-break{ display:none; }
+
+@media (min-width:901px){
+  .recovery-tip h3{
+    text-align:center;
+  }
+  .desktop-recovery-break{
+    display:inline;
+  }
+}
+
+
+/* v89 — desktop hero shared-grid fine tune: slight left shift */
+@media (min-width:901px){
+  body.atlanta .hero .hero-grid,
+
+  body.midtown .hero .hero-grid{
+    transform:translateX(-18px);
+  }
+}
+
+/* v92 — compact supporting copy beneath scheduling preference submit */
+.preference-followup { margin-top: 12px; }
+.preference-followup p { margin: 0 0 10px; }
+.preference-followup p:last-child { margin-bottom: 0; }
+
+
+/* v95 — proper full-width third row inside Pro Tip/scheduling panel */
+@media (min-width:901px){
+  body.atlanta .pro-tip > .preference-followup-wide,
+
+  body.midtown .pro-tip > .preference-followup-wide{
+    grid-column:1 / -1;
+    display:grid;
+    grid-template-columns:1fr 1.25fr 1fr;
+    gap:0;
+    width:100%;
+    box-sizing:border-box;
+    margin-top:4px;
+    padding:20px 12px 4px;
+    border-top:1px solid #cfcfcf;
+  }
+
+  body.atlanta .preference-followup-item,
+
+
+  body.midtown .preference-followup-item{
+    min-width:0;
+    padding:0 24px;
+  }
+
+  body.atlanta .preference-followup-item + .preference-followup-item,
+
+
+  body.midtown .preference-followup-item + .preference-followup-item{
+    border-left:1px solid #d8d8d8;
+  }
+
+  body.atlanta .preference-followup-item p,
+
+
+  body.midtown .preference-followup-item p{
+    margin:0;
+    line-height:1.42;
+  }
+}
+
+/* Mobile/tablet: stack cleanly beneath the two main sections. */
+@media (max-width:900px){
+  body.atlanta .pro-tip > .preference-followup-wide,
+
+  body.midtown .pro-tip > .preference-followup-wide{
+    display:block;
+    width:100%;
+    margin-top:14px;
+    padding-top:14px;
+    border-top:1px solid #cfcfcf;
+  }
+
+  body.atlanta .preference-followup-item,
+
+
+  body.midtown .preference-followup-item{
+    padding:0;
+    margin:0 0 12px;
+    border:0 !important;
+  }
+
+  body.atlanta .preference-followup-item:last-child,
+
+
+  body.midtown .preference-followup-item:last-child{
+    margin-bottom:0;
+  }
+
+  body.atlanta .preference-followup-item p,
+
+
+  body.midtown .preference-followup-item p{
+    margin:0;
+  }
+}
+
+
+/* v97 — complete repeated CTA block near bottom */
+body.atlanta .bottom-official-cta-block,
+
+
+
+/* v97 — complete repeated CTA block near bottom */
+body.midtown .bottom-official-cta-block{
+  width:min(1080px,92vw);
+  margin:30px auto 28px;
+  text-align:center;
+}
+body.atlanta .bottom-official-cta-button,
+
+body.midtown .bottom-official-cta-button{
+  margin:0 0 12px;
+}
+body.atlanta .bottom-official-cta-block .note,
+
+body.midtown .bottom-official-cta-block .note{
+  margin:0;
+}
+@media(max-width:900px){
+  body.atlanta .bottom-official-cta-block,
+
+  body.midtown .bottom-official-cta-block{
+    margin:24px auto 22px;
+  }
+}
+
+
+/* v98 — simplified, centered lower information flow */
+body.atlanta .lower-info-centered,
+
+
+
+/* v98 — simplified, centered lower information flow */
+body.midtown .lower-info-centered{
+  width:min(820px,100%);
+  margin:0 auto;
+}
+
+body.atlanta .signup-questions-centered,
+
+
+body.midtown .signup-questions-centered{
+  max-width:760px;
+  margin:0 auto 24px;
+  text-align:center;
+}
+
+body.atlanta .signup-questions-centered .smallcaps,
+
+
+body.midtown .signup-questions-centered .smallcaps{
+  margin-bottom:8px;
+}
+
+body.atlanta .signup-questions-centered p:last-child,
+
+
+body.midtown .signup-questions-centered p:last-child{
+  margin-bottom:0;
+}
+
+body.atlanta .lower-info-centered .session-practical-info,
+
+
+body.midtown .lower-info-centered .session-practical-info{
+  width:100%;
+  box-sizing:border-box;
+  margin:0 auto;
+  transform:none !important;
+}
+
+body.atlanta .lower-info-centered .session-practical-info h3,
+
+
+body.midtown .lower-info-centered .session-practical-info h3{
+  text-align:center;
+}
+
+body.atlanta .secondary-centered,
+
+
+body.midtown .secondary-centered{
+  margin-left:auto;
+  margin-right:auto;
+  text-align:center;
+}
+
+@media (max-width:900px){
+  body.atlanta .lower-info-centered,
+
+  body.midtown .lower-info-centered{
+    width:100%;
+  }
+  body.atlanta .signup-questions-centered,
+
+  body.midtown .signup-questions-centered{
+    margin-bottom:18px;
+  }
+}
+
+
+/* v99 — tighten gap above Questions block on desktop only */
+@media (min-width:901px){
+  body.atlanta .signup-questions-centered,
+
+  body.midtown .signup-questions-centered{
+    transform:translateY(-22px);
+    margin-bottom:2px;
+  }
+}
+
+
+/* v100 — Questions block another 20px upward; keep white card position stable */
+@media (min-width:901px){
+  body.atlanta .signup-questions-centered,
+
+  body.midtown .signup-questions-centered{
+    transform:translateY(-42px);
+    margin-bottom:-18px;
+  }
+}
+
+
+/* v101 — Questions block slightly higher on desktop */
+@media (min-width:901px){
+  body.atlanta .signup-questions-centered,
+
+  body.midtown .signup-questions-centered{
+    transform:translateY(-54px);
+    margin-bottom:-30px;
+  }
+}
+
+
+/* v102 — Atlanta lower CTA unit slightly closer to the secondary graphic on desktop */
+@media (min-width:901px){
+  body.atlanta .bottom-official-cta-block,
+
+  body.midtown .bottom-official-cta-block{
+    transform:translateY(-20px);
+    margin-bottom:-20px;
+  }
+}
+
+
+/* v103 — restore breathing room below lower CTA before black help section */
+@media (min-width:901px){
+  body.atlanta .bottom-official-cta-block,
+
+  body.midtown .bottom-official-cta-block{
+    margin-bottom:18px;
+  }
+}
+
+
+/* v104 — final desktop spacing balance:
+   give the secondary graphic breathing room without disturbing the surrounding layout */
+@media (min-width:901px){
+  body.atlanta .secondary-centered,
+
+  body.midtown .secondary-centered{
+    margin-top:22px;
+  }
+}
+
+
+/* v105 — boxier lower session card on Atlanta desktop.
+   Slightly narrower than the 760px referral callout; centered. */
+@media (min-width:901px){
+  body.atlanta .lower-info-centered,
+
+  body.midtown .lower-info-centered{
+    max-width:700px;
+    margin-left:auto;
+    margin-right:auto;
+  }
+  body.atlanta .lower-info-centered .session-practical-info,
+
+  body.midtown .lower-info-centered .session-practical-info{
+    width:100%;
+    max-width:700px;
+  }
+}
+
+
+/* v106 — visually center lower graphic between session card and CTA.
+   Redistribute existing vertical space rather than lengthening the page. */
+@media (min-width:901px){
+  body.atlanta .secondary-centered,
+
+  body.midtown .secondary-centered{
+    margin-top:36px;
+    margin-bottom:-14px;
+  }
+}
+
+
+/* v109 — portrait-mobile centering and spacing polish */
+.mobile-session-break{ display:none; }
+
+@media (max-width:600px) and (orientation:portrait){
+
+  /* Center the entire hero copy flow, not just the headline. */
+  body.atlanta .hero .hero-grid,
+  body.midtown .hero .hero-grid{
+    transform:none !important;
+    left:0 !important;
+  }
+
+  body.atlanta .hero .copy,
+  body.midtown .hero .copy{
+    text-align:center;
+  }
+
+  body.atlanta .hero .kicker,
+  body.midtown .hero .kicker{
+    margin-left:auto;
+    margin-right:auto;
+  }
+
+  body.atlanta .hero .lead,
+  body.midtown .hero .lead{
+    text-align:center !important;
+    margin-left:auto;
+    margin-right:auto;
+  }
+
+  body.atlanta .hero .offer,
+  body.midtown .hero .offer{
+    justify-content:center;
+    margin-left:auto;
+    margin-right:auto;
+  }
+
+  body.atlanta .hero .session-times,
+  body.midtown .hero .session-times{
+    text-align:center !important;
+    margin-left:auto;
+    margin-right:auto;
+  }
+
+  .mobile-session-break{
+    display:inline;
+  }
+
+  body.atlanta .hero .hero-cta-row,
+  body.midtown .hero .hero-cta-row{
+    text-align:center;
+  }
+
+  body.atlanta .hero .hero-cta-row .cta,
+  body.midtown .hero .hero-cta-row .cta{
+    display:inline-block;
+    margin-left:auto;
+    margin-right:auto;
+  }
+
+  /* Pull the Questions block closer to the preceding CTA/note. */
+  body.atlanta .lower-info-centered,
+  body.midtown .lower-info-centered{
+    margin-top:-26px;
+  }
+
+  /* Restore a little breathing room between the white card and graphic. */
+  body.atlanta .secondary-centered,
+  body.midtown .secondary-centered{
+    margin-top:34px;
+  }
+
+  /* Replace the oversized floating blue X with a compact close control. */
+  body.atlanta .offer-popover-close,
+  body.midtown .offer-popover-close{
+    width:28px;
+    height:28px;
+    right:8px;
+    top:8px;
+    padding:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border:2px solid #111;
+    border-radius:50%;
+    background:#fff;
+    color:#111 !important;
+    font-size:1.05rem;
+    line-height:1;
+    box-shadow:2px 2px 0 #111;
+  }
+
+  body.atlanta .offer-popover,
+  body.midtown .offer-popover{
+    padding-right:48px;
+  }
+}
+
+
+/* v111 — portrait-mobile final lower-flow spacing balance */
+@media (max-width:600px) and (orientation:portrait){
+  /* Move the lower official-application button upward toward the graphic. */
+  body.atlanta .bottom-official-cta-block,
+  body.midtown .bottom-official-cta-block{
+    margin-top:8px !important;
+  }
+
+  /* Reduce the oversized dead space before Questions while retaining separation. */
+  body.atlanta .lower-info-centered,
+  body.midtown .lower-info-centered{
+    margin-top:-64px !important;
+  }
+}
+
+
+/* v112 — hero copy polish */
+.hero-thanks{
+  display:block;
+  text-align:center;
+  margin-bottom:6px;
+}
+
+/* Keep desktop/tablet natural; force the cleaner break only on portrait phones. */
+.mobile-break-before{
+  display:inline;
+}
+
+@media (max-width:600px) and (orientation:portrait){
+  .mobile-break-before{
+    display:block;
+  }
+
+  .hero-thanks{
+    text-align:center;
+    margin-bottom:8px;
+  }
+}
+
+
+/* v113 — responsive thank-you wording */
+.hero-thanks-full{
+  display:inline;
+}
+.hero-thanks-mobile{
+  display:none;
+}
+
+@media (max-width:600px) and (orientation:portrait){
+  .hero-thanks-full{
+    display:none;
+  }
+  .hero-thanks-mobile{
+    display:inline;
+  }
+}
+
+
+/* v114 — mobile landscape hero centering/polish
+   Match the centered portrait treatment without changing desktop. */
+@media (max-width:900px) and (orientation:landscape){
+  body.atlanta .hero .hero-grid,
+  body.midtown .hero .hero-grid{
+    transform:none !important;
+    left:0 !important;
+  }
+
+  body.atlanta .hero .copy,
+  body.midtown .hero .copy{
+    text-align:center !important;
+    margin-left:auto;
+    margin-right:auto;
+  }
+
+  body.atlanta .hero .kicker,
+  body.midtown .hero .kicker{
+    margin-left:auto !important;
+    margin-right:auto !important;
+  }
+
+  body.atlanta .hero .lead,
+  body.midtown .hero .lead{
+    text-align:center !important;
+    margin-left:auto !important;
+    margin-right:auto !important;
+  }
+
+  body.atlanta .hero .offer,
+  body.midtown .hero .offer{
+    justify-content:center !important;
+    margin-left:auto !important;
+    margin-right:auto !important;
+  }
+
+  body.atlanta .hero .session-times,
+  body.midtown .hero .session-times{
+    text-align:center !important;
+    margin-left:auto !important;
+    margin-right:auto !important;
+  }
+
+  body.atlanta .hero .hero-cta-row,
+  body.midtown .hero .hero-cta-row{
+    text-align:center !important;
+  }
+
+  body.atlanta .hero .hero-cta-row .cta,
+  body.midtown .hero .hero-cta-row .cta{
+    display:inline-block !important;
+    margin-left:auto !important;
+    margin-right:auto !important;
+  }
+
+  body.atlanta .hero .hero-note,
+  body.midtown .hero .hero-note{
+    text-align:center !important;
+    margin-left:auto !important;
+    margin-right:auto !important;
+  }
+}
