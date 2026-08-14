@@ -2848,3 +2848,7 @@ body.midtown .hero h1 .blue{
   text-decoration:underline;
   text-underline-offset:2px;
 }
+
+/* v147: first CTA desktop-only explanatory-copy spacing */
+.desktop-first-app-note-gap{display:none;}
+@media (min-width:769px){.desktop-first-app-note-gap{display:block;height:10px;}}
