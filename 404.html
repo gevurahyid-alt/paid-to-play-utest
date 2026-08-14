@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Redirecting…</title>
+<script>
+(function () {
+  var path = window.location.pathname.replace(/\/+$/, "");
+  var lower = path.toLowerCase();
+
+  if (lower === "/atlanta") {
+    window.location.replace("/Atlanta/" + window.location.search + window.location.hash);
+    return;
+  }
+
+  if (lower === "/midtown") {
+    window.location.replace("/Midtown/" + window.location.search + window.location.hash);
+    return;
+  }
+})();
+</script>
+</head>
+<body>
+<p>Page not found.</p>
+</body>
+</html>

@@ -1845,3 +1845,777 @@ body.midtown .secondary-centered{
     margin-right:auto !important;
   }
 }
+
+
+/* v118: friend/family self-share link */
+.friend-share-item .copy-page-link{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  margin-top:10px;
+  min-height:38px;
+  padding:8px 15px;
+  border:1px solid currentColor;
+  border-radius:8px;
+  background:transparent;
+  font:inherit;
+  font-weight:700;
+  cursor:pointer;
+}
+.copy-page-link-status{display:inline-block;margin-left:8px;font-size:.9em;}
+
+/* v118: more deliberate close-X treatment */
+.offer-popover-close,
+.recovery-modal-close,
+.scheduler-modal-close{
+  width:36px;
+  height:36px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  line-height:1;
+  font-size:20px;
+  font-weight:500;
+  opacity:.72;
+  padding:0;
+}
+.offer-popover-close:hover,
+.recovery-modal-close:hover,
+.scheduler-modal-close:hover{opacity:1;}
+
+
+/* v119 desktop QC refinements */
+@media (min-width: 769px){
+  .desktop-keep{white-space:nowrap;}
+  .friend-share-item .copy-page-link{
+    display:flex;
+    width:max-content;
+    margin:12px auto 0;
+  }
+
+  /* Compact the 18+ informational popover and anchor its close control to the corner. */
+  body.atlanta .offer-popover,
+  body.midtown .offer-popover{
+    width:min(660px, calc(100% - 32px));
+    max-width:660px;
+  }
+  .offer-popover-close{
+    top:8px;
+    right:8px;
+  }
+}
+
+/* Do not impose the new desktop wrap decisions on mobile. */
+@media (max-width: 768px){
+  .desktop-only-break br,
+  .adult-desktop-break br{display:none;}
+  .desktop-keep{white-space:normal;}
+}
+
+/* v120: in-place availability retry */
+.availability-error .availability-retry{
+  margin-top:12px;
+  min-height:36px;
+  padding:7px 14px;
+  border:2px solid #111;
+  background:#ffd12f;
+  color:#111;
+  font:inherit;
+  font-weight:800;
+  cursor:pointer;
+  box-shadow:3px 3px 0 #111;
+}
+.availability-error .availability-retry:disabled{
+  opacity:.6;
+  cursor:wait;
+}
+
+
+/* v121 — final interaction polish */
+
+/* Center Copy Link consistently on desktop and mobile. */
+.friend-share-item .copy-page-link{
+  display:flex;
+  width:max-content;
+  margin:12px auto 0;
+}
+
+/* Use one consistent circled close control for offer popovers on all viewports. */
+body.atlanta .offer-popover-close,
+body.midtown .offer-popover-close{
+  width:30px;
+  height:30px;
+  right:8px;
+  top:8px;
+  padding:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border:2px solid #111;
+  border-radius:50%;
+  background:#fff;
+  color:#111 !important;
+  font-size:1.08rem;
+  font-weight:700;
+  line-height:1;
+  box-shadow:2px 2px 0 #111;
+  opacity:1;
+  cursor:pointer;
+}
+
+/* Secondary graphic: subtle desktop-only hover cue; tappable/clickable everywhere. */
+.secondary-centered .secondary{
+  cursor:pointer;
+}
+.secondary-centered{
+  position:relative;
+}
+@media (min-width:769px){
+  .secondary-centered::after{
+    content:"Click to enlarge";
+    position:absolute;
+    left:50%;
+    bottom:14px;
+    transform:translateX(-50%) translateY(4px);
+    padding:5px 9px;
+    border-radius:6px;
+    background:rgba(0,0,0,.78);
+    color:#fff;
+    font-size:12px;
+    font-weight:700;
+    line-height:1;
+    opacity:0;
+    pointer-events:none;
+    transition:opacity .16s ease, transform .16s ease;
+  }
+  .secondary-centered:hover::after{
+    opacity:.88;
+    transform:translateX(-50%) translateY(0);
+  }
+}
+@media (max-width:768px){
+  .secondary-centered::after{display:none;}
+}
+
+/* Image lightbox */
+.image-lightbox[hidden]{display:none !important;}
+.image-lightbox{
+  position:fixed;
+  inset:0;
+  z-index:9999;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:24px;
+  background:rgba(0,0,0,.78);
+}
+.image-lightbox-inner{
+  position:relative;
+  max-width:min(1100px,94vw);
+  max-height:92vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.image-lightbox-image{
+  display:block;
+  max-width:94vw;
+  max-height:88vh;
+  width:auto;
+  height:auto;
+  object-fit:contain;
+  border-radius:8px;
+  box-shadow:0 12px 40px rgba(0,0,0,.35);
+}
+.image-lightbox-close{
+  position:absolute;
+  z-index:2;
+  top:-14px;
+  right:-14px;
+  width:34px;
+  height:34px;
+  padding:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border:2px solid #111;
+  border-radius:50%;
+  background:#fff;
+  color:#111;
+  font-size:1.15rem;
+  font-weight:700;
+  line-height:1;
+  box-shadow:2px 2px 0 #111;
+  cursor:pointer;
+}
+body.lightbox-open{
+  overflow:hidden;
+}
+@media (max-width:768px){
+  .image-lightbox{padding:14px;}
+  .image-lightbox-inner{max-width:96vw;max-height:94vh;}
+  .image-lightbox-image{max-width:96vw;max-height:90vh;}
+  .image-lightbox-close{top:-10px;right:-6px;}
+}
+
+
+/* v122 — desktop-only polished left-hero treatment inspired by the approved mockup.
+   No airbrush wash. Right hero artwork is untouched. Mobile rules are untouched. */
+@media (min-width: 901px){
+
+  body.atlanta .hero .copy,
+  body.midtown .hero .copy{
+    position:relative;
+    max-width:560px;
+    margin-left:auto;
+    margin-right:auto;
+    text-align:center;
+  }
+
+  body.atlanta .hero .kicker,
+  body.midtown .hero .kicker{
+    margin-bottom:20px;
+    padding:7px 14px;
+    border:1px solid rgba(0,0,0,.08);
+    box-shadow:0 5px 14px rgba(0,0,0,.06);
+    transform:rotate(-.7deg);
+    letter-spacing:.035em;
+  }
+
+  body.atlanta .hero h1,
+  body.midtown .hero h1{
+    font-size:clamp(64px,5.8vw,84px);
+    line-height:.86;
+    letter-spacing:-.055em;
+    margin-bottom:17px;
+    text-wrap:balance;
+    text-shadow:0 1px 0 rgba(255,255,255,.5);
+  }
+
+  body.atlanta .hero .lead,
+  body.midtown .hero .lead{
+    max-width:510px !important;
+    margin:0 auto 6px !important;
+    font-size:1.17rem;
+    line-height:1.5;
+    text-align:center !important;
+  }
+
+  body.atlanta .hero .offer,
+  body.midtown .hero .offer{
+    display:grid !important;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:13px;
+    width:100%;
+    max-width:535px;
+    margin:24px auto 26px;
+    align-items:stretch;
+  }
+
+  body.atlanta .hero .pill,
+  body.midtown .hero .pill{
+    position:relative;
+    min-height:82px;
+    padding:38px 10px 11px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    background:rgba(255,255,255,.93);
+    border:2px solid #161616;
+    border-radius:4px;
+    box-shadow:
+      5px 6px 0 rgba(18,18,18,.90),
+      0 10px 22px rgba(0,0,0,.075);
+    font-size:.86rem;
+    line-height:1.16;
+    letter-spacing:.012em;
+    transition:transform .15s ease, box-shadow .15s ease, background .15s ease;
+  }
+
+  body.atlanta .hero .pill:hover,
+  body.midtown .hero .pill:hover{
+    transform:translateY(-2px);
+    background:#fff;
+    box-shadow:
+      5px 8px 0 rgba(18,18,18,.90),
+      0 14px 26px rgba(0,0,0,.09);
+  }
+
+  /* Small restrained functional icons — not decorative artwork. */
+  body.atlanta .hero .pill::before,
+  body.midtown .hero .pill::before{
+    position:absolute;
+    top:10px;
+    left:50%;
+    transform:translateX(-50%);
+    width:24px;
+    height:24px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#111;
+    font-size:20px;
+    line-height:1;
+    font-weight:900;
+    pointer-events:none;
+  }
+  body.atlanta .hero .pill[data-detail="payment"]::before,
+  body.midtown .hero .pill[data-detail="payment"]::before{
+    content:"$";
+    font-family:Arial, sans-serif;
+    border:2px solid #111;
+    border-radius:50%;
+    font-size:14px;
+  }
+  body.atlanta .hero .pill[data-detail="duration"]::before,
+  body.midtown .hero .pill[data-detail="duration"]::before{
+    content:"";
+    border:2px solid #111;
+    border-radius:50%;
+    box-sizing:border-box;
+    background:
+      linear-gradient(#111,#111) 50% 6px/2px 7px no-repeat,
+      linear-gradient(45deg,transparent 44%,#111 45% 55%,transparent 56%) 55% 55%/8px 8px no-repeat;
+  }
+  body.atlanta .hero .pill[data-detail="age"]::before,
+  body.midtown .hero .pill[data-detail="age"]::before{
+    content:"18+";
+    width:auto;
+    min-width:24px;
+    font-family:Arial, sans-serif;
+    font-size:13px;
+    letter-spacing:-.02em;
+    border-bottom:2px solid #111;
+  }
+
+  body.atlanta .hero .session-times,
+  body.midtown .hero .session-times{
+    max-width:510px !important;
+    margin:0 auto 20px !important;
+    line-height:1.52;
+    text-align:center !important;
+  }
+
+  body.atlanta .hero .hero-cta-row,
+  body.midtown .hero .hero-cta-row{
+    margin-top:18px;
+    margin-bottom:14px;
+  }
+
+  body.atlanta .hero .hero-cta-row .cta,
+  body.midtown .hero .hero-cta-row .cta{
+    padding:15px 28px;
+    border-radius:3px;
+    background:linear-gradient(180deg,#2f9ed7 0%,#268fc7 100%);
+    border:2px solid #111;
+    box-shadow:
+      7px 8px 0 #171717,
+      0 12px 24px rgba(0,0,0,.09);
+    transition:transform .16s ease, box-shadow .16s ease, filter .16s ease;
+  }
+
+  body.atlanta .hero .hero-cta-row .cta:hover,
+  body.midtown .hero .hero-cta-row .cta:hover{
+    transform:translateY(-2px);
+    filter:brightness(1.025);
+    box-shadow:
+      7px 10px 0 #171717,
+      0 16px 28px rgba(0,0,0,.11);
+  }
+
+  body.atlanta .hero .hero-note,
+  body.midtown .hero .hero-note{
+    max-width:500px;
+    margin:0 auto;
+    color:#5b5b56;
+    font-size:.95rem;
+    line-height:1.45;
+  }
+}
+
+
+/* v124 — clean hero baseline after desktop polish experiment */
+@media (min-width:901px){
+  body.atlanta .hero .copy,
+  body.midtown .hero .copy{
+    max-width:560px;
+    margin-left:auto;
+    margin-right:auto;
+    text-align:center;
+  }
+
+  /* Return the three fact controls to the serious text-only treatment. */
+  body.atlanta .hero .offer,
+  body.midtown .hero .offer{
+    display:flex !important;
+    justify-content:center;
+    gap:14px;
+    width:100%;
+    max-width:560px;
+    margin:24px auto 28px;
+  }
+
+  body.atlanta .hero .pill,
+  body.midtown .hero .pill{
+    min-height:0;
+    padding:13px 18px;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    background:#fff;
+    border:2px solid #111;
+    border-radius:0;
+    box-shadow:5px 6px 0 #111;
+    font-size:inherit;
+    line-height:1.2;
+    letter-spacing:normal;
+    transform:none;
+  }
+  body.atlanta .hero .pill::before,
+  body.midtown .hero .pill::before{
+    content:none !important;
+    display:none !important;
+  }
+  body.atlanta .hero .pill:hover,
+  body.midtown .hero .pill:hover{
+    transform:none;
+    background:#fff;
+    box-shadow:5px 6px 0 #111;
+  }
+
+  /* Keep the improved breathing room, but return CTA to the established visual language. */
+  body.atlanta .hero .hero-cta-row,
+  body.midtown .hero .hero-cta-row{
+    margin-top:20px;
+    margin-bottom:15px;
+  }
+  body.atlanta .hero .hero-cta-row .cta,
+  body.midtown .hero .hero-cta-row .cta,
+  body.atlanta .hero .hero-cta-row .cta:hover,
+  body.midtown .hero .hero-cta-row .cta:hover{
+    transform:none;
+    filter:none;
+    border-radius:0;
+  }
+
+  /* Short age popup should fit its content instead of spanning the full hero. */
+  body.atlanta .hero .offer-popover[data-detail="age"],
+  body.midtown .hero .offer-popover[data-detail="age"]{
+    width:min(560px,100%);
+    max-width:560px;
+    margin-left:auto;
+    margin-right:auto;
+  }
+}
+
+/* Dialog copy remains left aligned on every viewport. */
+body.atlanta .offer-popover,
+body.midtown .offer-popover,
+body.atlanta .offer-popover p,
+body.midtown .offer-popover p{
+  text-align:left !important;
+}
+
+/* Mobile: Copy Link centered horizontally and more evenly within its whitespace. */
+@media (max-width:768px){
+  .friend-share-item .copy-page-link{
+    display:flex;
+    width:max-content;
+    margin:28px auto 30px;
+  }
+}
+
+
+/* v125 — desktop QC: three-across fact buttons; mobile intentionally unchanged */
+@media (min-width:901px){
+  body.atlanta .hero .offer,
+  body.midtown .hero .offer{
+    display:grid !important;
+    grid-template-columns:1.25fr 1fr .72fr !important;
+    gap:14px !important;
+    width:100% !important;
+    max-width:760px !important;
+    margin:24px auto 28px !important;
+    align-items:stretch !important;
+  }
+
+  body.atlanta .hero .pill,
+  body.midtown .hero .pill{
+    width:100% !important;
+    min-width:0 !important;
+    white-space:nowrap;
+  }
+
+  /* Age popup: compact desktop width and normal document flow. */
+  body.atlanta .hero .offer-popover,
+  body.midtown .hero .offer-popover{
+    text-align:left !important;
+  }
+  body.atlanta .hero .offer-popover[data-detail="age"],
+  body.midtown .hero .offer-popover[data-detail="age"]{
+    width:min(620px,100%) !important;
+    max-width:620px !important;
+    margin:14px auto 18px !important;
+  }
+}
+
+
+/* v134 — exact v125 visual baseline + selected later fixes.
+   HEADLINE TYPOGRAPHY IS INTENTIONALLY UNTOUCHED. */
+
+.hero .earn{
+  color:var(--blue) !important;
+}
+
+/* All intended instructional/promo graphics enlarge with the same lightbox. */
+.hero-art,
+.instruction-shot img,
+.secondary-centered .secondary{
+  cursor:zoom-in;
+}
+
+/* Keep popup copy left-aligned. */
+body.atlanta .offer-popover,
+body.midtown .offer-popover,
+body.atlanta .offer-popover-copy,
+body.midtown .offer-popover-copy{
+  text-align:left !important;
+}
+
+@media (min-width:901px){
+  /* Slightly lower Copy Link in the three-column desktop block. */
+  .friend-share-item .copy-page-link{
+    position:relative;
+    top:17px;
+  }
+
+  /* Compact AGES 18+ popup with a deliberate two-line sentence. */
+  .hero .offer-popover[data-detail="age"]{
+    width:560px !important;
+    max-width:calc(100vw - 48px) !important;
+    margin-left:auto !important;
+    margin-right:auto !important;
+    padding-right:58px !important;
+    text-align:left !important;
+  }
+  .hero .offer-popover[data-detail="age"] .offer-popover-copy{
+    white-space:normal !important;
+  }
+  .hero .offer-popover[data-detail="age"] .adult-desktop-break{
+    display:inline !important;
+  }
+}
+
+@media (max-width:900px){
+  /* Preserve v125 mobile layout exactly; only suppress desktop-specific break. */
+  .hero .offer-popover[data-detail="age"] .adult-desktop-break{
+    display:none !important;
+  }
+}
+
+
+/* v135 — portrait-mobile line break before blue earn amount */
+.mobile-earn-break{
+  display:none;
+}
+@media (max-width:600px) and (orientation:portrait){
+  .mobile-earn-break{
+    display:inline;
+  }
+  .hero .earn{
+    white-space:nowrap;
+  }
+}
+
+
+/* v136 — restore ONLY the original Paid to Play headline typesetting.
+   Everything else remains v135. */
+body.atlanta .hero h1,
+body.midtown .hero h1{
+  font-family:Arial,Helvetica,sans-serif !important;
+  font-weight:700 !important;
+  font-size:clamp(42px,7vw,82px) !important;
+  line-height:.9 !important;
+  margin:0 0 18px !important;
+  text-transform:uppercase !important;
+  letter-spacing:-.04em !important;
+  transform:none !important;
+  text-shadow:none !important;
+  text-wrap:initial !important;
+}
+
+body.atlanta .hero h1 .blue,
+body.midtown .hero h1 .blue{
+  color:var(--blue) !important;
+  background:none !important;
+  -webkit-text-fill-color:currentColor !important;
+  font:inherit !important;
+  letter-spacing:inherit !important;
+  text-shadow:none !important;
+}
+
+
+/* v137 — consistent enlargement affordance + close-button placement */
+
+/* All three enlargeable graphic areas get the same desktop hover cue. */
+.visual,
+.instruction-shot,
+.secondary-centered{
+  position:relative;
+}
+
+@media (min-width:769px){
+  .visual::after,
+  .instruction-shot::after,
+  .secondary-centered::after{
+    content:"Click to enlarge";
+    position:absolute;
+    left:50%;
+    bottom:14px;
+    transform:translateX(-50%) translateY(4px);
+    padding:5px 9px;
+    border-radius:6px;
+    background:rgba(0,0,0,.78);
+    color:#fff;
+    font-size:12px;
+    font-weight:700;
+    line-height:1;
+    opacity:0;
+    pointer-events:none;
+    transition:opacity .16s ease, transform .16s ease;
+    z-index:3;
+    white-space:nowrap;
+  }
+
+  .visual:hover::after,
+  .instruction-shot:hover::after,
+  .secondary-centered:hover::after{
+    opacity:.88;
+    transform:translateX(-50%) translateY(0);
+  }
+}
+
+@media (max-width:768px){
+  .visual::after,
+  .instruction-shot::after,
+  .secondary-centered::after{
+    display:none !important;
+  }
+}
+
+/* Make all enlargeable images use zoom cursor. */
+.hero-art,
+.instruction-shot img,
+.secondary-centered .secondary{
+  cursor:zoom-in !important;
+}
+
+/* Put the lightbox close control in one predictable place:
+   inside the enlarged image's top-right corner. */
+.image-lightbox-inner{
+  position:relative;
+}
+
+.image-lightbox-close{
+  top:10px !important;
+  right:10px !important;
+  width:36px !important;
+  height:36px !important;
+  z-index:5 !important;
+  margin:0 !important;
+  transform:none !important;
+}
+
+@media (max-width:768px){
+  .image-lightbox-close{
+    top:8px !important;
+    right:8px !important;
+  }
+}
+
+
+/* v138 — final portrait-mobile deployment polish */
+.mobile-three-hour-break{display:none;}
+@media (max-width:600px) and (orientation:portrait){
+  .mobile-three-hour-break{display:inline;}
+
+  /* Tighten the stacked follow-up after Copy Link without affecting desktop. */
+  body.atlanta .friend-share-item,
+  body.midtown .friend-share-item{
+    margin-bottom:4px !important;
+  }
+  body.atlanta .friend-share-item .copy-page-link,
+  body.midtown .friend-share-item .copy-page-link{
+    margin:24px auto 10px !important;
+  }
+}
+
+
+/* v139 — lightbox close X moved to the actual visible image edge */
+.image-lightbox-inner{
+  position:relative;
+  display:inline-flex !important;
+  width:auto !important;
+  height:auto !important;
+  max-width:94vw !important;
+  max-height:92vh !important;
+}
+
+.image-lightbox-image{
+  display:block !important;
+  max-width:94vw !important;
+  max-height:88vh !important;
+  width:auto !important;
+  height:auto !important;
+}
+
+/* Tight corner placement: visually attached to the image edge. */
+.image-lightbox-close{
+  top:4px !important;
+  right:4px !important;
+  width:34px !important;
+  height:34px !important;
+  margin:0 !important;
+  transform:none !important;
+  z-index:10 !important;
+}
+
+@media (max-width:768px){
+  .image-lightbox-inner{
+    max-width:96vw !important;
+    max-height:94vh !important;
+  }
+  .image-lightbox-image{
+    max-width:96vw !important;
+    max-height:90vh !important;
+  }
+  .image-lightbox-close{
+    top:4px !important;
+    right:4px !important;
+  }
+}
+
+
+/* v139a — approved v139 + one mobile-only spacing adjustment.
+   Reduce the gap BELOW Copy Link before "Not ready yet?" by ~22px.
+   No desktop, hero, typography, lightbox, or other layout changes. */
+@media (max-width:600px) and (orientation:portrait){
+  body.atlanta .friend-share-item + .preference-followup-item,
+  body.midtown .friend-share-item + .preference-followup-item{
+    position:relative;
+    top:-22px;
+    margin-bottom:-22px !important;
+  }
+}
+
+/* v139c — final portrait-mobile Copy Link balance.
+   Restore 14px of the 22px v139a tightening, leaving a subtle 8px reduction
+   from approved v139. Desktop/tablet unchanged. */
+@media (max-width:600px) and (orientation:portrait){
+  body.atlanta .friend-share-item + .preference-followup-item,
+  body.midtown .friend-share-item + .preference-followup-item{
+    top:-8px;
+    margin-bottom:-8px !important;
+  }
+}
