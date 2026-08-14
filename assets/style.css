@@ -2619,3 +2619,28 @@ body.midtown .hero h1 .blue{
     margin-bottom:-8px !important;
   }
 }
+
+/* v140 — desktop-only hover feedback for the three clickable hero fact buttons.
+   Normal appearance and mobile behavior are unchanged. */
+@media (min-width:901px){
+  body.atlanta .hero .pill:hover,
+  body.midtown .hero .pill:hover{
+    transform:translate(2px,2px);
+    background:#fff;
+    box-shadow:3px 4px 0 #111;
+  }
+}
+
+/* v141 — desktop hero Apply CTA physical press.
+   Keep the existing resting appearance. On hover, move the blue button face
+   2px down/right into its hard shadow instead of changing only the shadow. */
+@media (min-width:901px){
+  body.atlanta .hero .hero-cta-row .cta:hover,
+  body.midtown .hero .hero-cta-row .cta:hover{
+    transform:translate(2px,2px);
+    filter:none;
+    box-shadow:
+      5px 6px 0 #171717,
+      0 10px 24px rgba(0,0,0,.09);
+  }
+}
