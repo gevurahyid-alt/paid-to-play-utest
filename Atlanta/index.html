@@ -368,7 +368,7 @@ header.topbar > * {
     };
     const dayHeaders=rows.map(r=>`<th><div>${esc(displayDay(r.day))}</div><div>${esc(displayDate(r.date))}</div></th>`).join('');
     function publicStatus(v){
-      if(v===null || v==='' || typeof v==='undefined') return {cls:'empty',label:'—'};
+      if(v===null || v==='' || typeof v==='undefined') return {cls:'full',label:'FULL'};
       const n=Number(v);
       if(!Number.isFinite(n)) return {cls:'empty',label:'—'};
       if(n===0) return {cls:'full',label:'FULL'};
