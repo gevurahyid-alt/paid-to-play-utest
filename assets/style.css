@@ -2644,3 +2644,207 @@ body.midtown .hero h1 .blue{
       0 10px 24px rgba(0,0,0,.09);
   }
 }
+
+/* v145 — Shared Atlanta/Midtown testimonial / lower-flow refinement.
+   Midtown now uses the exact approved Atlanta component styling; study-specific content remains separate. */
+
+/* Approved small hierarchy polish for the four instructional steps. */
+:is(body.atlanta, body.midtown) .four-steps .step > b{
+  color:var(--blue);
+}
+
+/* Pair the referral checkpoint with the first official-application CTA on desktop. */
+:is(body.atlanta, body.midtown) .atlanta-action-row{
+  margin:20px auto 0;
+}
+:is(body.atlanta, body.midtown) .atlanta-action-row .referral-info-callout{
+  margin:0;
+  max-width:none;
+}
+:is(body.atlanta, body.midtown) .atlanta-action-cta{
+  text-align:center;
+}
+:is(body.atlanta, body.midtown) .atlanta-action-cta-button{
+  margin:0 0 10px;
+  text-align:center;
+}
+:is(body.atlanta, body.midtown) .atlanta-action-cta .note{
+  margin:0 auto;
+  max-width:380px;
+  line-height:1.45;
+}
+
+@media (min-width:901px){
+  :is(body.atlanta, body.midtown) .atlanta-action-row{
+    display:grid;
+    grid-template-columns:minmax(0,1.72fr) minmax(250px,.95fr);
+    gap:28px;
+    align-items:center;
+    max-width:1040px;
+  }
+}
+
+@media (max-width:900px){
+  :is(body.atlanta, body.midtown) .atlanta-action-row{
+    display:block;
+  }
+  :is(body.atlanta, body.midtown) .atlanta-action-row .referral-info-callout{
+    max-width:760px;
+    margin-left:auto;
+    margin-right:auto;
+  }
+  :is(body.atlanta, body.midtown) .atlanta-action-cta{
+    margin-top:28px;
+  }
+}
+
+/* Replace the repeated lower campaign card with real participant feedback,
+   while reusing an untouched crop from the existing Atlanta artwork. */
+:is(body.atlanta, body.midtown) .participant-testimonials{
+  padding:0;
+  margin:34px auto 6px;
+  max-width:1080px;
+  background:#fffdf7;
+  border:3px solid #111;
+  box-shadow:7px 7px 0 var(--blue);
+}
+:is(body.atlanta, body.midtown) .participant-testimonials-heading{
+  text-align:center;
+  padding:18px 18px 8px;
+}
+:is(body.atlanta, body.midtown) .participant-testimonials-heading h2{
+  margin:0;
+  font-size:1.45rem;
+  text-transform:uppercase;
+  letter-spacing:.025em;
+}
+:is(body.atlanta, body.midtown) .participant-testimonials-heading p{
+  margin:5px 0 0;
+  color:var(--muted);
+}
+:is(body.atlanta, body.midtown) .participant-testimonials-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr)) minmax(175px,.82fr);
+  gap:16px;
+  align-items:stretch;
+  padding:12px 18px 14px;
+}
+:is(body.atlanta, body.midtown) .participant-quote-card{
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  min-height:220px;
+  padding:28px 18px 16px;
+  background:#fff;
+  border:2px solid #111;
+  box-shadow:0 4px 0 #e8e8e8;
+}
+:is(body.atlanta, body.midtown) .participant-quote-mark{
+  position:absolute;
+  top:5px;
+  left:13px;
+  color:var(--blue);
+  font-size:3.4rem;
+  line-height:1;
+  font-weight:900;
+}
+:is(body.atlanta, body.midtown) .participant-quote-card blockquote{
+  margin:22px 0 16px;
+  padding:0;
+  border:0;
+  font-size:1.03rem;
+  line-height:1.43;
+  font-style:normal;
+}
+:is(body.atlanta, body.midtown) .participant-attribution{
+  margin:auto 0 0;
+  padding-top:12px;
+  border-top:1px solid #cfcfcf;
+}
+:is(body.atlanta, body.midtown) .participant-attribution strong,
+:is(body.atlanta, body.midtown) .participant-attribution span{
+  display:block;
+}
+:is(body.atlanta, body.midtown) .participant-attribution span{
+  margin-top:2px;
+  color:var(--blue);
+  font-size:.88rem;
+  font-weight:700;
+}
+:is(body.atlanta, body.midtown) .participant-polaroid-wrap{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-width:0;
+}
+:is(body.atlanta, body.midtown) .participant-polaroid-wrap img{
+  display:block;
+  width:100%;
+  max-width:235px;
+  height:auto;
+}
+:is(body.atlanta, body.midtown) .participant-testimonials-tagline{
+  margin:0;
+  padding:11px 18px 14px;
+  text-align:center;
+  border-top:1px solid #d8d8d8;
+  font-size:.94rem;
+}
+:is(body.atlanta, body.midtown) .participant-testimonials-tagline strong{
+  color:var(--blue);
+}
+
+@media (max-width:900px){
+  :is(body.atlanta, body.midtown) .participant-testimonials{
+    margin-top:28px;
+  }
+  :is(body.atlanta, body.midtown) .participant-testimonials-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+  :is(body.atlanta, body.midtown) .participant-polaroid-wrap{
+    grid-column:1/-1;
+  }
+  :is(body.atlanta, body.midtown) .participant-polaroid-wrap img{
+    max-width:250px;
+  }
+}
+
+@media (max-width:600px){
+  :is(body.atlanta, body.midtown) .participant-testimonials{
+    margin-left:0;
+    margin-right:0;
+    box-shadow:5px 5px 0 var(--blue);
+  }
+  :is(body.atlanta, body.midtown) .participant-testimonials-heading{
+    padding:15px 12px 6px;
+  }
+  :is(body.atlanta, body.midtown) .participant-testimonials-heading h2{
+    font-size:1.18rem;
+  }
+  :is(body.atlanta, body.midtown) .participant-testimonials-grid{
+    grid-template-columns:1fr;
+    gap:12px;
+    padding:10px 12px 12px;
+  }
+  :is(body.atlanta, body.midtown) .participant-quote-card{
+    min-height:0;
+  }
+  :is(body.atlanta, body.midtown) .participant-polaroid-wrap{
+    grid-column:auto;
+  }
+  :is(body.atlanta, body.midtown) .participant-polaroid-wrap img{
+    max-width:225px;
+  }
+}
+
+/* The main corporate site is a secondary credibility path, not an application CTA. */
+:is(body.atlanta, body.midtown) footer .main-site-link{
+  margin:0 0 16px;
+  font-size:.92rem;
+  color:#333;
+}
+:is(body.atlanta, body.midtown) footer .main-site-link a{
+  color:var(--blue);
+  text-decoration:underline;
+  text-underline-offset:2px;
+}
