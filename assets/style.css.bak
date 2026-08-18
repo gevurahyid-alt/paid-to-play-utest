@@ -2935,7 +2935,7 @@ body.atlanta .hero .hero-art,body.midtown .hero .hero-art{
     line-height:1.35;
   }
   body.atlanta .hero .visual,body.midtown .hero .visual{
-    width:106%;max-width:660px;justify-self:end;align-self:start;margin-top:-40px;
+    width:102.5%;max-width:625px;justify-self:end;align-self:start;margin-top:-4px;
   }
 }
 @media (min-width:901px) and (max-width:1249px){
@@ -2978,95 +2978,4 @@ body.atlanta .hero .hero-art,body.midtown .hero .hero-art{
   .credibility-item{min-height:0;padding:14px 12px}
   .credibility-item+.credibility-item{border-left:0;border-top:1px solid rgba(30,143,209,.48)}
   .credibility-proof{font-size:.94rem;max-width:300px;margin:0 auto}
-}
-
-/* ATLANTA DESKTOP GEOMETRY PARITY — locked Midtown 1440x900 visual master.
-   Desktop only. Keeps the existing Atlanta content/artwork and reproduces the
-   pre-1280 Midtown left-lane proportions, spacing, and hero/art relationship. */
-@media (min-width:901px){
-  body.atlanta .hero{
-    padding-top:0 !important;
-    padding-bottom:14px !important;
-  }
-  body.atlanta .hero .hero-grid{
-    width:min(1080px,92vw) !important;
-    grid-template-columns:330px minmax(0,1fr) !important;
-    gap:16px !important;
-    align-items:start !important;
-    overflow:visible !important;
-  }
-  body.atlanta .hero .copy{
-    width:330px !important;
-    max-width:330px !important;
-    min-width:0 !important;
-    justify-self:start !important;
-    text-align:center !important;
-    padding-top:42px !important;
-  }
-  body.atlanta .hero .kicker{
-    margin-bottom:18px !important;
-  }
-  body.atlanta .hero h1{
-    font-size:64px !important;
-    line-height:.9 !important;
-    margin-bottom:18px !important;
-    white-space:nowrap;
-  }
-  body.atlanta .hero .lead{
-    width:330px !important;
-    max-width:330px !important;
-    margin:0 auto 2px !important;
-    font-size:1.03rem !important;
-    line-height:1.58 !important;
-    text-align:center !important;
-  }
-  body.atlanta .hero .offer{
-    margin:12px auto 14px !important;
-  }
-  body.atlanta .hero .session-times{
-    width:330px !important;
-    max-width:330px !important;
-    text-align:center !important;
-    margin:0 auto 9px !important;
-    font-size:1rem !important;
-    line-height:1.65 !important;
-  }
-  body.atlanta .hero .hero-thanks{
-    display:block !important;
-    margin-bottom:4px !important;
-  }
-  body.atlanta .hero .hero-cta-row{
-    position:relative !important;
-    left:-12px !important;
-    text-align:center !important;
-    margin:10px 0 8px !important;
-  }
-  body.atlanta .hero .hero-cta-row .cta{
-    white-space:nowrap !important;
-    font-size:1.05rem !important;
-    padding:14px 19px !important;
-  }
-  body.atlanta .hero .hero-note{
-    white-space:nowrap !important;
-    text-align:center !important;
-    font-size:.83rem !important;
-    line-height:1.35 !important;
-    margin-top:7px !important;
-  }
-  body.atlanta .hero .visual{
-    width:790px !important;
-    max-width:none !important;
-    justify-self:start !important;
-    align-self:start !important;
-    margin-top:0 !important;
-    margin-left:0 !important;
-    overflow:visible !important;
-  }
-  body.atlanta .hero .hero-art{
-    width:790px !important;
-    max-width:none !important;
-  }
-  body.atlanta .hero-credibility{
-    padding-top:0 !important;
-  }
 }

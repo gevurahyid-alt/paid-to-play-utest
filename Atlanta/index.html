@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Atlanta Wearable Technology Study | Paid to Play Testing</title>
 <meta name="description" content="Atlanta-area adults: apply for an in-person wearable technology testing opportunity in Sandy Springs paying $120 for approximately 3 hours.">
-<link rel="stylesheet" href="../assets/style.css?v=1391">
+<link rel="stylesheet" href="../assets/style.css?v=1393">
 <link rel="icon" type="image/png" sizes="512x512" href="../assets/favicon.png?v=47">
 <link rel="shortcut icon" href="../assets/favicon.ico?v=47">
 
@@ -75,6 +75,81 @@ header.topbar > * {
     margin-top: -16px;
   }
 }
+
+/* Atlanta desktop parity with the locked Midtown hero rhythm.
+   Desktop only: mobile/tablet markup behavior remains unchanged. */
+.atlanta-desktop-break,
+.atlanta-desktop-thanks {
+  display: none;
+}
+@media (min-width: 901px) {
+  body.atlanta .hero .atlanta-desktop-break {
+    display: inline;
+  }
+  body.atlanta .hero .desktop-lead-break {
+    display: none;
+  }
+  body.atlanta .hero .hero-thanks-full {
+    display: none;
+  }
+  body.atlanta .hero .atlanta-desktop-thanks {
+    display: inline;
+  }
+  body.atlanta .hero .atlanta-desktop-hidden {
+    display: none;
+  }
+}
+</style>
+
+<style>
+/* ATLANTA DESKTOP CONSOLIDATED POLISH — desktop only; portrait mobile remains locked. */
+.atlanta-desktop-ribbon-break{display:none}
+.atlanta-desktop-post-cta{display:none}
+@media (min-width:901px){
+  body.atlanta .hero .atlanta-desktop-ribbon-break{display:block}
+
+  /* Slightly more breathing room through the established desktop hero rhythm. */
+  body.atlanta .hero .offer{margin:16px auto 18px!important}
+  body.atlanta .hero .session-times{margin:3px auto 12px!important}
+  body.atlanta .hero .hero-cta-row{margin-top:13px!important;margin-bottom:9px!important}
+  body.atlanta .hero .hero-note{margin-top:8px!important}
+  body.atlanta .hero{padding-bottom:47px!important}
+  body.atlanta .hero .atlanta-desktop-post-cta{display:block;margin:10px auto 0;max-width:430px;text-align:center}
+  body.atlanta .hero .atlanta-desktop-no-tech{margin:0;font-size:.94rem;line-height:1.35;font-weight:700}
+  body.atlanta .hero .atlanta-desktop-eligibility{margin:8px 0 0;font-size:.74rem;line-height:1.35;font-weight:400}
+
+  /* Desktop credibility order: Story | Need Help | Press. */
+  body.atlanta .credibility-grid{grid-template-columns:1fr 1.18fr 1fr}
+  body.atlanta .credibility-item{gap:5px;transform:translateY(21px)}
+  body.atlanta .credibility-story>span{font-size:.79rem;letter-spacing:.025em}
+  body.atlanta .credibility-story>strong{margin-top:0}
+  body.atlanta .credibility-help>strong{font-size:.85rem;line-height:1.1;letter-spacing:.04em}
+  body.atlanta .credibility-help>span{max-width:300px;font-size:.86rem;line-height:1.32}
+  body.atlanta .atlanta-desktop-trust-link{display:inline-block;margin-top:3px;color:#0a7fc7;font-size:.78rem;line-height:1.15;font-weight:800;text-decoration:underline;text-underline-offset:2px}
+  body.atlanta .credibility-press .credibility-eyebrow{font-size:.62rem;margin-bottom:2px}
+  body.atlanta .credibility-press>strong{font-size:1.12rem}
+
+  /* Desktop-only spacing test: modest breathing room after credibility strip. */
+  body.atlanta .hero-credibility{padding-bottom:69px}
+
+  /* Reuse the approved Atlanta modal language on desktop without touching mobile rules. */
+  body.atlanta .atlanta-modal-backdrop{position:fixed;inset:0;z-index:10000;display:flex;align-items:center;justify-content:center;padding:24px;box-sizing:border-box;background:rgba(0,0,0,.62);overscroll-behavior:contain}
+  body.atlanta .atlanta-modal-backdrop[hidden]{display:none!important}
+  body.atlanta .atlanta-modal{position:relative;width:min(560px,calc(100vw - 48px));max-height:calc(100vh - 64px);overflow:auto;overflow-x:hidden;box-sizing:border-box;padding:28px 26px 25px;border:2px solid #111;border-radius:4px;background:#F6F0DF;color:#111;box-shadow:7px 7px 0 #118ee8;outline:none;-webkit-overflow-scrolling:touch}
+  body.atlanta .atlanta-modal-accent{width:54px;height:5px;margin:0 0 13px;background:#f2cc21;transform:rotate(-1deg)}
+  body.atlanta .atlanta-modal h2{margin:0 42px 15px 0;font-size:1.42rem;line-height:1.08;letter-spacing:.01em}
+  body.atlanta .atlanta-modal p{margin:0 0 12px;font-size:.94rem;line-height:1.5}
+  body.atlanta .atlanta-modal-close{position:absolute;top:12px;right:12px;width:36px;height:36px;padding:0;border:2px solid #111;border-radius:50%;background:#fff;color:#111;font:700 25px/30px Arial,sans-serif;text-align:center;cursor:pointer}
+  body.atlanta .atlanta-modal-callout{margin:16px 0;padding:13px 14px;border:2px solid #111;background:#fff;box-shadow:4px 4px 0 #f2cc21}
+  body.atlanta .atlanta-modal-callout>strong{display:block;margin-bottom:6px;font-size:.8rem;letter-spacing:.07em}
+  body.atlanta .atlanta-modal-callout span{display:block;font-size:.88rem;line-height:1.44}
+  body.atlanta .atlanta-modal-ending{margin-bottom:0!important}
+  body.atlanta .atlanta-testimonial-card{margin:0 0 13px;padding:14px 15px;border:1.5px solid #111;background:#fff}
+  body.atlanta .atlanta-testimonial-card:last-child{margin-bottom:0}
+  body.atlanta .atlanta-testimonial-card p{margin:0 0 8px;font-size:.95rem;line-height:1.44}
+  body.atlanta .atlanta-testimonial-card cite{display:block;font-size:.8rem;font-style:normal;font-weight:800}
+  body.atlanta #atlanta-story-modal .atlanta-modal{padding-top:24px;padding-bottom:21px}
+}
 </style>
 
 <!-- Privacy-friendly analytics by Plausible -->
@@ -84,31 +159,196 @@ header.topbar > * {
   plausible.init()
 </script>
 
+
+<style>
+/* ATLANTA LOCKED PORTRAIT MOBILE IMPLEMENTATION — approved 2026-08-18 */
+.atlanta-mobile-woman,.atlanta-mobile-vr,.atlanta-mobile-menu,.atlanta-mobile-credibility{display:none}
+.atlanta-mobile-redirect-break{display:none}
+
+@media (max-width:600px) and (orientation:portrait){
+  html,body.atlanta{max-width:100%;overflow-x:clip}
+  @supports not (overflow:clip){html,body.atlanta{overflow-x:hidden}}
+
+  body.atlanta .topbar{
+    position:relative!important;z-index:auto!important;overflow:visible!important;background:transparent!important;
+    min-height:118px;padding:20px 48px 15px 16px;border-bottom:4px solid #118ee8;box-sizing:border-box;
+  }
+  body.atlanta .topbar::before{content:"";position:absolute;inset:0;z-index:0;background:#070707;pointer-events:none}
+  body.atlanta .topbar .brand{position:relative;z-index:30!important;width:auto!important;font-size:21px;line-height:1.08;letter-spacing:.7px}
+  body.atlanta .brand-sherpa-tagline{position:relative;z-index:30!important;max-width:300px;margin:8px auto 0!important;font-size:11px;line-height:1.45;font-style:normal}
+  body.atlanta .atlanta-mobile-menu{display:block;position:absolute;z-index:30!important;right:18px;top:27px;width:29px;height:24px;padding:0;border:0;background:transparent;pointer-events:none}
+  body.atlanta .atlanta-mobile-menu::before,body.atlanta .atlanta-mobile-menu::after,body.atlanta .atlanta-mobile-menu span{content:"";display:block;width:29px;height:3px;margin:0 0 6px;border-radius:2px;background:#fff}
+
+  body.atlanta .hero{position:relative!important;z-index:auto!important;background:#F6F0DF;padding:20px 0 14px!important;overflow:visible!important}
+  body.atlanta .hero-grid{display:block}
+  body.atlanta .hero .copy{position:relative;min-height:670px!important;text-align:left;isolation:isolate;overflow:visible!important}
+  body.atlanta .hero .visual{display:none!important}
+
+  body.atlanta .atlanta-mobile-woman{display:block;position:absolute;top:-92px;right:-58px;width:167px;height:350px;overflow:visible;z-index:12;pointer-events:none}
+  body.atlanta .atlanta-mobile-woman img{position:absolute;display:block;width:181px;max-width:none;height:auto;top:0;right:-6px}
+  body.atlanta .atlanta-mobile-vr{display:block;position:absolute;top:286px;right:-10px;width:179px;height:auto;overflow:visible;z-index:16;pointer-events:none;transform:rotate(2.5deg);transform-origin:center}
+  body.atlanta .atlanta-mobile-vr img{display:block;width:100%;height:auto;max-width:none}
+
+  body.atlanta .hero .kicker{position:relative;z-index:20!important;width:max-content;max-width:none!important;margin:0 0 14px!important;padding:7px 9px!important;font-size:.69rem!important;line-height:1.15;white-space:nowrap;transform:translate(24px,-12px) rotate(-1deg)!important}
+  body.atlanta .hero h1{position:relative;z-index:20!important;width:196px!important;margin:0 0 14px!important;font-size:40px!important;line-height:.88!important;white-space:nowrap;transform:translate(24px,-12px)!important}
+  body.atlanta .hero .lead{position:relative;z-index:20!important;width:214px!important;max-width:214px!important;margin:0!important;font-size:.91rem!important;line-height:1.48!important;text-align:left;transform:translate(24px,-12px)!important}
+
+  body.atlanta .hero .offer{position:relative;z-index:20!important;display:flex!important;flex-direction:column!important;align-items:center!important;gap:8px!important;width:254px!important;max-width:254px!important;margin:10px auto 17px!important;transform:translate(-48px,-12px)!important}
+  body.atlanta .hero .offer-lower-pair{display:flex!important;flex-direction:row!important;align-items:stretch!important;justify-content:center!important;gap:9px!important;width:auto!important}
+  body.atlanta .hero .pill{width:auto!important;min-height:38px!important;padding:8px 10px!important;font-size:.76rem!important;line-height:1.05!important;white-space:nowrap!important;box-shadow:3px 3px 0 #111!important}
+  body.atlanta .hero .offer-detail-trigger:first-of-type{width:190px!important}
+  body.atlanta .hero .offer-detail-trigger[data-detail="duration"]{width:137px!important}
+  body.atlanta .hero .offer-detail-trigger[data-detail="age"]{width:101px!important}
+  body.atlanta .offer-detail-trigger{position:relative!important;touch-action:manipulation}
+  body.atlanta .offer-detail-trigger::after{content:"›";position:absolute;right:10px;top:50%;transform:translateY(-52%);font-size:.92em;line-height:1;font-weight:700;opacity:.58;pointer-events:none}
+  body.atlanta .offer-detail-trigger:active{transform:translate(2px,2px)!important;box-shadow:2px 2px 0 #111!important}
+
+  body.atlanta .offer-popover{box-sizing:border-box!important;left:calc(50% + 48px)!important;width:calc(100vw - 40px)!important;max-width:360px!important;min-width:0!important;padding:16px 42px 16px 16px!important;overflow-wrap:anywhere!important;word-break:normal!important}
+  body.atlanta .offer-popover-copy{max-width:100%!important;min-width:0!important}
+  body.atlanta .offer-popover-close{right:8px!important;top:8px!important}
+
+  body.atlanta .hero .session-times{position:absolute!important;top:330px!important;left:14px!important;width:166px!important;max-width:166px!important;min-height:0!important;margin:0!important;padding:0!important;text-align:center!important;font-size:.83rem!important;line-height:1.48!important;z-index:18!important}
+  body.atlanta .hero .hero-thanks{display:block!important;text-align:center!important;margin:0 0 7px!important}
+  body.atlanta .hero .hero-thanks-full,body.atlanta .hero .atlanta-desktop-thanks{display:none!important}
+  body.atlanta .hero .hero-thanks-mobile{display:inline!important}
+  body.atlanta .hero .atlanta-session-offered,body.atlanta .hero .atlanta-desktop-hidden{display:none!important}
+  body.atlanta .hero .mobile-session-break{display:inline!important}
+
+  body.atlanta .hero .hero-cta-row{position:absolute!important;top:548px!important;left:0!important;right:0!important;width:100%!important;margin:0!important;text-align:center!important;z-index:24!important}
+  body.atlanta .hero .hero-cta-row .cta{position:relative!important;z-index:24!important;display:inline-block!important;width:min(330px,86vw)!important;min-width:0!important;max-width:330px!important;min-height:0!important;box-sizing:border-box!important;padding:10px 18px 11px!important;font-size:1.22rem!important;line-height:.98!important;white-space:normal!important;text-align:center!important;border-width:2px!important;box-shadow:5px 5px 0 #111!important}
+  body.atlanta .hero .hero-cta-row .cta .cta-atl-prefix,body.atlanta .hero .hero-cta-row .cta .cta-atl-rest{display:block!important}
+  body.atlanta .hero .hero-note{position:absolute!important;top:615px!important;left:50%!important;transform:translateX(-50%)!important;z-index:26!important;width:300px!important;max-width:80vw!important;margin:0!important;padding:5px 6px!important;box-sizing:border-box!important;background:#F6F0DF!important;text-align:center!important;font-size:.88rem!important;line-height:1.34!important}
+  body.atlanta .atlanta-mobile-redirect-break{display:inline}
+
+  body.atlanta .hero-credibility .credibility-grid{display:none!important}
+  body.atlanta .hero-credibility{position:relative;z-index:10;margin-top:0!important;padding:18px 20px 22px!important;background:#F6F0DF!important}
+  body.atlanta .atlanta-mobile-credibility{display:block!important;max-width:330px;margin:0 auto;text-align:center}
+  body.atlanta .atlanta-mobile-trust-block{padding:13px 0}
+  body.atlanta .atlanta-mobile-trust-block + .atlanta-mobile-trust-block{border-top:1px solid rgba(17,17,17,.18)}
+  body.atlanta .atlanta-mobile-trust-kicker{font-size:1.04rem;line-height:1.16;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+  body.atlanta .atlanta-mobile-trust-link{display:inline-block;margin-top:4px;font-size:1.02rem;line-height:1.22;font-weight:700;color:inherit;text-decoration:underline;text-underline-offset:2px;cursor:pointer}
+  body.atlanta .atlanta-mobile-trust-help p{margin:7px auto 5px;max-width:315px;font-size:1.08rem;line-height:1.4}
+  body.atlanta .atlanta-mobile-trust-press .atlanta-mobile-trust-kicker{font-size:.68rem;line-height:1.18}
+  body.atlanta .atlanta-mobile-trust-nyt{margin-top:4px;font-family:Georgia,"Times New Roman",serif;font-size:1rem;line-height:1.12;font-weight:700}
+
+  .atlanta-modal-backdrop{position:fixed;inset:0;z-index:10000;display:flex;align-items:center;justify-content:center;padding:18px;box-sizing:border-box;background:rgba(0,0,0,.62);overscroll-behavior:contain}
+  .atlanta-modal-backdrop[hidden]{display:none!important}
+  .atlanta-modal{position:relative;width:min(360px,calc(100vw - 36px));max-height:calc(100dvh - 36px);overflow:auto;overflow-x:hidden;box-sizing:border-box;padding:25px 20px 22px;border:2px solid #111;border-radius:4px;background:#F6F0DF;color:#111;box-shadow:7px 7px 0 #118ee8;outline:none;-webkit-overflow-scrolling:touch}
+  .atlanta-modal-accent{width:54px;height:5px;margin:0 0 13px;background:#f2cc21;transform:rotate(-1deg)}
+  .atlanta-modal h2{margin:0 35px 15px 0;font-size:1.28rem;line-height:1.08;letter-spacing:.01em}
+  .atlanta-modal p{margin:0 0 12px;font-size:.88rem;line-height:1.48}
+  .atlanta-modal-close{position:absolute;top:10px;right:10px;width:34px;height:34px;padding:0;border:2px solid #111;border-radius:50%;background:#fff;color:#111;font:700 24px/28px Arial,sans-serif;text-align:center;cursor:pointer}
+  .atlanta-modal-callout{margin:15px 0;padding:12px 13px;border:2px solid #111;background:#fff;box-shadow:4px 4px 0 #f2cc21}
+  .atlanta-modal-callout>strong{display:block;margin-bottom:6px;font-size:.78rem;letter-spacing:.07em}
+  .atlanta-modal-callout span{display:block;font-size:.82rem;line-height:1.42}
+  .atlanta-modal-ending{margin-bottom:0!important}
+  .atlanta-testimonial-card{margin:0 0 13px;padding:13px 14px;border:1.5px solid #111;background:#fff}
+  .atlanta-testimonial-card:last-child{margin-bottom:0}
+  .atlanta-testimonial-card p{margin:0 0 8px;font-size:.9rem;line-height:1.42}
+  .atlanta-testimonial-card cite{display:block;font-size:.78rem;font-style:normal;font-weight:800}
+
+  #atlanta-story-modal .atlanta-modal{padding-top:22px!important;padding-bottom:18px!important}
+  #atlanta-story-modal .atlanta-modal-accent{margin-bottom:9px!important}
+  #atlanta-story-modal .atlanta-modal h2{margin-bottom:10px!important}
+  #atlanta-story-modal .atlanta-modal p{margin-bottom:8px!important}
+  #atlanta-story-modal .atlanta-modal-callout{margin-top:10px!important;margin-bottom:9px!important;padding-top:9px!important;padding-bottom:9px!important}
+  #atlanta-story-modal .atlanta-modal-callout>strong{margin-bottom:5px!important}
+  #atlanta-story-modal .atlanta-modal-ending{margin-top:0!important;margin-bottom:0!important}
+}
+@media (min-width:414px) and (max-width:600px) and (orientation:portrait){body.atlanta .atlanta-mobile-woman{right:-50px}}
+@media (min-width:430px) and (max-width:600px) and (orientation:portrait){body.atlanta .atlanta-mobile-woman{right:-46px}}
+html.atlanta-modal-open,body.atlanta-modal-open{overflow:hidden!important;overscroll-behavior:none!important}
+</style>
+
+
+<style>
+/* Atlanta desktop contact + minimal hamburger utility test. Desktop only; mobile remains locked. */
+.atlanta-desktop-contact,.atlanta-desktop-utility-menu{display:none}
+@media (min-width:901px){
+  body.atlanta .credibility-press .atlanta-desktop-contact{display:block;margin-top:8px;font-family:Arial,Helvetica,sans-serif;font-size:.72rem;line-height:1.25;font-weight:400;color:#111;text-align:center}
+  body.atlanta .credibility-press .atlanta-desktop-contact a{color:#0a7fc7;font-weight:700;text-decoration:none}
+  body.atlanta header.topbar .atlanta-mobile-menu{display:block;position:absolute;z-index:80;right:20px;top:12px;width:44px;height:44px;padding:0;border:0;background:transparent;pointer-events:auto;cursor:pointer}
+  body.atlanta header.topbar .atlanta-mobile-menu::before,body.atlanta header.topbar .atlanta-mobile-menu::after,body.atlanta header.topbar .atlanta-mobile-menu span{content:"";position:absolute;left:12px;display:block;width:20px;height:2px;margin:0;border-radius:1px;background:#fff}
+  body.atlanta header.topbar .atlanta-mobile-menu::before{top:14px}
+  body.atlanta header.topbar .atlanta-mobile-menu span{top:21px}
+  body.atlanta header.topbar .atlanta-mobile-menu::after{top:28px}
+  body.atlanta .atlanta-desktop-utility-menu{display:block;position:fixed;z-index:75;top:0;right:0;width:100%;height:100%;pointer-events:none}
+  body.atlanta .atlanta-desktop-utility-menu[hidden]{display:none}
+  body.atlanta .atlanta-desktop-utility-panel{position:absolute;top:76px;right:24px;width:min(330px,calc(100vw - 48px));padding:14px 16px 16px;background:#0b0b0b;border:2px solid #111;box-shadow:5px 5px 0 #1696d2;pointer-events:auto}
+  body.atlanta .atlanta-desktop-utility-panel a,body.atlanta .atlanta-desktop-utility-panel button{display:block;width:100%;box-sizing:border-box;margin:0;padding:11px 8px;border:0;border-bottom:1px solid rgba(255,255,255,.2);background:transparent;color:#fff;font:700 13px/1.2 Arial,Helvetica,sans-serif;text-align:left;text-decoration:none;cursor:pointer}
+  body.atlanta .atlanta-desktop-utility-panel a:hover,body.atlanta .atlanta-desktop-utility-panel button:hover{color:#28a9e2}
+  body.atlanta .atlanta-desktop-utility-panel .atlanta-desktop-menu-close{padding-top:3px;padding-bottom:9px;color:#f2c300;font-size:11px;text-align:right}
+  body.atlanta .atlanta-desktop-utility-panel .atlanta-desktop-menu-main-site{margin-top:8px;padding-top:14px;border-top:1px solid rgba(255,255,255,.28);color:#cfcfcf;font-weight:600}
+  body.atlanta .atlanta-desktop-utility-panel > :last-child{border-bottom:0}
+}
+</style>
 </head>
 <body class="atlanta">
-<header class="topbar"><div class="wrap brand">PAID TO <span>PLAY</span> TESTING</div><div class="brand-sherpa-tagline">Your Tech Study Sherpa — Guiding You From Application to Testing</div></header>
+<header class="topbar"><div class="wrap brand">PAID TO <span>PLAY</span> TESTING</div><div class="brand-sherpa-tagline">Your Tech Study Sherpa — Guiding You From Application to Testing</div><button class="atlanta-mobile-menu" type="button" aria-label="Menu" tabindex="-1"><span></span></button></header>
+<div class="atlanta-desktop-utility-menu" id="atlanta-desktop-utility-menu" hidden aria-hidden="true">
+  <div class="atlanta-desktop-utility-panel" role="dialog" aria-modal="false" aria-label="Atlanta page menu">
+    <button type="button" class="atlanta-desktop-menu-close">CLOSE</button>
+    <a href="#before-you-apply" class="atlanta-desktop-menu-apply">APPLY FOR THE ATLANTA STUDY</a>
+    <button type="button" data-modal-open="atlanta-story-modal">OUR STORY</button>
+    <button type="button" data-modal-open="atlanta-testimonials-modal">TESTIMONIALS</button>
+    <a href="mailto:info@paidtoplaytesting.com">CONTACT</a>
+    <a href="https://www.paidtoplaytesting.com/" target="_blank" rel="noopener noreferrer" class="atlanta-desktop-menu-main-site">VISIT MAIN WEBSITE</a>
+  </div>
+</div>
 
 <main>
 <section class="hero">
 <div class="wrap hero-grid">
   <div class="copy">
-    <div class="kicker">ATLANTA AREA • SANDY SPRINGS</div>
+    <div class="kicker">ATLANTA AREA •<br class="atlanta-desktop-ribbon-break"> SANDY SPRINGS</div>
+    <div class="atlanta-mobile-woman" aria-hidden="true"><img src="../assets/atlanta-mobile-woman.png" alt=""></div>
+    <div class="atlanta-mobile-vr" aria-hidden="true"><img src="../assets/atlanta-mobile-vr.png" alt=""></div>
     <h1>Get Paid<br><span class="blue">to Play!</span></h1>
-    <p class="lead"><strong>Test wearable technology and <span class="mobile-earn-break"><br></span><span class="earn">earn&nbsp;$120</span></strong><span class="desktop-lead-break"><br></span> for an approximately <span class="mobile-three-hour-break"><br></span>3-hour, in-person session.</p>
+    <p class="lead"><strong>Test wearable technology and<span class="atlanta-desktop-break"><br></span> <span class="mobile-earn-break"><br></span><span class="earn">earn&nbsp;$120</span></strong><span class="desktop-lead-break"><br></span> for an approximately<span class="atlanta-desktop-break"><br></span> <span class="mobile-three-hour-break"><br></span>3-hour, in-person session.</p>
     <div class="offer offer-interactive" aria-label="Study details">
       <button class="pill offer-detail-trigger" type="button" aria-expanded="false" data-detail="payment">$120 STUDY PAYMENT</button>
+      <div class="offer-lower-pair">
       <button class="pill offer-detail-trigger" type="button" aria-expanded="false" data-detail="duration">ABOUT 3 HOURS</button>
       <button class="pill offer-detail-trigger" type="button" aria-expanded="false" data-detail="age">AGES 18+</button>
+      </div>
       <div class="offer-popover" id="offer-detail-popover" role="status" aria-live="polite" hidden>
         <button class="offer-popover-close" type="button" aria-label="Close details">×</button>
         <div class="offer-popover-copy"></div>
       </div>
     </div>
-    <p class="session-times"><span class="hero-thanks"><span class="hero-thanks-full">Thank you for your interest in the wearables study!</span><span class="hero-thanks-mobile">Thank you for your interest in the study!</span></span>Weekday sessions are offered at<span class="mobile-session-break"><br></span> <strong>9:30 AM</strong> and <strong class="time-2pm">2 PM</strong>.<br><span class="keep-together">No technology experience is required.</span><span class="desktop-eligibility-break"><br></span> Participation is subject to eligibility and successful screening.</p>
+    <p class="session-times"><span class="hero-thanks"><span class="hero-thanks-full">Thank you for your interest in the wearables study!</span><span class="atlanta-desktop-thanks">Thank you for your interest in the study!</span><span class="hero-thanks-mobile">Thank you for your interest in the study!</span></span>Weekday sessions are<span class="atlanta-session-offered"> offered</span><span class="mobile-session-break"><br></span> at<span class="atlanta-desktop-break"><br></span> <strong>9:30 AM</strong> and <strong class="time-2pm">2 PM</strong>.<span class="atlanta-desktop-hidden"><br><span class="keep-together">No technology experience is required.</span><span class="desktop-eligibility-break"><br></span> Participation is subject to eligibility and successful screening.</span></p>
     <p class="hero-cta-row"><a class="cta" href="#before-you-apply"><span class="cta-atl-prefix">Apply for the</span> <span class="cta-atl-rest">Atlanta Study</span></a></p>
-    <p class="note hero-note">You'll continue to the official uTest registration/application process.</p>
+    <p class="note hero-note">You'll continue to the official<span class="atlanta-mobile-redirect-break"><br></span> uTest registration process.</p>
+    <div class="atlanta-desktop-post-cta" aria-label="Additional study requirements">
+      <p class="atlanta-desktop-no-tech">No technology experience is required.</p>
+      <p class="atlanta-desktop-eligibility">Participation is subject to eligibility and successful screening.</p>
+    </div>
   </div>
-  <div class="visual"><img class="hero-art" src="../assets/atlanta-hero.jpeg" alt="Get Paid to Play wearable technology testing campaign"></div>
+  <div class="visual"><img class="hero-art" src="../assets/atlanta-hero-final-composite.png" alt="Get Paid to Play wearable technology testing campaign"></div>
+</div>
+</section>
+
+
+<section class="hero-credibility" aria-label="Paid to Play Testing credibility">
+<div class="wrap credibility-grid">
+<div class="credibility-item credibility-story"><span>FROM TESTER TO</span><strong>TESTING SHERPA</strong><a class="atlanta-desktop-trust-link" href="#atlanta-story-modal" data-modal-open="atlanta-story-modal">Our Story →</a></div>
+<div class="credibility-item credibility-help"><strong>NEED HELP?</strong><span>We’ve assisted hundreds of prospective participants along the way. Let us help you.</span><a class="atlanta-desktop-trust-link" href="#atlanta-testimonials-modal" data-modal-open="atlanta-testimonials-modal">Read Testimonials →</a></div>
+<div class="credibility-item credibility-press"><span class="credibility-eyebrow">AS FEATURED IN</span><strong>The New York Times</strong><span class="atlanta-desktop-contact">Questions? <a href="mailto:info@paidtoplaytesting.com">info@paidtoplaytesting.com</a></span></div>
+</div>
+<div class="atlanta-mobile-credibility">
+  <div class="atlanta-mobile-trust-block atlanta-mobile-trust-story">
+    <div class="atlanta-mobile-trust-kicker">FROM TESTER TO TESTING SHERPA</div>
+    <a class="atlanta-mobile-trust-link" href="#atlanta-story-modal" data-modal-open="atlanta-story-modal">Our Story →</a>
+  </div>
+  <div class="atlanta-mobile-trust-block atlanta-mobile-trust-help">
+    <div class="atlanta-mobile-trust-kicker">NEED HELP?</div>
+    <p>We’ve assisted hundreds of prospective participants along the way.<br><strong>Let us help you.</strong></p>
+    <a class="atlanta-mobile-trust-link" href="#atlanta-testimonials-modal" data-modal-open="atlanta-testimonials-modal">Read Testimonials →</a>
+  </div>
+  <div class="atlanta-mobile-trust-block atlanta-mobile-trust-press">
+    <div class="atlanta-mobile-trust-kicker">AS FEATURED IN</div>
+    <div class="atlanta-mobile-trust-nyt">The New York Times</div>
+  </div>
 </div>
 </section>
 
@@ -745,6 +985,91 @@ header.topbar > * {
 })();
 </script>
 
+
+
+<div class="atlanta-modal-backdrop" id="atlanta-story-modal" hidden aria-hidden="true">
+  <section class="atlanta-modal" role="dialog" aria-modal="true" aria-labelledby="atlanta-story-modal-title" tabindex="-1">
+    <button class="atlanta-modal-close" type="button" aria-label="Close Our Story">×</button>
+    <div class="atlanta-modal-accent" aria-hidden="true"></div>
+    <h2 id="atlanta-story-modal-title">FROM TESTER TO<br>TESTING SHERPA</h2>
+    <p>Paid to Play Testing grew out of firsthand experience participating in paid technology studies beginning in <strong>2022</strong>.</p>
+    <p>By <strong>2023</strong>, that experience had evolved into helping other prospective participants discover opportunities and navigate the testing process.</p>
+    <p>Since then, we have <strong>assisted hundreds of prospective participants along the way</strong>.</p>
+    <p>Daniel also serves as a <strong>uTest Ambassador</strong>, helping participants better understand and navigate the process.</p>
+    <div class="atlanta-modal-callout">
+      <strong>BOSSUP WINNER</strong>
+      <span>Digital Design Trusted Technologies was selected as a winner in the <strong>BossUp competition</strong>, a Shark-Tank-style entrepreneurial contest.</span>
+    </div>
+    <p class="atlanta-modal-ending"><strong>We know the process because we've been through it ourselves.</strong></p>
+  </section>
+</div>
+
+<div class="atlanta-modal-backdrop" id="atlanta-testimonials-modal" hidden aria-hidden="true">
+  <section class="atlanta-modal" role="dialog" aria-modal="true" aria-labelledby="atlanta-testimonials-modal-title" tabindex="-1">
+    <button class="atlanta-modal-close" type="button" aria-label="Close Testimonials">×</button>
+    <div class="atlanta-modal-accent" aria-hidden="true"></div>
+    <h2 id="atlanta-testimonials-modal-title">WHAT PARTICIPANTS SAY</h2>
+    <blockquote class="atlanta-testimonial-card"><p>“Thanks again for your time and assistance Daniel.”</p><cite>Luke S.</cite></blockquote>
+    <blockquote class="atlanta-testimonial-card"><p>“Thank you Daniel. I appreciate all you have done for me.”</p><cite>Catalina R.</cite></blockquote>
+    <blockquote class="atlanta-testimonial-card"><p>“Wooo hooo! 🎉🎉... I checked the trash and there it was 😺”</p><cite>Maribel M.</cite></blockquote>
+  </section>
+</div>
+
+
+<script>
+(function(){
+  let lastTrigger=null;
+  function openAtlantaModal(id,trigger){
+    const backdrop=document.getElementById(id); if(!backdrop) return;
+    lastTrigger=trigger||null; backdrop.hidden=false; backdrop.setAttribute('aria-hidden','false');
+    document.documentElement.classList.add('atlanta-modal-open'); document.body.classList.add('atlanta-modal-open');
+    const dialog=backdrop.querySelector('.atlanta-modal'); if(dialog) requestAnimationFrame(()=>dialog.focus());
+  }
+  function closeAtlantaModal(backdrop){
+    if(!backdrop) return; backdrop.hidden=true; backdrop.setAttribute('aria-hidden','true');
+    document.documentElement.classList.remove('atlanta-modal-open'); document.body.classList.remove('atlanta-modal-open');
+    if(lastTrigger) lastTrigger.focus(); lastTrigger=null;
+  }
+  document.addEventListener('click',e=>{
+    const opener=e.target.closest('[data-modal-open]');
+    if(opener){e.preventDefault();openAtlantaModal(opener.getAttribute('data-modal-open'),opener);return}
+    const close=e.target.closest('.atlanta-modal-close');
+    if(close){closeAtlantaModal(close.closest('.atlanta-modal-backdrop'));return}
+    if(e.target.classList.contains('atlanta-modal-backdrop')) closeAtlantaModal(e.target);
+  });
+  document.addEventListener('keydown',e=>{if(e.key==='Escape'){const open=document.querySelector('.atlanta-modal-backdrop:not([hidden])');if(open) closeAtlantaModal(open)}});
+})();
+</script>
+
+
+<script>
+(function(){
+  const desktopMQ=window.matchMedia('(min-width:901px)');
+  const toggle=document.querySelector('.atlanta-mobile-menu');
+  const menu=document.getElementById('atlanta-desktop-utility-menu');
+  if(!toggle||!menu) return;
+  const close=menu.querySelector('.atlanta-desktop-menu-close');
+  const panel=menu.querySelector('.atlanta-desktop-utility-panel');
+  function openMenu(){if(!desktopMQ.matches)return;menu.hidden=false;menu.setAttribute('aria-hidden','false');toggle.setAttribute('aria-expanded','true');if(close)close.focus()}
+  function closeMenu(returnFocus){menu.hidden=true;menu.setAttribute('aria-hidden','true');toggle.setAttribute('aria-expanded','false');if(returnFocus&&desktopMQ.matches)toggle.focus()}
+  function sync(){if(desktopMQ.matches){toggle.removeAttribute('tabindex');toggle.setAttribute('aria-controls','atlanta-desktop-utility-menu');toggle.setAttribute('aria-expanded',menu.hidden?'false':'true')}else{closeMenu(false);toggle.setAttribute('tabindex','-1');toggle.removeAttribute('aria-controls');toggle.removeAttribute('aria-expanded')}}
+  toggle.addEventListener('click',()=>{if(!desktopMQ.matches)return;menu.hidden?openMenu():closeMenu(true)});
+  if(close)close.addEventListener('click',()=>closeMenu(true));
+  menu.addEventListener('click',e=>{
+    const action=e.target.closest('a,[data-modal-open]');if(!action)return;
+    if(action.classList.contains('atlanta-desktop-menu-apply')){e.preventDefault();closeMenu(false);document.getElementById('before-you-apply')?.scrollIntoView({behavior:'smooth',block:'start'});return}
+    closeMenu(false);
+  });
+  document.addEventListener('click',e=>{
+    if(menu.hidden||!desktopMQ.matches)return;
+    if(toggle.contains(e.target)||(panel&&panel.contains(e.target)))return;
+    closeMenu(false);
+  });
+  document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!menu.hidden)closeMenu(true)});
+  if(desktopMQ.addEventListener)desktopMQ.addEventListener('change',sync);else desktopMQ.addListener(sync);
+  sync();
+})();
+</script>
 
 </body>
 </html>
