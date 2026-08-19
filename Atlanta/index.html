@@ -176,7 +176,7 @@ header.topbar > * {
   body.atlanta .topbar::before{content:"";position:absolute;inset:0;z-index:0;background:#070707;pointer-events:none}
   body.atlanta .topbar .brand{position:relative;z-index:30!important;width:auto!important;font-size:21px;line-height:1.08;letter-spacing:.7px}
   body.atlanta .brand-sherpa-tagline{position:relative;z-index:30!important;max-width:300px;margin:8px auto 0!important;font-size:11px;line-height:1.45;font-style:normal}
-  body.atlanta .atlanta-mobile-menu{display:block;position:absolute;z-index:30!important;right:18px;top:27px;width:29px;height:24px;padding:0;border:0;background:transparent;pointer-events:none}
+  body.atlanta .atlanta-mobile-menu{display:none;position:absolute;z-index:30!important;right:18px;top:27px;width:29px;height:24px;padding:0;border:0;background:transparent;pointer-events:none}
   body.atlanta .atlanta-mobile-menu::before,body.atlanta .atlanta-mobile-menu::after,body.atlanta .atlanta-mobile-menu span{content:"";display:block;width:29px;height:3px;margin:0 0 6px;border-radius:2px;background:#fff}
 
   body.atlanta .hero{position:relative!important;z-index:auto!important;background:#F6F0DF;padding:20px 0 14px!important;overflow:visible!important}
@@ -282,9 +282,1491 @@ html.atlanta-modal-open,body.atlanta-modal-open{overflow:hidden!important;oversc
   body.atlanta .atlanta-desktop-utility-panel > :last-child{border-bottom:0}
 }
 </style>
+<style>
+/* ATLANTA MOBILE COMPOSITION PROTOTYPE — isolated duplicate only.
+   Production Atlanta HTML and shared CSS remain untouched. */
+.mobile-woman-stage,.mobile-promo-stage,.mobile-vr-stage,.mobile-menu-prototype{display:none}
+@media (max-width:600px) and (orientation:portrait){
+  body.mobile-woman-prototype .topbar{
+    position:relative;
+    min-height:118px;
+    padding:20px 48px 15px 16px;
+    border-bottom:4px solid #118ee8;
+    box-sizing:border-box;
+  }
+  body.mobile-woman-prototype .topbar .brand{
+    width:auto!important;
+    font-size:21px;
+    line-height:1.08;
+    letter-spacing:.7px;
+  }
+  body.mobile-woman-prototype .brand-sherpa-tagline{
+    max-width:300px;
+    margin:8px auto 0!important;
+    font-size:11px;
+    line-height:1.45;
+    font-style:normal;
+  }
+  body.mobile-woman-prototype .mobile-menu-prototype{
+    display:block;
+    position:absolute;
+    right:18px;
+    top:27px;
+    width:29px;
+    height:24px;
+    padding:0;
+    border:0;
+    background:transparent;
+    pointer-events:none;
+  }
+  body.mobile-woman-prototype .mobile-menu-prototype::before,
+  body.mobile-woman-prototype .mobile-menu-prototype::after,
+  body.mobile-woman-prototype .mobile-menu-prototype span{
+    content:"";
+    display:block;
+    width:29px;
+    height:3px;
+    margin:0 0 6px;
+    border-radius:2px;
+    background:#fff;
+  }
+
+  body.mobile-woman-prototype .hero{
+    position:relative;
+    background:#F6F0DF;
+    padding:25px 0 22px;
+    overflow:hidden;
+  }
+  body.mobile-woman-prototype .hero-grid{display:block}
+  body.mobile-woman-prototype .hero .copy{
+    position:relative;
+    min-height:770px;
+    text-align:left;
+    isolation:isolate;
+  }
+  body.mobile-woman-prototype .hero .visual{display:none!important}
+
+  /* Upper-right woman: transparent asset over the site's cream field. */
+  body.mobile-woman-prototype .mobile-woman-stage{
+    display:block;
+    position:absolute;
+    z-index:1;
+    top:-27px;
+    right:-40px;
+    width:222px;
+    height:355px;
+    overflow:hidden;
+    pointer-events:none;
+  }
+  body.mobile-woman-prototype .mobile-woman-stage img{
+    position:absolute;
+    display:block;
+    width:238px;
+    max-width:none;
+    height:auto;
+    top:-1px;
+    right:-8px;
+  }
+
+  body.mobile-woman-prototype .hero .kicker{
+    position:relative;
+    z-index:4;
+    width:max-content;
+    max-width:225px;
+    margin:0 0 16px;
+    padding:8px 10px;
+    font-size:.72rem;
+    line-height:1.15;
+    white-space:nowrap;
+  }
+  body.mobile-woman-prototype .hero h1{
+    position:relative;
+    z-index:4;
+    width:217px;
+    margin:0 0 17px;
+    font-size:42px;
+    line-height:.89;
+    white-space:nowrap;
+  }
+  body.mobile-woman-prototype .hero .lead{
+    position:relative;
+    z-index:4;
+    width:205px;
+    max-width:205px;
+    margin:0;
+    font-size:.95rem;
+    line-height:1.5;
+    text-align:left;
+  }
+
+  /* Keep the existing study controls live and readable. */
+  body.mobile-woman-prototype .hero .offer{
+    position:relative;
+    z-index:6;
+    width:306px!important;
+    margin:30px 0 22px 0!important;
+  }
+
+  /* Independent promo artwork, tucked into the woman/control relationship. */
+  body.mobile-woman-prototype .mobile-promo-stage{
+    display:block;
+    position:absolute;
+    z-index:5;
+    top:344px;
+    right:-2px;
+    width:189px;
+    height:139px;
+    overflow:visible;
+    pointer-events:none;
+    transform:rotate(-1.5deg);
+    transform-origin:center;
+  }
+  body.mobile-woman-prototype .mobile-promo-stage img{
+    display:block;
+    width:100%;
+    height:auto;
+    max-width:none;
+  }
+
+  /* Session copy occupies the left while the VR Polaroid continues the art on right. */
+  body.mobile-woman-prototype .hero .session-times{
+    position:relative;
+    z-index:6;
+    width:205px;
+    max-width:205px;
+    min-height:210px;
+    margin:15px 0 0 4px !important;
+    text-align:center !important;
+    font-size:.92rem;
+    line-height:1.55;
+  }
+  body.mobile-woman-prototype .mobile-vr-stage{
+    display:block;
+    position:absolute;
+    z-index:5;
+    top:491px;
+    right:-18px;
+    width:197px;
+    height:210px;
+    overflow:visible;
+    pointer-events:none;
+    transform:rotate(3deg);
+    transform-origin:center;
+  }
+  body.mobile-woman-prototype .mobile-vr-stage img{
+    display:block;
+    width:100%;
+    height:auto;
+    max-width:none;
+  }
+
+  body.mobile-woman-prototype .hero .hero-cta-row{
+    position:relative;
+    z-index:8;
+    clear:both;
+    margin:5px 0 0!important;
+  }
+  body.mobile-woman-prototype .hero .hero-note{
+    position:relative;
+    z-index:8;
+  }
+  body.mobile-woman-prototype .hero-credibility{
+    position:relative;
+    z-index:10;
+    background:#F6F0DF;
+  }
+}
+</style>
+
+<style>
+/* ATLANTA MOBILE CORRECTIVE COMPOSITION PASS — prototype only */
+@media (max-width:600px) and (orientation:portrait){
+  /* Zone framework + deliberate stacking */
+  body.mobile-woman-prototype .hero{
+    padding:20px 0 14px !important;
+    overflow:hidden;
+  }
+  body.mobile-woman-prototype .hero .copy{
+    position:relative;
+    min-height:650px !important;
+    text-align:left;
+    isolation:isolate;
+  }
+  body.mobile-woman-prototype .hero .visual{display:none!important}
+
+  /* ZONE 1 — upper hero */
+  body.mobile-woman-prototype .mobile-woman-stage{
+    z-index:2 !important;
+    top:-8px !important;
+    right:-48px !important;
+    width:167px !important;
+    height:284px !important;
+    overflow:hidden !important;
+  }
+  body.mobile-woman-prototype .mobile-woman-stage img{
+    width:181px !important;
+    top:0 !important;
+    right:-5px !important;
+  }
+  body.mobile-woman-prototype .hero .kicker{
+    z-index:8 !important;
+    max-width:none !important;
+    margin:0 0 14px !important;
+    padding:7px 9px !important;
+    font-size:.69rem !important;
+  }
+  body.mobile-woman-prototype .hero h1{
+    z-index:8 !important;
+    width:196px !important;
+    margin:0 0 14px !important;
+    font-size:40px !important;
+    line-height:.88 !important;
+  }
+
+  /* ZONE 2 — controlled description */
+  body.mobile-woman-prototype .hero .lead{
+    z-index:8 !important;
+    width:198px !important;
+    max-width:198px !important;
+    margin:0 !important;
+    font-size:.91rem !important;
+    line-height:1.48 !important;
+  }
+
+  /* ZONE 3 — compact 1-over-2 pyramid */
+  body.mobile-woman-prototype .hero .offer{
+    position:relative;
+    z-index:10 !important;
+    display:flex !important;
+    flex-direction:column !important;
+    align-items:center !important;
+    gap:8px !important;
+    width:254px !important;
+    max-width:254px !important;
+    margin:24px auto 17px !important;
+  }
+  body.mobile-woman-prototype .hero .offer-lower-pair{
+    display:flex !important;
+    flex-direction:row !important;
+    align-items:stretch !important;
+    justify-content:center !important;
+    gap:9px !important;
+    width:auto !important;
+  }
+  body.mobile-woman-prototype .hero .pill{
+    width:auto !important;
+    min-height:38px !important;
+    padding:8px 10px !important;
+    font-size:.76rem !important;
+    line-height:1.05 !important;
+    white-space:nowrap !important;
+    box-shadow:3px 3px 0 #111 !important;
+  }
+  body.mobile-woman-prototype .hero .offer-detail-trigger:first-of-type{
+    width:190px !important;
+  }
+  body.mobile-woman-prototype .hero .offer-detail-trigger[data-detail="duration"]{
+    width:137px !important;
+  }
+  body.mobile-woman-prototype .hero .offer-detail-trigger[data-detail="age"]{
+    width:101px !important;
+  }
+
+  /* ZONE 4 — promo + VR read as one cluster, never under controls */
+  body.mobile-woman-prototype .mobile-promo-stage{
+    display:block !important;
+    z-index:5 !important;
+    top:342px !important;
+    right:-5px !important;
+    width:176px !important;
+    height:auto !important;
+    overflow:visible !important;
+    transform:rotate(-1.3deg) !important;
+  }
+  body.mobile-woman-prototype .mobile-vr-stage{
+    display:block !important;
+    z-index:6 !important;
+    top:465px !important;
+    right:-9px !important;
+    width:179px !important;
+    height:auto !important;
+    overflow:visible !important;
+    transform:rotate(2.5deg) !important;
+  }
+
+  /* ZONE 5 — only requested Atlanta session copy */
+  body.mobile-woman-prototype .hero .session-times{
+    position:relative;
+    z-index:9 !important;
+    width:230px !important;
+    max-width:230px !important;
+    min-height:146px !important;
+    margin:15px auto 0 !important;
+    text-align:center !important;
+    font-size:.83rem !important;
+    line-height:1.5 !important;
+  }
+  body.mobile-woman-prototype .hero .hero-thanks{
+    display:block !important;
+    text-align:center !important;
+    margin-bottom:8px !important;
+  }
+  body.mobile-woman-prototype .hero .session-offered{
+    display:none !important;
+  }
+  body.mobile-woman-prototype .hero .atlanta-desktop-hidden{
+    display:none !important;
+  }
+
+  /* ZONE 6 — compact, one-line functional CTA */
+  body.mobile-woman-prototype .hero .hero-cta-row{
+    z-index:12 !important;
+    margin:8px 0 0 !important;
+    text-align:center !important;
+  }
+  body.mobile-woman-prototype .hero .hero-cta-row .cta{
+    display:inline-block !important;
+    width:auto !important;
+    min-width:0 !important;
+    max-width:320px !important;
+    padding:11px 15px !important;
+    font-size:.82rem !important;
+    line-height:1 !important;
+    white-space:nowrap !important;
+    border-width:2px !important;
+    box-shadow:4px 4px 0 #111 !important;
+  }
+  body.mobile-woman-prototype .hero .hero-note{
+    z-index:12 !important;
+    max-width:310px !important;
+    margin:8px auto 0 !important;
+    text-align:center !important;
+    font-size:.72rem !important;
+    line-height:1.35 !important;
+  }
+
+  /* ZONE 7 — compact credibility bridge */
+  body.mobile-woman-prototype .hero-credibility{
+    padding:6px 0 10px !important;
+  }
+  body.mobile-woman-prototype .hero-credibility .wrap{
+    width:min(370px,95vw) !important;
+  }
+  body.mobile-woman-prototype .credibility-grid{
+    display:grid !important;
+    grid-template-columns:.9fr 1fr 1.2fr !important;
+    align-items:stretch !important;
+    min-height:0 !important;
+    padding-top:8px !important;
+    border-top:1px solid rgba(16,16,16,.24) !important;
+  }
+  body.mobile-woman-prototype .credibility-item{
+    min-height:54px !important;
+    padding:4px 7px !important;
+    font-size:.67rem !important;
+    line-height:1.2 !important;
+  }
+  body.mobile-woman-prototype .credibility-item + .credibility-item{
+    border-top:0 !important;
+    border-left:1px solid rgba(30,143,209,.58) !important;
+  }
+  body.mobile-woman-prototype .credibility-story{
+    font-size:.68rem !important;
+  }
+  body.mobile-woman-prototype .credibility-story strong{
+    margin-top:2px !important;
+    font-size:1.04em !important;
+  }
+  body.mobile-woman-prototype .credibility-eyebrow{
+    font-size:.53rem !important;
+    margin-bottom:2px !important;
+  }
+  body.mobile-woman-prototype .credibility-press strong{
+    font-size:.86rem !important;
+  }
+  body.mobile-woman-prototype .credibility-proof{
+    max-width:none !important;
+    margin:0 !important;
+    font-size:.64rem !important;
+    line-height:1.25 !important;
+  }
+}
+</style>
+
+<style>
+/* ATLANTA MOBILE TARGETED REFINEMENT — prototype only; production/shared CSS untouched */
+@media (max-width:600px) and (orientation:portrait){
+  /* 1. Preserve scale; move the woman higher and farther into the right edge. */
+  body.mobile-woman-prototype .mobile-woman-stage{
+    top:-4px !important;
+    right:-44px !important;
+  }
+  body.mobile-woman-prototype .mobile-woman-stage img{
+    right:-6px !important;
+  }
+
+  /* 2. Keep the successful 1-over-2 pyramid, nudged left as one unit. */
+  body.mobile-woman-prototype .hero .offer{
+    transform:translateX(-12px);
+  }
+
+  /* 4. CTA and redirect note remain a deliberate readable pair above artwork. */
+  body.mobile-woman-prototype .hero .hero-cta-row{
+    position:relative;
+    z-index:14 !important;
+    margin-top:12px !important;
+  }
+  body.mobile-woman-prototype .hero .hero-note{
+    position:relative;
+    z-index:15 !important;
+    width:max-content !important;
+    max-width:min(310px,88vw) !important;
+    box-sizing:border-box;
+    margin:7px auto 0 !important;
+    padding:5px 9px !important;
+    background:#F6F0DF;
+    text-align:center !important;
+    line-height:1.35 !important;
+  }
+}
+
+/* Nearby wider phones get breathing room without changing the composition model. */
+@media (min-width:414px) and (max-width:600px) and (orientation:portrait){
+  body.mobile-woman-prototype .mobile-woman-stage{right:-38px !important;}
+  body.mobile-woman-prototype .hero .lead{width:207px !important;max-width:207px !important;}
+  body.mobile-woman-prototype .hero .offer{transform:translateX(-10px);}
+}
+
+@media (min-width:430px) and (max-width:600px) and (orientation:portrait){
+  body.mobile-woman-prototype .mobile-woman-stage{right:-34px !important;}
+  body.mobile-woman-prototype .hero .lead{width:214px !important;max-width:214px !important;}
+}
+</style>
+
+<style>
+/* HEADER-BREAKOUT + LOWER-HERO IMPLEMENTATION — isolated mobile prototype only */
+@media (max-width:600px) and (orientation:portrait){
+
+  /* Let the woman intentionally break upward into the black header.
+     Header background stays behind her; branding/menu stay above her. */
+  body.mobile-woman-prototype .topbar{
+    position:relative !important;
+    z-index:auto !important;
+    overflow:visible !important;
+    background:transparent !important;
+  }
+  body.mobile-woman-prototype .topbar::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    z-index:0;
+    background:#070707;
+    pointer-events:none;
+  }
+  body.mobile-woman-prototype .topbar .brand,
+  body.mobile-woman-prototype .brand-sherpa-tagline,
+  body.mobile-woman-prototype .mobile-menu-prototype{
+    position:relative;
+    z-index:30 !important;
+  }
+  body.mobile-woman-prototype .mobile-menu-prototype{
+    position:absolute !important;
+  }
+
+  body.mobile-woman-prototype .hero{
+    overflow:visible !important;
+    position:relative !important;
+    z-index:auto !important;
+  }
+  body.mobile-woman-prototype .hero .copy{
+    min-height:760px !important;
+    overflow:visible !important;
+  }
+
+  /* Woman keeps existing scale, but intentionally enters the header.
+     She remains behind header UI. */
+  body.mobile-woman-prototype .mobile-woman-stage{
+    top:-92px !important;
+    right:-58px !important;
+    width:167px !important;
+    height:350px !important;
+    overflow:visible !important;
+    z-index:12 !important;
+  }
+  body.mobile-woman-prototype .mobile-woman-stage img{
+    width:181px !important;
+    right:-6px !important;
+    top:0 !important;
+  }
+
+  /* Keep upper hero text/control UI above the woman where their territories approach. */
+  body.mobile-woman-prototype .hero .kicker,
+  body.mobile-woman-prototype .hero h1,
+  body.mobile-woman-prototype .hero .lead,
+  body.mobile-woman-prototype .hero .offer{
+    z-index:20 !important;
+  }
+
+  /* Lower hero becomes an explicit two-zone row:
+     session copy left, promo right. */
+  body.mobile-woman-prototype .hero .session-times{
+    position:absolute !important;
+    top:414px !important;
+    left:4px !important;
+    width:166px !important;
+    max-width:166px !important;
+    min-height:0 !important;
+    margin:0 !important;
+    padding:0 !important;
+    text-align:center !important;
+    line-height:1.48 !important;
+    z-index:18 !important;
+  }
+  body.mobile-woman-prototype .hero .hero-thanks{
+    display:block !important;
+    margin:0 0 16px !important;
+    text-align:center !important;
+  }
+
+  body.mobile-woman-prototype .mobile-promo-stage{
+    top:405px !important;
+    right:-1px !important;
+    width:176px !important;
+    height:auto !important;
+    overflow:visible !important;
+    z-index:16 !important;
+    transform:rotate(-1.3deg) !important;
+  }
+
+  /* VR remains primarily right and rises behind CTA. */
+  body.mobile-woman-prototype .mobile-vr-stage{
+    top:535px !important;
+    right:-7px !important;
+    width:179px !important;
+    height:auto !important;
+    overflow:visible !important;
+    z-index:14 !important;
+    transform:rotate(2.5deg) !important;
+  }
+
+  /* Centered CTA in front of the participant hand. */
+  body.mobile-woman-prototype .hero .hero-cta-row{
+    position:absolute !important;
+    top:574px !important;
+    left:0 !important;
+    right:0 !important;
+    width:100% !important;
+    margin:0 !important;
+    text-align:center !important;
+    z-index:24 !important;
+  }
+  body.mobile-woman-prototype .hero .hero-cta-row .cta{
+    position:relative !important;
+    z-index:24 !important;
+  }
+
+  /* Dedicated clean note zone below the CTA; art cannot pass through it. */
+  body.mobile-woman-prototype .hero .hero-note{
+    position:absolute !important;
+    top:637px !important;
+    left:50% !important;
+    transform:translateX(-50%) !important;
+    z-index:26 !important;
+    width:310px !important;
+    max-width:84vw !important;
+    margin:0 !important;
+    padding:7px 10px !important;
+    box-sizing:border-box !important;
+    background:#F6F0DF !important;
+    text-align:center !important;
+    line-height:1.35 !important;
+  }
+}
+
+/* Nearby wider phones keep the same composition with a little extra separation. */
+@media (min-width:414px) and (max-width:600px) and (orientation:portrait){
+  body.mobile-woman-prototype .mobile-woman-stage{right:-50px !important;}
+  body.mobile-woman-prototype .hero .session-times{left:8px !important;width:176px !important;max-width:176px !important;}
+  body.mobile-woman-prototype .mobile-promo-stage{right:3px !important;}
+}
+@media (min-width:430px) and (max-width:600px) and (orientation:portrait){
+  body.mobile-woman-prototype .mobile-woman-stage{right:-46px !important;}
+  body.mobile-woman-prototype .hero .session-times{left:12px !important;width:184px !important;max-width:184px !important;}
+  body.mobile-woman-prototype .mobile-promo-stage{right:7px !important;}
+}
+</style>
+
+<style>
+/* VERTICAL-GAP REFINEMENT — isolated portrait prototype only.
+   Positioning only: no copy, font-size, artwork scale, or control dimensions changed. */
+@media (max-width:600px) and (orientation:portrait){
+
+  /* Pull the intact 1-over-2 control group closer to the description.
+     Internal button dimensions and 8/9px spacing remain untouched. */
+  body.mobile-woman-prototype .hero .offer{
+    margin-top:10px !important;
+  }
+
+  /* Reclaim some of the lower-hero dead space while retaining the promo's
+     existing right-side territory, size, rotation, and horizontal alignment. */
+  body.mobile-woman-prototype .mobile-promo-stage{
+    top:386px !important;
+  }
+}
+</style>
+
+<style>
+/* PROMO POSITION EXPERIMENT ONLY — preserve every other current element exactly. */
+@media (max-width:600px) and (orientation:portrait){
+  body.mobile-woman-prototype .mobile-promo-stage{
+    top:350px !important;
+  }
+}
+</style>
+
+<style>
+/* POSITIONING EXPERIMENT — controls left + VR substantially higher.
+   No copy, font-size, artwork size, CTA, credibility, or downstream changes. */
+@media (max-width:600px) and (orientation:portrait){
+
+  /* Shift the entire existing 1-over-2 controls group left as one unit.
+     Preserve current dimensions and internal spacing. */
+  body.mobile-woman-prototype .hero .offer{
+    transform:translateX(-26px) !important;
+  }
+
+  /* Bring the VR/Polaroid much earlier into the right-side visual cascade.
+     Preserve its current size and rotation; stop choreographing the hand around CTA. */
+  body.mobile-woman-prototype .mobile-vr-stage{
+    top:442px !important;
+    right:-7px !important;
+    z-index:14 !important;
+  }
+
+  /* Ensure the CTA remains independent of the VR artwork rather than being
+     positioned as part of a hand/CTA interaction. */
+  body.mobile-woman-prototype .hero .hero-cta-row{
+    z-index:24 !important;
+  }
+}
+</style>
+
+<style>
+/* STRONGER POSITIONING PASS — same isolated mobile prototype.
+   Positioning only; no size, copy, font, CTA, credibility, or downstream changes. */
+@media (max-width:600px) and (orientation:portrait){
+
+  /* Move the existing intact 1-over-2 fact control group farther left. */
+  body.mobile-woman-prototype .hero .offer{
+    transform:translateX(-38px) !important;
+  }
+
+  /* Bring the VR/Polaroid much higher in the right-side cascade.
+     Preserve its current dimensions and rotation. */
+  body.mobile-woman-prototype .mobile-vr-stage{
+    top:382px !important;
+    right:-7px !important;
+    z-index:14 !important;
+  }
+}
+</style>
+
+<style>
+/* TWO-ZONE MOBILE COMPOSITION CORRECTION — isolated portrait prototype only.
+   Left: fact buttons + session copy. Right: VR/Polaroid cascading beside them.
+   Promo follows below VR. No typography, size, CTA, header, woman, or downstream changes. */
+@media (max-width:600px) and (orientation:portrait){
+
+  /* Move intact 1-over-2 fact group farther left to establish the left zone. */
+  body.mobile-woman-prototype .hero .offer{
+    transform:translateX(-48px) !important;
+  }
+
+  /* VR begins alongside the button area, not below it.
+     Preserve current scale/rotation; only position changes. */
+  body.mobile-woman-prototype .mobile-vr-stage{
+    top:286px !important;
+    right:-10px !important;
+    z-index:16 !important;
+  }
+
+  /* Promo follows AFTER/BELOW the VR participant and stays out of his face/headset/hand. */
+  body.mobile-woman-prototype .mobile-promo-stage{
+    top:514px !important;
+    right:-1px !important;
+    z-index:14 !important;
+  }
+}
+</style>
+
+<style>
+/* SUPPORTING COPY POSITION ONLY — isolated portrait prototype.
+   Move the left-side session copy directly beneath the existing button group.
+   No wording, font-size, VR, promo, CTA, header, woman, or downstream changes. */
+@media (max-width:600px) and (orientation:portrait){
+  body.mobile-woman-prototype .hero .session-times{
+    top:350px !important;
+    left:4px !important;
+    width:166px !important;
+    max-width:166px !important;
+    margin:0 !important;
+    text-align:center !important;
+  }
+}
+</style>
+
+<style>
+/* SMALL SUPPORTING-COPY LIFT ONLY */
+@media (max-width:600px) and (orientation:portrait){
+  body.mobile-woman-prototype .hero .session-times{
+    top:334px !important;
+  }
+}
+</style>
+
+<style>
+/* LEFT-COLUMN ALIGNMENT / SUPPORTING-COPY GROUPING ONLY */
+@media (max-width:600px) and (orientation:portrait){
+
+  /* Nudge upper left content together as one aligned group over the fixed buttons. */
+  body.mobile-woman-prototype .hero .kicker,
+  body.mobile-woman-prototype .hero h1,
+  body.mobile-woman-prototype .hero .lead{
+    transform:translateX(10px) !important;
+  }
+
+  /* Keep the supporting copy as one grouped block in the same left-side zone. */
+  body.mobile-woman-prototype .hero .session-times{
+    left:14px !important;
+    width:166px !important;
+    max-width:166px !important;
+    text-align:center !important;
+  }
+}
+</style>
+
+<style>
+/* PORTRAIT CALLOUT CONTAINMENT + TOP-GAP REDUCTION ONLY */
+@media (max-width:600px) and (orientation:portrait){
+
+  /* Shared study-detail callout containment.
+     Compensate for the intentionally left-shifted offer group so the panel itself
+     stays safely inside the viewport with its border, shadow, and close control visible. */
+  body.mobile-woman-prototype .offer-popover{
+    box-sizing:border-box !important;
+    left:calc(50% + 48px) !important;
+    width:calc(100vw - 40px) !important;
+    max-width:360px !important;
+    min-width:0 !important;
+    padding:16px 42px 16px 16px !important;
+    overflow-wrap:anywhere !important;
+    word-break:normal !important;
+  }
+  body.mobile-woman-prototype .offer-popover-copy{
+    max-width:100% !important;
+    min-width:0 !important;
+  }
+  body.mobile-woman-prototype .offer-popover-close{
+    right:8px !important;
+    top:8px !important;
+  }
+
+  /* Remove roughly half of the cream gap above the Atlanta ribbon by lifting
+     the established LEFT-side sequence as one composition. Internal spacing is unchanged. */
+  body.mobile-woman-prototype .hero .kicker,
+  body.mobile-woman-prototype .hero h1,
+  body.mobile-woman-prototype .hero .lead{
+    transform:translate(10px,-12px) !important;
+  }
+  body.mobile-woman-prototype .hero .offer{
+    transform:translate(-48px,-12px) !important;
+  }
+  body.mobile-woman-prototype .hero .session-times{
+    top:322px !important;
+  }
+}
+</style>
+
+<style>
+/* SURGICAL RIBBON ANGLE ROLLBACK ONLY */
+@media (max-width:600px) and (orientation:portrait){
+  body.mobile-woman-prototype .hero .kicker{
+    transform:translate(10px,-12px) rotate(-1deg) !important;
+  }
+}
+</style>
+
+<style>
+/* PORTRAIT MOBILE: upper-left alignment + supporting-copy tightening only */
+@media (max-width:600px) and (orientation:portrait){
+
+  /* Small alignment correction over the existing fixed button group.
+     Preserve ribbon rotation and all sizing/wrapping. */
+  body.mobile-woman-prototype .hero .kicker{
+    transform:translate(4px,-12px) rotate(-1deg) !important;
+  }
+  body.mobile-woman-prototype .hero h1,
+  body.mobile-woman-prototype .hero .lead{
+    transform:translate(4px,-12px) !important;
+  }
+
+  /* Pull the grouped supporting copy slightly upward and tighten only
+     the internal gap created by the shorter thank-you line. */
+  body.mobile-woman-prototype .hero .session-times{
+    top:312px !important;
+  }
+  body.mobile-woman-prototype .hero .hero-thanks{
+    margin-bottom:10px !important;
+  }
+}
+</style>
+
+<style>
+/* PORTRAIT MOBILE: left-column alignment + restored breathing room only */
+@media (max-width:600px) and (orientation:portrait){
+
+  /* Move the existing upper-left content block farther right as one unit.
+     Preserve size, wrapping, spacing, and ribbon rotation. */
+  body.mobile-woman-prototype .hero .kicker{
+    transform:translate(14px,-12px) rotate(-1deg) !important;
+  }
+  body.mobile-woman-prototype .hero h1,
+  body.mobile-woman-prototype .hero .lead{
+    transform:translate(14px,-12px) !important;
+  }
+
+  /* Restore a deliberate gap beneath the unchanged button group while
+     keeping the supporting copy grouped and centered within its left zone. */
+  body.mobile-woman-prototype .hero .session-times{
+    top:330px !important;
+    left:14px !important;
+    width:166px !important;
+    max-width:166px !important;
+    text-align:center !important;
+  }
+  body.mobile-woman-prototype .hero .hero-thanks{
+    margin-bottom:16px !important;
+  }
+}
+</style>
+
+<style>
+/* FINAL LEFT-COLUMN ALIGNMENT MICRO-REFINEMENT ONLY */
+@media (max-width:600px) and (orientation:portrait){
+
+  /* Move upper-left content a little farther right as one unit.
+     Preserve sizes, wrapping, spacing, and ribbon angle. */
+  body.mobile-woman-prototype .hero .kicker{
+    transform:translate(20px,-12px) rotate(-1deg) !important;
+  }
+  body.mobile-woman-prototype .hero h1,
+  body.mobile-woman-prototype .hero .lead{
+    transform:translate(20px,-12px) !important;
+  }
+
+  /* Tighten only the internal gap between thank-you and weekday-session copy.
+     Keep the whole grouped block exactly where it is. */
+  body.mobile-woman-prototype .hero .hero-thanks{
+    margin-bottom:12px !important;
+  }
+}
+</style>
+
+<style>
+/* PORTRAIT MICRO-ALIGNMENT ONLY */
+@media (max-width:600px) and (orientation:portrait){
+  body.mobile-woman-prototype .hero .kicker{
+    transform:translate(24px,-12px) rotate(-1deg) !important;
+  }
+  body.mobile-woman-prototype .hero h1,
+  body.mobile-woman-prototype .hero .lead{
+    transform:translate(24px,-12px) !important;
+  }
+  body.mobile-woman-prototype .hero .hero-thanks{
+    margin-bottom:9px !important;
+  }
+}
+</style>
+
+<style>
+/* LOWER FLOW + TAP AFFORDANCE EXPERIMENT ONLY — portrait isolated prototype */
+@media (max-width:600px) and (orientation:portrait){
+
+  /* Existing study-detail controls: visual cue only, dimensions/positions unchanged. */
+  body.mobile-woman-prototype .offer-detail-trigger{
+    position:relative !important;
+    touch-action:manipulation;
+  }
+  body.mobile-woman-prototype .offer-detail-trigger::after{
+    content:"›";
+    position:absolute;
+    right:10px;
+    top:50%;
+    transform:translateY(-52%);
+    font-size:.92em;
+    line-height:1;
+    font-weight:700;
+    opacity:.58;
+    pointer-events:none;
+  }
+  body.mobile-woman-prototype .offer-detail-trigger:active{
+    transform:translate(2px,2px) !important;
+    box-shadow:2px 2px 0 #111 !important;
+  }
+
+  /* Slight internal tightening only; keep whole support-copy block in place. */
+  body.mobile-woman-prototype .hero .hero-thanks{
+    margin-bottom:7px !important;
+  }
+
+  /* Lower order: CTA -> redirect note -> promo -> credibility.
+     CTA and note remain exactly where they already are. */
+  body.mobile-woman-prototype .mobile-promo-stage{
+    top:686px !important;
+    right:-1px !important;
+    z-index:18 !important;
+  }
+
+  /* End the cream hero shortly after the now-below-CTA promo so the compact
+     credibility bridge follows without the previous large empty gap. */
+  body.mobile-woman-prototype .hero .copy{
+    min-height:798px !important;
+  }
+
+  body.mobile-woman-prototype .hero-credibility{
+    margin-top:0 !important;
+  }
+}
+</style>
+
+<style>
+/* CTA + CREDIBILITY RESTRUCTURE TEST — portrait isolated prototype only */
+@media (max-width:600px) and (orientation:portrait){
+
+  /* Promo temporarily removed from this mobile transition only. */
+  body.mobile-woman-prototype .mobile-promo-stage{
+    display:none !important;
+  }
+
+  /* Stronger primary CTA; preserve established visual treatment. */
+  body.mobile-woman-prototype .hero .hero-cta-row{
+    top:568px !important;
+  }
+  body.mobile-woman-prototype .hero .hero-cta-row .cta{
+    width:min(330px,86vw) !important;
+    min-height:54px !important;
+    box-sizing:border-box !important;
+    padding:15px 18px !important;
+    font-size:.92rem !important;
+    line-height:1.08 !important;
+    white-space:nowrap !important;
+  }
+
+  /* Deliberate readable two-line redirect note. */
+  body.mobile-woman-prototype .hero .hero-note{
+    top:638px !important;
+    width:292px !important;
+    max-width:78vw !important;
+    padding:5px 6px !important;
+    font-size:.79rem !important;
+    line-height:1.38 !important;
+    background:#F6F0DF !important;
+    text-align:center !important;
+  }
+
+  /* Remove the old compact three-column credibility banner on portrait only. */
+  body.mobile-woman-prototype .hero-credibility .credibility-grid{
+    display:none !important;
+  }
+
+  /* Expanded, readable stacked trust section. */
+  body.mobile-woman-prototype .hero-credibility{
+    margin-top:0 !important;
+    padding:18px 20px 22px !important;
+    background:#F6F0DF !important;
+  }
+  body.mobile-woman-prototype .mobile-expanded-credibility{
+    display:block !important;
+    max-width:330px;
+    margin:0 auto;
+    text-align:center;
+  }
+  body.mobile-woman-prototype .mobile-trust-block{
+    padding:13px 0;
+  }
+  body.mobile-woman-prototype .mobile-trust-block + .mobile-trust-block{
+    border-top:1px solid rgba(17,17,17,.18);
+  }
+  body.mobile-woman-prototype .mobile-trust-kicker{
+    font-size:.72rem;
+    line-height:1.2;
+    font-weight:800;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+  }
+  body.mobile-woman-prototype .mobile-trust-nyt{
+    margin-top:4px;
+    font-family:Georgia, "Times New Roman", serif;
+    font-size:1.1rem;
+    line-height:1.15;
+    font-weight:700;
+  }
+  body.mobile-woman-prototype .mobile-trust-help p{
+    margin:7px auto 5px;
+    max-width:285px;
+    font-size:.78rem;
+    line-height:1.42;
+  }
+  body.mobile-woman-prototype .mobile-trust-link{
+    display:inline-block;
+    margin-top:4px;
+    font-size:.73rem;
+    line-height:1.2;
+    font-weight:700;
+    color:inherit;
+    text-decoration:underline;
+    text-underline-offset:2px;
+  }
+  body.mobile-woman-prototype .mobile-trust-link[aria-disabled="true"]{
+    cursor:default;
+  }
+
+  /* End the hero after CTA/note so trust follows promptly, without touching VR placement. */
+  body.mobile-woman-prototype .hero .copy{
+    min-height:706px !important;
+  }
+}
+</style>
+
+<style>
+/* CTA TYPOGRAPHY EMPHASIS ONLY — isolated portrait prototype */
+@media (max-width:600px) and (orientation:portrait){
+
+  /* ~15% increase from .92rem; preserve current width and two-line wrap. */
+  body.mobile-woman-prototype .hero .hero-cta-row .cta{
+    font-size:1.06rem !important;
+    padding:16px 18px !important;
+  }
+
+  /* ~10% increase from .79rem; preserve current centered two-line treatment. */
+  body.mobile-woman-prototype .hero .hero-note{
+    font-size:.87rem !important;
+  }
+}
+</style>
+
+<style>
+/* CTA CORRECTION + STORY/TESTIMONIAL MODALS — isolated portrait prototype */
+@media (max-width:600px) and (orientation:portrait){
+
+  /* CTA: same width/position, less empty blue height, stronger two-line label. */
+  body.mobile-woman-prototype .hero .hero-cta-row .cta{
+    width:min(330px,86vw) !important;
+    min-height:0 !important;
+    padding:10px 18px 11px !important;
+    font-size:1.18rem !important;
+    line-height:.98 !important;
+    white-space:normal !important;
+    text-align:center !important;
+    box-shadow:5px 5px 0 #111 !important;
+  }
+  body.mobile-woman-prototype .hero .hero-cta-row .cta .cta-atl-prefix,
+  body.mobile-woman-prototype .hero .hero-cta-row .cta .cta-atl-rest{
+    display:block !important;
+  }
+
+  /* Redirect note: preserve clean centered two-line relationship. */
+  body.mobile-woman-prototype .hero .hero-note{
+    width:300px !important;
+    max-width:80vw !important;
+    font-size:.88rem !important;
+    line-height:1.34 !important;
+  }
+
+  /* Credibility links remain understated text links. */
+  body.mobile-woman-prototype .mobile-trust-link{
+    cursor:pointer;
+  }
+
+  /* Reusable modal system */
+  .ptp-modal-backdrop{
+    position:fixed;
+    inset:0;
+    z-index:10000;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:18px;
+    box-sizing:border-box;
+    background:rgba(0,0,0,.62);
+    overscroll-behavior:contain;
+  }
+  .ptp-modal-backdrop[hidden]{
+    display:none !important;
+  }
+  .ptp-modal{
+    position:relative;
+    width:min(360px, calc(100vw - 36px));
+    max-height:calc(100dvh - 36px);
+    overflow:auto;
+    box-sizing:border-box;
+    padding:25px 20px 22px;
+    border:2px solid #111;
+    border-radius:4px;
+    background:#F6F0DF;
+    color:#111;
+    box-shadow:7px 7px 0 #118ee8;
+    outline:none;
+    -webkit-overflow-scrolling:touch;
+  }
+  .ptp-modal-accent{
+    width:54px;
+    height:5px;
+    margin:0 0 13px;
+    background:#f2cc21;
+    transform:rotate(-1deg);
+  }
+  .ptp-modal h2{
+    margin:0 35px 15px 0;
+    font-size:1.28rem;
+    line-height:1.08;
+    letter-spacing:.01em;
+  }
+  .ptp-modal p{
+    margin:0 0 12px;
+    font-size:.88rem;
+    line-height:1.48;
+  }
+  .ptp-modal-close{
+    position:absolute;
+    top:10px;
+    right:10px;
+    width:34px;
+    height:34px;
+    padding:0;
+    border:2px solid #111;
+    border-radius:50%;
+    background:#fff;
+    color:#111;
+    font:700 24px/28px Arial,sans-serif;
+    text-align:center;
+    cursor:pointer;
+  }
+  .ptp-modal-callout{
+    margin:15px 0;
+    padding:12px 13px;
+    border:2px solid #111;
+    background:#fff;
+    box-shadow:4px 4px 0 #f2cc21;
+  }
+  .ptp-modal-callout > strong{
+    display:block;
+    margin-bottom:6px;
+    font-size:.78rem;
+    letter-spacing:.07em;
+  }
+  .ptp-modal-callout span{
+    display:block;
+    font-size:.82rem;
+    line-height:1.42;
+  }
+  .ptp-modal-ending{
+    margin-bottom:0 !important;
+  }
+  .ptp-testimonial-card{
+    margin:0 0 13px;
+    padding:13px 14px;
+    border:1.5px solid #111;
+    background:#fff;
+  }
+  .ptp-testimonial-card:last-child{
+    margin-bottom:0;
+  }
+  .ptp-testimonial-card p{
+    margin:0 0 8px;
+    font-size:.9rem;
+    line-height:1.42;
+  }
+  .ptp-testimonial-card cite{
+    display:block;
+    font-size:.78rem;
+    font-style:normal;
+    font-weight:800;
+  }
+}
+
+html.ptp-modal-open,
+body.ptp-modal-open{
+  overflow:hidden !important;
+  overscroll-behavior:none !important;
+}
+</style>
+
+<style>
+/* CTA SPACING + CREDIBILITY TYPOGRAPHY ONLY — portrait isolated prototype */
+@media (max-width:600px) and (orientation:portrait){
+
+  /* Tighten cream space above CTA by ~50% without moving unrelated hero elements. */
+  body.mobile-woman-prototype .hero .hero-cta-row{
+    top:548px !important;
+  }
+
+  /* Preserve compact CTA height; strengthen label slightly only. */
+  body.mobile-woman-prototype .hero .hero-cta-row .cta{
+    font-size:1.22rem !important;
+    padding:10px 18px 11px !important;
+  }
+
+  /* Keep redirect note tightly associated; no added vertical spacing. */
+  body.mobile-woman-prototype .hero .hero-note{
+    top:615px !important;
+  }
+
+  /* Tighten space below note before credibility by reducing hero end height. */
+  body.mobile-woman-prototype .hero .copy{
+    min-height:670px !important;
+  }
+
+  /* Substantially enlarge credibility typography while preserving stacked structure. */
+  body.mobile-woman-prototype .mobile-trust-kicker{
+    font-size:1.04rem !important;
+    line-height:1.16 !important;
+  }
+  body.mobile-woman-prototype .mobile-trust-link{
+    font-size:1.02rem !important;
+    line-height:1.22 !important;
+  }
+  body.mobile-woman-prototype .mobile-trust-nyt{
+    font-size:1.55rem !important;
+    line-height:1.08 !important;
+  }
+  body.mobile-woman-prototype .mobile-trust-help p{
+    font-size:1.08rem !important;
+    line-height:1.4 !important;
+    max-width:315px !important;
+  }
+
+  /* Preserve viewport-safe modal behavior. */
+  body.mobile-woman-prototype .ptp-modal{
+    width:min(360px, calc(100vw - 36px)) !important;
+    max-height:calc(100dvh - 36px) !important;
+    overflow:auto !important;
+  }
+}
+</style>
+
+<style>
+/* CREDIBILITY REBALANCE ONLY — portrait isolated prototype */
+@media (max-width:600px) and (orientation:portrait){
+
+  /* Reduce AS FEATURED IN / NYT block ~35–40% from current enlarged state,
+     while keeping it more readable than the original compact version. */
+  body.mobile-woman-prototype .mobile-trust-press .mobile-trust-kicker{
+    font-size:.68rem !important;
+    line-height:1.18 !important;
+  }
+  body.mobile-woman-prototype .mobile-trust-nyt{
+    font-size:1.00rem !important;
+    line-height:1.12 !important;
+  }
+}
+</style>
+
+<style>
+/* STORY MODAL FIT + CREDIBILITY LINE BREAK ONLY — portrait isolated prototype */
+@media (max-width:600px) and (orientation:portrait){
+
+  /* Tighten Story modal vertical rhythm without changing width or type hierarchy. */
+  #story-modal .ptp-modal{
+    padding-top:22px !important;
+    padding-bottom:18px !important;
+  }
+  #story-modal .ptp-modal-accent{
+    margin-bottom:9px !important;
+  }
+  #story-modal .ptp-modal h2{
+    margin-bottom:10px !important;
+  }
+  #story-modal .ptp-modal p{
+    margin-bottom:8px !important;
+  }
+  #story-modal .ptp-modal-callout{
+    margin-top:10px !important;
+    margin-bottom:9px !important;
+    padding-top:9px !important;
+    padding-bottom:9px !important;
+  }
+  #story-modal .ptp-modal-callout > strong{
+    margin-bottom:5px !important;
+  }
+  #story-modal .ptp-modal-ending{
+    margin-top:0 !important;
+    margin-bottom:0 !important;
+  }
+
+  /* Keep Let us help you. as the closing line of the same thought. */
+  body.mobile-woman-prototype .mobile-trust-help p br{
+    display:block;
+  }
+}
+</style>
+
+<style>
+@media (max-width:600px) and (orientation:portrait){
+  #testimonials-modal .ptp-modal{
+    max-height:calc(100dvh - 36px) !important;
+    overflow-y:auto !important;
+    overflow-x:hidden !important;
+    -webkit-overflow-scrolling:touch;
+  }
+}
+</style>
+
+<style>
+/* FINAL SURGICAL HAMBURGER FUNCTIONALITY PASS — no page-layout changes */
+.atlanta-mobile-nav{display:none}
+
+@media (max-width:600px) and (orientation:portrait){
+  body.mobile-woman-prototype .mobile-menu-prototype{
+    pointer-events:auto !important;
+    cursor:pointer;
+    touch-action:manipulation;
+  }
+
+  /* Visual bars only: anchor and existing button box stay exactly where they are. */
+  body.mobile-woman-prototype .mobile-menu-prototype::before,
+  body.mobile-woman-prototype .mobile-menu-prototype::after,
+  body.mobile-woman-prototype .mobile-menu-prototype span{
+    width:22px !important;
+    height:2px !important;
+    margin-left:auto !important;
+    margin-right:auto !important;
+    margin-bottom:5px !important;
+  }
+
+  body.mobile-woman-prototype .atlanta-mobile-nav{
+    display:block;
+    position:fixed;
+    inset:0;
+    z-index:9998;
+    background:rgba(0,0,0,.20);
+  }
+  body.mobile-woman-prototype .atlanta-mobile-nav[hidden]{
+    display:none !important;
+  }
+  body.mobile-woman-prototype .atlanta-mobile-nav-panel{
+    position:absolute;
+    top:104px;
+    right:12px;
+    width:min(286px,calc(100vw - 24px));
+    box-sizing:border-box;
+    padding:10px 12px 12px;
+    border:2px solid #118ee8;
+    background:#070707;
+    box-shadow:4px 4px 0 rgba(17,142,232,.28);
+    text-align:left;
+  }
+  body.mobile-woman-prototype .atlanta-mobile-nav-panel a,
+  body.mobile-woman-prototype .atlanta-mobile-nav-close{
+    display:block;
+    width:100%;
+    box-sizing:border-box;
+    margin:0;
+    padding:10px 8px;
+    border:0;
+    border-bottom:1px solid rgba(255,255,255,.18);
+    background:transparent;
+    color:#fff;
+    font:700 .76rem/1.25 Arial,sans-serif;
+    letter-spacing:.02em;
+    text-align:left;
+    text-decoration:none;
+    cursor:pointer;
+  }
+  body.mobile-woman-prototype .atlanta-mobile-nav-panel a:last-child{
+    border-bottom:0;
+  }
+  body.mobile-woman-prototype .atlanta-mobile-nav-close{
+    padding-top:4px;
+    padding-bottom:8px;
+    color:#69bfff;
+    font-size:.68rem;
+    text-align:right;
+  }
+  body.mobile-woman-prototype .atlanta-mobile-nav-panel a:active,
+  body.mobile-woman-prototype .atlanta-mobile-nav-close:active{
+    opacity:.72;
+  }
+}
+</style>
+
+
+<style>
+/* Keep portrait-only expanded credibility markup hidden outside the mobile layout. */
+body.atlanta .mobile-expanded-credibility{display:none}
+
+/* Atlanta trust transition — surgical desktop/mobile credibility message insertion only. */
+body.atlanta .atlanta-trust-transition{box-sizing:border-box}
+body.atlanta .atlanta-trust-transition .atlanta-trust-transition-inner{box-sizing:border-box;text-align:center}
+@media (min-width:901px){
+  body.atlanta .atlanta-trust-transition{width:min(1080px,92vw);margin:0 auto;border-top:1px solid rgba(17,17,17,.22);border-bottom:1px solid rgba(17,17,17,.22)}
+  body.atlanta .atlanta-trust-transition-inner{padding:10px 18px 11px;font-family:Georgia,"Times New Roman",serif;font-size:1.08rem;line-height:1.3;color:#111}
+  body.atlanta .atlanta-trust-transition-blue{color:#0a7fc7;font-weight:700}
+  body.atlanta .atlanta-trust-transition-mobile-break{display:none}
+}
+@media (max-width:900px){
+  body.atlanta .atlanta-trust-transition{width:min(330px,calc(100% - 40px));margin:0 auto;border-top:1px solid rgba(17,17,17,.18);border-bottom:1px solid rgba(17,17,17,.18)}
+  body.atlanta .atlanta-trust-transition-inner{padding:12px 4px 13px;font-family:Arial,Helvetica,sans-serif;font-size:.92rem;line-height:1.4;color:#111}
+  body.atlanta .atlanta-trust-transition-blue{color:#0a7fc7;font-weight:700}
+  body.atlanta .atlanta-trust-transition-mobile-break{display:block}
+}
+</style>
+
+<style>
+/* Atlanta icon-container revision: independently removable availability-header icon only. */
+body.atlanta .availability-heading{position:relative}
+body.atlanta .availability-calendar-icon{
+  position:absolute;left:12px;top:50%;transform:translateY(-50%);
+  display:block;width:44px;height:44px;box-sizing:border-box;padding:7px;
+  border:2px solid #111;border-radius:50%;background:#fff;color:#111;pointer-events:none;
+}
+body.atlanta .availability-calendar-icon svg{display:block;width:100%;height:100%;overflow:visible}
+
+/* Desktop-only calendar-icon placement; removable without affecting the mobile experiment. */
+@media (min-width:901px){
+  body.atlanta .availability-calendar-icon{left:12px}
+}
+
+/* Mobile-only calendar-icon treatment; removable independently from desktop. */
+@media (max-width:600px){
+  body.atlanta .availability-calendar-icon{left:7px;width:38px;height:38px;padding:6px}
+}
+
+/* Keep the urgency sentence on its own compact line beneath the availability note. */
+body.atlanta .availability-top-urgency{display:block;margin-top:1px}
+
+/* Atlanta-only removal of the primary desktop hero's enlarge affordance. */
+body.atlanta .hero .visual .hero-art{cursor:default!important}
+body.atlanta .hero .visual::after{display:none!important}
+
+/* Keep the Step 4 NDA term intact; desktop receives the requested break before it. */
+.atlanta-desktop-nda-break{display:none}
+@media (min-width:901px){.atlanta-desktop-nda-break{display:inline}}
+.atlanta-nda-term{white-space:nowrap}
+</style>
 </head>
-<body class="atlanta">
-<header class="topbar"><div class="wrap brand">PAID TO <span>PLAY</span> TESTING</div><div class="brand-sherpa-tagline">Your Tech Study Sherpa — Guiding You From Application to Testing</div><button class="atlanta-mobile-menu" type="button" aria-label="Menu" tabindex="-1"><span></span></button></header>
+<body class="atlanta mobile-woman-prototype">
+<header class="topbar"><div class="wrap brand">PAID TO <span>PLAY</span> TESTING</div><div class="brand-sherpa-tagline">Your Tech Study Sherpa — Guiding You From Application to Testing</div><button class="atlanta-mobile-menu" type="button" aria-label="Menu" tabindex="-1"><span></span></button><button class="mobile-menu-prototype" type="button" aria-label="Menu" aria-expanded="false" aria-controls="atlanta-mobile-nav"><span></span></button></header>
+<nav class="atlanta-mobile-nav" id="atlanta-mobile-nav" aria-label="Mobile navigation" hidden>
+  <div class="atlanta-mobile-nav-panel">
+    <button class="atlanta-mobile-nav-close" type="button">CLOSE</button>
+    <a href="https://utest.com/c-signup/wearables-atl-ambassador-1436373" target="_blank" rel="noopener noreferrer">APPLY FOR THE ATLANTA STUDY</a>
+    <a href="#atlanta-story-modal" data-modal-open="atlanta-story-modal">OUR STORY</a>
+    <a href="#atlanta-testimonials-modal" data-modal-open="atlanta-testimonials-modal">TESTIMONIALS</a>
+    <a href="mailto:info@paidtoplaytesting.com">CONTACT</a>
+    <a href="https://www.paidtoplaytesting.com/" target="_blank" rel="noopener noreferrer">VISIT MAIN WEBSITE</a>
+  </div>
+</nav>
 <div class="atlanta-desktop-utility-menu" id="atlanta-desktop-utility-menu" hidden aria-hidden="true">
   <div class="atlanta-desktop-utility-panel" role="dialog" aria-modal="false" aria-label="Atlanta page menu">
     <button type="button" class="atlanta-desktop-menu-close">CLOSE</button>
@@ -301,8 +1783,9 @@ html.atlanta-modal-open,body.atlanta-modal-open{overflow:hidden!important;oversc
 <div class="wrap hero-grid">
   <div class="copy">
     <div class="kicker">ATLANTA AREA •<br class="atlanta-desktop-ribbon-break"> SANDY SPRINGS</div>
-    <div class="atlanta-mobile-woman" aria-hidden="true"><img src="../assets/atlanta-mobile-woman.png" alt=""></div>
-    <div class="atlanta-mobile-vr" aria-hidden="true"><img src="../assets/atlanta-mobile-vr.png" alt=""></div>
+    <div class="mobile-woman-stage" aria-hidden="true"><img src="../assets/atlanta-mobile-woman.png" alt=""></div>
+    <div class="mobile-promo-stage" aria-hidden="true"><img src="../assets/atlanta-mobile-promo.png" alt=""></div>
+    <div class="mobile-vr-stage" aria-hidden="true"><img src="../assets/atlanta-mobile-vr.png" alt=""></div>
     <h1>Get Paid<br><span class="blue">to Play!</span></h1>
     <p class="lead"><strong>Test wearable technology and<span class="atlanta-desktop-break"><br></span> <span class="mobile-earn-break"><br></span><span class="earn">earn&nbsp;$120</span></strong><span class="desktop-lead-break"><br></span> for an approximately<span class="atlanta-desktop-break"><br></span> <span class="mobile-three-hour-break"><br></span>3-hour, in-person session.</p>
     <div class="offer offer-interactive" aria-label="Study details">
@@ -316,11 +1799,11 @@ html.atlanta-modal-open,body.atlanta-modal-open{overflow:hidden!important;oversc
         <div class="offer-popover-copy"></div>
       </div>
     </div>
-    <p class="session-times"><span class="hero-thanks"><span class="hero-thanks-full">Thank you for your interest in the wearables study!</span><span class="atlanta-desktop-thanks">Thank you for your interest in the study!</span><span class="hero-thanks-mobile">Thank you for your interest in the study!</span></span>Weekday sessions are<span class="atlanta-session-offered"> offered</span><span class="mobile-session-break"><br></span> at<span class="atlanta-desktop-break"><br></span> <strong>9:30 AM</strong> and <strong class="time-2pm">2 PM</strong>.<span class="atlanta-desktop-hidden"><br><span class="keep-together">No technology experience is required.</span><span class="desktop-eligibility-break"><br></span> Participation is subject to eligibility and successful screening.</span></p>
+    <p class="session-times"><span class="hero-thanks"><span class="hero-thanks-full">Thank you for your interest in the wearables study!</span><span class="atlanta-desktop-thanks">Thank you for your interest in the study!</span><span class="hero-thanks-mobile">Thank you for your interest in the study!</span></span>Weekday sessions are<span class="atlanta-session-offered"> offered</span><span class="mobile-session-break"><br></span> at<span class="atlanta-desktop-break"><br></span> <strong>9:30 AM</strong> and <strong class="time-2pm">2 PM</strong>.<span class="atlanta-desktop-hidden"><br><span class="keep-together">No technology experience required.</span><span class="desktop-eligibility-break"><br></span> Participation is subject to eligibility and successful screening.</span></p>
     <p class="hero-cta-row"><a class="cta" href="#before-you-apply"><span class="cta-atl-prefix">Apply for the</span> <span class="cta-atl-rest">Atlanta Study</span></a></p>
     <p class="note hero-note">You'll continue to the official<span class="atlanta-mobile-redirect-break"><br></span> uTest registration process.</p>
     <div class="atlanta-desktop-post-cta" aria-label="Additional study requirements">
-      <p class="atlanta-desktop-no-tech">No technology experience is required.</p>
+      <p class="atlanta-desktop-no-tech">No technology experience required.</p>
       <p class="atlanta-desktop-eligibility">Participation is subject to eligibility and successful screening.</p>
     </div>
   </div>
@@ -329,34 +1812,40 @@ html.atlanta-modal-open,body.atlanta-modal-open{overflow:hidden!important;oversc
 </section>
 
 
+
+<div class="atlanta-trust-transition" aria-label="Paid to Play Testing trust statement">
+  <div class="atlanta-trust-transition-inner">Real people. Real testing opportunities. <br class="atlanta-trust-transition-mobile-break"><span class="atlanta-trust-transition-blue">Personal help when you need it.</span></div>
+</div>
+
 <section class="hero-credibility" aria-label="Paid to Play Testing credibility">
 <div class="wrap credibility-grid">
 <div class="credibility-item credibility-story"><span>FROM TESTER TO</span><strong>TESTING SHERPA</strong><a class="atlanta-desktop-trust-link" href="#atlanta-story-modal" data-modal-open="atlanta-story-modal">Our Story →</a></div>
 <div class="credibility-item credibility-help"><strong>NEED HELP?</strong><span>We’ve assisted hundreds of prospective participants along the way. Let us help you.</span><a class="atlanta-desktop-trust-link" href="#atlanta-testimonials-modal" data-modal-open="atlanta-testimonials-modal">Read Testimonials →</a></div>
 <div class="credibility-item credibility-press"><span class="credibility-eyebrow">AS FEATURED IN</span><strong>The New York Times</strong><span class="atlanta-desktop-contact">Questions? <a href="mailto:info@paidtoplaytesting.com">info@paidtoplaytesting.com</a></span></div>
 </div>
-<div class="atlanta-mobile-credibility">
-  <div class="atlanta-mobile-trust-block atlanta-mobile-trust-story">
-    <div class="atlanta-mobile-trust-kicker">FROM TESTER TO TESTING SHERPA</div>
-    <a class="atlanta-mobile-trust-link" href="#atlanta-story-modal" data-modal-open="atlanta-story-modal">Our Story →</a>
+<div class="mobile-expanded-credibility">
+  <div class="mobile-trust-block mobile-trust-story">
+    <div class="mobile-trust-kicker">FROM TESTER TO TESTING SHERPA</div>
+    <a class="mobile-trust-link" href="#atlanta-story-modal" data-modal-open="atlanta-story-modal">Our Story →</a>
   </div>
-  <div class="atlanta-mobile-trust-block atlanta-mobile-trust-help">
-    <div class="atlanta-mobile-trust-kicker">NEED HELP?</div>
+  <div class="mobile-trust-block mobile-trust-help">
+    <div class="mobile-trust-kicker">NEED HELP?</div>
     <p>We’ve assisted hundreds of prospective participants along the way.<br><strong>Let us help you.</strong></p>
-    <a class="atlanta-mobile-trust-link" href="#atlanta-testimonials-modal" data-modal-open="atlanta-testimonials-modal">Read Testimonials →</a>
+    <a class="mobile-trust-link" href="#atlanta-testimonials-modal" data-modal-open="atlanta-testimonials-modal">Read Testimonials →</a>
   </div>
-  <div class="atlanta-mobile-trust-block atlanta-mobile-trust-press">
-    <div class="atlanta-mobile-trust-kicker">AS FEATURED IN</div>
-    <div class="atlanta-mobile-trust-nyt">The New York Times</div>
+  <div class="mobile-trust-block mobile-trust-press">
+    <div class="mobile-trust-kicker">AS FEATURED IN</div>
+    <div class="mobile-trust-nyt">The New York Times</div>
   </div>
 </div>
+
 </section>
 
 <section id="before-you-apply">
 <div class="wrap">
   <div class="warning pro-tip">
     <div class="tip-copy">
-      <div class="tip-label">💡 PRO TIP</div>
+      <div class="tip-label" style="max-width:none;white-space:nowrap">💡 PRO TIP — PLEASE READ</div>
       <h2>Keep Your Application<span class="desktop-only-break"><br></span> Tab or Window Open</h2>
       <p>You'll first create a uTest account and follow a link to complete the study's application/screener and NDA (non-disclosure agreement).</p>
 <p>After creating your uTest account, you'll be asked to confirm your account by email.</p>
@@ -385,9 +1874,9 @@ html.atlanta-modal-open,body.atlanta-modal-open{overflow:hidden!important;oversc
       </figure>
 
       <section class="availability-tool" data-location="atl" data-api="https://script.google.com/macros/s/AKfycbybIuYUdhAe6B5LjxmZ5iRROS6uQvQiFzmTQsz5Bb8fDRh1vysUhF6ySNU6qO9QHI0i/exec">
-        <div class="availability-heading"><span class="availability-title">CHECK CURRENT AVAILABILITY</span><span class="availability-location">Loading…</span></div>
+        <div class="availability-heading"><span class="availability-calendar-icon" aria-hidden="true"><svg viewBox="0 0 32 32" focusable="false"><rect x="4.75" y="7" width="22.5" height="20" rx="2.5" fill="none" stroke="currentColor" stroke-width="2.5"/><path d="M5 13h22M10 4.5v5M22 4.5v5" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><g fill="currentColor"><rect x="9" y="16" width="3.5" height="3.5" rx=".5"/><rect x="14.25" y="16" width="3.5" height="3.5" rx=".5"/><rect x="19.5" y="16" width="3.5" height="3.5" rx=".5"/><rect x="9" y="21" width="3.5" height="3.5" rx=".5"/><rect x="14.25" y="21" width="3.5" height="3.5" rx=".5"/><rect x="19.5" y="21" width="3.5" height="3.5" rx=".5"/></g></svg></span><span class="availability-title">CHECK CURRENT AVAILABILITY</span><span class="availability-location">Loading…</span></div>
         <div class="availability-meta">Last updated: <strong class="availability-updated">Loading…</strong></div>
-        <p class="availability-top-note">Availability may change. Current information is shown for planning purposes.</p>
+        <p class="availability-top-note">Availability may change. Current information is shown for planning purposes. <strong class="availability-top-urgency">Sign up soon to help secure your preferred slot.</strong></p>
         <div class="availability-legend" aria-label="Availability status legend"><span><i class="lg-available"></i>Available</span><span><i class="lg-limited"></i>Limited</span><span><i class="lg-few"></i>Few slots left</span><span><i class="lg-full"></i>Full</span></div>
         <div class="availability-weeks" aria-live="polite">
           <div class="availability-loading">Loading current availability…</div>
@@ -418,7 +1907,7 @@ html.atlanta-modal-open,body.atlanta-modal-open{overflow:hidden!important;oversc
             <label><span>Backup Date #1 (optional)</span><input name="backup_date_1" type="date"></label>
             <label><span>Backup Date #2 (optional)</span><input name="backup_date_2" type="date"></label>
           </div>
-          <p class="preference-note"><strong>This is a scheduling preference only.</strong> It does not reserve or confirm a session. Availability may change. <strong>Your session is not officially scheduled until confirmed by uTest directly.</strong> You may also select a future date not shown on this calendar, pending availability. <strong>If we have the necessary information, we will forward your preferences.</strong> <strong>If you’re unsure of your backup dates, you may leave them blank or update your preferences later.</strong> <strong>Earlier dates are encouraged, as availability is limited and study opportunities may fill or change at any time.</strong><br><strong class="slots-urgency">Slots tend to fill quickly.</strong></p>
+          <p class="preference-note"><strong>This is a scheduling preference only.</strong> It does not reserve or confirm a session. Availability may change. <strong>Your session is not officially scheduled until confirmed by uTest directly.</strong> You may also select a future date not shown on this calendar, pending availability. <strong>If we have the necessary information, we will forward your preferences.</strong> <strong>If you’re unsure of your backup dates, you may leave them blank or update your preferences later.</strong> <strong>Earlier dates are encouraged, as availability is limited and study opportunities may fill or change at any time.</strong></p>
           <button class="preference-submit" type="submit">Submit Scheduling Preferences</button>
           
           <p class="preference-status" role="status" aria-live="polite"></p>
@@ -454,7 +1943,7 @@ html.atlanta-modal-open,body.atlanta-modal-open{overflow:hidden!important;oversc
     <div class="step"><b>1. Create your account</b>Use the official uTest signup page reached through the button below.</div>
     <div class="step"><b>2. Preserve the uTest tab</b>Confirm your email in an app, different tab, or another device. Then return to the original uTest tab. If you lose it, don’t create a second account.</div>
     <div class="step"><b>3. Continue & submit</b>Click <strong>Continue To Application</strong>, then complete and submit the study application/screener.</div>
-    <div class="step"><b>4. Complete your NDA</b>Complete the required Non-Disclosure Agreement before participating in the test.</div>
+    <div class="step"><b>4. Complete your NDA</b>Complete the required<span class="atlanta-desktop-nda-break"><br></span> <span class="atlanta-nda-term">Non-Disclosure Agreement</span> before participating in the test.</div>
   </div>
 
   <div class="nda-note">
@@ -473,7 +1962,7 @@ html.atlanta-modal-open,body.atlanta-modal-open{overflow:hidden!important;oversc
     </div>
     <div class="atlanta-action-cta">
       <p class="atlanta-action-cta-button"><a class="cta" href="https://utest.com/c-signup/wearables-atl-ambassador-1436373" rel="noopener noreferrer" target="_blank">Continue to Official uTest Application</a></p>
-      <p class="note" style="text-align:center">A new tab will open to continue through the official uTest application flow.<span class="desktop-app-note-break"><br></span><span class="desktop-first-app-note-gap"></span> You can switch back to this tab at any time if you need assistance or want to check or update your scheduling preferences.</p>
+      <p class="note" style="text-align:center">A new tab will open to continue through the official uTest application flow.<span class="desktop-app-note-break"><br></span><span class="desktop-first-app-note-gap"></span> You can switch back to this tab at any time if you need assistance or want to submit or update your scheduling preferences.</p>
     </div>
   </div>
 </div>
@@ -528,7 +2017,7 @@ html.atlanta-modal-open,body.atlanta-modal-open{overflow:hidden!important;oversc
 
 <div class="bottom-official-cta-block">
   <p class="bottom-official-cta-button"><a class="cta" href="https://utest.com/c-signup/wearables-atl-ambassador-1436373" rel="noopener noreferrer" target="_blank" rel="noopener noreferrer">Continue to Official uTest Application</a></p>
-  <p class="note" style="text-align:center">A new tab will open to continue through the official uTest application flow.<span class="desktop-app-note-break"><br></span> You can switch back to this tab at any time if you need assistance or want to check or update your scheduling preferences.</p>
+  <p class="note" style="text-align:center">A new tab will open to continue through the official uTest application flow.<span class="desktop-app-note-break"><br></span> You can switch back to this tab at any time if you need assistance or want to submit or update your scheduling preferences.</p>
 </div>
 
 
@@ -820,7 +2309,7 @@ html.atlanta-modal-open,body.atlanta-modal-open{overflow:hidden!important;oversc
   const details = {
     payment: '<strong>Quick, convenient payment options.</strong> After completing the study, choose a Tremendous Virtual Visa or PayPal transfer. <strong>And keep an eye out for additional opportunities to earn through other tests and bonuses.</strong>',
     duration: '<strong>Plan ahead for your visit.</strong> Please arrive about 15 minutes before your appointment and allow extra time for transportation delays. Rescheduling opportunities may be limited.',
-    age: '<strong>We welcome adults of all ages, backgrounds, and<span class="adult-desktop-break"><br></span> walks of life.</strong>'
+    age: '<strong>We welcome adults of all ages, backgrounds, and walks of life.</strong>'
   };
 
   function hideDetail(){
@@ -962,7 +2451,7 @@ html.atlanta-modal-open,body.atlanta-modal-open{overflow:hidden!important;oversc
     if(previousFocus && typeof previousFocus.focus === 'function') previousFocus.focus();
   }
 
-  document.querySelectorAll('.hero-art, .instruction-shot img, .secondary-centered .secondary').forEach(img => {
+  document.querySelectorAll('.instruction-shot img, .secondary-centered .secondary').forEach(img => {
     img.setAttribute('tabindex','0');
     img.setAttribute('role','button');
     img.setAttribute('aria-label',(img.alt || 'Study graphic') + ' — enlarge');
@@ -993,12 +2482,12 @@ html.atlanta-modal-open,body.atlanta-modal-open{overflow:hidden!important;oversc
     <div class="atlanta-modal-accent" aria-hidden="true"></div>
     <h2 id="atlanta-story-modal-title">FROM TESTER TO<br>TESTING SHERPA</h2>
     <p>Paid to Play Testing grew out of firsthand experience participating in paid technology studies beginning in <strong>2022</strong>.</p>
-    <p>By <strong>2023</strong>, that experience had evolved into helping other prospective participants discover opportunities and navigate the testing process.</p>
+    <p>By <strong>2023</strong>, that experience had evolved into helping others discover opportunities and navigate the testing process.</p>
     <p>Since then, we have <strong>assisted hundreds of prospective participants along the way</strong>.</p>
-    <p>Daniel also serves as a <strong>uTest Ambassador</strong>, helping participants better understand and navigate the process.</p>
+    <p>Daniel also serves as a <strong>uTest Ambassador</strong>, bringing firsthand knowledge of the testing process to those looking for opportunities.</p>
     <div class="atlanta-modal-callout">
       <strong>BOSSUP WINNER</strong>
-      <span>Digital Design Trusted Technologies was selected as a winner in the <strong>BossUp competition</strong>, a Shark-Tank-style entrepreneurial contest.</span>
+      <span>We were selected as a winner in the <strong>BossUp competition</strong>, a Shark-Tank-style entrepreneurial contest.</span>
     </div>
     <p class="atlanta-modal-ending"><strong>We know the process because we've been through it ourselves.</strong></p>
   </section>
@@ -1066,9 +2555,65 @@ html.atlanta-modal-open,body.atlanta-modal-open{overflow:hidden!important;oversc
     closeMenu(false);
   });
   document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!menu.hidden)closeMenu(true)});
+  window.addEventListener('scroll',()=>{if(!menu.hidden)closeMenu(false)},{passive:true});
   if(desktopMQ.addEventListener)desktopMQ.addEventListener('change',sync);else desktopMQ.addListener(sync);
   sync();
 })();
+</script>
+
+<script>
+(function(){
+  var menuButton = document.querySelector('.mobile-menu-prototype');
+  var menu = document.getElementById('atlanta-mobile-nav');
+  var closeButton = menu ? menu.querySelector('.atlanta-mobile-nav-close') : null;
+  if (!menuButton || !menu || !closeButton) return;
+
+  function setMenu(open) {
+    menu.hidden = !open;
+    menuButton.setAttribute('aria-expanded', open ? 'true' : 'false');
+  }
+
+  menuButton.addEventListener('click', function(e){
+    e.stopPropagation();
+    setMenu(menu.hidden);
+  });
+
+  closeButton.addEventListener('click', function(){
+    setMenu(false);
+    menuButton.focus();
+  });
+
+  menu.addEventListener('click', function(e){
+    if (e.target === menu) setMenu(false);
+  });
+
+  menu.querySelectorAll('a').forEach(function(link){
+    link.addEventListener('click', function(){
+      setMenu(false);
+    });
+  });
+
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape' && !menu.hidden) {
+      setMenu(false);
+      menuButton.focus();
+    }
+  });
+
+  window.addEventListener('scroll', function(){
+    if (!menu.hidden) setMenu(false);
+  }, {passive:true});
+})();
+</script>
+
+<script>
+/* Atlanta image-only context-menu and native-drag deterrent; independently removable. */
+document.addEventListener('contextmenu', function(e){
+  if (e.target && e.target.closest && e.target.closest('img')) e.preventDefault();
+});
+document.addEventListener('dragstart', function(e){
+  if (e.target && e.target.closest && e.target.closest('img')) e.preventDefault();
+});
 </script>
 
 </body>
