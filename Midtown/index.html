@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="format-detection" content="telephone=no">
 <title>Midtown Wearable Technology Study | Paid to Play Testing</title>
 <meta name="description" content="New York City-area adults: apply for an in-person wearable technology testing opportunity in Midtown Manhattan paying $150 for approximately 3 hours.">
 <link rel="stylesheet" href="../assets/style.css?v=1393">
@@ -11,22 +12,22 @@
 
 <style>
 .brand-sherpa-tagline{
- margin-top:5px;
- font-size:13px;
- line-height:1.25;
- font-style:italic;
- font-weight:500;
- color:#f2f2f2;
- text-align:center;
- letter-spacing:.1px;
+  margin-top:5px;
+  font-size:13px;
+  line-height:1.25;
+  font-style:italic;
+  font-weight:500;
+  color:#f2f2f2;
+  text-align:center;
+  letter-spacing:.1px;
 }
 @media (max-width:600px){
- .brand-sherpa-tagline{
- font-size:11px;
- line-height:1.25;
- margin-top:4px;
- padding:0 12px;
- }
+  .brand-sherpa-tagline{
+    font-size:11px;
+    line-height:1.25;
+    margin-top:4px;
+    padding:0 12px;
+  }
 }
 </style>
 
@@ -37,30 +38,30 @@
 header.site-header,
 .topbar,
 header.topbar {
- text-align: center;
+  text-align: center;
 }
 .site-header .brand,
 header.site-header .brand,
 .topbar .brand,
 header.topbar .brand {
- width: 100%;
- margin-left: auto;
- margin-right: auto;
- text-align: center;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
 }
 .brand-sherpa-tagline {
- text-align: center;
+  text-align: center;
 }
 </style>
 
 
 <style>
 header.topbar {
- text-align:center !important;
+  text-align:center !important;
 }
 header.topbar > * {
- margin-left:auto !important;
- margin-right:auto !important;
+  margin-left:auto !important;
+  margin-right:auto !important;
 }
 </style>
 
@@ -68,27 +69,92 @@ header.topbar > * {
 <style>
 /* v41: slightly tighten the separation between the application CTA and What to expect */
 .two-col {
- margin-top: -22px;
+  margin-top: -22px;
 }
 @media (max-width: 700px) {
- .two-col {
- margin-top: -16px;
- }
+  .two-col {
+    margin-top: -16px;
+  }
+}
+
+/* Atlanta desktop parity with the locked Midtown hero rhythm.
+   Desktop only: mobile/tablet markup behavior remains unchanged. */
+.atlanta-desktop-break,
+.atlanta-desktop-thanks {
+  display: none;
+}
+@media (min-width: 901px) {
+  body.atlanta .hero .atlanta-desktop-break {
+    display: inline;
+  }
+  body.atlanta .hero .desktop-lead-break {
+    display: none;
+  }
+  body.atlanta .hero .hero-thanks-full {
+    display: none;
+  }
+  body.atlanta .hero .atlanta-desktop-thanks {
+    display: inline;
+  }
+  body.atlanta .hero .atlanta-desktop-hidden {
+    display: none;
+  }
 }
 </style>
 
-
 <style>
-/* v42: match Midtown's CTA-to-What-to-expect visual spacing to Atlanta */
-@media (min-width: 701px) {
- .two-col {
- margin-top: -38px;
- }
+/* ATLANTA DESKTOP CONSOLIDATED POLISH — desktop only; portrait mobile remains locked. */
+.atlanta-desktop-ribbon-break{display:none}
+.atlanta-desktop-post-cta{display:none}
+.midtown-mobile-ribbon-text{display:none}
+@media (max-width:600px) and (orientation:portrait){
+  .midtown-desktop-ribbon-text{display:none}
+  .midtown-mobile-ribbon-text{display:inline}
 }
-@media (max-width: 700px) {
- .two-col {
- margin-top: -24px;
- }
+@media (min-width:901px){
+  body.atlanta .hero .atlanta-desktop-ribbon-break{display:block}
+
+  /* Slightly more breathing room through the established desktop hero rhythm. */
+  body.atlanta .hero .offer{margin:16px auto 18px!important}
+  body.atlanta .hero .session-times{margin:3px auto 12px!important}
+  body.atlanta .hero .hero-cta-row{margin-top:13px!important;margin-bottom:9px!important}
+  body.atlanta .hero .hero-note{margin-top:8px!important}
+  body.atlanta .hero{padding-bottom:47px!important}
+  body.atlanta .hero .atlanta-desktop-post-cta{display:block;margin:10px auto 0;max-width:430px;text-align:center}
+  body.atlanta .hero .atlanta-desktop-no-tech{margin:0;font-size:.94rem;line-height:1.35;font-weight:700}
+  body.atlanta .hero .atlanta-desktop-eligibility{margin:8px 0 0;font-size:.74rem;line-height:1.35;font-weight:400}
+
+  /* Desktop credibility order: Story | Need Help | Press. */
+  body.atlanta .credibility-grid{grid-template-columns:1fr 1.18fr 1fr}
+  body.atlanta .credibility-item{gap:5px;transform:translateY(21px)}
+  body.atlanta .credibility-story>span{font-size:.79rem;letter-spacing:.025em}
+  body.atlanta .credibility-story>strong{margin-top:0}
+  body.atlanta .credibility-help>strong{font-size:.85rem;line-height:1.1;letter-spacing:.04em}
+  body.atlanta .credibility-help>span{max-width:300px;font-size:.86rem;line-height:1.32}
+  body.atlanta .atlanta-desktop-trust-link{display:inline-block;margin-top:3px;color:#0a7fc7;font-size:.78rem;line-height:1.15;font-weight:800;text-decoration:underline;text-underline-offset:2px}
+  body.atlanta .credibility-press .credibility-eyebrow{font-size:.62rem;margin-bottom:2px}
+  body.atlanta .credibility-press>strong{font-size:1.12rem}
+
+  /* Desktop-only spacing test: modest breathing room after credibility strip. */
+  body.atlanta .hero-credibility{padding-bottom:69px}
+
+  /* Reuse the approved Atlanta modal language on desktop without touching mobile rules. */
+  body.atlanta .atlanta-modal-backdrop{position:fixed;inset:0;z-index:10000;display:flex;align-items:center;justify-content:center;padding:24px;box-sizing:border-box;background:rgba(0,0,0,.62);overscroll-behavior:contain}
+  body.atlanta .atlanta-modal-backdrop[hidden]{display:none!important}
+  body.atlanta .atlanta-modal{position:relative;width:min(560px,calc(100vw - 48px));max-height:calc(100vh - 64px);overflow:auto;overflow-x:hidden;box-sizing:border-box;padding:28px 26px 25px;border:2px solid #111;border-radius:4px;background:#F6F0DF;color:#111;box-shadow:7px 7px 0 #118ee8;outline:none;-webkit-overflow-scrolling:touch}
+  body.atlanta .atlanta-modal-accent{width:54px;height:5px;margin:0 0 13px;background:#f2cc21;transform:rotate(-1deg)}
+  body.atlanta .atlanta-modal h2{margin:0 42px 15px 0;font-size:1.42rem;line-height:1.08;letter-spacing:.01em}
+  body.atlanta .atlanta-modal p{margin:0 0 12px;font-size:.94rem;line-height:1.5}
+  body.atlanta .atlanta-modal-close{position:absolute;top:12px;right:12px;width:36px;height:36px;padding:0;border:2px solid #111;border-radius:50%;background:#fff;color:#111;font:700 25px/30px Arial,sans-serif;text-align:center;cursor:pointer}
+  body.atlanta .atlanta-modal-callout{margin:16px 0;padding:13px 14px;border:2px solid #111;background:#fff;box-shadow:4px 4px 0 #f2cc21}
+  body.atlanta .atlanta-modal-callout>strong{display:block;margin-bottom:6px;font-size:.8rem;letter-spacing:.07em}
+  body.atlanta .atlanta-modal-callout span{display:block;font-size:.88rem;line-height:1.44}
+  body.atlanta .atlanta-modal-ending{margin-bottom:0!important}
+  body.atlanta .atlanta-testimonial-card{margin:0 0 13px;padding:14px 15px;border:1.5px solid #111;background:#fff}
+  body.atlanta .atlanta-testimonial-card:last-child{margin-bottom:0}
+  body.atlanta .atlanta-testimonial-card p{margin:0 0 8px;font-size:.95rem;line-height:1.44}
+  body.atlanta .atlanta-testimonial-card cite{display:block;font-size:.8rem;font-style:normal;font-weight:800}
+  body.atlanta #atlanta-story-modal .atlanta-modal{padding-top:24px;padding-bottom:21px}
 }
 </style>
 
@@ -99,555 +165,2375 @@ header.topbar > * {
   plausible.init()
 </script>
 
+
+<style>
+/* ATLANTA LOCKED PORTRAIT MOBILE IMPLEMENTATION — approved 2026-08-18 */
+.atlanta-mobile-woman,.atlanta-mobile-vr,.atlanta-mobile-menu,.atlanta-mobile-credibility{display:none}
+.atlanta-mobile-redirect-break{display:none}
+
+@media (max-width:600px) and (orientation:portrait){
+  html,body.atlanta{max-width:100%;overflow-x:clip}
+  @supports not (overflow:clip){html,body.atlanta{overflow-x:hidden}}
+
+  body.atlanta .topbar{
+    position:relative!important;z-index:auto!important;overflow:visible!important;background:transparent!important;
+    min-height:118px;padding:20px 48px 15px 16px;border-bottom:4px solid #118ee8;box-sizing:border-box;
+  }
+  body.atlanta .topbar::before{content:"";position:absolute;inset:0;z-index:0;background:#070707;pointer-events:none}
+  body.atlanta .topbar .brand{position:relative;z-index:30!important;width:auto!important;font-size:21px;line-height:1.08;letter-spacing:.7px}
+  body.atlanta .brand-sherpa-tagline{position:relative;z-index:30!important;max-width:300px;margin:8px auto 0!important;font-size:11px;line-height:1.45;font-style:normal}
+  body.atlanta .atlanta-mobile-menu{display:none;position:absolute;z-index:30!important;right:18px;top:27px;width:29px;height:24px;padding:0;border:0;background:transparent;pointer-events:none}
+  body.atlanta .atlanta-mobile-menu::before,body.atlanta .atlanta-mobile-menu::after,body.atlanta .atlanta-mobile-menu span{content:"";display:block;width:29px;height:3px;margin:0 0 6px;border-radius:2px;background:#fff}
+
+  body.atlanta .hero{position:relative!important;z-index:auto!important;background:#F6F0DF;padding:20px 0 14px!important;overflow:visible!important}
+  body.atlanta .hero-grid{display:block}
+  body.atlanta .hero .copy{position:relative;min-height:670px!important;text-align:left;isolation:isolate;overflow:visible!important}
+  body.atlanta .hero .visual{display:none!important}
+
+  body.atlanta .atlanta-mobile-woman{display:block;position:absolute;top:-92px;right:-58px;width:167px;height:350px;overflow:visible;z-index:12;pointer-events:none}
+  body.atlanta .atlanta-mobile-woman img{position:absolute;display:block;width:181px;max-width:none;height:auto;top:0;right:-6px}
+  body.atlanta .atlanta-mobile-vr{display:block;position:absolute;top:286px;right:-10px;width:179px;height:auto;overflow:visible;z-index:16;pointer-events:none;transform:rotate(2.5deg);transform-origin:center}
+  body.atlanta .atlanta-mobile-vr img{display:block;width:100%;height:auto;max-width:none}
+
+  body.atlanta .hero .kicker{position:relative;z-index:20!important;width:max-content;max-width:none!important;margin:0 0 14px!important;padding:7px 9px!important;font-size:.69rem!important;line-height:1.15;white-space:nowrap;transform:translate(24px,-12px) rotate(-1deg)!important}
+  body.atlanta .hero h1{position:relative;z-index:20!important;width:196px!important;margin:0 0 14px!important;font-size:40px!important;line-height:.88!important;white-space:nowrap;transform:translate(24px,-12px)!important}
+  body.atlanta .hero .lead{position:relative;z-index:20!important;width:214px!important;max-width:214px!important;margin:0!important;font-size:.91rem!important;line-height:1.48!important;text-align:left;transform:translate(24px,-12px)!important}
+
+  body.atlanta .hero .offer{position:relative;z-index:20!important;display:flex!important;flex-direction:column!important;align-items:center!important;gap:8px!important;width:254px!important;max-width:254px!important;margin:10px auto 17px!important;transform:translate(-48px,-12px)!important}
+  body.atlanta .hero .offer-lower-pair{display:flex!important;flex-direction:row!important;align-items:stretch!important;justify-content:center!important;gap:9px!important;width:auto!important}
+  body.atlanta .hero .pill{width:auto!important;min-height:38px!important;padding:8px 10px!important;font-size:.76rem!important;line-height:1.05!important;white-space:nowrap!important;box-shadow:3px 3px 0 #111!important}
+  body.atlanta .hero .offer-detail-trigger:first-of-type{width:190px!important}
+  body.atlanta .hero .offer-detail-trigger[data-detail="duration"]{width:137px!important}
+  body.atlanta .hero .offer-detail-trigger[data-detail="age"]{width:101px!important}
+  body.atlanta .offer-detail-trigger{position:relative!important;touch-action:manipulation}
+  body.atlanta .offer-detail-trigger::after{content:"›";position:absolute;right:10px;top:50%;transform:translateY(-52%);font-size:.92em;line-height:1;font-weight:700;opacity:.58;pointer-events:none}
+  body.atlanta .offer-detail-trigger:active{transform:translate(2px,2px)!important;box-shadow:2px 2px 0 #111!important}
+
+  body.atlanta .offer-popover{box-sizing:border-box!important;left:calc(50% + 48px)!important;width:calc(100vw - 40px)!important;max-width:360px!important;min-width:0!important;padding:16px 42px 16px 16px!important;overflow-wrap:anywhere!important;word-break:normal!important}
+  body.atlanta .offer-popover-copy{max-width:100%!important;min-width:0!important}
+  body.atlanta .offer-popover-close{right:8px!important;top:8px!important}
+
+  body.atlanta .hero .session-times{position:absolute!important;top:330px!important;left:14px!important;width:166px!important;max-width:166px!important;min-height:0!important;margin:0!important;padding:0!important;text-align:center!important;font-size:.83rem!important;line-height:1.48!important;z-index:18!important}
+  body.atlanta .hero .hero-thanks{display:block!important;text-align:center!important;margin:0 0 7px!important}
+  body.atlanta .hero .hero-thanks-full,body.atlanta .hero .atlanta-desktop-thanks{display:none!important}
+  body.atlanta .hero .hero-thanks-mobile{display:inline!important}
+  body.atlanta .hero .atlanta-session-offered,body.atlanta .hero .atlanta-desktop-hidden{display:none!important}
+  body.atlanta .hero .mobile-session-break{display:inline!important}
+
+  body.atlanta .hero .hero-cta-row{position:absolute!important;top:548px!important;left:0!important;right:0!important;width:100%!important;margin:0!important;text-align:center!important;z-index:24!important}
+  body.atlanta .hero .hero-cta-row .cta{position:relative!important;z-index:24!important;display:inline-block!important;width:min(330px,86vw)!important;min-width:0!important;max-width:330px!important;min-height:0!important;box-sizing:border-box!important;padding:10px 18px 11px!important;font-size:1.22rem!important;line-height:.98!important;white-space:normal!important;text-align:center!important;border-width:2px!important;box-shadow:5px 5px 0 #111!important}
+  body.atlanta .hero .hero-cta-row .cta .cta-atl-prefix,body.atlanta .hero .hero-cta-row .cta .cta-atl-rest{display:block!important}
+  body.atlanta .hero .hero-note{position:absolute!important;top:615px!important;left:50%!important;transform:translateX(-50%)!important;z-index:26!important;width:300px!important;max-width:80vw!important;margin:0!important;padding:5px 6px!important;box-sizing:border-box!important;background:#F6F0DF!important;text-align:center!important;font-size:.88rem!important;line-height:1.34!important}
+  body.atlanta .atlanta-mobile-redirect-break{display:inline}
+
+  body.atlanta .hero-credibility .credibility-grid{display:none!important}
+  body.atlanta .hero-credibility{position:relative;z-index:10;margin-top:0!important;padding:18px 20px 22px!important;background:#F6F0DF!important}
+  body.atlanta .atlanta-mobile-credibility{display:block!important;max-width:330px;margin:0 auto;text-align:center}
+  body.atlanta .atlanta-mobile-trust-block{padding:13px 0}
+  body.atlanta .atlanta-mobile-trust-block + .atlanta-mobile-trust-block{border-top:1px solid rgba(17,17,17,.18)}
+  body.atlanta .atlanta-mobile-trust-kicker{font-size:1.04rem;line-height:1.16;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+  body.atlanta .atlanta-mobile-trust-link{display:inline-block;margin-top:4px;font-size:1.02rem;line-height:1.22;font-weight:700;color:inherit;text-decoration:underline;text-underline-offset:2px;cursor:pointer}
+  body.atlanta .atlanta-mobile-trust-help p{margin:7px auto 5px;max-width:315px;font-size:1.08rem;line-height:1.4}
+  body.atlanta .atlanta-mobile-trust-press .atlanta-mobile-trust-kicker{font-size:.68rem;line-height:1.18}
+  body.atlanta .atlanta-mobile-trust-nyt{margin-top:4px;font-family:Georgia,"Times New Roman",serif;font-size:1rem;line-height:1.12;font-weight:700}
+
+  .atlanta-modal-backdrop{position:fixed;inset:0;z-index:10000;display:flex;align-items:center;justify-content:center;padding:18px;box-sizing:border-box;background:rgba(0,0,0,.62);overscroll-behavior:contain}
+  .atlanta-modal-backdrop[hidden]{display:none!important}
+  .atlanta-modal{position:relative;width:min(360px,calc(100vw - 36px));max-height:calc(100dvh - 36px);overflow:auto;overflow-x:hidden;box-sizing:border-box;padding:25px 20px 22px;border:2px solid #111;border-radius:4px;background:#F6F0DF;color:#111;box-shadow:7px 7px 0 #118ee8;outline:none;-webkit-overflow-scrolling:touch}
+  .atlanta-modal-accent{width:54px;height:5px;margin:0 0 13px;background:#f2cc21;transform:rotate(-1deg)}
+  .atlanta-modal h2{margin:0 35px 15px 0;font-size:1.28rem;line-height:1.08;letter-spacing:.01em}
+  .atlanta-modal p{margin:0 0 12px;font-size:.88rem;line-height:1.48}
+  .atlanta-modal-close{position:absolute;top:10px;right:10px;width:34px;height:34px;padding:0;border:2px solid #111;border-radius:50%;background:#fff;color:#111;font:700 24px/28px Arial,sans-serif;text-align:center;cursor:pointer}
+  .atlanta-modal-callout{margin:15px 0;padding:12px 13px;border:2px solid #111;background:#fff;box-shadow:4px 4px 0 #f2cc21}
+  .atlanta-modal-callout>strong{display:block;margin-bottom:6px;font-size:.78rem;letter-spacing:.07em}
+  .atlanta-modal-callout span{display:block;font-size:.82rem;line-height:1.42}
+  .atlanta-modal-ending{margin-bottom:0!important}
+  .atlanta-testimonial-card{margin:0 0 13px;padding:13px 14px;border:1.5px solid #111;background:#fff}
+  .atlanta-testimonial-card:last-child{margin-bottom:0}
+  .atlanta-testimonial-card p{margin:0 0 8px;font-size:.9rem;line-height:1.42}
+  .atlanta-testimonial-card cite{display:block;font-size:.78rem;font-style:normal;font-weight:800}
+
+  #atlanta-story-modal .atlanta-modal{padding-top:22px!important;padding-bottom:18px!important}
+  #atlanta-story-modal .atlanta-modal-accent{margin-bottom:9px!important}
+  #atlanta-story-modal .atlanta-modal h2{margin-bottom:10px!important}
+  #atlanta-story-modal .atlanta-modal p{margin-bottom:8px!important}
+  #atlanta-story-modal .atlanta-modal-callout{margin-top:10px!important;margin-bottom:9px!important;padding-top:9px!important;padding-bottom:9px!important}
+  #atlanta-story-modal .atlanta-modal-callout>strong{margin-bottom:5px!important}
+  #atlanta-story-modal .atlanta-modal-ending{margin-top:0!important;margin-bottom:0!important}
+}
+@media (min-width:414px) and (max-width:600px) and (orientation:portrait){body.atlanta .atlanta-mobile-woman{right:-50px}}
+@media (min-width:430px) and (max-width:600px) and (orientation:portrait){body.atlanta .atlanta-mobile-woman{right:-46px}}
+html.atlanta-modal-open,body.atlanta-modal-open{overflow:hidden!important;overscroll-behavior:none!important}
+</style>
+
+
+<style>
+/* Atlanta desktop contact + minimal hamburger utility test. Desktop only; mobile remains locked. */
+.atlanta-desktop-contact,.atlanta-desktop-utility-menu{display:none}
+@media (min-width:901px){
+  body.atlanta .credibility-press .atlanta-desktop-contact{display:block;margin-top:8px;font-family:Arial,Helvetica,sans-serif;font-size:.72rem;line-height:1.25;font-weight:400;color:#111;text-align:center}
+  body.atlanta .credibility-press .atlanta-desktop-contact a{color:#0a7fc7;font-weight:700;text-decoration:none}
+  body.atlanta header.topbar .atlanta-mobile-menu{display:block;position:absolute;z-index:80;right:20px;top:12px;width:44px;height:44px;padding:0;border:0;background:transparent;pointer-events:auto;cursor:pointer}
+  body.atlanta header.topbar .atlanta-mobile-menu::before,body.atlanta header.topbar .atlanta-mobile-menu::after,body.atlanta header.topbar .atlanta-mobile-menu span{content:"";position:absolute;left:12px;display:block;width:20px;height:2px;margin:0;border-radius:1px;background:#fff}
+  body.atlanta header.topbar .atlanta-mobile-menu::before{top:14px}
+  body.atlanta header.topbar .atlanta-mobile-menu span{top:21px}
+  body.atlanta header.topbar .atlanta-mobile-menu::after{top:28px}
+  body.atlanta .atlanta-desktop-utility-menu{display:block;position:fixed;z-index:75;top:0;right:0;width:100%;height:100%;pointer-events:none}
+  body.atlanta .atlanta-desktop-utility-menu[hidden]{display:none}
+  body.atlanta .atlanta-desktop-utility-panel{position:absolute;top:76px;right:24px;width:min(330px,calc(100vw - 48px));padding:14px 16px 16px;background:#0b0b0b;border:2px solid #111;box-shadow:5px 5px 0 #1696d2;pointer-events:auto}
+  body.atlanta .atlanta-desktop-utility-panel a,body.atlanta .atlanta-desktop-utility-panel button{display:block;width:100%;box-sizing:border-box;margin:0;padding:11px 8px;border:0;border-bottom:1px solid rgba(255,255,255,.2);background:transparent;color:#fff;font:700 13px/1.2 Arial,Helvetica,sans-serif;text-align:left;text-decoration:none;cursor:pointer}
+  body.atlanta .atlanta-desktop-utility-panel a:hover,body.atlanta .atlanta-desktop-utility-panel button:hover{color:#28a9e2}
+  body.atlanta .atlanta-desktop-utility-panel .atlanta-desktop-menu-close{padding-top:3px;padding-bottom:9px;color:#f2c300;font-size:11px;text-align:right}
+  body.atlanta .atlanta-desktop-utility-panel .atlanta-desktop-menu-main-site{margin-top:8px;padding-top:14px;border-top:1px solid rgba(255,255,255,.28);color:#cfcfcf;font-weight:600}
+  body.atlanta .atlanta-desktop-utility-panel > :last-child{border-bottom:0}
+}
+</style>
+<style>
+/* ATLANTA MOBILE COMPOSITION PROTOTYPE — isolated duplicate only.
+   Production Atlanta HTML and shared CSS remain untouched. */
+.mobile-woman-stage,.mobile-promo-stage,.mobile-vr-stage,.mobile-menu-prototype{display:none}
+@media (max-width:600px) and (orientation:portrait){
+  body.mobile-woman-prototype .topbar{
+    position:relative;
+    min-height:118px;
+    padding:20px 48px 15px 16px;
+    border-bottom:4px solid #118ee8;
+    box-sizing:border-box;
+  }
+  body.mobile-woman-prototype .topbar .brand{
+    width:auto!important;
+    font-size:21px;
+    line-height:1.08;
+    letter-spacing:.7px;
+  }
+  body.mobile-woman-prototype .brand-sherpa-tagline{
+    max-width:300px;
+    margin:8px auto 0!important;
+    font-size:11px;
+    line-height:1.45;
+    font-style:normal;
+  }
+  body.mobile-woman-prototype .mobile-menu-prototype{
+    display:block;
+    position:absolute;
+    right:18px;
+    top:27px;
+    width:29px;
+    height:24px;
+    padding:0;
+    border:0;
+    background:transparent;
+    pointer-events:none;
+  }
+  body.mobile-woman-prototype .mobile-menu-prototype::before,
+  body.mobile-woman-prototype .mobile-menu-prototype::after,
+  body.mobile-woman-prototype .mobile-menu-prototype span{
+    content:"";
+    display:block;
+    width:29px;
+    height:3px;
+    margin:0 0 6px;
+    border-radius:2px;
+    background:#fff;
+  }
+
+  body.mobile-woman-prototype .hero{
+    position:relative;
+    background:#F6F0DF;
+    padding:25px 0 22px;
+    overflow:hidden;
+  }
+  body.mobile-woman-prototype .hero-grid{display:block}
+  body.mobile-woman-prototype .hero .copy{
+    position:relative;
+    min-height:770px;
+    text-align:left;
+    isolation:isolate;
+  }
+  body.mobile-woman-prototype .hero .visual{display:none!important}
+
+  /* Upper-right woman: transparent asset over the site's cream field. */
+  body.mobile-woman-prototype .mobile-woman-stage{
+    display:block;
+    position:absolute;
+    z-index:1;
+    top:-27px;
+    right:-40px;
+    width:222px;
+    height:355px;
+    overflow:hidden;
+    pointer-events:none;
+  }
+  body.mobile-woman-prototype .mobile-woman-stage img{
+    position:absolute;
+    display:block;
+    width:238px;
+    max-width:none;
+    height:auto;
+    top:-1px;
+    right:-8px;
+  }
+
+  body.mobile-woman-prototype .hero .kicker{
+    position:relative;
+    z-index:4;
+    width:max-content;
+    max-width:225px;
+    margin:0 0 16px;
+    padding:8px 10px;
+    font-size:.72rem;
+    line-height:1.15;
+    white-space:nowrap;
+  }
+  body.mobile-woman-prototype .hero h1{
+    position:relative;
+    z-index:4;
+    width:217px;
+    margin:0 0 17px;
+    font-size:42px;
+    line-height:.89;
+    white-space:nowrap;
+  }
+  body.mobile-woman-prototype .hero .lead{
+    position:relative;
+    z-index:4;
+    width:205px;
+    max-width:205px;
+    margin:0;
+    font-size:.95rem;
+    line-height:1.5;
+    text-align:left;
+  }
+
+  /* Keep the existing study controls live and readable. */
+  body.mobile-woman-prototype .hero .offer{
+    position:relative;
+    z-index:6;
+    width:306px!important;
+    margin:30px 0 22px 0!important;
+  }
+
+  /* Independent promo artwork, tucked into the woman/control relationship. */
+  body.mobile-woman-prototype .mobile-promo-stage{
+    display:block;
+    position:absolute;
+    z-index:5;
+    top:344px;
+    right:-2px;
+    width:189px;
+    height:139px;
+    overflow:visible;
+    pointer-events:none;
+    transform:rotate(-1.5deg);
+    transform-origin:center;
+  }
+  body.mobile-woman-prototype .mobile-promo-stage img{
+    display:block;
+    width:100%;
+    height:auto;
+    max-width:none;
+  }
+
+  /* Session copy occupies the left while the VR Polaroid continues the art on right. */
+  body.mobile-woman-prototype .hero .session-times{
+    position:relative;
+    z-index:6;
+    width:205px;
+    max-width:205px;
+    min-height:210px;
+    margin:15px 0 0 4px !important;
+    text-align:center !important;
+    font-size:.92rem;
+    line-height:1.55;
+  }
+  body.mobile-woman-prototype .mobile-vr-stage{
+    display:block;
+    position:absolute;
+    z-index:5;
+    top:491px;
+    right:-18px;
+    width:197px;
+    height:210px;
+    overflow:visible;
+    pointer-events:none;
+    transform:rotate(3deg);
+    transform-origin:center;
+  }
+  body.mobile-woman-prototype .mobile-vr-stage img{
+    display:block;
+    width:100%;
+    height:auto;
+    max-width:none;
+  }
+
+  body.mobile-woman-prototype .hero .hero-cta-row{
+    position:relative;
+    z-index:8;
+    clear:both;
+    margin:5px 0 0!important;
+  }
+  body.mobile-woman-prototype .hero .hero-note{
+    position:relative;
+    z-index:8;
+  }
+  body.mobile-woman-prototype .hero-credibility{
+    position:relative;
+    z-index:10;
+    background:#F6F0DF;
+  }
+}
+</style>
+
+<style>
+/* ATLANTA MOBILE CORRECTIVE COMPOSITION PASS — prototype only */
+@media (max-width:600px) and (orientation:portrait){
+  /* Zone framework + deliberate stacking */
+  body.mobile-woman-prototype .hero{
+    padding:20px 0 14px !important;
+    overflow:hidden;
+  }
+  body.mobile-woman-prototype .hero .copy{
+    position:relative;
+    min-height:650px !important;
+    text-align:left;
+    isolation:isolate;
+  }
+  body.mobile-woman-prototype .hero .visual{display:none!important}
+
+  /* ZONE 1 — upper hero */
+  body.mobile-woman-prototype .mobile-woman-stage{
+    z-index:2 !important;
+    top:-8px !important;
+    right:-48px !important;
+    width:167px !important;
+    height:284px !important;
+    overflow:hidden !important;
+  }
+  body.mobile-woman-prototype .mobile-woman-stage img{
+    width:181px !important;
+    top:0 !important;
+    right:-5px !important;
+  }
+  body.mobile-woman-prototype .hero .kicker{
+    z-index:8 !important;
+    max-width:none !important;
+    margin:0 0 14px !important;
+    padding:7px 9px !important;
+    font-size:.69rem !important;
+  }
+  body.mobile-woman-prototype .hero h1{
+    z-index:8 !important;
+    width:196px !important;
+    margin:0 0 14px !important;
+    font-size:40px !important;
+    line-height:.88 !important;
+  }
+
+  /* ZONE 2 — controlled description */
+  body.mobile-woman-prototype .hero .lead{
+    z-index:8 !important;
+    width:198px !important;
+    max-width:198px !important;
+    margin:0 !important;
+    font-size:.91rem !important;
+    line-height:1.48 !important;
+  }
+
+  /* ZONE 3 — compact 1-over-2 pyramid */
+  body.mobile-woman-prototype .hero .offer{
+    position:relative;
+    z-index:10 !important;
+    display:flex !important;
+    flex-direction:column !important;
+    align-items:center !important;
+    gap:8px !important;
+    width:254px !important;
+    max-width:254px !important;
+    margin:24px auto 17px !important;
+  }
+  body.mobile-woman-prototype .hero .offer-lower-pair{
+    display:flex !important;
+    flex-direction:row !important;
+    align-items:stretch !important;
+    justify-content:center !important;
+    gap:9px !important;
+    width:auto !important;
+  }
+  body.mobile-woman-prototype .hero .pill{
+    width:auto !important;
+    min-height:38px !important;
+    padding:8px 10px !important;
+    font-size:.76rem !important;
+    line-height:1.05 !important;
+    white-space:nowrap !important;
+    box-shadow:3px 3px 0 #111 !important;
+  }
+  body.mobile-woman-prototype .hero .offer-detail-trigger:first-of-type{
+    width:190px !important;
+  }
+  body.mobile-woman-prototype .hero .offer-detail-trigger[data-detail="duration"]{
+    width:137px !important;
+  }
+  body.mobile-woman-prototype .hero .offer-detail-trigger[data-detail="age"]{
+    width:101px !important;
+  }
+
+  /* ZONE 4 — promo + VR read as one cluster, never under controls */
+  body.mobile-woman-prototype .mobile-promo-stage{
+    display:block !important;
+    z-index:5 !important;
+    top:342px !important;
+    right:-5px !important;
+    width:176px !important;
+    height:auto !important;
+    overflow:visible !important;
+    transform:rotate(-1.3deg) !important;
+  }
+  body.mobile-woman-prototype .mobile-vr-stage{
+    display:block !important;
+    z-index:6 !important;
+    top:465px !important;
+    right:-9px !important;
+    width:179px !important;
+    height:auto !important;
+    overflow:visible !important;
+    transform:rotate(2.5deg) !important;
+  }
+
+  /* ZONE 5 — only requested Atlanta session copy */
+  body.mobile-woman-prototype .hero .session-times{
+    position:relative;
+    z-index:9 !important;
+    width:230px !important;
+    max-width:230px !important;
+    min-height:146px !important;
+    margin:15px auto 0 !important;
+    text-align:center !important;
+    font-size:.83rem !important;
+    line-height:1.5 !important;
+  }
+  body.mobile-woman-prototype .hero .hero-thanks{
+    display:block !important;
+    text-align:center !important;
+    margin-bottom:8px !important;
+  }
+  body.mobile-woman-prototype .hero .session-offered{
+    display:none !important;
+  }
+  body.mobile-woman-prototype .hero .atlanta-desktop-hidden{
+    display:none !important;
+  }
+
+  /* ZONE 6 — compact, one-line functional CTA */
+  body.mobile-woman-prototype .hero .hero-cta-row{
+    z-index:12 !important;
+    margin:8px 0 0 !important;
+    text-align:center !important;
+  }
+  body.mobile-woman-prototype .hero .hero-cta-row .cta{
+    display:inline-block !important;
+    width:auto !important;
+    min-width:0 !important;
+    max-width:320px !important;
+    padding:11px 15px !important;
+    font-size:.82rem !important;
+    line-height:1 !important;
+    white-space:nowrap !important;
+    border-width:2px !important;
+    box-shadow:4px 4px 0 #111 !important;
+  }
+  body.mobile-woman-prototype .hero .hero-note{
+    z-index:12 !important;
+    max-width:310px !important;
+    margin:8px auto 0 !important;
+    text-align:center !important;
+    font-size:.72rem !important;
+    line-height:1.35 !important;
+  }
+
+  /* ZONE 7 — compact credibility bridge */
+  body.mobile-woman-prototype .hero-credibility{
+    padding:6px 0 10px !important;
+  }
+  body.mobile-woman-prototype .hero-credibility .wrap{
+    width:min(370px,95vw) !important;
+  }
+  body.mobile-woman-prototype .credibility-grid{
+    display:grid !important;
+    grid-template-columns:.9fr 1fr 1.2fr !important;
+    align-items:stretch !important;
+    min-height:0 !important;
+    padding-top:8px !important;
+    border-top:1px solid rgba(16,16,16,.24) !important;
+  }
+  body.mobile-woman-prototype .credibility-item{
+    min-height:54px !important;
+    padding:4px 7px !important;
+    font-size:.67rem !important;
+    line-height:1.2 !important;
+  }
+  body.mobile-woman-prototype .credibility-item + .credibility-item{
+    border-top:0 !important;
+    border-left:1px solid rgba(30,143,209,.58) !important;
+  }
+  body.mobile-woman-prototype .credibility-story{
+    font-size:.68rem !important;
+  }
+  body.mobile-woman-prototype .credibility-story strong{
+    margin-top:2px !important;
+    font-size:1.04em !important;
+  }
+  body.mobile-woman-prototype .credibility-eyebrow{
+    font-size:.53rem !important;
+    margin-bottom:2px !important;
+  }
+  body.mobile-woman-prototype .credibility-press strong{
+    font-size:.86rem !important;
+  }
+  body.mobile-woman-prototype .credibility-proof{
+    max-width:none !important;
+    margin:0 !important;
+    font-size:.64rem !important;
+    line-height:1.25 !important;
+  }
+}
+</style>
+
+<style>
+/* ATLANTA MOBILE TARGETED REFINEMENT — prototype only; production/shared CSS untouched */
+@media (max-width:600px) and (orientation:portrait){
+  /* 1. Preserve scale; move the woman higher and farther into the right edge. */
+  body.mobile-woman-prototype .mobile-woman-stage{
+    top:-4px !important;
+    right:-44px !important;
+  }
+  body.mobile-woman-prototype .mobile-woman-stage img{
+    right:-6px !important;
+  }
+
+  /* 2. Keep the successful 1-over-2 pyramid, nudged left as one unit. */
+  body.mobile-woman-prototype .hero .offer{
+    transform:translateX(-12px);
+  }
+
+  /* 4. CTA and redirect note remain a deliberate readable pair above artwork. */
+  body.mobile-woman-prototype .hero .hero-cta-row{
+    position:relative;
+    z-index:14 !important;
+    margin-top:12px !important;
+  }
+  body.mobile-woman-prototype .hero .hero-note{
+    position:relative;
+    z-index:15 !important;
+    width:max-content !important;
+    max-width:min(310px,88vw) !important;
+    box-sizing:border-box;
+    margin:7px auto 0 !important;
+    padding:5px 9px !important;
+    background:#F6F0DF;
+    text-align:center !important;
+    line-height:1.35 !important;
+  }
+}
+
+/* Nearby wider phones get breathing room without changing the composition model. */
+@media (min-width:414px) and (max-width:600px) and (orientation:portrait){
+  body.mobile-woman-prototype .mobile-woman-stage{right:-38px !important;}
+  body.mobile-woman-prototype .hero .lead{width:207px !important;max-width:207px !important;}
+  body.mobile-woman-prototype .hero .offer{transform:translateX(-10px);}
+}
+
+@media (min-width:430px) and (max-width:600px) and (orientation:portrait){
+  body.mobile-woman-prototype .mobile-woman-stage{right:-34px !important;}
+  body.mobile-woman-prototype .hero .lead{width:214px !important;max-width:214px !important;}
+}
+</style>
+
+<style>
+/* HEADER-BREAKOUT + LOWER-HERO IMPLEMENTATION — isolated mobile prototype only */
+@media (max-width:600px) and (orientation:portrait){
+
+  /* Let the woman intentionally break upward into the black header.
+     Header background stays behind her; branding/menu stay above her. */
+  body.mobile-woman-prototype .topbar{
+    position:relative !important;
+    z-index:auto !important;
+    overflow:visible !important;
+    background:transparent !important;
+  }
+  body.mobile-woman-prototype .topbar::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    z-index:0;
+    background:#070707;
+    pointer-events:none;
+  }
+  body.mobile-woman-prototype .topbar .brand,
+  body.mobile-woman-prototype .brand-sherpa-tagline,
+  body.mobile-woman-prototype .mobile-menu-prototype{
+    position:relative;
+    z-index:30 !important;
+  }
+  body.mobile-woman-prototype .mobile-menu-prototype{
+    position:absolute !important;
+  }
+
+  body.mobile-woman-prototype .hero{
+    overflow:visible !important;
+    position:relative !important;
+    z-index:auto !important;
+  }
+  body.mobile-woman-prototype .hero .copy{
+    min-height:760px !important;
+    overflow:visible !important;
+  }
+
+  /* Woman keeps existing scale, but intentionally enters the header.
+     She remains behind header UI. */
+  body.mobile-woman-prototype .mobile-woman-stage{
+    top:-92px !important;
+    right:-58px !important;
+    width:167px !important;
+    height:350px !important;
+    overflow:visible !important;
+    z-index:12 !important;
+  }
+  body.mobile-woman-prototype .mobile-woman-stage img{
+    width:181px !important;
+    right:-6px !important;
+    top:0 !important;
+  }
+
+  /* Keep upper hero text/control UI above the woman where their territories approach. */
+  body.mobile-woman-prototype .hero .kicker,
+  body.mobile-woman-prototype .hero h1,
+  body.mobile-woman-prototype .hero .lead,
+  body.mobile-woman-prototype .hero .offer{
+    z-index:20 !important;
+  }
+
+  /* Lower hero becomes an explicit two-zone row:
+     session copy left, promo right. */
+  body.mobile-woman-prototype .hero .session-times{
+    position:absolute !important;
+    top:414px !important;
+    left:4px !important;
+    width:166px !important;
+    max-width:166px !important;
+    min-height:0 !important;
+    margin:0 !important;
+    padding:0 !important;
+    text-align:center !important;
+    line-height:1.48 !important;
+    z-index:18 !important;
+  }
+  body.mobile-woman-prototype .hero .hero-thanks{
+    display:block !important;
+    margin:0 0 16px !important;
+    text-align:center !important;
+  }
+
+  body.mobile-woman-prototype .mobile-promo-stage{
+    top:405px !important;
+    right:-1px !important;
+    width:176px !important;
+    height:auto !important;
+    overflow:visible !important;
+    z-index:16 !important;
+    transform:rotate(-1.3deg) !important;
+  }
+
+  /* VR remains primarily right and rises behind CTA. */
+  body.mobile-woman-prototype .mobile-vr-stage{
+    top:535px !important;
+    right:-7px !important;
+    width:179px !important;
+    height:auto !important;
+    overflow:visible !important;
+    z-index:14 !important;
+    transform:rotate(2.5deg) !important;
+  }
+
+  /* Centered CTA in front of the participant hand. */
+  body.mobile-woman-prototype .hero .hero-cta-row{
+    position:absolute !important;
+    top:574px !important;
+    left:0 !important;
+    right:0 !important;
+    width:100% !important;
+    margin:0 !important;
+    text-align:center !important;
+    z-index:24 !important;
+  }
+  body.mobile-woman-prototype .hero .hero-cta-row .cta{
+    position:relative !important;
+    z-index:24 !important;
+  }
+
+  /* Dedicated clean note zone below the CTA; art cannot pass through it. */
+  body.mobile-woman-prototype .hero .hero-note{
+    position:absolute !important;
+    top:637px !important;
+    left:50% !important;
+    transform:translateX(-50%) !important;
+    z-index:26 !important;
+    width:310px !important;
+    max-width:84vw !important;
+    margin:0 !important;
+    padding:7px 10px !important;
+    box-sizing:border-box !important;
+    background:#F6F0DF !important;
+    text-align:center !important;
+    line-height:1.35 !important;
+  }
+}
+
+/* Nearby wider phones keep the same composition with a little extra separation. */
+@media (min-width:414px) and (max-width:600px) and (orientation:portrait){
+  body.mobile-woman-prototype .mobile-woman-stage{right:-50px !important;}
+  body.mobile-woman-prototype .hero .session-times{left:8px !important;width:176px !important;max-width:176px !important;}
+  body.mobile-woman-prototype .mobile-promo-stage{right:3px !important;}
+}
+@media (min-width:430px) and (max-width:600px) and (orientation:portrait){
+  body.mobile-woman-prototype .mobile-woman-stage{right:-46px !important;}
+  body.mobile-woman-prototype .hero .session-times{left:12px !important;width:184px !important;max-width:184px !important;}
+  body.mobile-woman-prototype .mobile-promo-stage{right:7px !important;}
+}
+</style>
+
+<style>
+/* VERTICAL-GAP REFINEMENT — isolated portrait prototype only.
+   Positioning only: no copy, font-size, artwork scale, or control dimensions changed. */
+@media (max-width:600px) and (orientation:portrait){
+
+  /* Pull the intact 1-over-2 control group closer to the description.
+     Internal button dimensions and 8/9px spacing remain untouched. */
+  body.mobile-woman-prototype .hero .offer{
+    margin-top:10px !important;
+  }
+
+  /* Reclaim some of the lower-hero dead space while retaining the promo's
+     existing right-side territory, size, rotation, and horizontal alignment. */
+  body.mobile-woman-prototype .mobile-promo-stage{
+    top:386px !important;
+  }
+}
+</style>
+
+<style>
+/* PROMO POSITION EXPERIMENT ONLY — preserve every other current element exactly. */
+@media (max-width:600px) and (orientation:portrait){
+  body.mobile-woman-prototype .mobile-promo-stage{
+    top:350px !important;
+  }
+}
+</style>
+
+<style>
+/* POSITIONING EXPERIMENT — controls left + VR substantially higher.
+   No copy, font-size, artwork size, CTA, credibility, or downstream changes. */
+@media (max-width:600px) and (orientation:portrait){
+
+  /* Shift the entire existing 1-over-2 controls group left as one unit.
+     Preserve current dimensions and internal spacing. */
+  body.mobile-woman-prototype .hero .offer{
+    transform:translateX(-26px) !important;
+  }
+
+  /* Bring the VR/Polaroid much earlier into the right-side visual cascade.
+     Preserve its current size and rotation; stop choreographing the hand around CTA. */
+  body.mobile-woman-prototype .mobile-vr-stage{
+    top:442px !important;
+    right:-7px !important;
+    z-index:14 !important;
+  }
+
+  /* Ensure the CTA remains independent of the VR artwork rather than being
+     positioned as part of a hand/CTA interaction. */
+  body.mobile-woman-prototype .hero .hero-cta-row{
+    z-index:24 !important;
+  }
+}
+</style>
+
+<style>
+/* STRONGER POSITIONING PASS — same isolated mobile prototype.
+   Positioning only; no size, copy, font, CTA, credibility, or downstream changes. */
+@media (max-width:600px) and (orientation:portrait){
+
+  /* Move the existing intact 1-over-2 fact control group farther left. */
+  body.mobile-woman-prototype .hero .offer{
+    transform:translateX(-38px) !important;
+  }
+
+  /* Bring the VR/Polaroid much higher in the right-side cascade.
+     Preserve its current dimensions and rotation. */
+  body.mobile-woman-prototype .mobile-vr-stage{
+    top:382px !important;
+    right:-7px !important;
+    z-index:14 !important;
+  }
+}
+</style>
+
+<style>
+/* TWO-ZONE MOBILE COMPOSITION CORRECTION — isolated portrait prototype only.
+   Left: fact buttons + session copy. Right: VR/Polaroid cascading beside them.
+   Promo follows below VR. No typography, size, CTA, header, woman, or downstream changes. */
+@media (max-width:600px) and (orientation:portrait){
+
+  /* Move intact 1-over-2 fact group farther left to establish the left zone. */
+  body.mobile-woman-prototype .hero .offer{
+    transform:translateX(-48px) !important;
+  }
+
+  /* VR begins alongside the button area, not below it.
+     Preserve current scale/rotation; only position changes. */
+  body.mobile-woman-prototype .mobile-vr-stage{
+    top:286px !important;
+    right:-10px !important;
+    z-index:16 !important;
+  }
+
+  /* Promo follows AFTER/BELOW the VR participant and stays out of his face/headset/hand. */
+  body.mobile-woman-prototype .mobile-promo-stage{
+    top:514px !important;
+    right:-1px !important;
+    z-index:14 !important;
+  }
+}
+</style>
+
+<style>
+/* SUPPORTING COPY POSITION ONLY — isolated portrait prototype.
+   Move the left-side session copy directly beneath the existing button group.
+   No wording, font-size, VR, promo, CTA, header, woman, or downstream changes. */
+@media (max-width:600px) and (orientation:portrait){
+  body.mobile-woman-prototype .hero .session-times{
+    top:350px !important;
+    left:4px !important;
+    width:166px !important;
+    max-width:166px !important;
+    margin:0 !important;
+    text-align:center !important;
+  }
+}
+</style>
+
+<style>
+/* SMALL SUPPORTING-COPY LIFT ONLY */
+@media (max-width:600px) and (orientation:portrait){
+  body.mobile-woman-prototype .hero .session-times{
+    top:334px !important;
+  }
+}
+</style>
+
+<style>
+/* LEFT-COLUMN ALIGNMENT / SUPPORTING-COPY GROUPING ONLY */
+@media (max-width:600px) and (orientation:portrait){
+
+  /* Nudge upper left content together as one aligned group over the fixed buttons. */
+  body.mobile-woman-prototype .hero .kicker,
+  body.mobile-woman-prototype .hero h1,
+  body.mobile-woman-prototype .hero .lead{
+    transform:translateX(10px) !important;
+  }
+
+  /* Keep the supporting copy as one grouped block in the same left-side zone. */
+  body.mobile-woman-prototype .hero .session-times{
+    left:14px !important;
+    width:166px !important;
+    max-width:166px !important;
+    text-align:center !important;
+  }
+}
+</style>
+
+<style>
+/* PORTRAIT CALLOUT CONTAINMENT + TOP-GAP REDUCTION ONLY */
+@media (max-width:600px) and (orientation:portrait){
+
+  /* Shared study-detail callout containment.
+     Compensate for the intentionally left-shifted offer group so the panel itself
+     stays safely inside the viewport with its border, shadow, and close control visible. */
+  body.mobile-woman-prototype .offer-popover{
+    box-sizing:border-box !important;
+    left:calc(50% + 48px) !important;
+    width:calc(100vw - 40px) !important;
+    max-width:360px !important;
+    min-width:0 !important;
+    padding:16px 42px 16px 16px !important;
+    overflow-wrap:anywhere !important;
+    word-break:normal !important;
+  }
+  body.mobile-woman-prototype .offer-popover-copy{
+    max-width:100% !important;
+    min-width:0 !important;
+  }
+  body.mobile-woman-prototype .offer-popover-close{
+    right:8px !important;
+    top:8px !important;
+  }
+
+  /* Remove roughly half of the cream gap above the Atlanta ribbon by lifting
+     the established LEFT-side sequence as one composition. Internal spacing is unchanged. */
+  body.mobile-woman-prototype .hero .kicker,
+  body.mobile-woman-prototype .hero h1,
+  body.mobile-woman-prototype .hero .lead{
+    transform:translate(10px,-12px) !important;
+  }
+  body.mobile-woman-prototype .hero .offer{
+    transform:translate(-48px,-12px) !important;
+  }
+  body.mobile-woman-prototype .hero .session-times{
+    top:322px !important;
+  }
+}
+</style>
+
+<style>
+/* SURGICAL RIBBON ANGLE ROLLBACK ONLY */
+@media (max-width:600px) and (orientation:portrait){
+  body.mobile-woman-prototype .hero .kicker{
+    transform:translate(10px,-12px) rotate(-1deg) !important;
+  }
+}
+</style>
+
+<style>
+/* PORTRAIT MOBILE: upper-left alignment + supporting-copy tightening only */
+@media (max-width:600px) and (orientation:portrait){
+
+  /* Small alignment correction over the existing fixed button group.
+     Preserve ribbon rotation and all sizing/wrapping. */
+  body.mobile-woman-prototype .hero .kicker{
+    transform:translate(4px,-12px) rotate(-1deg) !important;
+  }
+  body.mobile-woman-prototype .hero h1,
+  body.mobile-woman-prototype .hero .lead{
+    transform:translate(4px,-12px) !important;
+  }
+
+  /* Pull the grouped supporting copy slightly upward and tighten only
+     the internal gap created by the shorter thank-you line. */
+  body.mobile-woman-prototype .hero .session-times{
+    top:312px !important;
+  }
+  body.mobile-woman-prototype .hero .hero-thanks{
+    margin-bottom:10px !important;
+  }
+}
+</style>
+
+<style>
+/* PORTRAIT MOBILE: left-column alignment + restored breathing room only */
+@media (max-width:600px) and (orientation:portrait){
+
+  /* Move the existing upper-left content block farther right as one unit.
+     Preserve size, wrapping, spacing, and ribbon rotation. */
+  body.mobile-woman-prototype .hero .kicker{
+    transform:translate(14px,-12px) rotate(-1deg) !important;
+  }
+  body.mobile-woman-prototype .hero h1,
+  body.mobile-woman-prototype .hero .lead{
+    transform:translate(14px,-12px) !important;
+  }
+
+  /* Restore a deliberate gap beneath the unchanged button group while
+     keeping the supporting copy grouped and centered within its left zone. */
+  body.mobile-woman-prototype .hero .session-times{
+    top:330px !important;
+    left:14px !important;
+    width:166px !important;
+    max-width:166px !important;
+    text-align:center !important;
+  }
+  body.mobile-woman-prototype .hero .hero-thanks{
+    margin-bottom:16px !important;
+  }
+}
+</style>
+
+<style>
+/* FINAL LEFT-COLUMN ALIGNMENT MICRO-REFINEMENT ONLY */
+@media (max-width:600px) and (orientation:portrait){
+
+  /* Move upper-left content a little farther right as one unit.
+     Preserve sizes, wrapping, spacing, and ribbon angle. */
+  body.mobile-woman-prototype .hero .kicker{
+    transform:translate(20px,-12px) rotate(-1deg) !important;
+  }
+  body.mobile-woman-prototype .hero h1,
+  body.mobile-woman-prototype .hero .lead{
+    transform:translate(20px,-12px) !important;
+  }
+
+  /* Tighten only the internal gap between thank-you and weekday-session copy.
+     Keep the whole grouped block exactly where it is. */
+  body.mobile-woman-prototype .hero .hero-thanks{
+    margin-bottom:12px !important;
+  }
+}
+</style>
+
+<style>
+/* PORTRAIT MICRO-ALIGNMENT ONLY */
+@media (max-width:600px) and (orientation:portrait){
+  body.mobile-woman-prototype .hero .kicker{
+    transform:translate(36px,-12px) rotate(-1deg) !important;
+  }
+  body.mobile-woman-prototype .hero h1,
+  body.mobile-woman-prototype .hero .lead{
+    transform:translate(24px,-12px) !important;
+  }
+  body.mobile-woman-prototype .hero .hero-thanks{
+    margin-bottom:9px !important;
+  }
+}
+</style>
+
+<style>
+/* LOWER FLOW + TAP AFFORDANCE EXPERIMENT ONLY — portrait isolated prototype */
+@media (max-width:600px) and (orientation:portrait){
+
+  /* Existing study-detail controls: visual cue only, dimensions/positions unchanged. */
+  body.mobile-woman-prototype .offer-detail-trigger{
+    position:relative !important;
+    touch-action:manipulation;
+  }
+  body.mobile-woman-prototype .offer-detail-trigger::after{
+    content:"›";
+    position:absolute;
+    right:10px;
+    top:50%;
+    transform:translateY(-52%);
+    font-size:.92em;
+    line-height:1;
+    font-weight:700;
+    opacity:.58;
+    pointer-events:none;
+  }
+  body.mobile-woman-prototype .offer-detail-trigger:active{
+    transform:translate(2px,2px) !important;
+    box-shadow:2px 2px 0 #111 !important;
+  }
+
+  /* Slight internal tightening only; keep whole support-copy block in place. */
+  body.mobile-woman-prototype .hero .hero-thanks{
+    margin-bottom:7px !important;
+  }
+
+  /* Lower order: CTA -> redirect note -> promo -> credibility.
+     CTA and note remain exactly where they already are. */
+  body.mobile-woman-prototype .mobile-promo-stage{
+    top:686px !important;
+    right:-1px !important;
+    z-index:18 !important;
+  }
+
+  /* End the cream hero shortly after the now-below-CTA promo so the compact
+     credibility bridge follows without the previous large empty gap. */
+  body.mobile-woman-prototype .hero .copy{
+    min-height:798px !important;
+  }
+
+  body.mobile-woman-prototype .hero-credibility{
+    margin-top:0 !important;
+  }
+}
+</style>
+
+<style>
+/* CTA + CREDIBILITY RESTRUCTURE TEST — portrait isolated prototype only */
+@media (max-width:600px) and (orientation:portrait){
+
+  /* Promo temporarily removed from this mobile transition only. */
+  body.mobile-woman-prototype .mobile-promo-stage{
+    display:none !important;
+  }
+
+  /* Stronger primary CTA; preserve established visual treatment. */
+  body.mobile-woman-prototype .hero .hero-cta-row{
+    top:568px !important;
+  }
+  body.mobile-woman-prototype .hero .hero-cta-row .cta{
+    width:min(330px,86vw) !important;
+    min-height:54px !important;
+    box-sizing:border-box !important;
+    padding:15px 18px !important;
+    font-size:.92rem !important;
+    line-height:1.08 !important;
+    white-space:nowrap !important;
+  }
+
+  /* Deliberate readable two-line redirect note. */
+  body.mobile-woman-prototype .hero .hero-note{
+    top:638px !important;
+    width:292px !important;
+    max-width:78vw !important;
+    padding:5px 6px !important;
+    font-size:.79rem !important;
+    line-height:1.38 !important;
+    background:#F6F0DF !important;
+    text-align:center !important;
+  }
+
+  /* Remove the old compact three-column credibility banner on portrait only. */
+  body.mobile-woman-prototype .hero-credibility .credibility-grid{
+    display:none !important;
+  }
+
+  /* Expanded, readable stacked trust section. */
+  body.mobile-woman-prototype .hero-credibility{
+    margin-top:0 !important;
+    padding:18px 20px 22px !important;
+    background:#F6F0DF !important;
+  }
+  body.mobile-woman-prototype .mobile-expanded-credibility{
+    display:block !important;
+    max-width:330px;
+    margin:0 auto;
+    text-align:center;
+  }
+  body.mobile-woman-prototype .mobile-trust-block{
+    padding:13px 0;
+  }
+  body.mobile-woman-prototype .mobile-trust-block + .mobile-trust-block{
+    border-top:1px solid rgba(17,17,17,.18);
+  }
+  body.mobile-woman-prototype .mobile-trust-kicker{
+    font-size:.72rem;
+    line-height:1.2;
+    font-weight:800;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+  }
+  body.mobile-woman-prototype .mobile-trust-nyt{
+    margin-top:4px;
+    font-family:Georgia, "Times New Roman", serif;
+    font-size:1.1rem;
+    line-height:1.15;
+    font-weight:700;
+  }
+  body.mobile-woman-prototype .mobile-trust-help p{
+    margin:7px auto 5px;
+    max-width:285px;
+    font-size:.78rem;
+    line-height:1.42;
+  }
+  body.mobile-woman-prototype .mobile-trust-link{
+    display:inline-block;
+    margin-top:4px;
+    font-size:.73rem;
+    line-height:1.2;
+    font-weight:700;
+    color:inherit;
+    text-decoration:underline;
+    text-underline-offset:2px;
+  }
+  body.mobile-woman-prototype .mobile-trust-link[aria-disabled="true"]{
+    cursor:default;
+  }
+
+  /* End the hero after CTA/note so trust follows promptly, without touching VR placement. */
+  body.mobile-woman-prototype .hero .copy{
+    min-height:706px !important;
+  }
+}
+</style>
+
+<style>
+/* CTA TYPOGRAPHY EMPHASIS ONLY — isolated portrait prototype */
+@media (max-width:600px) and (orientation:portrait){
+
+  /* ~15% increase from .92rem; preserve current width and two-line wrap. */
+  body.mobile-woman-prototype .hero .hero-cta-row .cta{
+    font-size:1.06rem !important;
+    padding:16px 18px !important;
+  }
+
+  /* ~10% increase from .79rem; preserve current centered two-line treatment. */
+  body.mobile-woman-prototype .hero .hero-note{
+    font-size:.87rem !important;
+  }
+}
+</style>
+
+<style>
+/* CTA CORRECTION + STORY/TESTIMONIAL MODALS — isolated portrait prototype */
+@media (max-width:600px) and (orientation:portrait){
+
+  /* CTA: same width/position, less empty blue height, stronger two-line label. */
+  body.mobile-woman-prototype .hero .hero-cta-row .cta{
+    width:min(330px,86vw) !important;
+    min-height:0 !important;
+    padding:10px 18px 11px !important;
+    font-size:1.18rem !important;
+    line-height:.98 !important;
+    white-space:normal !important;
+    text-align:center !important;
+    box-shadow:5px 5px 0 #111 !important;
+  }
+  body.mobile-woman-prototype .hero .hero-cta-row .cta .cta-atl-prefix,
+  body.mobile-woman-prototype .hero .hero-cta-row .cta .cta-atl-rest{
+    display:block !important;
+  }
+
+  /* Redirect note: preserve clean centered two-line relationship. */
+  body.mobile-woman-prototype .hero .hero-note{
+    width:300px !important;
+    max-width:80vw !important;
+    font-size:.88rem !important;
+    line-height:1.34 !important;
+  }
+
+  /* Credibility links remain understated text links. */
+  body.mobile-woman-prototype .mobile-trust-link{
+    cursor:pointer;
+  }
+
+  /* Reusable modal system */
+  .ptp-modal-backdrop{
+    position:fixed;
+    inset:0;
+    z-index:10000;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:18px;
+    box-sizing:border-box;
+    background:rgba(0,0,0,.62);
+    overscroll-behavior:contain;
+  }
+  .ptp-modal-backdrop[hidden]{
+    display:none !important;
+  }
+  .ptp-modal{
+    position:relative;
+    width:min(360px, calc(100vw - 36px));
+    max-height:calc(100dvh - 36px);
+    overflow:auto;
+    box-sizing:border-box;
+    padding:25px 20px 22px;
+    border:2px solid #111;
+    border-radius:4px;
+    background:#F6F0DF;
+    color:#111;
+    box-shadow:7px 7px 0 #118ee8;
+    outline:none;
+    -webkit-overflow-scrolling:touch;
+  }
+  .ptp-modal-accent{
+    width:54px;
+    height:5px;
+    margin:0 0 13px;
+    background:#f2cc21;
+    transform:rotate(-1deg);
+  }
+  .ptp-modal h2{
+    margin:0 35px 15px 0;
+    font-size:1.28rem;
+    line-height:1.08;
+    letter-spacing:.01em;
+  }
+  .ptp-modal p{
+    margin:0 0 12px;
+    font-size:.88rem;
+    line-height:1.48;
+  }
+  .ptp-modal-close{
+    position:absolute;
+    top:10px;
+    right:10px;
+    width:34px;
+    height:34px;
+    padding:0;
+    border:2px solid #111;
+    border-radius:50%;
+    background:#fff;
+    color:#111;
+    font:700 24px/28px Arial,sans-serif;
+    text-align:center;
+    cursor:pointer;
+  }
+  .ptp-modal-callout{
+    margin:15px 0;
+    padding:12px 13px;
+    border:2px solid #111;
+    background:#fff;
+    box-shadow:4px 4px 0 #f2cc21;
+  }
+  .ptp-modal-callout > strong{
+    display:block;
+    margin-bottom:6px;
+    font-size:.78rem;
+    letter-spacing:.07em;
+  }
+  .ptp-modal-callout span{
+    display:block;
+    font-size:.82rem;
+    line-height:1.42;
+  }
+  .ptp-modal-ending{
+    margin-bottom:0 !important;
+  }
+  .ptp-testimonial-card{
+    margin:0 0 13px;
+    padding:13px 14px;
+    border:1.5px solid #111;
+    background:#fff;
+  }
+  .ptp-testimonial-card:last-child{
+    margin-bottom:0;
+  }
+  .ptp-testimonial-card p{
+    margin:0 0 8px;
+    font-size:.9rem;
+    line-height:1.42;
+  }
+  .ptp-testimonial-card cite{
+    display:block;
+    font-size:.78rem;
+    font-style:normal;
+    font-weight:800;
+  }
+}
+
+html.ptp-modal-open,
+body.ptp-modal-open{
+  overflow:hidden !important;
+  overscroll-behavior:none !important;
+}
+</style>
+
+<style>
+/* CTA SPACING + CREDIBILITY TYPOGRAPHY ONLY — portrait isolated prototype */
+@media (max-width:600px) and (orientation:portrait){
+
+  /* Tighten cream space above CTA by ~50% without moving unrelated hero elements. */
+  body.mobile-woman-prototype .hero .hero-cta-row{
+    top:548px !important;
+  }
+
+  /* Preserve compact CTA height; strengthen label slightly only. */
+  body.mobile-woman-prototype .hero .hero-cta-row .cta{
+    font-size:1.22rem !important;
+    padding:10px 18px 11px !important;
+  }
+
+  /* Keep redirect note tightly associated; no added vertical spacing. */
+  body.mobile-woman-prototype .hero .hero-note{
+    top:615px !important;
+  }
+
+  /* Tighten space below note before credibility by reducing hero end height. */
+  body.mobile-woman-prototype .hero .copy{
+    min-height:670px !important;
+  }
+
+  /* Substantially enlarge credibility typography while preserving stacked structure. */
+  body.mobile-woman-prototype .mobile-trust-kicker{
+    font-size:1.04rem !important;
+    line-height:1.16 !important;
+  }
+  body.mobile-woman-prototype .mobile-trust-link{
+    font-size:1.02rem !important;
+    line-height:1.22 !important;
+  }
+  body.mobile-woman-prototype .mobile-trust-nyt{
+    font-size:1.55rem !important;
+    line-height:1.08 !important;
+  }
+  body.mobile-woman-prototype .mobile-trust-help p{
+    font-size:1.08rem !important;
+    line-height:1.4 !important;
+    max-width:315px !important;
+  }
+
+  /* Preserve viewport-safe modal behavior. */
+  body.mobile-woman-prototype .ptp-modal{
+    width:min(360px, calc(100vw - 36px)) !important;
+    max-height:calc(100dvh - 36px) !important;
+    overflow:auto !important;
+  }
+}
+</style>
+
+<style>
+/* CREDIBILITY REBALANCE ONLY — portrait isolated prototype */
+@media (max-width:600px) and (orientation:portrait){
+
+  /* Reduce AS FEATURED IN / NYT block ~35–40% from current enlarged state,
+     while keeping it more readable than the original compact version. */
+  body.mobile-woman-prototype .mobile-trust-press .mobile-trust-kicker{
+    font-size:.68rem !important;
+    line-height:1.18 !important;
+  }
+  body.mobile-woman-prototype .mobile-trust-nyt{
+    font-size:1.00rem !important;
+    line-height:1.12 !important;
+  }
+}
+</style>
+
+<style>
+/* STORY MODAL FIT + CREDIBILITY LINE BREAK ONLY — portrait isolated prototype */
+@media (max-width:600px) and (orientation:portrait){
+
+  /* Tighten Story modal vertical rhythm without changing width or type hierarchy. */
+  #story-modal .ptp-modal{
+    padding-top:22px !important;
+    padding-bottom:18px !important;
+  }
+  #story-modal .ptp-modal-accent{
+    margin-bottom:9px !important;
+  }
+  #story-modal .ptp-modal h2{
+    margin-bottom:10px !important;
+  }
+  #story-modal .ptp-modal p{
+    margin-bottom:8px !important;
+  }
+  #story-modal .ptp-modal-callout{
+    margin-top:10px !important;
+    margin-bottom:9px !important;
+    padding-top:9px !important;
+    padding-bottom:9px !important;
+  }
+  #story-modal .ptp-modal-callout > strong{
+    margin-bottom:5px !important;
+  }
+  #story-modal .ptp-modal-ending{
+    margin-top:0 !important;
+    margin-bottom:0 !important;
+  }
+
+  /* Keep Let us help you. as the closing line of the same thought. */
+  body.mobile-woman-prototype .mobile-trust-help p br{
+    display:block;
+  }
+}
+</style>
+
+<style>
+@media (max-width:600px) and (orientation:portrait){
+  #testimonials-modal .ptp-modal{
+    max-height:calc(100dvh - 36px) !important;
+    overflow-y:auto !important;
+    overflow-x:hidden !important;
+    -webkit-overflow-scrolling:touch;
+  }
+}
+</style>
+
+<style>
+/* FINAL SURGICAL HAMBURGER FUNCTIONALITY PASS — no page-layout changes */
+.atlanta-mobile-nav{display:none}
+
+@media (max-width:600px) and (orientation:portrait){
+  body.mobile-woman-prototype .mobile-menu-prototype{
+    pointer-events:auto !important;
+    cursor:pointer;
+    touch-action:manipulation;
+  }
+
+  /* Visual bars only: anchor and existing button box stay exactly where they are. */
+  body.mobile-woman-prototype .mobile-menu-prototype::before,
+  body.mobile-woman-prototype .mobile-menu-prototype::after,
+  body.mobile-woman-prototype .mobile-menu-prototype span{
+    width:22px !important;
+    height:2px !important;
+    margin-left:auto !important;
+    margin-right:auto !important;
+    margin-bottom:5px !important;
+  }
+
+  body.mobile-woman-prototype .atlanta-mobile-nav{
+    display:block;
+    position:fixed;
+    inset:0;
+    z-index:9998;
+    background:rgba(0,0,0,.20);
+  }
+  body.mobile-woman-prototype .atlanta-mobile-nav[hidden]{
+    display:none !important;
+  }
+  body.mobile-woman-prototype .atlanta-mobile-nav-panel{
+    position:absolute;
+    top:104px;
+    right:12px;
+    width:min(286px,calc(100vw - 24px));
+    box-sizing:border-box;
+    padding:10px 12px 12px;
+    border:2px solid #118ee8;
+    background:#070707;
+    box-shadow:4px 4px 0 rgba(17,142,232,.28);
+    text-align:left;
+  }
+  body.mobile-woman-prototype .atlanta-mobile-nav-panel a,
+  body.mobile-woman-prototype .atlanta-mobile-nav-close{
+    display:block;
+    width:100%;
+    box-sizing:border-box;
+    margin:0;
+    padding:10px 8px;
+    border:0;
+    border-bottom:1px solid rgba(255,255,255,.18);
+    background:transparent;
+    color:#fff;
+    font:700 .76rem/1.25 Arial,sans-serif;
+    letter-spacing:.02em;
+    text-align:left;
+    text-decoration:none;
+    cursor:pointer;
+  }
+  body.mobile-woman-prototype .atlanta-mobile-nav-panel a:last-child{
+    border-bottom:0;
+  }
+  body.mobile-woman-prototype .atlanta-mobile-nav-close{
+    padding-top:4px;
+    padding-bottom:8px;
+    color:#69bfff;
+    font-size:.68rem;
+    text-align:right;
+  }
+  body.mobile-woman-prototype .atlanta-mobile-nav-panel a:active,
+  body.mobile-woman-prototype .atlanta-mobile-nav-close:active{
+    opacity:.72;
+  }
+}
+</style>
+
+
+<style>
+/* Keep portrait-only expanded credibility markup hidden outside the mobile layout. */
+body.atlanta .mobile-expanded-credibility{display:none}
+
+/* Atlanta trust transition — surgical desktop/mobile credibility message insertion only. */
+body.atlanta .atlanta-trust-transition{box-sizing:border-box}
+body.atlanta .atlanta-trust-transition .atlanta-trust-transition-inner{box-sizing:border-box;text-align:center}
+@media (min-width:901px){
+  body.atlanta .atlanta-trust-transition{width:min(1080px,92vw);margin:0 auto;border-top:1px solid rgba(17,17,17,.22);border-bottom:1px solid rgba(17,17,17,.22)}
+  body.atlanta .atlanta-trust-transition-inner{padding:10px 18px 11px;font-family:Georgia,"Times New Roman",serif;font-size:1.08rem;line-height:1.3;color:#111}
+  body.atlanta .atlanta-trust-transition-blue{color:#0a7fc7;font-weight:700}
+  body.atlanta .atlanta-trust-transition-mobile-break{display:none}
+}
+@media (max-width:900px){
+  body.atlanta .atlanta-trust-transition{width:min(330px,calc(100% - 40px));margin:0 auto;border-top:1px solid rgba(17,17,17,.18);border-bottom:1px solid rgba(17,17,17,.18)}
+  body.atlanta .atlanta-trust-transition-inner{padding:12px 4px 13px;font-family:Arial,Helvetica,sans-serif;font-size:.92rem;line-height:1.4;color:#111}
+  body.atlanta .atlanta-trust-transition-blue{color:#0a7fc7;font-weight:700}
+  body.atlanta .atlanta-trust-transition-mobile-break{display:block}
+}
+</style>
+
+<style>
+/* Atlanta icon-container revision: independently removable availability-header icon only. */
+body.atlanta .availability-heading{position:relative}
+body.atlanta .availability-calendar-icon{
+  position:absolute;left:12px;top:50%;transform:translateY(-50%);
+  display:block;width:44px;height:44px;box-sizing:border-box;padding:7px;
+  border:2px solid #111;border-radius:50%;background:#fff;color:#111;pointer-events:none;
+}
+body.atlanta .availability-calendar-icon svg{display:block;width:100%;height:100%;overflow:visible}
+
+/* Desktop-only calendar-icon placement; removable without affecting the mobile experiment. */
+@media (min-width:901px){
+  body.atlanta .availability-calendar-icon{left:12px}
+}
+
+/* Mobile-only calendar-icon treatment; removable independently from desktop. */
+@media (max-width:600px){
+  body.atlanta .availability-calendar-icon{left:7px;width:38px;height:38px;padding:6px}
+}
+
+/* Keep the urgency sentence on its own compact line beneath the availability note. */
+body.atlanta .availability-top-urgency{display:block;margin-top:1px}
+
+/* Atlanta-only removal of the primary desktop hero's enlarge affordance. */
+body.atlanta .hero .visual .hero-art{cursor:default!important}
+body.atlanta .hero .visual::after{display:none!important}
+
+/* Keep the Step 4 NDA term intact; desktop receives the requested break before it. */
+.atlanta-desktop-nda-break{display:none}
+@media (min-width:901px){.atlanta-desktop-nda-break{display:inline}}
+.atlanta-nda-term{white-space:nowrap}
+</style>
+
+<style>
+/* Atlanta portrait-mobile polish pass 1 — isolated and independently removable. */
+.atlanta-mobile-followup-break{display:none}
+@media (max-width:600px) and (orientation:portrait){
+  body.mobile-woman-prototype .mobile-menu-prototype{top:22px!important}
+  body.atlanta .availability-calendar-icon{left:5px;width:32px;height:32px;padding:5px}
+  body.atlanta .atlanta-mobile-followup-break{display:block}
+}
+</style>
+
+<style>
+/* Atlanta portrait-mobile standalone calendar treatment — independently removable. */
+.atlanta-mobile-standalone-calendar{display:none}
+@media (max-width:600px) and (orientation:portrait){
+  body.atlanta .availability-heading .availability-calendar-icon{display:none!important}
+  body.atlanta .availability-tool{
+    position:relative;padding-top:60px;
+    background:linear-gradient(to bottom,var(--yellow) 0 60px,#fff 60px);
+  }
+  body.atlanta .atlanta-mobile-standalone-calendar{
+    display:block;position:absolute;left:50%;top:8px;z-index:2;
+    width:44px;height:44px;box-sizing:border-box;margin:0;padding:7px;
+    transform:translateX(-50%);border:2px solid #111;border-radius:50%;
+    background:#fff;color:#111;pointer-events:none;
+  }
+  body.atlanta .atlanta-mobile-standalone-calendar svg{display:block;width:100%;height:100%;overflow:visible}
+}
+</style>
+
+<style>
+/* Atlanta Pro Tip roadmap beta — each production graphic is independently removable. */
+.atlanta-roadmap-beta,
+.atlanta-utest-help-beta{display:block;width:100%;margin:18px 0 0}
+.atlanta-utest-help-beta{margin-top:12px}
+.atlanta-roadmap-beta img,
+.atlanta-utest-help-beta img{display:block;width:100%;max-width:100%;height:auto}
+</style>
+
+<style>
+/* Atlanta desktop Pro Tip composition beta — isolated from tablet/mobile layouts. */
+@media (min-width:1100px){
+  body.atlanta #before-you-apply > .wrap{
+    width:min(1400px,96vw);
+  }
+  body.atlanta #before-you-apply .pro-tip{
+    grid-template-columns:minmax(0,2fr) minmax(480px,1fr);
+    gap:24px;
+  }
+  body.atlanta #before-you-apply .atlanta-utest-help-beta{
+    width:76%;
+    margin-left:auto;
+    margin-right:auto;
+  }
+}
+</style>
+
+<style>
+/* Atlanta scheduling-column integration — isolated from Midtown and scheduler functionality. */
+.atlanta-roadmap-beta picture{display:block;width:100%}
+body.atlanta .tip-tools > .preference-followup-wide{
+  display:block;width:100%;box-sizing:border-box;margin-top:0;
+  border:1px solid #d5dce4;background:#fff;
+}
+body.atlanta .tip-tools > .preference-followup-wide .preference-followup-item{
+  display:grid;grid-template-columns:44px minmax(0,1fr);gap:12px;
+  align-items:start;box-sizing:border-box;margin:0;padding:14px 12px;border:0;
+}
+body.atlanta .tip-tools > .preference-followup-wide .preference-followup-item + .preference-followup-item{
+  border-top:1px solid #d5dce4;
+}
+body.atlanta .scheduling-point-icon{
+  display:flex;align-items:center;justify-content:center;width:40px;height:40px;
+  box-sizing:border-box;border:2px solid var(--blue);border-radius:50%;color:var(--blue);
+}
+body.atlanta .scheduling-point-icon svg{display:block;width:24px;height:24px}
+body.atlanta .scheduling-point-copy{min-width:0}
+body.atlanta .tip-tools > .preference-followup-wide p{margin:0;line-height:1.42}
+body.atlanta .tip-tools > .preference-followup-wide .friend-share-item{margin:0!important}
+body.atlanta .tip-tools > .preference-followup-wide .copy-page-link{
+  position:static;top:auto;margin:9px auto 0!important;
+}
+body.atlanta .tip-tools > .preference-followup-wide .friend-share-item + .preference-followup-item{
+  position:static;top:auto;margin:0!important;
+}
+@media (max-width:900px){
+  body.atlanta .tip-tools > .preference-followup-wide{margin-top:0;padding:0}
+}
+</style>
+
+<style>
+/* Atlanta master QA refinements — requested copy wrapping, mobile scaling, and Friday fit only. */
+body.atlanta .pro-tip-intro-thanks{text-align:center}
+body.atlanta .desktop-intro-break,
+body.atlanta .desktop-phone-break,
+body.atlanta .desktop-scheduling-break,
+body.atlanta .desktop-scheduling-clarification-break,
+body.atlanta .mobile-copy-break,
+body.atlanta .mobile-roadmap-enlarge-label{display:none}
+body.atlanta .atlanta-lead-portrait{display:none}
+body.atlanta .desktop-nda-keep{white-space:normal}
+body.atlanta .atlanta-phone-keep,
+body.atlanta .atlanta-utest-id-keep{white-space:nowrap}
+body.atlanta .availability-clarification{
+  margin:5px 9px 0;font-size:.78rem;line-height:1.35;
+}
+body.atlanta .availability-table{
+  width:100%!important;min-width:0!important;max-width:100%!important;
+  table-layout:fixed!important;box-sizing:border-box;
+}
+body.atlanta .availability-table-wrap{
+  width:100%!important;max-width:100%!important;box-sizing:border-box;
+  overflow-x:hidden!important;padding-right:1px;
+}
+body.atlanta .tip-tools > .preference-followup-wide .copy-page-link{
+  margin:16px auto 3px!important;
+}
+@media (min-width:901px){
+  body.atlanta .desktop-intro-break,
+  body.atlanta .desktop-phone-break,
+  body.atlanta .desktop-scheduling-break,
+  body.atlanta .desktop-scheduling-clarification-break{display:inline}
+  body.atlanta .desktop-nda-keep{white-space:nowrap}
+  body.atlanta .atlanta-action-row{
+    grid-template-columns:minmax(250px,.95fr) minmax(0,1.72fr);
+    align-items:start;
+    margin-top:40px;
+  }
+  body.atlanta .atlanta-action-cta{order:1}
+  body.atlanta .atlanta-action-row .referral-info-callout{order:2}
+  body.atlanta .tip-tools > .instruction-shot{margin-bottom:8px}
+  body.atlanta .tip-tools > .availability-tool{position:relative;top:6px}
+  body.atlanta .tip-tools > .preference-followup-wide{margin-top:20px}
+  body.atlanta .tip-tools > .preference-followup-wide .friend-share-item{
+    padding-bottom:10px;
+  }
+  body.atlanta .tip-tools > .preference-followup-wide .copy-page-link{
+    position:relative;top:10px;left:-28px;margin:10px auto 0!important;
+  }
+  body.atlanta .tip-copy > .recovery-tip{margin-top:47px}
+  body.atlanta .tip-tools > .instruction-shot figcaption{padding:6px 11px}
+}
+@media (max-width:600px) and (orientation:portrait){
+  body.atlanta .mobile-copy-break{display:inline}
+  body.atlanta .atlanta-lead-default{display:none}
+  body.atlanta .atlanta-lead-portrait{display:inline}
+  body.atlanta .hero-thanks-mobile{font-weight:800}
+  body.atlanta .atlanta-roadmap-beta{
+    width:118%;margin-left:-9%;margin-right:-9%;
+  }
+  body.atlanta .atlanta-utest-help-beta{
+    width:114%;margin-left:-7%;margin-right:-7%;
+  }
+  body.atlanta .atlanta-roadmap-beta img{cursor:zoom-in}
+  body.atlanta .mobile-roadmap-enlarge-label{
+    display:block;margin:6px 0 0;text-align:center;color:#666;
+    font-size:.76rem;line-height:1.2;font-weight:600;
+  }
+}
+</style>
 </head>
-<body class="midtown">
-<header class="topbar"><div class="wrap brand">PAID TO <span>PLAY</span> TESTING</div><div class="brand-sherpa-tagline">Your Tech Study Sherpa — Guiding You From Application to Testing</div></header>
+<body class="atlanta mobile-woman-prototype">
+<header class="topbar"><div class="wrap brand">PAID TO <span>PLAY</span> TESTING</div><div class="brand-sherpa-tagline">Your Tech Study Sherpa — Guiding You From Application to Testing</div><button class="atlanta-mobile-menu" type="button" aria-label="Menu" tabindex="-1"><span></span></button><button class="mobile-menu-prototype" type="button" aria-label="Menu" aria-expanded="false" aria-controls="atlanta-mobile-nav"><span></span></button></header>
+<nav class="atlanta-mobile-nav" id="atlanta-mobile-nav" aria-label="Mobile navigation" hidden>
+  <div class="atlanta-mobile-nav-panel">
+    <button class="atlanta-mobile-nav-close" type="button">CLOSE</button>
+    <a href="#before-you-apply">APPLY FOR THE MIDTOWN STUDY</a>
+    <a href="#atlanta-story-modal" data-modal-open="atlanta-story-modal">OUR STORY</a>
+    <a href="#atlanta-testimonials-modal" data-modal-open="atlanta-testimonials-modal">TESTIMONIALS</a>
+    <a href="mailto:info@paidtoplaytesting.com">CONTACT</a>
+    <a href="https://www.paidtoplaytesting.com/" target="_blank" rel="noopener noreferrer">VISIT MAIN WEBSITE</a>
+  </div>
+</nav>
+<div class="atlanta-desktop-utility-menu" id="atlanta-desktop-utility-menu" hidden aria-hidden="true">
+  <div class="atlanta-desktop-utility-panel" role="dialog" aria-modal="false" aria-label="Midtown page menu">
+    <button type="button" class="atlanta-desktop-menu-close">CLOSE</button>
+    <a href="#before-you-apply" class="atlanta-desktop-menu-apply">APPLY FOR THE MIDTOWN STUDY</a>
+    <button type="button" data-modal-open="atlanta-story-modal">OUR STORY</button>
+    <button type="button" data-modal-open="atlanta-testimonials-modal">TESTIMONIALS</button>
+    <a href="mailto:info@paidtoplaytesting.com">CONTACT</a>
+    <a href="https://www.paidtoplaytesting.com/" target="_blank" rel="noopener noreferrer" class="atlanta-desktop-menu-main-site">VISIT MAIN WEBSITE</a>
+  </div>
+</div>
 
 <main>
 <section class="hero">
 <div class="wrap hero-grid">
- <div class="copy">
- <div class="kicker">MIDTOWN MANHATTAN • NYC</div>
- <h1>Get Paid<br><span class="blue">to Play!</span></h1>
- <p class="lead"><strong>Test wearable technology and <span class="mobile-earn-break"><br></span><span class="earn">earn&nbsp;$150</span></strong><span class="desktop-lead-break"><br></span> for an approximately <span class="mobile-three-hour-break"><br></span>3-hour, in-person session.</p>
- <div class="offer offer-interactive" aria-label="Study details">
- <button class="pill offer-detail-trigger" type="button" aria-expanded="false" data-detail="payment">$150 STUDY PAYMENT</button>
- <div class="offer-lower-pair">
- <button class="pill offer-detail-trigger" type="button" aria-expanded="false" data-detail="duration">ABOUT 3 HOURS</button>
- <button class="pill offer-detail-trigger" type="button" aria-expanded="false" data-detail="age">AGES 18+</button>
- </div>
- <div class="offer-popover" id="offer-detail-popover" role="status" aria-live="polite" hidden>
- <button class="offer-popover-close" type="button" aria-label="Close details">×</button>
- <div class="offer-popover-copy"></div>
- </div>
- </div>
- <p class="session-times"><span class="hero-thanks"><span class="hero-thanks-full">Thank you for your interest in the wearables study!</span><span class="hero-thanks-mobile">Thank you for your interest in the study!</span></span>Weekday sessions are offered at<span class="mobile-session-break"><br></span> <strong>9:00 AM</strong> and <strong class="time-2pm">1:30 PM</strong>.<br><span class="keep-together">No technology experience is required.</span><span class="desktop-eligibility-break"><br></span> Participation is subject to eligibility and successful screening.</p>
- <p class="hero-cta-row"><a class="cta" href="#before-you-apply"><span class="cta-atl-prefix">Apply for the</span> <span class="cta-atl-rest">Midtown Study</span></a></p>
- <p class="note hero-note">You'll continue to the official uTest registration process.</p>
- </div>
- <div class="visual"><img class="hero-art" src="../assets/midtown-hero-final-composite.jpeg" alt="Get Paid to Play Midtown wearable technology testing campaign"></div>
+  <div class="copy">
+    <div class="kicker"><span class="midtown-desktop-ribbon-text">MIDTOWN MANHATTAN •<br class="atlanta-desktop-ribbon-break"> NEW YORK CITY</span><span class="midtown-mobile-ribbon-text">MIDTOWN MANHATTAN • NYC</span></div>
+    <div class="mobile-woman-stage" aria-hidden="true"><img src="../assets/atlanta-mobile-woman.png" alt=""></div>
+    <div class="mobile-promo-stage" aria-hidden="true"><img src="../assets/atlanta-mobile-promo.png" alt=""></div>
+    <div class="mobile-vr-stage" aria-hidden="true"><img src="../assets/atlanta-mobile-vr.png" alt=""></div>
+    <h1>Get Paid<br><span class="blue">to Play!</span></h1>
+    <p class="lead"><span class="atlanta-lead-default"><strong>Test wearable technology and<span class="atlanta-desktop-break"><br></span> <span class="mobile-earn-break"><br></span><span class="earn">earn&nbsp;$150</span></strong><span class="desktop-lead-break"><br></span> for an approximately<span class="atlanta-desktop-break"><br></span> <span class="mobile-three-hour-break"><br></span>3-hour, in-person session.</span><span class="atlanta-lead-portrait"><strong>Test wearable technology<br>and<br><span class="earn">earn&nbsp;$150</span></strong> for an<br>approximately<br>3-hour, in-person session.</span></p>
+    <div class="offer offer-interactive" aria-label="Study details">
+      <button class="pill offer-detail-trigger" type="button" aria-expanded="false" data-detail="payment">$150 STUDY PAYMENT</button>
+      <div class="offer-lower-pair">
+      <button class="pill offer-detail-trigger" type="button" aria-expanded="false" data-detail="duration">ABOUT 3 HOURS</button>
+      <button class="pill offer-detail-trigger" type="button" aria-expanded="false" data-detail="age">AGES 18+</button>
+      </div>
+      <div class="offer-popover" id="offer-detail-popover" role="status" aria-live="polite" hidden>
+        <button class="offer-popover-close" type="button" aria-label="Close details">×</button>
+        <div class="offer-popover-copy"></div>
+      </div>
+    </div>
+    <p class="session-times"><span class="hero-thanks"><span class="hero-thanks-full">Thank you for your interest in the wearables study!</span><span class="atlanta-desktop-thanks">Thank you for your interest in the study!</span><span class="hero-thanks-mobile">Thank you for your<br>interest in the study!</span></span>Weekday sessions are<span class="atlanta-session-offered"> offered</span><span class="mobile-session-break"><br></span> at<span class="atlanta-desktop-break"><br></span> <strong>9:00 AM</strong> and <strong class="time-2pm">1:30 PM</strong>.<span class="atlanta-desktop-hidden"><br><span class="keep-together">No technology experience required.</span><span class="desktop-eligibility-break"><br></span> Participation is subject to eligibility and successful screening.</span></p>
+    <p class="hero-cta-row"><a class="cta" href="#before-you-apply"><span class="cta-atl-prefix">Apply for the</span> <span class="cta-atl-rest">Midtown Study</span></a></p>
+    <p class="note hero-note">You'll continue to the official<span class="atlanta-mobile-redirect-break"><br></span> uTest registration process.</p>
+    <div class="atlanta-desktop-post-cta" aria-label="Additional study requirements">
+      <p class="atlanta-desktop-no-tech">No technology experience required.</p>
+      <p class="atlanta-desktop-eligibility">Participation is subject to eligibility and successful screening.</p>
+    </div>
+  </div>
+  <div class="visual"><img class="hero-art" src="../assets/midtown-hero-final-composite.jpeg" alt="Get Paid to Play Midtown wearable technology testing campaign"></div>
 </div>
 </section>
 
 
+
+<div class="atlanta-trust-transition" aria-label="Paid to Play Testing trust statement">
+  <div class="atlanta-trust-transition-inner">Real people. Real testing opportunities. <br class="atlanta-trust-transition-mobile-break"><span class="atlanta-trust-transition-blue">Personal help when you need it.</span></div>
+</div>
+
 <section class="hero-credibility" aria-label="Paid to Play Testing credibility">
 <div class="wrap credibility-grid">
-<div class="credibility-item credibility-story"><span>From Tester to</span><strong>Testing Sherpa</strong></div>
-<div class="credibility-item credibility-press"><span class="credibility-eyebrow">AS FEATURED IN</span><strong>The New York Times</strong></div>
-<div class="credibility-item credibility-proof"><span>We’ve assisted hundreds of prospective participants along the way.</span></div>
+<div class="credibility-item credibility-story"><span>FROM TESTER TO</span><strong>TESTING SHERPA</strong><a class="atlanta-desktop-trust-link" href="#atlanta-story-modal" data-modal-open="atlanta-story-modal">Our Story →</a></div>
+<div class="credibility-item credibility-help"><strong>NEED HELP?</strong><span>We’ve assisted hundreds of prospective participants along the way. Let us help you.</span><a class="atlanta-desktop-trust-link" href="#atlanta-testimonials-modal" data-modal-open="atlanta-testimonials-modal">Read Testimonials →</a></div>
+<div class="credibility-item credibility-press"><span class="credibility-eyebrow">AS FEATURED IN</span><strong>The New York Times</strong><span class="atlanta-desktop-contact">Questions? <a href="mailto:info@paidtoplaytesting.com">info@paidtoplaytesting.com</a></span></div>
 </div>
+<div class="mobile-expanded-credibility">
+  <div class="mobile-trust-block mobile-trust-story">
+    <div class="mobile-trust-kicker">FROM TESTER TO TESTING SHERPA</div>
+    <a class="mobile-trust-link" href="#atlanta-story-modal" data-modal-open="atlanta-story-modal">Our Story →</a>
+  </div>
+  <div class="mobile-trust-block mobile-trust-help">
+    <div class="mobile-trust-kicker">NEED HELP?</div>
+    <p>We’ve assisted hundreds of prospective participants along the way.<br><strong>Let us help you.</strong></p>
+    <a class="mobile-trust-link" href="#atlanta-testimonials-modal" data-modal-open="atlanta-testimonials-modal">Read Testimonials →</a>
+  </div>
+  <div class="mobile-trust-block mobile-trust-press">
+    <div class="mobile-trust-kicker">AS FEATURED IN</div>
+    <div class="mobile-trust-nyt">The New York Times</div>
+  </div>
+</div>
+
 </section>
 
 <section id="before-you-apply">
 <div class="wrap">
- <div class="warning pro-tip">
- <div class="tip-copy">
- <div class="tip-label">💡 PRO TIP</div>
- <h2>Keep Your Application<span class="desktop-only-break"><br></span> Tab or Window Open</h2>
- <p>You'll first create a uTest account and follow a link to complete the study's application/screener and NDA (non-disclosure agreement).</p>
+  <div class="warning pro-tip">
+    <div class="tip-copy">
+      <div class="tip-label" style="max-width:none;white-space:nowrap">💡 PRO TIP — PLEASE NOTE</div>
+      <h2>Keep Your Application<span class="desktop-only-break"><br></span> Tab or Window Open</h2>
+      <p class="pro-tip-intro-thanks"><strong>Thank you for your interest in testing wearable technology!</strong></p>
+      <p>You'll first create a uTest account and follow a link to complete the study's brief application/screener and NDA<span class="desktop-intro-break"><br></span> <span class="desktop-nda-keep">(non-disclosure agreement).</span></p>
 <p>After creating your uTest account, you'll be asked to confirm your account by email.</p>
- <div class="critical-tip">
- <span class="critical-pin" aria-hidden="true">📌</span>
- <strong class="critical-copy">DO NOT USE THE ORIGINAL UTEST TAB OR WINDOW TO CHECK YOUR EMAIL.</strong>
- </div>
- <p><strong>Keep that uTest page open.</strong> Check your email using your email app, a <strong>different browser tab</strong>, or another device. After confirming your account, return to the original uTest tab or window and click <strong>Continue To Application</strong>.</p>
- <p>This allows your new uTest account information — including your <strong>uTest ID, name and email</strong> — to carry over automatically to the study application.</p>
- <p><strong>Don't close the original uTest tab or window or wait too long to continue.</strong> If you leave the signup flow and cannot return to that page, the automatic handoff may be lost. You may then need to log in to uTest, locate your uTest ID, and take additional steps to complete the study application.</p>
- <p><strong>Best practice:</strong> Keep the original uTest tab open until you have reached the study application.</p>
+      <div class="atlanta-roadmap-beta">
+        <picture>
+          <source media="(max-width:900px)" srcset="../assets/atlanta-application-roadmap-mobile.png">
+          <img src="../assets/atlanta-application-roadmap-beta.png" alt="Here's what to expect: scheduling preferences, uTest registration, study screener, referral information, and NDA agreement">
+        </picture>
+        <p class="mobile-roadmap-enlarge-label">Tap to enlarge</p>
+      </div>
+      <div class="atlanta-utest-help-beta">
+        <img src="../assets/atlanta-utest-help-panel-beta.png" alt="The button to continue to uTest appears near the end of this page; email links and help are available throughout the page">
+      </div>
+      <div class="critical-tip">
+        <span class="critical-pin" aria-hidden="true">📌</span>
+        <strong class="critical-copy">DO NOT USE THE ORIGINAL UTEST TAB OR WINDOW TO CHECK YOUR EMAIL.</strong>
+      </div>
+      <p><strong>Keep that uTest page open.</strong><span class="mobile-copy-break"><br></span> Check your email using your email app, a <strong>different browser tab</strong>, or another device. After confirming your account, return to the original uTest tab or window and click <strong>Continue To Application</strong>.</p>
+      <p>This allows your new uTest account information — including your <strong>uTest ID, name and email</strong> — to carry over automatically to the study application.</p>
+      <p><strong>Don't close the original uTest tab or window or wait too long to continue.</strong><br> If you leave the signup flow and cannot return to that page, the automatic handoff may be lost. You may then need to log in to uTest, locate your uTest ID, and take additional steps to complete the study application.</p>
+      <p><strong>Best practice: Keep the original uTest tab open until you have reached the study application.</strong></p>
 
- <div class="recovery-tip">
- <h3>If You Accidentally Close or<span class="desktop-recovery-break"><br></span> Lose the Original uTest Page</h3>
- <p><strong>Don't create another uTest account.</strong> Log in to your existing account and locate your uTest ID.</p>
- <p>If you still need to complete the study application, email <a href="mailto:info@paidtoplaytesting.com">info@paidtoplaytesting.com</a> for assistance accessing the appropriate application form.</p>
- <p><strong>Already have your uTest ID?</strong> Include it when contacting us so we can help you get back on track more quickly.</p>
- <p><strong>You can also scroll to the bottom of this page to submit a help request.</strong></p>
- </div>
- </div>
+      <div class="recovery-tip">
+        <h3>If You Accidentally Close or<span class="desktop-recovery-break"><br></span> Lose the Original uTest Page</h3>
+        <p><strong>Don't create another uTest account.</strong> Log in to your existing account and locate your uTest ID.</p>
+        <p>If you still need to complete the study application, email <a href="mailto:info@paidtoplaytesting.com">info@paidtoplaytesting.com</a> for assistance accessing the appropriate application form.</p>
+        <p><strong>Already have your <span class="atlanta-utest-id-keep">uTest ID</span>?</strong> Include it when contacting us so we can help you get back on track more quickly.</p>
+        <p><strong>You can also scroll to the bottom of this page to submit a help request.</strong></p>
+      </div>
+    </div>
 
- <div class="tip-tools">
- <figure class="instruction-shot">
- <img src="../assets/utest-confirm-account-cropped.png" alt="uTest Confirm Your Account page showing the Continue To Application button">
- <figcaption>Follow the arrow to <strong>Continue To Application</strong> before leaving the uTest page.</figcaption>
- </figure>
+    <div class="tip-tools">
+      <figure class="instruction-shot">
+        <img src="../assets/utest-confirm-account-cropped.png" alt="uTest Confirm Your Account page showing the Continue To Application button">
+        <figcaption>Follow arrow to <strong>Continue To Application</strong> before leaving uTest page.</figcaption>
+      </figure>
 
- <section class="availability-tool" data-location="midtown" data-api="https://script.google.com/macros/s/AKfycbybIuYUdhAe6B5LjxmZ5iRROS6uQvQiFzmTQsz5Bb8fDRh1vysUhF6ySNU6qO9QHI0i/exec">
- <div class="availability-heading"><span class="availability-title">CHECK CURRENT AVAILABILITY</span><span class="availability-location">Loading…</span></div>
- <div class="availability-meta">Last updated: <strong class="availability-updated">Loading…</strong></div>
- <p class="availability-top-note">Availability may change. Current information is shown for planning purposes.</p>
- <div class="availability-legend" aria-label="Availability status legend"><span><i class="lg-available"></i>Available</span><span><i class="lg-limited"></i>Limited</span><span><i class="lg-few"></i>Few slots left</span><span><i class="lg-full"></i>Full</span></div>
- <div class="availability-weeks" aria-live="polite">
- <div class="availability-loading">Loading current availability…</div>
- </div>
+      <section class="availability-tool" data-location="midtown" data-api="https://script.google.com/macros/s/AKfycbybIuYUdhAe6B5LjxmZ5iRROS6uQvQiFzmTQsz5Bb8fDRh1vysUhF6ySNU6qO9QHI0i/exec">
+        <span class="atlanta-mobile-standalone-calendar" aria-hidden="true"><svg viewBox="0 0 32 32" focusable="false"><rect x="4.75" y="7" width="22.5" height="20" rx="2.5" fill="none" stroke="currentColor" stroke-width="2.5"/><path d="M5 13h22M10 4.5v5M22 4.5v5" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><g fill="currentColor"><rect x="9" y="16" width="3.5" height="3.5" rx=".5"/><rect x="14.25" y="16" width="3.5" height="3.5" rx=".5"/><rect x="19.5" y="16" width="3.5" height="3.5" rx=".5"/><rect x="9" y="21" width="3.5" height="3.5" rx=".5"/><rect x="14.25" y="21" width="3.5" height="3.5" rx=".5"/><rect x="19.5" y="21" width="3.5" height="3.5" rx=".5"/></g></svg></span>
+        <div class="availability-heading"><span class="availability-calendar-icon" aria-hidden="true"><svg viewBox="0 0 32 32" focusable="false"><rect x="4.75" y="7" width="22.5" height="20" rx="2.5" fill="none" stroke="currentColor" stroke-width="2.5"/><path d="M5 13h22M10 4.5v5M22 4.5v5" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><g fill="currentColor"><rect x="9" y="16" width="3.5" height="3.5" rx=".5"/><rect x="14.25" y="16" width="3.5" height="3.5" rx=".5"/><rect x="19.5" y="16" width="3.5" height="3.5" rx=".5"/><rect x="9" y="21" width="3.5" height="3.5" rx=".5"/><rect x="14.25" y="21" width="3.5" height="3.5" rx=".5"/><rect x="19.5" y="21" width="3.5" height="3.5" rx=".5"/></g></svg></span><span class="availability-title">CHECK CURRENT AVAILABILITY</span><span class="availability-location">Loading…</span></div>
+        <div class="availability-meta">Last updated: <strong class="availability-updated">Loading…</strong></div>
+        <p class="availability-clarification">If you know your preferred dates, you can enter your preferences below.<span class="desktop-scheduling-clarification-break"><br></span> <strong>If not, simply continue to uTest registration and you can return here later to submit your scheduling preferences.</strong></p>
+        <p class="availability-top-note">Current availability is shown for planning purposes and may change. <strong class="availability-top-urgency">Sign up soon to help secure your preferred slot.</strong></p>
+        <div class="availability-legend" aria-label="Availability status legend"><span><i class="lg-available"></i>Available</span><span><i class="lg-limited"></i>Limited</span><span><i class="lg-few"></i>Few slots left</span><span><i class="lg-full"></i>Full</span></div>
+        <div class="availability-weeks" aria-live="polite">
+          <div class="availability-loading">Loading current availability…</div>
+        </div>
 
- <div class="preference-heading">TELL US YOUR PREFERRED SESSION TIMES</div>
- <form class="preference-form" action="https://script.google.com/macros/s/AKfycbybIuYUdhAe6B5LjxmZ5iRROS6uQvQiFzmTQsz5Bb8fDRh1vysUhF6ySNU6qO9QHI0i/exec" method="POST" target="preference-submit-frame">
- <input type="hidden" name="action" value="preference">
- <input type="hidden" name="notes" value="">
- <input type="hidden" name="location" value="Midtown Manhattan • NYC">
- <input class="hp-field" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <div class="preference-heading">TELL US YOUR PREFERRED SESSION TIMES</div>
+        <form class="preference-form" action="https://script.google.com/macros/s/AKfycbybIuYUdhAe6B5LjxmZ5iRROS6uQvQiFzmTQsz5Bb8fDRh1vysUhF6ySNU6qO9QHI0i/exec" method="POST" target="preference-submit-frame">
+          <input type="hidden" name="action" value="preference">
+          <input type="hidden" name="notes" value="">
+          <input type="hidden" name="location" value="Midtown Manhattan • NYC">
+          <input class="hp-field" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
 
- <div class="preference-another-panel" hidden>
- <p class="another-question">Would this applicant like to attend with the previous applicant?</p>
- <div class="preference-another-options">
- <button type="button" class="another-together">YES, IF POSSIBLE</button>
- <button type="button" class="another-independent">NO PREFERENCE</button>
- </div>
- </div>
- <div class="preference-back-options" hidden><button type="button" class="back-to-submission-options">← BACK TO SUBMISSION OPTIONS</button></div>
- <div class="preference-grid">
- <label><span>Name <strong>*</strong></span><input name="name" type="text" autocomplete="name" required></label>
- <label><span>uTest ID <small>(if known)</small></span><input name="utest_id" type="text" inputmode="numeric" autocomplete="off" placeholder="e.g., 1234567"></label>
- <label><span>Email <strong>*</strong></span><input name="email" type="email" autocomplete="email" required></label>
- <label><span>Phone <small>(optional)</small></span><input name="phone" type="tel" autocomplete="tel"></label>
- <label><span>Preferred Date <strong>*</strong></span><input name="preferred_date" type="date" required></label>
- <label><span>Preferred Time <strong>*</strong></span><select name="preferred_time" required><option value="">Select time</option></select></label>
- <label><span>Backup Date #1 (optional)</span><input name="backup_date_1" type="date"></label>
- <label><span>Backup Date #2 (optional)</span><input name="backup_date_2" type="date"></label>
- </div>
- <p class="preference-note"><strong>This is a scheduling preference only.</strong> It does not reserve or confirm a session. Availability may change. <strong>Your session is not officially scheduled until confirmed by uTest directly.</strong> You may also select a future date not shown on this calendar, pending availability. <strong>If we have the necessary information, we will forward your preferences.</strong> <strong>If you’re unsure of your backup dates, you may leave them blank or update your preferences later.</strong> <strong>Earlier dates are encouraged, as availability is limited and study opportunities may fill or change at any time.</strong><br><strong class="slots-urgency">Slots tend to fill quickly.</strong></p>
- <button class="preference-submit" type="submit">Submit Scheduling Preferences</button>
- <p class="preference-status" role="status" aria-live="polite"></p>
+          <div class="preference-another-panel" hidden>
+            <p class="another-question">Would this applicant like to attend with the previous applicant?</p>
+            <div class="preference-another-options">
+              <button type="button" class="another-together">YES, IF POSSIBLE</button>
+              <button type="button" class="another-independent">NO PREFERENCE</button>
+            </div>
+          </div>
+          <div class="preference-back-options" hidden><button type="button" class="back-to-submission-options">← BACK TO SUBMISSION OPTIONS</button></div>
+          <div class="preference-grid">
+            <label><span>Name <strong>*</strong></span><input name="name" type="text" autocomplete="name" required></label>
+            <label><span>uTest ID <small>(if known)</small></span><input name="utest_id" type="text" inputmode="numeric" autocomplete="off" placeholder="e.g., 1234567"></label>
+            <label><span>Email <strong>*</strong></span><input name="email" type="email" autocomplete="email" required></label>
+            <label><span>Preferred Date <strong>*</strong></span><input name="preferred_date" type="date" required></label>
+            <label><span>Preferred Time <strong>*</strong></span><select name="preferred_time" required><option value="">Select time</option></select></label>
+            <label><span>Backup Date #1 (optional)</span><input name="backup_date_1" type="date"></label>
+            <label><span>Backup Date #2 (optional)</span><input name="backup_date_2" type="date"></label>
+          </div>
+          <p class="preference-note"><strong>This is a scheduling preference only.</strong> It does not reserve or confirm a session. Availability may change. <strong>Your session is not officially scheduled until confirmed by uTest directly.</strong> You may also select a future date not shown on this calendar, pending availability. <strong>If we have the necessary information, we will forward your preferences.</strong> <strong>If you’re unsure of your backup dates, you may leave them blank or update your preferences later.</strong> <strong>Earlier dates are encouraged, as availability is limited and study opportunities may fill or change at any time.</strong></p>
+          <button class="preference-submit" type="submit">Submit Scheduling Preferences</button>
+          
+          <p class="preference-status" role="status" aria-live="polite"></p>
 
 
- </form>
- <div class="preference-confirmation" hidden>
- <p class="preference-success-lead"><strong>Thank you! Your scheduling preferences have been received.</strong></p>
- <p>This is a scheduling preference only and does not reserve or confirm a session.</p>
- <p><strong>Need to change your dates or times?</strong> You can update your preferences at any time. Your newest submission will supersede your earlier preferences. You can also return to this page later — even in a new visit — and submit updated preferences at any time.</p>
- <div class="preference-success-actions">
- <button class="preference-submit preference-return-button" type="button">UPDATE MY SCHEDULING PREFERENCES</button>
- <button class="preference-submit preference-another-button" type="button">SUBMIT PREFERENCES FOR ANOTHER APPLICANT</button>
- </div>
- <div class="preference-success-info">
- <p><strong>Questions or need assistance?</strong> Email <a href="mailto:info@paidtoplaytesting.com"><strong>info@paidtoplaytesting.com</strong></a>. We will respond as soon as possible, typically within 24 business hours.</p>
- <p>Once your application is complete and you qualify, uTest should generally contact you regarding next steps within <strong>48 business hours</strong>. If you would like a status update or help expediting the process, or if more than 48 business hours have passed without hearing from uTest, feel free to reach out to us.</p>
- <p><strong>Ready to continue?</strong> Follow the application instructions below.</p>
- </div>
- </div>
- <iframe class="preference-submit-frame" name="preference-submit-frame" title="Preference submission response"></iframe>
- </section>
- </div>
+        </form>
+        <div class="preference-confirmation" hidden>
+          <p class="preference-success-lead"><strong>Thank you! Your scheduling preferences have been received.</strong></p>
+          <p>This is a scheduling preference only and does not reserve or confirm a session.</p>
+          <p><strong>Need to change your dates or times?</strong> You can update your preferences at any time. Your newest submission will supersede your earlier preferences. You can also return to this page later — even in a new visit — and submit updated preferences at any time.</p>
+          <div class="preference-success-actions">
+            <button class="preference-submit preference-return-button" type="button">UPDATE MY SCHEDULING PREFERENCES</button>
+            <button class="preference-submit preference-another-button" type="button">SUBMIT PREFERENCES FOR ANOTHER APPLICANT</button>
+          </div>
+          <div class="preference-success-info">
+            <p><strong>Questions or need assistance?</strong> Email <a href="mailto:info@paidtoplaytesting.com"><strong>info@paidtoplaytesting.com</strong></a>. We will respond as soon as possible, typically within 24 business hours.</p>
+            <p>Once your application is complete and you qualify, uTest should generally contact you regarding next steps within <strong>48 business hours</strong>. If you would like a status update or help expediting the process, or if more than 48 business hours have passed without hearing from uTest, feel free to reach out to us.</p>
+            <p><strong>Ready to continue?</strong> Follow the application instructions below.</p>
+          </div>
+        </div>
+        <iframe class="preference-submit-frame" name="preference-submit-frame" title="Preference submission response"></iframe>
+      </section>
 
-<div class="preference-followup-wide">
- <div class="preference-followup-item"><p><strong>Want to try to confirm your appointment as soon as possible?</strong> If you provide the requested information, we can send you the direct uTest scheduling hotline to contact after completing your application, which can help expedite the scheduling process.</p></div>
- <div class="preference-followup-item friend-share-item"><p><strong>Coming with a friend or family member?</strong> <span class="desktop-keep">If&nbsp;they plan</span> to participate too, they can apply separately using this page. You can still let us know if you prefer to attend at the same time or at different times.</p><button class="copy-page-link" type="button">Copy Link</button><span class="copy-page-link-status" aria-live="polite"></span></div>
- <div class="preference-followup-item"><p><strong>Not ready yet? No problem.</strong> <span class="desktop-keep">You&nbsp;can</span> complete your uTest application first and await contact, or return here anytime to submit your preferred dates and times.</p></div>
-</div>
+      <div class="preference-followup-wide">
+        <div class="preference-followup-item">
+          <span class="scheduling-point-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg></span>
+          <div class="scheduling-point-copy"><p><strong>Want to try to confirm your appointment as soon as possible?</strong><span class="mobile-copy-break desktop-scheduling-break"><br></span> If you provide the requested information, we can send you the direct uTest scheduling hotline to contact after completing your application, which can help expedite the scheduling process.</p></div>
+        </div>
+        <div class="preference-followup-item friend-share-item">
+          <span class="scheduling-point-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="2.5"/><circle cx="16" cy="8" r="2.5"/><path d="M3.5 17c.4-3 2-4.5 4.5-4.5s4.1 1.5 4.5 4.5M11.5 17c.4-3 2-4.5 4.5-4.5s4.1 1.5 4.5 4.5"/></svg></span>
+          <div class="scheduling-point-copy"><p><strong>Coming with a friend or family member?</strong><span class="mobile-copy-break desktop-scheduling-break"><br></span> If they plan to participate too, they can apply separately using this page. You can still let us know if you prefer to attend at the same time or at different times.</p><button class="copy-page-link" type="button">Copy Link</button><span class="copy-page-link-status" aria-live="polite"></span></div>
+        </div>
+        <div class="preference-followup-item">
+          <span class="scheduling-point-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="6" width="16" height="14" rx="2"/><path d="M8 3.5V8M16 3.5V8M4 10h16M8 14h2M14 14h2M8 17h2M14 17h2"/></svg></span>
+          <div class="scheduling-point-copy"><p><strong>Not ready to schedule yet? No problem.</strong><span class="mobile-copy-break desktop-scheduling-break"><br></span> You can complete the uTest process first and await contact, or return here anytime to submit your preferred dates and times.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
 
- </div>
+  <div class="steps four-steps">
+    <div class="step"><b>1. Create your account</b>Use the official uTest signup page reached through the button below.</div>
+    <div class="step"><b>2. Preserve the uTest tab</b>Confirm your email in an app, different tab, or another device. Then return to the original uTest tab. If you lose it, don’t create a second account.</div>
+    <div class="step"><b>3. Continue & submit</b>Click <strong>Continue To Application</strong>, then complete and submit the study application/screener.</div>
+    <div class="step"><b>4. Complete your NDA</b>Complete the required<span class="atlanta-desktop-nda-break"><br></span> <span class="atlanta-nda-term">Non-Disclosure Agreement</span> before participating in the test.</div>
+  </div>
 
- <div class="steps four-steps">
- <div class="step"><b>1. Create your account</b>Use the official uTest signup page reached through the button below.</div>
- <div class="step"><b>2. Preserve the uTest tab</b>Confirm your email in an app, different tab, or another device. Then return to the original uTest tab. If you lose it, don’t create a second account.</div>
- <div class="step"><b>3. Continue & submit</b>Click <strong>Continue To Application</strong>, then complete and submit the study application/screener.</div>
- <div class="step"><b>4. Complete your NDA</b>Complete the required Non-Disclosure Agreement before participating in the test.</div>
- </div>
-
- <div class="nda-note">
- <h3><span class="nda-step-prefix">One Last Step:</span> <span class="nda-step-rest">Complete Your NDA</span></h3>
- <p>After submitting the study application, be sure to complete the required <strong>NDA (Non-Disclosure Agreement)</strong> using the link provided on the page that follows your submission.</p>
+  <div class="nda-note">
+    <h3><span class="nda-step-prefix">One Last Step:</span> <span class="nda-step-rest">Complete Your NDA</span></h3>
+    <p>After submitting the study application, be sure to complete the required <strong>NDA (Non-Disclosure Agreement)</strong> using the link provided on the page that follows your submission.</p>
 <p><strong>The NDA must be completed before you can be officially scheduled and participate in the test.</strong> Follow the instructions after submitting your application and complete it promptly.</p>
 <p><strong>Then watch for confirmation from uTest.</strong> After completing your application and NDA, uTest will contact you regarding participation and scheduling, generally within <strong>2 business days</strong>.</p>
- </div>
+  </div>
 
- <div class="atlanta-action-row">
-  <div class="referral-info-callout">
-   <strong class="referral-heading"><span class="referral-important">IMPORTANT</span><span class="referral-dash"> — </span><span class="referral-rest">KEEP REFERRAL INFORMATION AS IS</span></strong>
-   <p>The application will automatically fill in referral information. Please leave any pre-filled referral information unchanged. It connects your application to this referral and allows us to assist with the process as a “concierge,” including answering your questions, responding to uTest on your behalf, and, in some cases, helping to expedite scheduling or resolve payment questions.</p>
-   <p><strong class="referral-spaced">If you provide your contact information, we can also help track current availability, manage your preferred and backup dates, and, when possible, help you find an earlier session. You can also submit or update your scheduling <span class="desktop-keep">preferences&nbsp;above.</span></strong></p>
-   <p><strong class="referral-spaced">If no referral information is listed, please enter 1436373 in the referral <span class="desktop-keep">uTest&nbsp;ID&nbsp;field&nbsp;when&nbsp;prompted.</span></strong></p>
+  <div class="atlanta-action-row">
+    <div class="referral-info-callout">
+      <strong class="referral-heading"><span class="referral-important">IMPORTANT</span><span class="referral-dash"> — </span><span class="referral-rest">KEEP REFERRAL INFORMATION <span class="keep-together">AS IS</span></span></strong>
+      <p>The application will automatically fill in referral information. Please leave any pre-filled referral information unchanged. It connects your application to this referral and allows us to assist with the process as a “concierge,” including answering your questions, responding to uTest on your behalf, and, in some cases, helping to expedite scheduling or resolve payment questions.</p>
+      <p><strong class="referral-spaced">If you provide your contact information, we can also help track current availability, manage your preferred and backup dates, and, when possible, help you find an earlier session. You can also submit or update your scheduling <span class="desktop-keep">preferences&nbsp;above.</span></strong></p>
+      <p><strong class="referral-spaced">If no referral information is listed, please enter <span class="referral-code">1436373</span> in the referral <span class="desktop-keep">uTest&nbsp;ID&nbsp;field&nbsp;when&nbsp;prompted.</span></strong></p>
+    </div>
+    <div class="atlanta-action-cta">
+      <p class="atlanta-action-cta-button"><a class="cta" href="https://utest.com/c-signup/wearables-nyc-ambassador-1436373" rel="noopener noreferrer" target="_blank">Continue to Official uTest Application</a></p>
+      <p class="note" style="text-align:center">A new tab will open to continue through the official uTest application flow.<span class="desktop-app-note-break"><br></span><span class="desktop-first-app-note-gap"></span> You can switch back to this tab at any time if you need assistance or want to submit or update your scheduling preferences.</p>
+    </div>
   </div>
-  <div class="atlanta-action-cta">
-   <p class="atlanta-action-cta-button"><a class="cta" href="https://utest.com/c-signup/wearables-nyc-ambassador-1436373" rel="noopener noreferrer" target="_blank">Continue to Official uTest Application</a></p>
-   <p class="note" style="text-align:center">A new tab will open to continue through the official uTest application flow.<span class="desktop-app-note-break"><br></span><span class="desktop-first-app-note-gap"></span> You can switch back to this tab at any time if you need assistance or want to check or update your scheduling preferences.</p>
-  </div>
- </div>
 </div>
 </section>
 
 <section>
 <div class="wrap">
- <div class="lower-info-centered">
- <div class="signup-questions-centered">
- <p class="smallcaps">Questions or stuck during signup?</p>
- <p>Paid to Play Testing can help you navigate the registration and application process.<br>Email <a href="mailto:info@paidtoplaytesting.com"><strong>info@paidtoplaytesting.com</strong></a> for assistance.<br>We typically respond within 24 hours on business days.</p>
- </div>
+  <div class="lower-info-centered">
+    <div class="signup-questions-centered">
+      <p class="smallcaps">Questions or stuck during signup?</p>
+      <p>Paid to Play Testing can help you navigate the registration and application process.<br>Email <a href="mailto:info@paidtoplaytesting.com"><strong>info@paidtoplaytesting.com</strong></a> for assistance.<br>We typically respond within 24 hours on business days.</p>
+    </div>
 
- <div class="session-practical-info">
- <h3>A Few Things to Know Before Your Session</h3>
- <p><strong>Plan ahead for your visit.</strong> Please arrive about 15 minutes before your appointment and allow extra time for transportation delays. <strong>If you arrive more than 5 minutes after your session begins, you may not be able to participate that day.</strong> Rescheduling opportunities may be limited, so please be punctual.</p>
- <p><strong>Quick, convenient payment options.</strong> After completing the study, choose a Tremendous Virtual Visa or PayPal transfer. <strong>And keep an eye out for additional opportunities to earn through other tests and bonuses.</strong></p>
- <p><strong>We welcome adults of all ages, backgrounds, and walks of life.</strong></p>
- </div>
- </div>
+    <div class="session-practical-info">
+      <h3>A Few Things to Know Before Your Session</h3>
+      <p><strong>Plan ahead for your visit.</strong> Please arrive about 15 minutes before your appointment and allow extra time for transportation delays. <strong>If you arrive more than 5 minutes after your session begins, you may not be able to participate that day.</strong> Rescheduling opportunities may be limited, so please be punctual.</p>
+      <p><strong>Quick, convenient payment options.</strong> After completing the study, choose a Tremendous Virtual Visa or PayPal transfer. <strong>And keep an eye out for additional opportunities to earn through other tests and bonuses.</strong></p>
+      <p><strong>We welcome adults of all ages, backgrounds, and walks of life.</strong></p>
+    </div>
+  </div>
 
- <section class="participant-testimonials" aria-labelledby="participant-testimonials-heading">
-  <div class="participant-testimonials-heading">
-   <h2 id="participant-testimonials-heading">What Participants Are Saying</h2>
-   <p>Real feedback from people we’ve helped through the testing process.</p>
-  </div>
-  <div class="participant-testimonials-grid">
-   <article class="participant-quote-card">
-    <span class="participant-quote-mark" aria-hidden="true">“</span>
-    <blockquote>Thanks again for your time and assistance Daniel.</blockquote>
-    <p class="participant-attribution"><strong>Luke S.</strong><span>Paid testing participant</span></p>
-   </article>
-   <article class="participant-quote-card">
-    <span class="participant-quote-mark" aria-hidden="true">“</span>
-    <blockquote>Thank you Daniel. I appreciate all you have done for me.</blockquote>
-    <p class="participant-attribution"><strong>Catalina R.</strong><span>Paid testing participant</span></p>
-   </article>
-   <article class="participant-quote-card">
-    <span class="participant-quote-mark" aria-hidden="true">“</span>
-    <blockquote><span class="maribel-hook">Wooo hooo! 🎉🎉</span><br>… I checked the trash and there it was 😺</blockquote>
-    <p class="participant-attribution"><strong>Maribel M.</strong><span>Paid testing participant</span></p>
-   </article>
-   <div class="participant-polaroid-wrap">
-    <img src="../assets/atlanta-participant-polaroid.jpeg" alt="Wearable technology participant wearing a headset with Hands-On Tech, Real Impact caption">
-   </div>
-  </div>
-  <p class="participant-testimonials-tagline">Real people. Real testing opportunities. <strong>Personal help when you need it.</strong></p>
- </section>
+  <section class="participant-testimonials" aria-labelledby="participant-testimonials-heading">
+    <div class="participant-testimonials-heading">
+      <h2 id="participant-testimonials-heading">What Participants Are Saying</h2>
+      <p>Real feedback from people we’ve helped through the testing process.</p>
+    </div>
+    <div class="participant-testimonials-grid">
+      <article class="participant-quote-card">
+        <span class="participant-quote-mark" aria-hidden="true">“</span>
+        <blockquote>Thanks again for your time and assistance Daniel.</blockquote>
+        <p class="participant-attribution"><strong>Luke S.</strong><span>Paid testing participant</span></p>
+      </article>
+      <article class="participant-quote-card">
+        <span class="participant-quote-mark" aria-hidden="true">“</span>
+        <blockquote>Thank you Daniel. I appreciate all you have done for me.</blockquote>
+        <p class="participant-attribution"><strong>Catalina R.</strong><span>Paid testing participant</span></p>
+      </article>
+      <article class="participant-quote-card">
+        <span class="participant-quote-mark" aria-hidden="true">“</span>
+        <blockquote><span class="maribel-hook">Wooo hooo! 🎉🎉</span><br>… I checked the trash and there it was 😺</blockquote>
+        <p class="participant-attribution"><strong>Maribel M.</strong><span>Paid testing participant</span></p>
+      </article>
+      <div class="participant-polaroid-wrap">
+        <img src="../assets/atlanta-participant-polaroid.jpeg" alt="Wearable technology participant wearing a headset with Hands-On Tech, Real Impact caption">
+      </div>
+    </div>
+    <p class="participant-testimonials-tagline">Real people. Real testing opportunities. <strong>Personal help when you need it.</strong></p>
+  </section>
 </div>
 </section>
 
+
 <div class="bottom-official-cta-block">
- <p class="bottom-official-cta-button"><a class="cta" href="https://utest.com/c-signup/wearables-nyc-ambassador-1436373" rel="noopener noreferrer" target="_blank">Continue to Official uTest Application</a></p>
- <p class="note" style="text-align:center">A new tab will open to continue through the official uTest application flow.<span class="desktop-app-note-break"><br></span> You can switch back to this tab at any time if you need assistance or want to check or update your scheduling preferences.</p>
+  <p class="bottom-official-cta-button"><a class="cta" href="https://utest.com/c-signup/wearables-nyc-ambassador-1436373" rel="noopener noreferrer" target="_blank" rel="noopener noreferrer">Continue to Official uTest Application</a></p>
+  <p class="note" style="text-align:center">A new tab will open to continue through the official uTest application flow.<span class="desktop-app-note-break"><br></span> You can switch back to this tab at any time if you need assistance or want to submit or update your scheduling preferences.</p>
 </div>
+
 
 <section class="help" id="signup-help">
 <div class="wrap">
- <h2>Need help with signup?</h2>
- <p>If you have questions or run into trouble during registration, email <a class="email-link" href="mailto:info@paidtoplaytesting.com">info@paidtoplaytesting.com</a> or use the optional assistance form below.</p>
- <p>Paid to Play Testing can help you navigate <strong>this registration and application process</strong>. Providing your information is optional, and you can apply directly without requesting assistance.</p>
+  <h2>Need help with signup?</h2>
+  <p>If you have questions or run into trouble during registration, email <a class="email-link" href="mailto:info@paidtoplaytesting.com">info@paidtoplaytesting.com</a> or use the optional assistance form below.</p>
+  <p>Paid to Play Testing can help you navigate <strong>this registration and application process</strong>. Providing your information is optional, and you can apply directly without requesting assistance.</p>
 
- <form class="assist-form" action="https://api.web3forms.com/submit" method="POST">
- <input type="hidden" name="access_key" value="422af10c-09b5-4581-b9a5-135f4b217983">
- <input type="hidden" name="subject" value="Paid to Play Testing - Signup Assistance Request">
- <input type="hidden" name="from_name" value="Paid to Play Testing">
- <input type="hidden" name="redirect" value="https://get.paidtoplaytesting.com/Midtown/ThankYou/">
+  <form class="assist-form" action="https://api.web3forms.com/submit" method="POST">
+    <input type="hidden" name="access_key" value="422af10c-09b5-4581-b9a5-135f4b217983">
+    <input type="hidden" name="subject" value="Paid to Play Testing - Signup Assistance Request">
+    <input type="hidden" name="from_name" value="Paid to Play Testing">
+    <input type="hidden" name="redirect" value="https://get.paidtoplaytesting.com/Midtown/ThankYou/">
 
- <div class="form-grid">
- <label>
- <span>Name <strong>*</strong></span>
- <input type="text" name="name" autocomplete="name" required>
- </label>
+    <div class="form-grid">
+      <label>
+        <span>Name <strong>*</strong></span>
+        <input type="text" name="name" autocomplete="name" required>
+      </label>
 
- <label>
- <span>Email <strong>*</strong></span>
- <input type="email" name="email" autocomplete="email" required>
- </label>
+      <label>
+        <span>Email <strong>*</strong></span>
+        <input type="email" name="email" autocomplete="email" required>
+      </label>
 
- <label class="wide">
- <span>Phone <small>(optional)</small></span>
- <input type="tel" name="phone" autocomplete="tel">
- </label>
+      <label class="wide">
+        <span>What do you need help with? <small>(optional)</small></span>
+        <textarea name="message" rows="4" placeholder="Briefly tell us what you need help with."></textarea>
+      </label>
+    </div>
 
- <label class="wide">
- <span>What do you need help with? <small>(optional)</small></span>
- <textarea name="message" rows="4" placeholder="Briefly tell us what you need help with."></textarea>
- </label>
- </div>
+    <label class="consent-live">
+      <input type="checkbox" name="consent" value="Agreed to contact for this registration/application" required>
+      <span>I agree that Paid to Play Testing may contact me to assist with <strong>this registration and application</strong>.</span>
+    </label>
 
- <label class="consent-live">
- <input type="checkbox" name="consent" value="Agreed to contact for this registration/application" required>
- <span>I agree that Paid to Play Testing may contact me to assist with <strong>this registration and application</strong>.</span>
- </label>
-
- <button class="form-submit" type="submit">Request Signup Help</button>
- <p class="form-privacy">Your information is used only to respond to your request for assistance with this registration/application. We typically respond within 24 hours on business days.<br>If you’re ready to apply now, you may also apply directly without submitting this form.</p>
- </form>
+    <button class="form-submit" type="submit">Request Signup Help</button>
+    <p class="form-privacy">Your information is used only to respond to your request for assistance with this registration/application. We typically respond within 24 hours on business days.<br>If you’re ready to apply now, you may also apply directly without submitting this form.</p>
+  </form>
 </div>
 </section>
 </main>
 
 <footer>
 <div class="wrap">
- <p class="main-site-link">Learn more about Paid to Play Testing: <a href="https://www.paidtoplaytesting.com/" target="_blank" rel="noopener noreferrer"><strong>Visit our main website →</strong></a></p>
- <p><strong>Paid to Play Testing</strong> is an independent referral and signup-assistance service. It is not owned or operated by, or affiliated with, uTest or Applause. uTest is a trademark of its respective owner.</p>
- <p>Study availability, eligibility, scheduling, selection and payment are determined by the study operator. Information on this page is provided to help prospective participants understand and navigate the application process.</p>
- <p><strong>Copyright © 2026 Paid to Play Testing — Digital Design Trusted Technologies. All Rights Reserved.</strong></p>
+  <p class="main-site-link">Learn more about Paid to Play Testing: <a href="https://www.paidtoplaytesting.com/" target="_blank" rel="noopener noreferrer"><strong>Visit our main website →</strong></a></p>
+  <p><strong>Paid to Play Testing</strong> is an independent referral and signup-assistance service. It is not owned or operated by, or affiliated with, uTest or Applause. uTest is a trademark of its respective owner.</p>
+  <p>Study availability, eligibility, scheduling, selection and payment are determined by the study operator. Information on this page is provided to help prospective participants understand and navigate the application process.</p>
+  <p><strong>Copyright © 2026 Paid to Play Testing — Digital Design Trusted Technologies. All Rights Reserved.</strong></p>
 </div>
 </footer>
 
 <script>
 (function(){
- function esc(s){return String(s ?? '').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
- function renderWeek(rows, times, weekNumber, maxPositive){
- const mobile=window.matchMedia('(max-width:700px)').matches;
- const displayDate=(value)=>{
- const s=String(value||'');
- const m=s.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);
- if(!m) return s;
- const month=String(Number(m[1]));
- const day=String(Number(m[2]));
- return mobile ? `${month}/${day}` : `${month}/${day}/${m[3]}`;
- };
- const displayDay=(value)=>{
- const s=String(value||'');
- if(!mobile) return s;
- const map={Monday:'Mon',Tuesday:'Tue',Wednesday:'Wed',Thursday:'Thu',Friday:'Fri'};
- return map[s]||s;
- };
- const dayHeaders=rows.map(r=>`<th><div>${esc(displayDay(r.day))}</div><div>${esc(displayDate(r.date))}</div></th>`).join('');
- function publicStatus(v){
- if(v===null || v==='' || typeof v==='undefined') return {cls:'full',label:'FULL'};
- const n=Number(v);
- if(!Number.isFinite(n)) return {cls:'empty',label:'—'};
- if(n===0) return {cls:'full',label:'FULL'};
- const ratio=maxPositive>0 ? n/maxPositive : 1;
- if(ratio<=0.25) return {cls:'few',label:'FEW SLOTS LEFT'};
- if(ratio<=0.50) return {cls:'limited',label:'LIMITED'};
- return {cls:'available',label:'AVAILABLE'};
- }
- function cells(key){
- return rows.map(r=>{
- const s=publicStatus(r[key]);
- return `<td class="${s.cls}">${esc(s.label)}</td>`;
- }).join('');
- }
- return `<div class="availability-table-wrap"><table class="availability-table"><thead><tr><th class="week-label">WEEK ${weekNumber}<br>Time</th>${dayHeaders}</tr></thead><tbody><tr><th>${esc(times[0])}</th>${cells('morning')}</tr><tr><th>${esc(times[1])}</th>${cells('afternoon')}</tr></tbody></table></div>`;
- }
- function formatSchedulerTimestamp(raw){
- const value=String(raw||'').trim();
+  function esc(s){return String(s ?? '').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+  function renderWeek(rows, times, weekNumber, maxPositive){
+    const mobile=window.matchMedia('(max-width:700px)').matches;
+    const displayDate=(value)=>{
+      const s=String(value||'');
+      const m=s.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);
+      if(!m) return s;
+      const month=String(Number(m[1]));
+      const day=String(Number(m[2]));
+      return mobile ? `${month}/${day}` : `${month}/${day}/${m[3]}`;
+    };
+    const displayDay=(value)=>{
+      const s=String(value||'');
+      if(!mobile) return s;
+      const map={Monday:'Mon',Tuesday:'Tue',Wednesday:'Wed',Thursday:'Thu',Friday:'Fri'};
+      return map[s]||s;
+    };
+    const dayHeaders=rows.map(r=>`<th><div>${esc(displayDay(r.day))}</div><div>${esc(displayDate(r.date))}</div></th>`).join('');
+    function publicStatus(v){
+      if(v===null || v==='' || typeof v==='undefined') return {cls:'full',label:'FULL'};
+      const n=Number(v);
+      if(!Number.isFinite(n)) return {cls:'empty',label:'—'};
+      if(n===0) return {cls:'full',label:'FULL'};
+      const ratio=maxPositive>0 ? n/maxPositive : 1;
+      if(ratio<=0.25) return {cls:'few',label:'FEW SLOTS LEFT'};
+      if(ratio<=0.50) return {cls:'limited',label:'LIMITED'};
+      return {cls:'available',label:'AVAILABLE'};
+    }
+    function cells(key){
+      return rows.map(r=>{
+        const s=publicStatus(r[key]);
+        return `<td class="${s.cls}">${esc(s.label)}</td>`;
+      }).join('');
+    }
+    return `<div class="availability-table-wrap"><table class="availability-table"><thead><tr><th class="week-label">WEEK ${weekNumber}<br>Time</th>${dayHeaders}</tr></thead><tbody><tr><th>${esc(times[0])}</th>${cells('morning')}</tr><tr><th>${esc(times[1])}</th>${cells('afternoon')}</tr></tbody></table></div>`;
+  }
+  function formatSchedulerTimestamp(raw){
+    const value=String(raw||'').trim();
 
- // Source calendars use day/month/year. Accept common variants such as:
- // 12/08/2026 4:38 PM
- // 12/8/2026 4:38 PM
- // 12/08/2026, 4:38:00 PM
- // 12/8/2026, 4:38 PM NY time
- const m=value.match(
- /^(\d{1,2})\/(\d{1,2})\/(\d{4})\s*,?\s*(\d{1,2}):(\d{2})(?::(\d{2}))?\s*(AM|PM)(?:\s+.*)?$/i
- );
+    // Source calendars use day/month/year. Accept common variants such as:
+    // 12/08/2026 4:38 PM
+    // 12/8/2026 4:38 PM
+    // 12/08/2026, 4:38:00 PM
+    // 12/8/2026, 4:38 PM NY time
+    const m=value.match(
+      /^(\d{1,2})\/(\d{1,2})\/(\d{4})\s*,?\s*(\d{1,2}):(\d{2})(?::(\d{2}))?\s*(AM|PM)(?:\s+.*)?$/i
+    );
 
- if(!m) return value;
+    if(!m) return value;
 
- const day=Number(m[1]);
- const month=Number(m[2]);
- const year=Number(m[3]);
+    const day=Number(m[1]);
+    const month=Number(m[2]);
+    const year=Number(m[3]);
 
- if(month<1||month>12||day<1||day>31) return value;
+    if(month<1||month>12||day<1||day>31) return value;
 
- const months=['Jan.','Feb.','Mar.','Apr.','May','June','July','Aug.','Sept.','Oct.','Nov.','Dec.'];
- return `${months[month-1]} ${day}, ${year} at ${m[4]}:${m[5]} ${m[7].toUpperCase()}`;
- }
+    const months=['Jan.','Feb.','Mar.','Apr.','May','June','July','Aug.','Sept.','Oct.','Nov.','Dec.'];
+    return `${months[month-1]} ${day}, ${year} at ${m[4]}:${m[5]} ${m[7].toUpperCase()}`;
+  }
 
- document.querySelectorAll('.availability-tool').forEach(async tool=>{
- const api=tool.dataset.api, loc=tool.dataset.location;
- const weeks=tool.querySelector('.availability-weeks');
- const timeSelect=tool.querySelector('select[name="preferred_time"]');
- const locationLabel=tool.querySelector('.availability-location');
- const updatedLabel=tool.querySelector('.availability-updated');
- const displayLocation=loc==='atl' ? 'ATLANTA • SANDY SPRINGS' : 'MIDTOWN MANHATTAN • NYC';
+  document.querySelectorAll('.availability-tool').forEach(async tool=>{
+    const api=tool.dataset.api, loc=tool.dataset.location;
+    const weeks=tool.querySelector('.availability-weeks');
+    const timeSelect=tool.querySelector('select[name="preferred_time"]');
+    const locationLabel=tool.querySelector('.availability-location');
+    const updatedLabel=tool.querySelector('.availability-updated');
+    const displayLocation=loc==='midtown' ? 'MIDTOWN MANHATTAN • NYC' : 'MIDTOWN MANHATTAN • NYC';
 
- async function loadAvailability(){
-   locationLabel.textContent='Loading…';
-   updatedLabel.textContent='Loading…';
-   weeks.innerHTML='<div class="availability-loading">Loading current availability…</div>';
-   try{
-     const res=await fetch(api+'?location='+encodeURIComponent(loc),{cache:'no-store'});
-     if(!res.ok) throw new Error('HTTP '+res.status);
-     const data=await res.json();
-     if(!data.success) throw new Error(data.error||'Availability unavailable');
-     locationLabel.textContent=displayLocation;
-     updatedLabel.textContent=formatSchedulerTimestamp(data.lastUpdated);
-     timeSelect.innerHTML='<option value="">Select time</option>'+data.times.map(t=>`<option value="${esc(t)}">${esc(t)}</option>`).join('');
-     const rows=data.sessions||[];
-     const positives=rows.flatMap(r=>[r.morning,r.afternoon]).map(Number).filter(n=>Number.isFinite(n)&&n>0);
-     const maxPositive=positives.length?Math.max(...positives):0;
-     const chunks=[]; for(let i=0;i<rows.length;i+=5) chunks.push(rows.slice(i,i+5));
-     weeks.innerHTML=chunks.map((c,i)=>renderWeek(c,data.times,i+1,maxPositive)).join('');
-   }catch(err){
-     locationLabel.textContent=displayLocation;
-     updatedLabel.textContent='temporarily unavailable';
-     weeks.innerHTML='<div class="availability-error">Current availability could not be loaded. Please try again shortly.<div><button class="availability-retry" type="button">TRY AGAIN</button></div></div>';
-     console.error(err);
-   }
- }
+    async function loadAvailability(){
+      locationLabel.textContent='Loading…';
+      updatedLabel.textContent='Loading…';
+      weeks.innerHTML='<div class="availability-loading">Loading current availability…</div>';
+      try{
+        const res=await fetch(api+'?location='+encodeURIComponent(loc),{cache:'no-store'});
+        if(!res.ok) throw new Error('HTTP '+res.status);
+        const data=await res.json();
+        if(!data.success) throw new Error(data.error||'Availability unavailable');
+        locationLabel.textContent=displayLocation;
+        updatedLabel.textContent=formatSchedulerTimestamp(data.lastUpdated);
+        timeSelect.innerHTML='<option value="">Select time</option>'+data.times.map(t=>`<option value="${esc(t)}">${esc(t)}</option>`).join('');
+        const rows=data.sessions||[];
+        const positives=rows.flatMap(r=>[r.morning,r.afternoon]).map(Number).filter(n=>Number.isFinite(n)&&n>0);
+        const maxPositive=positives.length?Math.max(...positives):0;
+        const chunks=[]; for(let i=0;i<rows.length;i+=5) chunks.push(rows.slice(i,i+5));
+        weeks.innerHTML=chunks.map((c,i)=>renderWeek(c,data.times,i+1,maxPositive)).join('');
+      }catch(err){
+        locationLabel.textContent=displayLocation;
+        updatedLabel.textContent='temporarily unavailable';
+        weeks.innerHTML='<div class="availability-error">Current availability could not be loaded. Please try again shortly.<div><button class="availability-retry" type="button">TRY AGAIN</button></div></div>';
+        console.error(err);
+      }
+    }
 
- weeks.addEventListener('click',e=>{
-   const retry=e.target.closest('.availability-retry');
-   if(retry){
-     retry.disabled=true;
-     loadAvailability();
-   }
- });
+    weeks.addEventListener('click',e=>{
+      const retry=e.target.closest('.availability-retry');
+      if(retry){
+        retry.disabled=true;
+        loadAvailability();
+      }
+    });
 
- loadAvailability();
+    loadAvailability();
 
- const form=tool.querySelector('.preference-form');
- const heading=tool.querySelector('.preference-heading');
- const frame=tool.querySelector('.preference-submit-frame');
- const status=tool.querySelector('.preference-status');
- const button=tool.querySelector('.preference-submit');
- let submitted=false;
- form.addEventListener('submit',()=>{
- submitted=true; button.disabled=true; status.className='preference-status'; status.textContent='Sending your preferences…';
- });
- const confirmation=tool.querySelector('.preference-confirmation');
- const returnButton=tool.querySelector('.preference-return-button');
- const anotherButton=tool.querySelector('.preference-another-button');
- const anotherPanel=tool.querySelector('.preference-another-panel');
- const togetherButton=tool.querySelector('.another-together');
- const independentButton=tool.querySelector('.another-independent');
- const notesInput=form.querySelector('input[name="notes"]');
- const backWrap=tool.querySelector('.preference-back-options');
- const backOptions=tool.querySelector('.back-to-submission-options');
- const anotherQuestion=tool.querySelector('.another-question');
- let lastSubmission=null;
+    const form=tool.querySelector('.preference-form');
+    const heading=tool.querySelector('.preference-heading');
+    const frame=tool.querySelector('.preference-submit-frame');
+    const status=tool.querySelector('.preference-status');
+    const button=tool.querySelector('.preference-submit');
+    let submitted=false;
+    form.addEventListener('submit',()=>{
+      submitted=true; button.disabled=true; status.className='preference-status'; status.textContent='Sending your preferences…';
+    });
+    const confirmation=tool.querySelector('.preference-confirmation');
+    const returnButton=tool.querySelector('.preference-return-button');
+    const anotherButton=tool.querySelector('.preference-another-button');
+    const anotherPanel=tool.querySelector('.preference-another-panel');
+    const togetherButton=tool.querySelector('.another-together');
+    const independentButton=tool.querySelector('.another-independent');
+    const notesInput=form.querySelector('input[name="notes"]');
+    const backWrap=tool.querySelector('.preference-back-options');
+    const backOptions=tool.querySelector('.back-to-submission-options');
+    const anotherQuestion=tool.querySelector('.another-question');
+    let lastSubmission=null;
 
- function snapshotForm(){
- const fd=new FormData(form);
- return {
- name:fd.get('name')||'',
- utest_id:fd.get('utest_id')||'',
- email:fd.get('email')||'',
- phone:fd.get('phone')||'',
- preferred_date:fd.get('preferred_date')||'',
- preferred_time:fd.get('preferred_time')||'',
- backup_date_1:fd.get('backup_date_1')||'',
- backup_date_2:fd.get('backup_date_2')||''
- };
- }
+    function snapshotForm(){
+      const fd=new FormData(form);
+      return {
+        name:fd.get('name')||'',
+        utest_id:fd.get('utest_id')||'',
+        email:fd.get('email')||'',
+        preferred_date:fd.get('preferred_date')||'',
+        preferred_time:fd.get('preferred_time')||'',
+        backup_date_1:fd.get('backup_date_1')||'',
+        backup_date_2:fd.get('backup_date_2')||''
+      };
+    }
 
- function setField(name,value){
- const el=form.elements[name];
- if(el) el.value=value||'';
- }
+    function setField(name,value){
+      const el=form.elements[name];
+      if(el) el.value=value||'';
+    }
 
- frame.addEventListener('load',()=>{
- if(!submitted) return;
- submitted=false;
- button.disabled=false;
- status.className='preference-status success';
- status.textContent='';
- lastSubmission=snapshotForm();
- form.hidden=true;
- backWrap.hidden=true;
- heading.textContent='✓ SUCCESS — PREFERENCES SUBMITTED';
- confirmation.hidden=false;
- confirmation.scrollIntoView({behavior:'smooth',block:'start'});
- });
+    frame.addEventListener('load',()=>{
+      if(!submitted) return;
+      submitted=false;
+      button.disabled=false;
+      status.className='preference-status success';
+      status.textContent='';
+      lastSubmission=snapshotForm();
+      form.hidden=true;
+      backWrap.hidden=true;
+      heading.textContent='✓ SUCCESS — PREFERENCES SUBMITTED';
+      confirmation.hidden=false;
+      confirmation.scrollIntoView({behavior:'smooth',block:'start'});
+    });
 
- returnButton.addEventListener('click',()=>{
- confirmation.hidden=true;
- form.hidden=false;
- anotherPanel.hidden=true;
- backWrap.hidden=false;
- notesInput.value='';
- heading.textContent='TELL US YOUR PREFERRED SESSION TIMES';
- status.textContent='';
- tool.scrollIntoView({behavior:'smooth',block:'start'});
- });
+    returnButton.addEventListener('click',()=>{
+      confirmation.hidden=true;
+      form.hidden=false;
+      anotherPanel.hidden=true;
+      backWrap.hidden=false;
+      notesInput.value='';
+      heading.textContent='TELL US YOUR PREFERRED SESSION TIMES';
+      status.textContent='';
+      tool.scrollIntoView({behavior:'smooth',block:'start'});
+    });
 
- anotherButton.addEventListener('click',()=>{
- confirmation.hidden=true;
- form.hidden=false;
- heading.textContent='TELL US YOUR PREFERRED SESSION TIMES';
- status.textContent='';
- anotherPanel.hidden=false;
- backWrap.hidden=false;
- anotherQuestion.textContent='Would this applicant like to attend with '+((lastSubmission&&lastSubmission.name)||'the previous applicant')+'?';
- setField('name','');
- setField('utest_id','');
- setField('email','');
- setField('phone','');
- setField('preferred_date','');
- setField('preferred_time','');
- setField('backup_date_1','');
- setField('backup_date_2','');
- notesInput.value='';
- tool.scrollIntoView({behavior:'smooth',block:'start'});
- });
+    anotherButton.addEventListener('click',()=>{
+      confirmation.hidden=true;
+      form.hidden=false;
+      heading.textContent='TELL US YOUR PREFERRED SESSION TIMES';
+      status.textContent='';
+      anotherPanel.hidden=false;
+      backWrap.hidden=false;
+      anotherQuestion.textContent='Would this applicant like to attend with '+((lastSubmission&&lastSubmission.name)||'the previous applicant')+'?';
+      setField('name','');
+      setField('utest_id','');
+      setField('email','');
+      setField('preferred_date','');
+      setField('preferred_time','');
+      setField('backup_date_1','');
+      setField('backup_date_2','');
+      notesInput.value='';
+      tool.scrollIntoView({behavior:'smooth',block:'start'});
+    });
 
- backOptions.addEventListener('click',()=>{
- form.hidden=true;
- anotherPanel.hidden=true;
- backWrap.hidden=true;
- notesInput.value='';
- heading.textContent='✓ SUCCESS — PREFERENCES SUBMITTED';
- confirmation.hidden=false;
- confirmation.scrollIntoView({behavior:'smooth',block:'start'});
- });
+    backOptions.addEventListener('click',()=>{
+      form.hidden=true;
+      anotherPanel.hidden=true;
+      backWrap.hidden=true;
+      notesInput.value='';
+      heading.textContent='✓ SUCCESS — PREFERENCES SUBMITTED';
+      confirmation.hidden=false;
+      confirmation.scrollIntoView({behavior:'smooth',block:'start'});
+    });
 
- togetherButton.addEventListener('click',()=>{
- if(lastSubmission){
- setField('preferred_date',lastSubmission.preferred_date);
- setField('preferred_time',lastSubmission.preferred_time);
- setField('backup_date_1',lastSubmission.backup_date_1);
- setField('backup_date_2',lastSubmission.backup_date_2);
- notesInput.value='ATTEND WITH: '+(lastSubmission.name||'previous applicant')+' — yes, if possible. Scheduling preferences may differ.';
- }
- anotherPanel.hidden=true;
- });
+    togetherButton.addEventListener('click',()=>{
+      if(lastSubmission){
+        setField('preferred_date',lastSubmission.preferred_date);
+        setField('preferred_time',lastSubmission.preferred_time);
+        setField('backup_date_1',lastSubmission.backup_date_1);
+        setField('backup_date_2',lastSubmission.backup_date_2);
+        notesInput.value='ATTEND WITH: '+(lastSubmission.name||'previous applicant')+' — yes, if possible. Scheduling preferences may differ.';
+      }
+      anotherPanel.hidden=true;
+    });
 
- independentButton.addEventListener('click',()=>{
- notesInput.value='CONNECTED TO: '+((lastSubmission&&lastSubmission.name)||'previous applicant')+' — no preference to attend together.';
- anotherPanel.hidden=true;
- });
- });
+    independentButton.addEventListener('click',()=>{
+      notesInput.value='CONNECTED TO: '+((lastSubmission&&lastSubmission.name)||'previous applicant')+' — no preference to attend together.';
+      anotherPanel.hidden=true;
+    });
+  });
 })();
 </script>
 
+
 <script>
 (function(){
- const offer = document.querySelector('.offer-interactive');
- if (!offer) return;
+  const offer = document.querySelector('.offer-interactive');
+  if (!offer) return;
 
- const popover = offer.querySelector('.offer-popover');
- const copy = offer.querySelector('.offer-popover-copy');
- const close = offer.querySelector('.offer-popover-close');
- const triggers = Array.from(offer.querySelectorAll('.offer-detail-trigger'));
+  const popover = offer.querySelector('.offer-popover');
+  const copy = offer.querySelector('.offer-popover-copy');
+  const close = offer.querySelector('.offer-popover-close');
+  const triggers = Array.from(offer.querySelectorAll('.offer-detail-trigger'));
 
- const details = {
- payment: '<strong>Quick, convenient payment options.</strong> After completing the study, choose a Tremendous Virtual Visa or PayPal transfer. <strong>And keep an eye out for additional opportunities to earn through other tests and bonuses.</strong>',
- duration: '<strong>Plan ahead for your visit.</strong> Please arrive about 15 minutes before your appointment and allow extra time for transportation delays. Rescheduling opportunities may be limited.',
- age: '<strong>We welcome adults of all ages, backgrounds, and<span class="adult-desktop-break"><br></span> walks of life.</strong>'
- };
+  const details = {
+    payment: '<strong>Quick, convenient payment options.</strong> After completing the study, choose a Tremendous Virtual Visa or PayPal transfer. <strong>And keep an eye out for additional opportunities to earn through other tests and bonuses.</strong>',
+    duration: '<strong>Plan ahead for your visit.</strong> Please arrive about 15 minutes before your appointment and allow extra time for transportation delays. Rescheduling opportunities may be limited.',
+    age: '<strong>We welcome adults of all ages, backgrounds, and walks of life.</strong>'
+  };
 
- function hideDetail(){
- popover.hidden = true;
+  function hideDetail(){
+    popover.hidden = true;
     delete popover.dataset.detail;
- triggers.forEach(btn => {
- btn.setAttribute('aria-expanded','false');
- btn.classList.remove('is-active');
- });
- }
+    triggers.forEach(btn => {
+      btn.setAttribute('aria-expanded','false');
+      btn.classList.remove('is-active');
+    });
+  }
 
- function showDetail(btn){
- const key = btn.dataset.detail;
+  function showDetail(btn){
+    const key = btn.dataset.detail;
     popover.dataset.detail = key;
- const alreadyOpen = !popover.hidden && btn.classList.contains('is-active');
- if (alreadyOpen) {
- hideDetail();
- return;
- }
- triggers.forEach(b => {
- b.setAttribute('aria-expanded','false');
- b.classList.remove('is-active');
- });
- copy.innerHTML = details[key] || '';
- btn.setAttribute('aria-expanded','true');
- btn.classList.add('is-active');
- popover.hidden = false;
- }
+    const alreadyOpen = !popover.hidden && btn.classList.contains('is-active');
+    if (alreadyOpen) {
+      hideDetail();
+      return;
+    }
+    triggers.forEach(b => {
+      b.setAttribute('aria-expanded','false');
+      b.classList.remove('is-active');
+    });
+    copy.innerHTML = details[key] || '';
+    btn.setAttribute('aria-expanded','true');
+    btn.classList.add('is-active');
+    popover.hidden = false;
+  }
 
- triggers.forEach(btn => btn.addEventListener('click', e => {
- e.stopPropagation();
- showDetail(btn);
- }));
+  triggers.forEach(btn => btn.addEventListener('click', e => {
+    e.stopPropagation();
+    showDetail(btn);
+  }));
 
- close.addEventListener('click', e => {
- e.stopPropagation();
- hideDetail();
- });
+  close.addEventListener('click', e => {
+    e.stopPropagation();
+    hideDetail();
+  });
 
- popover.addEventListener('click', e => e.stopPropagation());
- document.addEventListener('click', hideDetail);
- document.addEventListener('keydown', e => {
- if (e.key === 'Escape') hideDetail();
- });
+  popover.addEventListener('click', e => e.stopPropagation());
+  document.addEventListener('click', hideDetail);
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') hideDetail();
+  });
 })();
 </script>
 
@@ -745,7 +2631,7 @@ header.topbar > * {
     if(previousFocus && typeof previousFocus.focus === 'function') previousFocus.focus();
   }
 
-  document.querySelectorAll('.hero-art, .instruction-shot img, .secondary-centered .secondary').forEach(img => {
+  document.querySelectorAll('.instruction-shot img, .secondary-centered .secondary').forEach(img => {
     img.setAttribute('tabindex','0');
     img.setAttribute('role','button');
     img.setAttribute('aria-label',(img.alt || 'Study graphic') + ' — enlarge');
@@ -758,6 +2644,40 @@ header.topbar > * {
     });
   });
 
+  /* Atlanta portrait-mobile roadmap enlargement only; desktop remains inert. */
+  const mobileRoadmapMedia = window.matchMedia('(max-width:600px) and (orientation:portrait)');
+  const mobileRoadmap = document.querySelector('.atlanta-roadmap-beta img');
+  if(mobileRoadmap){
+    const roadmapAlt = mobileRoadmap.alt;
+    const syncMobileRoadmap = () => {
+      if(mobileRoadmapMedia.matches){
+        mobileRoadmap.setAttribute('tabindex','0');
+        mobileRoadmap.setAttribute('role','button');
+        mobileRoadmap.setAttribute('aria-label',roadmapAlt + ' — tap to enlarge');
+      }else{
+        mobileRoadmap.removeAttribute('tabindex');
+        mobileRoadmap.removeAttribute('role');
+        mobileRoadmap.setAttribute('aria-label',roadmapAlt);
+        if(!lightbox.hidden && lightboxImage.alt===roadmapAlt) closeLightbox();
+      }
+    };
+    mobileRoadmap.addEventListener('click',()=>{
+      if(mobileRoadmapMedia.matches) openLightbox(mobileRoadmap);
+    });
+    mobileRoadmap.addEventListener('keydown',e=>{
+      if(mobileRoadmapMedia.matches && (e.key==='Enter' || e.key===' ')){
+        e.preventDefault();
+        openLightbox(mobileRoadmap);
+      }
+    });
+    if(typeof mobileRoadmapMedia.addEventListener==='function'){
+      mobileRoadmapMedia.addEventListener('change',syncMobileRoadmap);
+    }else if(typeof mobileRoadmapMedia.addListener==='function'){
+      mobileRoadmapMedia.addListener(syncMobileRoadmap);
+    }
+    syncMobileRoadmap();
+  }
+
   closeButton.addEventListener('click',closeLightbox);
   lightbox.addEventListener('click',e=>{
     if(e.target===lightbox) closeLightbox();
@@ -768,6 +2688,147 @@ header.topbar > * {
 })();
 </script>
 
+
+
+<div class="atlanta-modal-backdrop" id="atlanta-story-modal" hidden aria-hidden="true">
+  <section class="atlanta-modal" role="dialog" aria-modal="true" aria-labelledby="atlanta-story-modal-title" tabindex="-1">
+    <button class="atlanta-modal-close" type="button" aria-label="Close Our Story">×</button>
+    <div class="atlanta-modal-accent" aria-hidden="true"></div>
+    <h2 id="atlanta-story-modal-title">FROM TESTER TO<br>TESTING SHERPA</h2>
+    <p>Paid to Play Testing grew out of firsthand experience participating in paid technology studies beginning in <strong>2022</strong>.</p>
+    <p>By <strong>2023</strong>, that experience had evolved into helping others discover opportunities and navigate the testing process.</p>
+    <p>Since then, we have <strong>assisted hundreds of prospective participants along the way</strong>.</p>
+    <p>Daniel also serves as a <strong>uTest Ambassador</strong>, bringing firsthand knowledge of the testing process to those looking for opportunities.</p>
+    <div class="atlanta-modal-callout">
+      <strong>BOSSUP WINNER</strong>
+      <span>We were selected as a winner in the <strong>BossUp competition</strong>, a Shark-Tank-style entrepreneurial contest.</span>
+    </div>
+    <p class="atlanta-modal-ending"><strong>We know the process because we've been through it ourselves.</strong></p>
+  </section>
+</div>
+
+<div class="atlanta-modal-backdrop" id="atlanta-testimonials-modal" hidden aria-hidden="true">
+  <section class="atlanta-modal" role="dialog" aria-modal="true" aria-labelledby="atlanta-testimonials-modal-title" tabindex="-1">
+    <button class="atlanta-modal-close" type="button" aria-label="Close Testimonials">×</button>
+    <div class="atlanta-modal-accent" aria-hidden="true"></div>
+    <h2 id="atlanta-testimonials-modal-title">WHAT PARTICIPANTS SAY</h2>
+    <blockquote class="atlanta-testimonial-card"><p>“Thanks again for your time and assistance Daniel.”</p><cite>Luke S.</cite></blockquote>
+    <blockquote class="atlanta-testimonial-card"><p>“Thank you Daniel. I appreciate all you have done for me.”</p><cite>Catalina R.</cite></blockquote>
+    <blockquote class="atlanta-testimonial-card"><p>“Wooo hooo! 🎉🎉... I checked the trash and there it was 😺”</p><cite>Maribel M.</cite></blockquote>
+  </section>
+</div>
+
+
+<script>
+(function(){
+  let lastTrigger=null;
+  function openAtlantaModal(id,trigger){
+    const backdrop=document.getElementById(id); if(!backdrop) return;
+    lastTrigger=trigger||null; backdrop.hidden=false; backdrop.setAttribute('aria-hidden','false');
+    document.documentElement.classList.add('atlanta-modal-open'); document.body.classList.add('atlanta-modal-open');
+    const dialog=backdrop.querySelector('.atlanta-modal'); if(dialog) requestAnimationFrame(()=>dialog.focus());
+  }
+  function closeAtlantaModal(backdrop){
+    if(!backdrop) return; backdrop.hidden=true; backdrop.setAttribute('aria-hidden','true');
+    document.documentElement.classList.remove('atlanta-modal-open'); document.body.classList.remove('atlanta-modal-open');
+    if(lastTrigger) lastTrigger.focus(); lastTrigger=null;
+  }
+  document.addEventListener('click',e=>{
+    const opener=e.target.closest('[data-modal-open]');
+    if(opener){e.preventDefault();openAtlantaModal(opener.getAttribute('data-modal-open'),opener);return}
+    const close=e.target.closest('.atlanta-modal-close');
+    if(close){closeAtlantaModal(close.closest('.atlanta-modal-backdrop'));return}
+    if(e.target.classList.contains('atlanta-modal-backdrop')) closeAtlantaModal(e.target);
+  });
+  document.addEventListener('keydown',e=>{if(e.key==='Escape'){const open=document.querySelector('.atlanta-modal-backdrop:not([hidden])');if(open) closeAtlantaModal(open)}});
+})();
+</script>
+
+
+<script>
+(function(){
+  const desktopMQ=window.matchMedia('(min-width:901px)');
+  const toggle=document.querySelector('.atlanta-mobile-menu');
+  const menu=document.getElementById('atlanta-desktop-utility-menu');
+  if(!toggle||!menu) return;
+  const close=menu.querySelector('.atlanta-desktop-menu-close');
+  const panel=menu.querySelector('.atlanta-desktop-utility-panel');
+  function openMenu(){if(!desktopMQ.matches)return;menu.hidden=false;menu.setAttribute('aria-hidden','false');toggle.setAttribute('aria-expanded','true');if(close)close.focus()}
+  function closeMenu(returnFocus){menu.hidden=true;menu.setAttribute('aria-hidden','true');toggle.setAttribute('aria-expanded','false');if(returnFocus&&desktopMQ.matches)toggle.focus()}
+  function sync(){if(desktopMQ.matches){toggle.removeAttribute('tabindex');toggle.setAttribute('aria-controls','atlanta-desktop-utility-menu');toggle.setAttribute('aria-expanded',menu.hidden?'false':'true')}else{closeMenu(false);toggle.setAttribute('tabindex','-1');toggle.removeAttribute('aria-controls');toggle.removeAttribute('aria-expanded')}}
+  toggle.addEventListener('click',()=>{if(!desktopMQ.matches)return;menu.hidden?openMenu():closeMenu(true)});
+  if(close)close.addEventListener('click',()=>closeMenu(true));
+  menu.addEventListener('click',e=>{
+    const action=e.target.closest('a,[data-modal-open]');if(!action)return;
+    if(action.classList.contains('atlanta-desktop-menu-apply')){e.preventDefault();closeMenu(false);document.getElementById('before-you-apply')?.scrollIntoView({behavior:'smooth',block:'start'});return}
+    closeMenu(false);
+  });
+  document.addEventListener('click',e=>{
+    if(menu.hidden||!desktopMQ.matches)return;
+    if(toggle.contains(e.target)||(panel&&panel.contains(e.target)))return;
+    closeMenu(false);
+  });
+  document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!menu.hidden)closeMenu(true)});
+  window.addEventListener('scroll',()=>{if(!menu.hidden)closeMenu(false)},{passive:true});
+  if(desktopMQ.addEventListener)desktopMQ.addEventListener('change',sync);else desktopMQ.addListener(sync);
+  sync();
+})();
+</script>
+
+<script>
+(function(){
+  var menuButton = document.querySelector('.mobile-menu-prototype');
+  var menu = document.getElementById('atlanta-mobile-nav');
+  var closeButton = menu ? menu.querySelector('.atlanta-mobile-nav-close') : null;
+  if (!menuButton || !menu || !closeButton) return;
+
+  function setMenu(open) {
+    menu.hidden = !open;
+    menuButton.setAttribute('aria-expanded', open ? 'true' : 'false');
+  }
+
+  menuButton.addEventListener('click', function(e){
+    e.stopPropagation();
+    setMenu(menu.hidden);
+  });
+
+  closeButton.addEventListener('click', function(){
+    setMenu(false);
+    menuButton.focus();
+  });
+
+  menu.addEventListener('click', function(e){
+    if (e.target === menu) setMenu(false);
+  });
+
+  menu.querySelectorAll('a').forEach(function(link){
+    link.addEventListener('click', function(){
+      setMenu(false);
+    });
+  });
+
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape' && !menu.hidden) {
+      setMenu(false);
+      menuButton.focus();
+    }
+  });
+
+  window.addEventListener('scroll', function(){
+    if (!menu.hidden) setMenu(false);
+  }, {passive:true});
+})();
+</script>
+
+<script>
+/* Atlanta image-only context-menu and native-drag deterrent; independently removable. */
+document.addEventListener('contextmenu', function(e){
+  if (e.target && e.target.closest && e.target.closest('img')) e.preventDefault();
+});
+document.addEventListener('dragstart', function(e){
+  if (e.target && e.target.closest && e.target.closest('img')) e.preventDefault();
+});
+</script>
 
 </body>
 </html>
