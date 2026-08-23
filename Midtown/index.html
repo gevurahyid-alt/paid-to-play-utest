@@ -2056,7 +2056,7 @@ body.atlanta .tip-tools > .preference-followup-wide .copy-page-link{
         <div class="availability-meta">Last updated: <strong class="availability-updated">Loading…</strong></div>
         <p class="availability-clarification">If you know your preferred dates, you can enter your preferences below.<span class="desktop-scheduling-clarification-break"><br></span> <strong>If not, simply continue to uTest registration and you can return here later to submit your scheduling preferences.</strong></p>
         <p class="availability-top-note">Current availability is shown for planning purposes and may change. <strong class="availability-top-urgency">Sign up soon to help secure your preferred slot.</strong></p>
-        <div class="availability-legend" aria-label="Availability status legend"><span><i class="lg-available"></i>Available</span><span><i class="lg-limited"></i>Limited</span><span><i class="lg-few"></i>Few slots left</span><span><i class="lg-full"></i>Full</span></div>
+        <div class="availability-legend" aria-label="Availability status legend"><span><i class="lg-available"></i>Available</span><span><i class="lg-limited"></i>Limited</span><span><i class="lg-few"></i>Few slots left</span><span><i class="lg-full"></i>Full</span><span><i class="lg-pending"></i>Coming soon</span></div>
         <div class="availability-weeks" aria-live="polite">
           <div class="availability-loading">Loading current availability…</div>
         </div>
@@ -2279,6 +2279,8 @@ body.atlanta .tip-tools > .preference-followup-wide .copy-page-link{
     };
     const dayHeaders=rows.map(r=>`<th><div>${esc(displayDay(r.day))}</div><div>${esc(displayDate(r.date))}</div></th>`).join('');
     function publicStatus(v){
+      const raw=String(v ?? '').trim().toUpperCase();
+      if(raw==='PENDING') return {cls:'pending',label:'COMING SOON'};
       if(v===null || v==='' || typeof v==='undefined') return {cls:'full',label:'FULL'};
       const n=Number(v);
       if(!Number.isFinite(n)) return {cls:'empty',label:'—'};

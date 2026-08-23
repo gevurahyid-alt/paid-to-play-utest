@@ -368,6 +368,11 @@ footer{padding:28px 0 40px;font-size:.82rem;color:#555}
   background:#f8cbad;
   font-weight:900;
 }
+.availability-table td.pending{
+  background:#cfe8f6;
+  color:#174f73;
+  font-weight:900;
+}
 .availability-table td.full{
   background:#d9d9d9;
   color:#333;
@@ -404,6 +409,7 @@ footer{padding:28px 0 40px;font-size:.82rem;color:#555}
 .availability-legend .lg-limited{background:#ffe699}
 .availability-legend .lg-few{background:#f8cbad}
 .availability-legend .lg-full{background:#d9d9d9}
+.availability-legend .lg-pending{background:#cfe8f6}
 
 
 /* v47 — tighten calendar and move full scheduling disclaimer to form box */
@@ -419,6 +425,7 @@ footer{padding:28px 0 40px;font-size:.82rem;color:#555}
 .availability-table td.available,
 .availability-table td.limited,
 .availability-table td.few,
+.availability-table td.pending,
 .availability-table td.full{
   font-size:.61rem;
   letter-spacing:-.2px;
@@ -596,6 +603,7 @@ footer{padding:28px 0 40px;font-size:.82rem;color:#555}
   .availability-table td.available,
   .availability-table td.limited,
   .availability-table td.few,
+  .availability-table td.pending,
   .availability-table td.full{
     font-size:.60rem;
     letter-spacing:-.25px;
@@ -703,6 +711,7 @@ footer{padding:28px 0 40px;font-size:.82rem;color:#555}
   .availability-table td.available,
   .availability-table td.limited,
   .availability-table td.few,
+  .availability-table td.pending,
   .availability-table td.full{
     font-size:.52rem !important;
     letter-spacing:-.35px !important;
@@ -724,6 +733,7 @@ footer{padding:28px 0 40px;font-size:.82rem;color:#555}
   .availability-table td.available,
   .availability-table td.limited,
   .availability-table td.few,
+  .availability-table td.pending,
   .availability-table td.full{
     font-size:.47rem !important;
     letter-spacing:-.45px !important;
