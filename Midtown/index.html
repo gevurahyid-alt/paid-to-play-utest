@@ -2056,7 +2056,7 @@ body.atlanta .tip-tools > .preference-followup-wide .copy-page-link{
         <div class="availability-meta">Last updated: <strong class="availability-updated">Loading…</strong></div>
         <p class="availability-clarification">If you know your preferred dates, you can enter your preferences below.<span class="desktop-scheduling-clarification-break"><br></span> <strong>If not, simply continue to uTest registration and you can return here later to submit your scheduling preferences.</strong></p>
         <p class="availability-top-note">Current availability is shown for planning purposes and may change. <strong class="availability-top-urgency">Sign up soon to help secure your preferred slot.</strong></p>
-        <div class="availability-legend" aria-label="Availability status legend"><span><i class="lg-available"></i>Available</span><span><i class="lg-limited"></i>Limited</span><span><i class="lg-few"></i>Few slots left</span><span><i class="lg-full"></i>Full</span><span><i class="lg-pending"></i>Coming soon</span></div>
+        <div class="availability-legend" aria-label="Availability status legend"><span><i class="lg-available"></i>Available</span><span><i class="lg-limited"></i>Limited</span><span><i class="lg-few"></i>Few slots left</span><span><i class="lg-full"></i>Full</span><span class="availability-legend-pending" hidden><i class="lg-pending"></i>Coming soon</span></div>
         <div class="availability-weeks" aria-live="polite">
           <div class="availability-loading">Loading current availability…</div>
         </div>
@@ -2328,11 +2328,13 @@ body.atlanta .tip-tools > .preference-followup-wide .copy-page-link{
     const timeSelect=tool.querySelector('select[name="preferred_time"]');
     const locationLabel=tool.querySelector('.availability-location');
     const updatedLabel=tool.querySelector('.availability-updated');
+    const pendingLegend=tool.querySelector('.availability-legend-pending');
     const displayLocation=loc==='midtown' ? 'MIDTOWN MANHATTAN • NYC' : 'MIDTOWN MANHATTAN • NYC';
 
     async function loadAvailability(){
       locationLabel.textContent='Loading…';
       updatedLabel.textContent='Loading…';
+      pendingLegend.hidden=true;
       weeks.innerHTML='<div class="availability-loading">Loading current availability…</div>';
       try{
         const res=await fetch(api+'?location='+encodeURIComponent(loc),{cache:'no-store'});
@@ -2343,6 +2345,7 @@ body.atlanta .tip-tools > .preference-followup-wide .copy-page-link{
         updatedLabel.textContent=formatSchedulerTimestamp(data.lastUpdated);
         timeSelect.innerHTML='<option value="">Select time</option>'+data.times.map(t=>`<option value="${esc(t)}">${esc(t)}</option>`).join('');
         const rows=data.sessions||[];
+        pendingLegend.hidden=!rows.some(r=>[r.morning,r.afternoon].some(v=>String(v ?? '').trim().toUpperCase()==='PENDING'));
         const positives=rows.flatMap(r=>[r.morning,r.afternoon]).map(Number).filter(n=>Number.isFinite(n)&&n>0);
         const maxPositive=positives.length?Math.max(...positives):0;
         const chunks=[]; for(let i=0;i<rows.length;i+=5) chunks.push(rows.slice(i,i+5));

@@ -411,6 +411,10 @@ footer{padding:28px 0 40px;font-size:.82rem;color:#555}
 .availability-legend .lg-full{background:#d9d9d9}
 .availability-legend .lg-pending{background:#cfe8f6}
 
+@media(max-width:600px) and (orientation:portrait){
+  .availability-legend-pending{display:none!important}
+}
+
 
 /* v47 — tighten calendar and move full scheduling disclaimer to form box */
 .availability-table{
