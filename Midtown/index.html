@@ -2095,6 +2095,7 @@ body.atlanta .tip-tools > .preference-followup-wide .copy-page-link{
             <label><span>Name <strong>*</strong></span><input name="name" type="text" autocomplete="name" required></label>
             <label><span>uTest ID <small>(if known)</small></span><input name="utest_id" type="text" inputmode="numeric" autocomplete="off" placeholder="e.g., 1234567"></label>
             <label><span>Email <strong>*</strong></span><input name="email" type="email" autocomplete="email" required></label>
+            <label><span>Phone <small>(optional)</small></span><input name="phone" type="tel" autocomplete="tel"></label>
             <label><span>Preferred Date <strong>*</strong></span><input name="preferred_date" type="date" required></label>
             <label><span>Preferred Time <strong>*</strong></span><select name="preferred_time" required><option value="">Select time</option></select></label>
             <label><span>Backup Date #1 (optional)</span><input name="backup_date_1" type="date"></label>
@@ -2410,6 +2411,7 @@ body.atlanta .tip-tools > .preference-followup-wide .copy-page-link{
         name:fd.get('name')||'',
         utest_id:fd.get('utest_id')||'',
         email:fd.get('email')||'',
+        phone:fd.get('phone')||'',
         preferred_date:fd.get('preferred_date')||'',
         preferred_time:fd.get('preferred_time')||'',
         backup_date_1:fd.get('backup_date_1')||'',
@@ -2458,6 +2460,7 @@ body.atlanta .tip-tools > .preference-followup-wide .copy-page-link{
       setField('name','');
       setField('utest_id','');
       setField('email','');
+      setField('phone','');
       setField('preferred_date','');
       setField('preferred_time','');
       setField('backup_date_1','');
