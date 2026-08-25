@@ -322,6 +322,16 @@ footer{padding:28px 0 40px;font-size:.82rem;color:#555}
 .preference-grid label{display:flex;flex-direction:column;gap:3px;font-weight:800;font-size:.78rem;min-width:0}
 .preference-grid small{font-weight:400}
 .preference-grid input,.preference-grid select{width:100%;min-width:0;border:1.5px solid #111;background:#fff;padding:7px 8px;font:inherit;color:#111}
+.preference-qualification{min-width:0;border:0;padding:0;margin:0;display:flex;flex-direction:column;gap:3px}
+.preference-qualification legend{padding:0;margin:0;font-weight:800;font-size:.78rem;line-height:1.25}
+.preference-radio-options{display:flex;flex-wrap:wrap;align-items:center;gap:4px 13px;min-width:0}
+.preference-grid .preference-radio-options label{display:inline-flex;flex-direction:row;align-items:center;gap:5px;min-width:0;min-height:32px;font-size:.78rem;font-weight:400;cursor:pointer}
+.preference-grid .preference-radio-options input[type="radio"]{width:18px;min-width:18px;height:18px;min-height:0;margin:0;padding:0;flex:0 0 18px;accent-color:#176eb5}
+@media(min-width:1051px){
+  .preference-radio-options{flex-wrap:nowrap;column-gap:4px}
+  .preference-grid .preference-radio-options label{gap:3px;white-space:nowrap;font-size:.76rem}
+  .preference-grid .preference-radio-options input[type="radio"]{width:16px;min-width:16px;height:16px;flex-basis:16px}
+}
 .preference-note{font-size:.76rem;line-height:1.35;margin:9px 0 7px;padding:7px 8px;background:#fff8d4;border:1px solid #d4a900}
 .preference-submit{width:100%;background:#176eb5;color:#fff;border:2px solid #111;padding:8px 10px;font-weight:900;text-transform:uppercase;cursor:pointer;box-shadow:3px 3px 0 #111}
 .preference-submit:hover{transform:translate(1px,1px);box-shadow:2px 2px 0 #111}
@@ -331,6 +341,7 @@ footer{padding:28px 0 40px;font-size:.82rem;color:#555}
 .preference-status.success{color:#0b6a25}.preference-status.error{color:#a21d14}
 .preference-submit-frame,.hp-field{position:absolute!important;width:1px!important;height:1px!important;overflow:hidden!important;clip:rect(0 0 0 0)!important;white-space:nowrap!important;border:0!important;padding:0!important;margin:-1px!important}
 @media(max-width:1050px) and (min-width:761px){.preference-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:1050px) and (min-width:701px){.preference-qualification{grid-column:1/-1}}
 @media(max-width:760px){
   .tip-tools{margin-top:4px}
   .availability-tool{margin-top:2px}
@@ -338,6 +349,10 @@ footer{padding:28px 0 40px;font-size:.82rem;color:#555}
   .availability-table{font-size:.7rem;min-width:455px}
 }
 @media(max-width:480px){.preference-grid{grid-template-columns:1fr}}
+
+@media(max-width:700px){
+  .preference-grid .preference-radio-options label{min-height:44px}
+}
 
 
 /* v46 — public-facing availability bands; exact counts remain private in Google Sheets */

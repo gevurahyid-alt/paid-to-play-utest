@@ -2080,6 +2080,14 @@ body.atlanta .tip-tools > .preference-followup-wide .copy-page-link{
             <label><span>Preferred Time <strong>*</strong></span><select name="preferred_time" required><option value="">Select time</option></select></label>
             <label><span>Backup Date #1 (optional)</span><input name="backup_date_1" type="date"></label>
             <label><span>Backup Date #2 (optional)</span><input name="backup_date_2" type="date"></label>
+            <fieldset class="preference-qualification">
+              <legend>Have you ever tested on-site with uTest? <strong>*</strong></legend>
+              <div class="preference-radio-options">
+                <label><input name="ever_tested_utest_onsite" type="radio" value="Yes" required><span>Yes</span></label>
+                <label><input name="ever_tested_utest_onsite" type="radio" value="No" required><span>No</span></label>
+                <label><input name="ever_tested_utest_onsite" type="radio" value="Not sure" required><span>Not sure</span></label>
+              </div>
+            </fieldset>
           </div>
           <p class="preference-note"><strong>This is a scheduling preference only.</strong> It does not reserve or confirm a session. Availability may change. <strong>Your session is not officially scheduled until confirmed by uTest directly.</strong> You may also select a future date not shown on this calendar, pending availability. <strong>If we have the necessary information, we will forward your preferences.</strong> <strong>If you’re unsure of your backup dates, you may leave them blank or update your preferences later.</strong> <strong>Earlier dates are encouraged, as availability is limited and study opportunities may fill or change at any time.</strong></p>
           <button class="preference-submit" type="submit">Submit Scheduling Preferences</button>
@@ -2400,13 +2408,20 @@ body.atlanta .tip-tools > .preference-followup-wide .copy-page-link{
         preferred_date:fd.get('preferred_date')||'',
         preferred_time:fd.get('preferred_time')||'',
         backup_date_1:fd.get('backup_date_1')||'',
-        backup_date_2:fd.get('backup_date_2')||''
+        backup_date_2:fd.get('backup_date_2')||'',
+        ever_tested_utest_onsite:fd.get('ever_tested_utest_onsite')||''
       };
     }
 
     function setField(name,value){
       const el=form.elements[name];
       if(el) el.value=value||'';
+    }
+
+    function setRadioValue(name,value){
+      form.querySelectorAll('input[type="radio"][name="'+name+'"]').forEach(radio=>{
+        radio.checked=radio.value===(value||'');
+      });
     }
 
     frame.addEventListener('load',()=>{
@@ -2429,6 +2444,7 @@ body.atlanta .tip-tools > .preference-followup-wide .copy-page-link{
       anotherPanel.hidden=true;
       backWrap.hidden=false;
       notesInput.value='';
+      if(lastSubmission) setRadioValue('ever_tested_utest_onsite',lastSubmission.ever_tested_utest_onsite);
       heading.textContent='TELL US YOUR PREFERRED SESSION TIMES';
       status.textContent='';
       tool.scrollIntoView({behavior:'smooth',block:'start'});
@@ -2450,6 +2466,7 @@ body.atlanta .tip-tools > .preference-followup-wide .copy-page-link{
       setField('preferred_time','');
       setField('backup_date_1','');
       setField('backup_date_2','');
+      setRadioValue('ever_tested_utest_onsite','');
       notesInput.value='';
       tool.scrollIntoView({behavior:'smooth',block:'start'});
     });
