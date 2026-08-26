@@ -2118,8 +2118,12 @@ body.atlanta .tip-tools > .preference-followup-wide .copy-page-link{
         </form>
         <div class="preference-confirmation" hidden>
           <p class="preference-success-lead"><strong>Thank you! Your scheduling preferences have been received.</strong></p>
+          <div class="preference-prior-participation-note" hidden>
+            <p>Because you indicated that you previously participated in an on-site uTest test, eligibility may depend on the specific project and how much time has passed. Some projects restrict repeat participation or require a certain amount of time between tests.</p>
+            <p>If you have not already done so, you may still complete the current uTest application and any required NDA. Submitting scheduling preferences does not guarantee an appointment, and uTest may not contact you if prior participation makes you ineligible. uTest will make the final eligibility determination and contact you if selected.</p>
+          </div>
           <p>This is a scheduling preference only and does not reserve or confirm a session.</p>
-          <p><strong>Need to change your dates or times?</strong> You can update your preferences at any time. Your newest submission will supersede your earlier preferences. You can also return to this page later — even in a new visit — and submit updated preferences at any time.</p>
+          <p><strong>Need to change your dates or times?</strong> You can update your preferences at any time. Your newest submission will supersede your earlier preferences. <span class="keep-together">You can also</span> return to this page later — even in a new visit — and submit updated preferences at any time.</p>
           <div class="preference-success-actions">
             <button class="preference-submit preference-return-button" type="button">UPDATE MY SCHEDULING PREFERENCES</button>
             <button class="preference-submit preference-another-button" type="button">SUBMIT PREFERENCES FOR ANOTHER APPLICANT</button>
@@ -2411,6 +2415,7 @@ body.atlanta .tip-tools > .preference-followup-wide .copy-page-link{
     const backWrap=tool.querySelector('.preference-back-options');
     const backOptions=tool.querySelector('.back-to-submission-options');
     const anotherQuestion=tool.querySelector('.another-question');
+    const priorParticipationNote=confirmation.querySelector('.preference-prior-participation-note');
     let lastSubmission=null;
 
     function snapshotForm(){
@@ -2439,6 +2444,10 @@ body.atlanta .tip-tools > .preference-followup-wide .copy-page-link{
       });
     }
 
+    function syncPriorParticipationNote(value){
+      priorParticipationNote.hidden=value!=='Yes';
+    }
+
     frame.addEventListener('load',()=>{
       if(!submitted) return;
       submitted=false;
@@ -2446,6 +2455,7 @@ body.atlanta .tip-tools > .preference-followup-wide .copy-page-link{
       status.className='preference-status success';
       status.textContent='';
       lastSubmission=snapshotForm();
+      syncPriorParticipationNote(lastSubmission.ever_tested_utest_onsite);
       form.hidden=true;
       backWrap.hidden=true;
       heading.textContent='✓ SUCCESS — PREFERENCES SUBMITTED';
@@ -2455,6 +2465,7 @@ body.atlanta .tip-tools > .preference-followup-wide .copy-page-link{
 
     returnButton.addEventListener('click',()=>{
       confirmation.hidden=true;
+      syncPriorParticipationNote('');
       form.hidden=false;
       anotherPanel.hidden=true;
       backWrap.hidden=false;
@@ -2467,6 +2478,7 @@ body.atlanta .tip-tools > .preference-followup-wide .copy-page-link{
 
     anotherButton.addEventListener('click',()=>{
       confirmation.hidden=true;
+      syncPriorParticipationNote('');
       form.hidden=false;
       heading.textContent='TELL US YOUR PREFERRED SESSION TIMES';
       status.textContent='';
@@ -2492,6 +2504,7 @@ body.atlanta .tip-tools > .preference-followup-wide .copy-page-link{
       backWrap.hidden=true;
       notesInput.value='';
       heading.textContent='✓ SUCCESS — PREFERENCES SUBMITTED';
+      syncPriorParticipationNote(lastSubmission&&lastSubmission.ever_tested_utest_onsite);
       confirmation.hidden=false;
       confirmation.scrollIntoView({behavior:'smooth',block:'start'});
     });
