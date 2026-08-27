@@ -2119,8 +2119,9 @@ body.atlanta .tip-tools > .preference-followup-wide .copy-page-link{
         <div class="preference-confirmation" hidden>
           <p class="preference-success-lead"><strong>Thank you! Your scheduling preferences have been received.</strong></p>
           <div class="preference-prior-participation-note" hidden>
-            <p>Because you indicated that you previously participated in an on-site uTest test, eligibility may depend on the specific project and how much time has passed. Some projects restrict repeat participation or require a certain amount of time between tests.</p>
-            <p>If you have not already done so, you may still complete the current uTest application and any required NDA. Submitting scheduling preferences does not guarantee an appointment, and uTest may not contact you if prior participation makes you ineligible. uTest will make the final eligibility determination and contact you if selected.</p>
+            <p class="preference-prior-yes" hidden>You indicated that you have previously participated in an on-site uTest test. Previous participation may affect eligibility for this study, depending on the test you completed and how long ago you participated.</p>
+            <p class="preference-prior-not-sure" hidden>You indicated that you are not sure whether you have previously participated in an on-site uTest test. If you have, it may affect eligibility for this study, depending on the test you may have completed and how long ago it was.</p>
+            <p>If you have not already done so, please complete the current uTest application and any required NDA. uTest will determine your eligibility and, if you are eligible and selected, will contact you directly to schedule.</p>
           </div>
           <p>This is a scheduling preference only and does not reserve or confirm a session.</p>
           <p><strong>Need to change your dates or times?</strong> You can update your preferences at any time. Your newest submission will supersede your earlier preferences. <span class="keep-together">You can also</span> return to this page later — even in a new visit — and submit updated preferences at any time.</p>
@@ -2416,6 +2417,8 @@ body.atlanta .tip-tools > .preference-followup-wide .copy-page-link{
     const backOptions=tool.querySelector('.back-to-submission-options');
     const anotherQuestion=tool.querySelector('.another-question');
     const priorParticipationNote=confirmation.querySelector('.preference-prior-participation-note');
+    const priorParticipationYes=confirmation.querySelector('.preference-prior-yes');
+    const priorParticipationNotSure=confirmation.querySelector('.preference-prior-not-sure');
     let lastSubmission=null;
 
     function snapshotForm(){
@@ -2445,7 +2448,11 @@ body.atlanta .tip-tools > .preference-followup-wide .copy-page-link{
     }
 
     function syncPriorParticipationNote(value){
-      priorParticipationNote.hidden=value!=='Yes';
+      const showYes=value==='Yes';
+      const showNotSure=value==='Not sure';
+      priorParticipationNote.hidden=!showYes && !showNotSure;
+      priorParticipationYes.hidden=!showYes;
+      priorParticipationNotSure.hidden=!showNotSure;
     }
 
     frame.addEventListener('load',()=>{

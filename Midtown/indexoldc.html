@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="format-detection" content="telephone=no">
-<title>Atlanta Wearable Technology Study | Paid to Play Testing</title>
-<meta name="description" content="Atlanta-area adults: apply for an in-person wearable technology testing opportunity in Sandy Springs paying $120 for approximately 3 hours.">
+<title>Midtown Wearable Technology Study | Paid to Play Testing</title>
+<meta name="description" content="New York City-area adults: apply for an in-person wearable technology testing opportunity in Midtown Manhattan paying $150 for approximately 3 hours.">
 <link rel="stylesheet" href="../assets/style.css?v=1393">
 <link rel="icon" type="image/png" sizes="512x512" href="../assets/favicon.png?v=47">
 <link rel="shortcut icon" href="../assets/favicon.ico?v=47">
@@ -106,6 +106,11 @@ header.topbar > * {
 /* ATLANTA DESKTOP CONSOLIDATED POLISH — desktop only; portrait mobile remains locked. */
 .atlanta-desktop-ribbon-break{display:none}
 .atlanta-desktop-post-cta{display:none}
+.midtown-mobile-ribbon-text{display:none}
+@media (max-width:600px) and (orientation:portrait){
+  .midtown-desktop-ribbon-text{display:none}
+  .midtown-mobile-ribbon-text{display:inline}
+}
 @media (min-width:901px){
   body.atlanta .hero .atlanta-desktop-ribbon-break{display:block}
 
@@ -1177,7 +1182,7 @@ html.atlanta-modal-open,body.atlanta-modal-open{overflow:hidden!important;oversc
 /* PORTRAIT MICRO-ALIGNMENT ONLY */
 @media (max-width:600px) and (orientation:portrait){
   body.mobile-woman-prototype .hero .kicker{
-    transform:translate(24px,-12px) rotate(-1deg) !important;
+    transform:translate(36px,-12px) rotate(-1deg) !important;
   }
   body.mobile-woman-prototype .hero h1,
   body.mobile-woman-prototype .hero .lead{
@@ -1710,7 +1715,7 @@ body.atlanta .mobile-expanded-credibility{display:none}
 body.atlanta .atlanta-trust-transition{box-sizing:border-box}
 body.atlanta .atlanta-trust-transition .atlanta-trust-transition-inner{box-sizing:border-box;text-align:center}
 @media (min-width:901px){
-  body.atlanta .atlanta-trust-transition{width:min(1080px,92vw);margin:-17px auto 0;border-top:1px solid rgba(17,17,17,.22);border-bottom:1px solid rgba(17,17,17,.22)}
+  body.atlanta .atlanta-trust-transition{width:min(1080px,92vw);margin:-25px auto 0;border-top:1px solid rgba(17,17,17,.22);border-bottom:1px solid rgba(17,17,17,.22)}
   body.atlanta .atlanta-trust-transition-inner{padding:10px 18px 11px;font-family:Georgia,"Times New Roman",serif;font-size:1.08rem;line-height:1.3;color:#111}
   body.atlanta .atlanta-trust-transition-blue{color:#0a7fc7;font-weight:700}
   body.atlanta .atlanta-trust-transition-mobile-break{display:none}
@@ -1915,13 +1920,28 @@ body.atlanta .tip-tools > .preference-followup-wide .copy-page-link{
   }
 }
 </style>
+
+<style>
+/* Midtown desktop CTA wording/clearance adjustment only. */
+@media (min-width:901px){
+  body.atlanta .hero .hero-cta-row{
+    left:0!important;
+    margin-inline:auto!important;
+  }
+  body.atlanta .hero .hero-cta-row .cta{
+    width:calc(100% - 24px);
+    box-sizing:border-box;
+    margin-inline:auto!important;
+  }
+}
+</style>
 </head>
 <body class="atlanta mobile-woman-prototype">
 <header class="topbar"><div class="wrap brand">PAID TO <span>PLAY</span> TESTING</div><div class="brand-sherpa-tagline">Your Tech Study Sherpa — Guiding You From Application to Testing</div><button class="atlanta-mobile-menu" type="button" aria-label="Menu" tabindex="-1"><span></span></button><button class="mobile-menu-prototype" type="button" aria-label="Menu" aria-expanded="false" aria-controls="atlanta-mobile-nav"><span></span></button></header>
 <nav class="atlanta-mobile-nav" id="atlanta-mobile-nav" aria-label="Mobile navigation" hidden>
   <div class="atlanta-mobile-nav-panel">
     <button class="atlanta-mobile-nav-close" type="button">CLOSE</button>
-    <a href="#before-you-apply">APPLY FOR THE ATLANTA STUDY</a>
+    <a href="#before-you-apply">APPLY FOR THE MIDTOWN STUDY</a>
     <a href="#atlanta-story-modal" data-modal-open="atlanta-story-modal">OUR STORY</a>
     <a href="#atlanta-testimonials-modal" data-modal-open="atlanta-testimonials-modal">TESTIMONIALS</a>
     <a href="mailto:info@paidtoplaytesting.com">CONTACT</a>
@@ -1929,9 +1949,9 @@ body.atlanta .tip-tools > .preference-followup-wide .copy-page-link{
   </div>
 </nav>
 <div class="atlanta-desktop-utility-menu" id="atlanta-desktop-utility-menu" hidden aria-hidden="true">
-  <div class="atlanta-desktop-utility-panel" role="dialog" aria-modal="false" aria-label="Atlanta page menu">
+  <div class="atlanta-desktop-utility-panel" role="dialog" aria-modal="false" aria-label="Midtown page menu">
     <button type="button" class="atlanta-desktop-menu-close">CLOSE</button>
-    <a href="#before-you-apply" class="atlanta-desktop-menu-apply">APPLY FOR THE ATLANTA STUDY</a>
+    <a href="#before-you-apply" class="atlanta-desktop-menu-apply">APPLY FOR THE MIDTOWN STUDY</a>
     <button type="button" data-modal-open="atlanta-story-modal">OUR STORY</button>
     <button type="button" data-modal-open="atlanta-testimonials-modal">TESTIMONIALS</button>
     <a href="mailto:info@paidtoplaytesting.com">CONTACT</a>
@@ -1943,14 +1963,14 @@ body.atlanta .tip-tools > .preference-followup-wide .copy-page-link{
 <section class="hero">
 <div class="wrap hero-grid">
   <div class="copy">
-    <div class="kicker">ATLANTA AREA •<br class="atlanta-desktop-ribbon-break"> SANDY SPRINGS</div>
+    <div class="kicker"><span class="midtown-desktop-ribbon-text">MIDTOWN MANHATTAN •<br class="atlanta-desktop-ribbon-break"> NEW YORK CITY</span><span class="midtown-mobile-ribbon-text">MIDTOWN MANHATTAN • NYC</span></div>
     <div class="mobile-woman-stage" aria-hidden="true"><img src="../assets/atlanta-mobile-woman.png" alt=""></div>
     <div class="mobile-promo-stage" aria-hidden="true"><img src="../assets/atlanta-mobile-promo.png" alt=""></div>
     <div class="mobile-vr-stage" aria-hidden="true"><img src="../assets/atlanta-mobile-vr.png" alt=""></div>
     <h1>Get Paid<br><span class="blue">to Play!</span></h1>
-    <p class="lead"><span class="atlanta-lead-default"><strong>Test wearable technology and<span class="atlanta-desktop-break"><br></span> <span class="mobile-earn-break"><br></span><span class="earn">earn&nbsp;$120</span></strong><span class="desktop-lead-break"><br></span> for an approximately<span class="atlanta-desktop-break"><br></span> <span class="mobile-three-hour-break"><br></span>3-hour, in-person session.</span><span class="atlanta-lead-portrait"><strong>Test wearable technology<br>and<br><span class="earn">earn&nbsp;$120</span></strong> for an<br>approximately<br>3-hour, in-person session.</span></p>
+    <p class="lead"><span class="atlanta-lead-default"><strong>Test wearable technology and<span class="atlanta-desktop-break"><br></span> <span class="mobile-earn-break"><br></span><span class="earn">earn&nbsp;$150</span></strong><span class="desktop-lead-break"><br></span> for an approximately<span class="atlanta-desktop-break"><br></span> <span class="mobile-three-hour-break"><br></span>3-hour, in-person session.</span><span class="atlanta-lead-portrait"><strong>Test wearable technology<br>and<br><span class="earn">earn&nbsp;$150</span></strong> for an<br>approximately<br>3-hour, in-person session.</span></p>
     <div class="offer offer-interactive" aria-label="Study details">
-      <button class="pill offer-detail-trigger" type="button" aria-expanded="false" data-detail="payment">$120 STUDY PAYMENT</button>
+      <button class="pill offer-detail-trigger" type="button" aria-expanded="false" data-detail="payment">$150 STUDY PAYMENT</button>
       <div class="offer-lower-pair">
       <button class="pill offer-detail-trigger" type="button" aria-expanded="false" data-detail="duration">ABOUT 3 HOURS</button>
       <button class="pill offer-detail-trigger" type="button" aria-expanded="false" data-detail="age">AGES 18+</button>
@@ -1960,15 +1980,15 @@ body.atlanta .tip-tools > .preference-followup-wide .copy-page-link{
         <div class="offer-popover-copy"></div>
       </div>
     </div>
-    <p class="session-times"><span class="hero-thanks"><span class="hero-thanks-full">Thank you for your interest in the wearables study!</span><span class="atlanta-desktop-thanks">Thank you for your interest in the study!</span><span class="hero-thanks-mobile">Thank you for your<br>interest in the study!</span></span>Weekday sessions are<span class="atlanta-session-offered"> offered</span><span class="mobile-session-break"><br></span> at<span class="atlanta-desktop-break"><br></span> <strong>9:30 AM</strong> and <strong class="time-2pm">2 PM</strong>.<span class="atlanta-desktop-hidden"><br><span class="keep-together">No technology experience required.</span><span class="desktop-eligibility-break"><br></span> Participation is subject to eligibility and successful screening.</span></p>
-    <p class="hero-cta-row"><a class="cta" href="#before-you-apply"><span class="cta-atl-prefix">Apply for the</span> <span class="cta-atl-rest">Atlanta Study</span></a></p>
+    <p class="session-times"><span class="hero-thanks"><span class="hero-thanks-full">Thank you for your interest in the wearables study!</span><span class="atlanta-desktop-thanks">Thank you for your interest in the study!</span><span class="hero-thanks-mobile">Thank you for your<br>interest in the study!</span></span>Weekday sessions are<span class="atlanta-session-offered"> offered</span><span class="mobile-session-break"><br></span> at<span class="atlanta-desktop-break"><br></span> <strong>9:00 AM</strong> and <strong class="time-2pm">1:30 PM</strong>.<span class="atlanta-desktop-hidden"><br><span class="keep-together">No technology experience required.</span><span class="desktop-eligibility-break"><br></span> Participation is subject to eligibility and successful screening.</span></p>
+    <p class="hero-cta-row"><a class="cta" href="#before-you-apply"><span class="cta-atl-prefix">Apply for the</span> <span class="cta-atl-rest">NYC Study</span></a></p>
     <p class="note hero-note">You'll continue to the official<span class="atlanta-mobile-redirect-break"><br></span> uTest registration process.</p>
     <div class="atlanta-desktop-post-cta" aria-label="Additional study requirements">
       <p class="atlanta-desktop-no-tech">No technology experience required.</p>
       <p class="atlanta-desktop-eligibility">Participation is subject to eligibility and successful screening.</p>
     </div>
   </div>
-  <div class="visual"><img class="hero-art" src="../assets/atlanta-hero-final-composite.png" alt="Get Paid to Play wearable technology testing campaign"></div>
+  <div class="visual"><img class="hero-art" src="../assets/MidtownWearablePicCC4_photo_color_corrected_cream_preserved.png" alt="Get Paid to Play Midtown wearable technology testing campaign"></div>
 </div>
 </section>
 
@@ -2033,7 +2053,7 @@ body.atlanta .tip-tools > .preference-followup-wide .copy-page-link{
       <div class="recovery-tip">
         <h3>If You Accidentally Close or<span class="desktop-recovery-break"><br></span> Lose the Original uTest Page</h3>
         <p><strong>Don't create another uTest account.</strong> Log in to your existing account and locate your uTest ID.</p>
-        <p>If you still need to complete the study application, email <a href="mailto:info@paidtoplaytesting.com">info@paidtoplaytesting.com</a> or text<span class="desktop-phone-break"><br></span> <a class="atlanta-phone-keep" href="sms:+17706792400">(770) 679-2400</a> for assistance accessing the appropriate application form.</p>
+        <p>If you still need to complete the study application, email <a href="mailto:info@paidtoplaytesting.com">info@paidtoplaytesting.com</a> or text<span class="desktop-phone-break"><br></span> <a class="atlanta-phone-keep" href="sms:+16467774460">(646) 777-4460</a> for assistance accessing the appropriate application form.</p>
         <p><strong>Already have your <span class="atlanta-utest-id-keep">uTest ID</span>?</strong> Include it when contacting us so we can help you get back on track more quickly.</p>
         <p><strong>You can also scroll to the bottom of this page to submit a help request.</strong></p>
       </div>
@@ -2045,7 +2065,7 @@ body.atlanta .tip-tools > .preference-followup-wide .copy-page-link{
         <figcaption>Follow arrow to <strong>Continue To Application</strong> before leaving uTest page.</figcaption>
       </figure>
 
-      <section class="availability-tool" data-location="atl" data-api="https://script.google.com/macros/s/AKfycbybIuYUdhAe6B5LjxmZ5iRROS6uQvQiFzmTQsz5Bb8fDRh1vysUhF6ySNU6qO9QHI0i/exec">
+      <section class="availability-tool" data-location="midtown" data-api="https://script.google.com/macros/s/AKfycbybIuYUdhAe6B5LjxmZ5iRROS6uQvQiFzmTQsz5Bb8fDRh1vysUhF6ySNU6qO9QHI0i/exec">
         <span class="atlanta-mobile-standalone-calendar" aria-hidden="true"><svg viewBox="0 0 32 32" focusable="false"><rect x="4.75" y="7" width="22.5" height="20" rx="2.5" fill="none" stroke="currentColor" stroke-width="2.5"/><path d="M5 13h22M10 4.5v5M22 4.5v5" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><g fill="currentColor"><rect x="9" y="16" width="3.5" height="3.5" rx=".5"/><rect x="14.25" y="16" width="3.5" height="3.5" rx=".5"/><rect x="19.5" y="16" width="3.5" height="3.5" rx=".5"/><rect x="9" y="21" width="3.5" height="3.5" rx=".5"/><rect x="14.25" y="21" width="3.5" height="3.5" rx=".5"/><rect x="19.5" y="21" width="3.5" height="3.5" rx=".5"/></g></svg></span>
         <div class="availability-heading"><span class="availability-calendar-icon" aria-hidden="true"><svg viewBox="0 0 32 32" focusable="false"><rect x="4.75" y="7" width="22.5" height="20" rx="2.5" fill="none" stroke="currentColor" stroke-width="2.5"/><path d="M5 13h22M10 4.5v5M22 4.5v5" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><g fill="currentColor"><rect x="9" y="16" width="3.5" height="3.5" rx=".5"/><rect x="14.25" y="16" width="3.5" height="3.5" rx=".5"/><rect x="19.5" y="16" width="3.5" height="3.5" rx=".5"/><rect x="9" y="21" width="3.5" height="3.5" rx=".5"/><rect x="14.25" y="21" width="3.5" height="3.5" rx=".5"/><rect x="19.5" y="21" width="3.5" height="3.5" rx=".5"/></g></svg></span><span class="availability-title">CHECK CURRENT AVAILABILITY</span><span class="availability-location">Loading…</span></div>
         <div class="availability-meta">Last updated: <strong class="availability-updated">Loading…</strong></div>
@@ -2060,7 +2080,7 @@ body.atlanta .tip-tools > .preference-followup-wide .copy-page-link{
         <form class="preference-form" action="https://script.google.com/macros/s/AKfycbybIuYUdhAe6B5LjxmZ5iRROS6uQvQiFzmTQsz5Bb8fDRh1vysUhF6ySNU6qO9QHI0i/exec" method="POST" target="preference-submit-frame">
           <input type="hidden" name="action" value="preference">
           <input type="hidden" name="notes" value="">
-          <input type="hidden" name="location" value="ATL Sandy Springs">
+          <input type="hidden" name="location" value="Midtown Manhattan • NYC">
           <input class="hp-field" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
 
           <div class="preference-another-panel" hidden>
@@ -2100,7 +2120,7 @@ body.atlanta .tip-tools > .preference-followup-wide .copy-page-link{
           <p class="preference-success-lead"><strong>Thank you! Your scheduling preferences have been received.</strong></p>
           <div class="preference-prior-participation-note" hidden>
             <p class="preference-prior-yes" hidden>You indicated that you have previously participated in an on-site uTest test. Previous participation may affect eligibility for this study, depending on the test you completed and how long ago you participated.</p>
-            <p class="preference-prior-not-sure" hidden>You indicated that you are not sure whether you have previously participated in an on-site uTest test. If you have, it may affect eligibility for this study, depending on the test you may have completed and how long ago it was.</p>
+            <p class="preference-prior-not-sure" hidden>You indicated that you are not sure whether you have previously participated in an on-site uTest test. If you have participated before, it may affect eligibility for this study, depending on the test you completed and how long ago you participated.</p>
             <p>If you have not already done so, please complete the current uTest application and any required NDA. uTest will determine your eligibility and, if you are eligible and selected, will contact you directly to schedule.</p>
           </div>
           <p>This is a scheduling preference only and does not reserve or confirm a session.</p>
@@ -2110,7 +2130,7 @@ body.atlanta .tip-tools > .preference-followup-wide .copy-page-link{
             <button class="preference-submit preference-another-button" type="button">SUBMIT PREFERENCES FOR ANOTHER APPLICANT</button>
           </div>
           <div class="preference-success-info">
-            <p><strong>Questions or need assistance?</strong> Email <a href="mailto:info@paidtoplaytesting.com"><strong>info@paidtoplaytesting.com</strong></a> or text <a href="sms:+17706792400"><strong>(770) 679-2400</strong></a>. We will respond as soon as possible, typically within 24 business hours.</p>
+            <p><strong>Questions or need assistance?</strong> Email <a href="mailto:info@paidtoplaytesting.com"><strong>info@paidtoplaytesting.com</strong></a>. We will respond as soon as possible, typically within 24 business hours.</p>
             <p>Once your application is complete and you qualify, uTest should generally contact you regarding next steps within <strong>48 business hours</strong>. If you would like a status update or help expediting the process, or if more than 48 business hours have passed without hearing from uTest, feel free to reach out to us.</p>
             <p><strong>Ready to continue?</strong> Follow the application instructions below.</p>
           </div>
@@ -2157,7 +2177,7 @@ body.atlanta .tip-tools > .preference-followup-wide .copy-page-link{
       <p><strong class="referral-spaced">If no referral information is listed, please enter <span class="referral-code">1436373</span> in the referral <span class="desktop-keep">uTest&nbsp;ID&nbsp;field&nbsp;when&nbsp;prompted.</span></strong></p>
     </div>
     <div class="atlanta-action-cta">
-      <p class="atlanta-action-cta-button"><a class="cta" href="https://utest.com/c-signup/wearables-atl-ambassador-1436373" rel="noopener noreferrer" target="_blank">Continue to Official uTest Application</a></p>
+      <p class="atlanta-action-cta-button"><a class="cta" href="https://utest.com/c-signup/wearables-nyc-ambassador-1436373" rel="noopener noreferrer" target="_blank">Continue to Official uTest Application</a></p>
       <p class="note" style="text-align:center">A new tab will open to continue through the official uTest application flow.<span class="desktop-app-note-break"><br></span><span class="desktop-first-app-note-gap"></span> You can switch back to this tab at any time if you need assistance or want to submit or update your scheduling preferences.</p>
     </div>
   </div>
@@ -2169,7 +2189,7 @@ body.atlanta .tip-tools > .preference-followup-wide .copy-page-link{
   <div class="lower-info-centered">
     <div class="signup-questions-centered">
       <p class="smallcaps">Questions or stuck during signup?</p>
-      <p>Paid to Play Testing can help you navigate the registration and application process.<br>Email <a href="mailto:info@paidtoplaytesting.com"><strong>info@paidtoplaytesting.com</strong></a> or text <a href="sms:+17706792400"><strong>(770) 679-2400</strong></a> for assistance.<br>We typically respond within 24 hours on business days.</p>
+      <p>Paid to Play Testing can help you navigate the registration and application process.<br>Email <a href="mailto:info@paidtoplaytesting.com"><strong>info@paidtoplaytesting.com</strong></a> for assistance.<br>We typically respond within 24 hours on business days.</p>
     </div>
 
     <div class="session-practical-info">
@@ -2212,7 +2232,7 @@ body.atlanta .tip-tools > .preference-followup-wide .copy-page-link{
 
 
 <div class="bottom-official-cta-block">
-  <p class="bottom-official-cta-button"><a class="cta" href="https://utest.com/c-signup/wearables-atl-ambassador-1436373" rel="noopener noreferrer" target="_blank" rel="noopener noreferrer">Continue to Official uTest Application</a></p>
+  <p class="bottom-official-cta-button"><a class="cta" href="https://utest.com/c-signup/wearables-nyc-ambassador-1436373" rel="noopener noreferrer" target="_blank" rel="noopener noreferrer">Continue to Official uTest Application</a></p>
   <p class="note" style="text-align:center">A new tab will open to continue through the official uTest application flow.<span class="desktop-app-note-break"><br></span> You can switch back to this tab at any time if you need assistance or want to submit or update your scheduling preferences.</p>
 </div>
 
@@ -2227,7 +2247,7 @@ body.atlanta .tip-tools > .preference-followup-wide .copy-page-link{
     <input type="hidden" name="access_key" value="422af10c-09b5-4581-b9a5-135f4b217983">
     <input type="hidden" name="subject" value="Paid to Play Testing - Signup Assistance Request">
     <input type="hidden" name="from_name" value="Paid to Play Testing">
-    <input type="hidden" name="redirect" value="https://get.paidtoplaytesting.com/Atlanta/ThankYou/">
+    <input type="hidden" name="redirect" value="https://get.paidtoplaytesting.com/Midtown/ThankYou/">
 
     <div class="form-grid">
       <label>
@@ -2238,11 +2258,6 @@ body.atlanta .tip-tools > .preference-followup-wide .copy-page-link{
       <label>
         <span>Email <strong>*</strong></span>
         <input type="email" name="email" autocomplete="email" required>
-      </label>
-
-      <label class="wide">
-        <span>Phone <small>(optional)</small></span>
-        <input type="tel" name="phone" autocomplete="tel">
       </label>
 
       <label class="wide">
@@ -2343,7 +2358,7 @@ body.atlanta .tip-tools > .preference-followup-wide .copy-page-link{
     const locationLabel=tool.querySelector('.availability-location');
     const updatedLabel=tool.querySelector('.availability-updated');
     const pendingLegend=tool.querySelector('.availability-legend-pending');
-    const displayLocation=loc==='atl' ? 'ATLANTA • SANDY SPRINGS' : 'MIDTOWN MANHATTAN • NYC';
+    const displayLocation=loc==='midtown' ? 'MIDTOWN MANHATTAN • NYC' : 'MIDTOWN MANHATTAN • NYC';
 
     async function loadAvailability(){
       locationLabel.textContent='Loading…';
