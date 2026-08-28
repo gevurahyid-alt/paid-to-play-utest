@@ -183,6 +183,34 @@ footer{padding:28px 0 40px;font-size:.82rem;color:#555}
 .recovery-tip p{margin:7px 0}
 .recovery-tip a{font-weight:900;color:#116ca4}
 
+@media(min-width:901px){
+  .pro-tip > .tip-copy{display:contents}
+  .pro-tip > .tip-copy > .tip-copy-intro{grid-column:1;grid-row:1}
+  .pro-tip > .tip-tools{grid-column:2;grid-row:1}
+  body.atlanta #before-you-apply .pro-tip > .tip-copy > .atlanta-utest-help-beta{
+    grid-column:1/-1;
+    grid-row:2;
+    justify-self:center;
+    width:calc((100% - 26px)*.475);
+  }
+  .pro-tip .application-recovery-pair{
+    grid-column:1/-1;
+    grid-row:3;
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:26px;
+    align-items:start;
+  }
+  body.atlanta .tip-copy > .application-recovery-pair > .recovery-tip{margin-top:16px}
+  body.atlanta .application-recovery-pair .desktop-phone-break{display:none}
+  body.atlanta .application-recovery-pair .atlanta-phone-keep{white-space:nowrap}
+}
+@media(min-width:1100px){
+  body.atlanta #before-you-apply .pro-tip > .tip-copy > .atlanta-utest-help-beta{
+    width:calc((100% - 504px)*.76);
+  }
+}
+
 .assist-form{
   margin-top:18px;
   background:#fff;
