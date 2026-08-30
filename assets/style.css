@@ -184,6 +184,7 @@ footer{padding:28px 0 40px;font-size:.82rem;color:#555}
 .recovery-tip a{font-weight:900;color:#116ca4}
 
 @media(min-width:901px){
+  body.atlanta .tip-copy-intro > h2{text-align:center}
   .pro-tip > .tip-copy{display:contents}
   .pro-tip > .tip-copy > .tip-copy-intro{grid-column:1;grid-row:1}
   .pro-tip > .tip-tools{grid-column:2;grid-row:1}
